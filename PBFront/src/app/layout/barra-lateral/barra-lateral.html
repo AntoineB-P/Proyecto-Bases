@@ -1,18 +1,25 @@
 <aside class="lateral">
-  <div class="logo">
-    <span class="logo-nombre">Liga<br>BetPlay</span>
-    <span class="logo-sub">Panel de gestión</span>
+  <div class="logo animate__animated animate__fadeInDown">
+    <span class="logo-liga">Liga</span>
+    <span class="logo-nombre">BetPlay</span>
+    <span class="logo-linea"></span>
   </div>
 
   <nav class="menu">
-    <ng-container *ngFor="let op of opciones">
+    <ng-container *ngFor="let op of opciones; let i = index">
 
-      <a class="opcion" *ngIf="op.listo" [routerLink]="op.ruta" routerLinkActive="activa">
+      <a class="opcion animate__animated animate__fadeInLeft"
+         *ngIf="op.listo"
+         [routerLink]="op.ruta"
+         routerLinkActive="activa"
+         [ngStyle]="{'animation-delay': (i * 70 + 200) + 'ms'}">
         <i class="bi {{ op.icono }}"></i>
         <span>{{ op.nombre }}</span>
       </a>
 
-      <span class="opcion deshabilitada" *ngIf="!op.listo">
+      <span class="opcion deshabilitada animate__animated animate__fadeInLeft"
+            *ngIf="!op.listo"
+            [ngStyle]="{'animation-delay': (i * 70 + 200) + 'ms'}">
         <i class="bi {{ op.icono }}"></i>
         <span>{{ op.nombre }}</span>
         <em>pronto</em>

@@ -1,19 +1,24 @@
 :root {
-  --cesped: #0D2A1E;
-  --cesped-franja: #0F3123;
-  --cesped-oscuro: #0A2117;
-  --tiza: #ECEFE4;
-  --tiza-suave: #A9B8A8;
-  --linea: rgba(236, 239, 228, 0.18);
-  --amarilla: #F2C230;
-  --roja: #D9412F;
+  --negro: #0a0a09;
+  --negro2: #111110;
+  --carbon: #1a1917;
+  --crema: #f2ead8;
+  --oro: #b8975a;
+  --oro2: #d4af72;
+  --texto: #c9bfa8;
+  --suave: #9c927c;
+  --linea: rgba(184, 151, 90, 0.28);
+  --amarilla: #f2c94c;
+  --roja: #b33a33;
 
-  --fuente-titulo: 'Fraunces', Georgia, serif;
-  --fuente-texto: 'Manrope', sans-serif;
-  
+  --fuente-titulo: 'Big Shoulders Display', sans-serif;
+  --fuente-texto: 'Jost', sans-serif;
+
   --salida: cubic-bezier(0.23, 1, 0.32, 1);
+  --ancho-lateral: 250px;
 
-  --ancho-lateral: 240px;
+  /* Animate.css dura 1s por defecto, lo bajamos para que se sienta más ágil */
+  --animate-duration: 700ms;
 }
 
 * {
@@ -21,21 +26,53 @@
 }
 
 body {
-  font-family: var(--fuente-texto);
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--tiza);
-  background-color: var(--cesped);
-
-  background-image: repeating-linear-gradient(
-    90deg,
-    var(--cesped) 0,
-    var(--cesped) 90px,
-    var(--cesped-franja) 90px,
-    var(--cesped-franja) 180px
-  );
-  background-attachment: fixed;
   margin: 0;
+  background-color: var(--negro);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+/* REFLECTORES: dos luces doradas que derivan despacio por el fondo */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  width: 70vw;
+  height: 60vh;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(212, 175, 114, 0.17), transparent);
+  pointer-events: none;
+}
+
+body::before {
+  top: -30vh;
+  left: -15vw;
+  animation: deriva 16s ease-in-out infinite alternate;
+}
+
+body::after {
+  top: -25vh;
+  right: -20vw;
+  animation: deriva 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes deriva {
+  from { transform: translateX(-6vw) scale(1); }
+  to   { transform: translateX(8vw) scale(1.15); }
+}
+
+/* rayita dorada que crece desde la izquierda (la usamos en varios sitios) */
+@keyframes crece {
+  from { transform: scaleX(0); }
+}
+
+/* al terminar la animación, el elemento queda libre para usar hover y :active */
+.animate__animated {
+  animation-fill-mode: backwards;
 }
 
 h1, h2, h3, p {
@@ -55,18 +92,9 @@ a {
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--amarilla);
+input:focus-visible {
+  outline: 2px solid var(--oro2);
   outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0ms !important;
-    transition-duration: 0.01ms !important;
-  }
 }
 
 ::-webkit-scrollbar {
@@ -74,10 +102,18 @@ select:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--cesped-oscuro);
+  background: var(--negro);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(236, 239, 228, 0.25);
+  background: var(--oro);
   border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

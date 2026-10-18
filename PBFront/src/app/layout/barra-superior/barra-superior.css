@@ -18,12 +18,12 @@
 }
 
 .buscador:focus-within {
-  border-bottom-color: var(--amarilla);
+  border-bottom-color: var(--oro2);
 }
 
 .buscador i {
-  color: var(--tiza-suave);
   margin-right: 12px;
+  color: var(--oro);
 }
 
 .buscador input {
@@ -31,28 +31,30 @@
   background: none;
   border: none;
   outline: none;
-  color: var(--tiza);
+  color: var(--crema);
   font-family: var(--fuente-texto);
   font-size: 15px;
 }
 
 .buscador input::placeholder {
-  color: var(--tiza-suave);
+  color: var(--suave);
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1.5px solid var(--tiza);
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  margin-left: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--oro);
+  background-color: var(--carbon);
   font-family: var(--fuente-titulo);
-  font-size: 15px;
-  font-weight: 500;
-  margin-left: 24px;
-  flex-shrink: 0;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--oro2);
 }
 
 @media (max-width: 900px) {
