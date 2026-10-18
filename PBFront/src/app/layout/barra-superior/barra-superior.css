@@ -1,33 +1,29 @@
 .superior {
-  height: 70px;
-  padding: 0 28px;
+  height: 76px;
+  padding: 0 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0A0F1E;
-  border-bottom: 1px solid #22304F;
+  border-bottom: 1px solid var(--linea);
 }
 
 .buscador {
   display: flex;
   align-items: center;
-  background-color: #111A2F;
-  border: 1px solid #22304F;
-  border-radius: 12px;
-  padding: 10px 16px;
   width: 100%;
-  max-width: 420px;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  max-width: 400px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--linea);
+  transition: border-color 160ms ease;
 }
 
 .buscador:focus-within {
-  border-color: #3B82F6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  border-bottom-color: var(--amarilla);
 }
 
 .buscador i {
-  color: #8FA0C2;
-  margin-right: 10px;
+  color: var(--tiza-suave);
+  margin-right: 12px;
 }
 
 .buscador input {
@@ -35,20 +31,32 @@
   background: none;
   border: none;
   outline: none;
-  color: #E8EEF9;
-  font-size: 14px;
+  color: var(--tiza);
+  font-family: var(--fuente-texto);
+  font-size: 15px;
+}
+
+.buscador input::placeholder {
+  color: var(--tiza-suave);
 }
 
 .avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #17233D;
-  border: 2px solid #FACC15;
+  border: 1.5px solid var(--tiza);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 13px;
-  margin-left: 20px;
+  font-family: var(--fuente-titulo);
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 24px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .superior {
+    padding: 0 20px;
+  }
 }

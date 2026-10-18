@@ -1,37 +1,37 @@
-<div class="encabezado animate__animated animate__fadeIn">
-  <div>
-    <h1>Dashboard</h1>
-    <p>Resumen general de la liga</p>
+<section class="portada" *ngIf="proximosPartidos.length > 0">
+  <div class="cancha-dibujo"></div>
+  <p class="portada-temporada">{{ temporada }}</p>
+
+  <div class="portada-texto">
+    <p class="portada-etiqueta">Próximo partido</p>
+    <h1 class="portada-equipos">
+      {{ proximosPartidos[0].local }}
+      <span class="recibe">recibe a</span>
+      {{ proximosPartidos[0].visitante }}
+    </h1>
+    <p class="portada-detalle">
+      {{ proximosPartidos[0].fecha }}, {{ proximosPartidos[0].hora }} en {{ proximosPartidos[0].estadio }}
+    </p>
   </div>
-  <span class="etiqueta-temporada"><i class="bi bi-calendar3"></i> {{ temporada }}</span>
-</div>
+</section>
 
-<div class="row g-3 mb-4">
-  <div class="col-6 col-md-3 animate__animated animate__fadeInUp animate__faster"
-       *ngFor="let ind of indicadores; let i = index"
-       [ngStyle]="{'animation-delay': (i * 0.08) + 's'}">
-    <div class="tarjeta indicador">
-      <div class="icono {{ ind.color }}">
-        <i class="bi {{ ind.icono }}"></i>
-      </div>
-      <div>
-        <span class="titulo">{{ ind.titulo }}</span>
-        <strong class="valor">{{ ind.valor }}</strong>
-      </div>
-    </div>
+<section class="cifras row g-0">
+  <div class="col-6 col-lg-3 cifra" *ngFor="let ind of indicadores">
+    <strong class="cifra-valor">{{ ind.valor }}</strong>
+    <span class="cifra-nombre">{{ ind.titulo }}</span>
   </div>
-</div>
+</section>
 
-<div class="row g-3 mb-4">
+<div class="row g-5">
 
-  <div class="col-lg-8 animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-trophy-fill t-amarillo"></i> Tabla de posiciones</h2>
-      <div class="contenedor-tabla">
+  <div class="col-xl-8">
+    <section class="bloque">
+      <h2 class="bloque-titulo">Tabla de posiciones</h2>
+      <div class="tabla-envoltura">
         <table class="tabla">
           <thead>
           <tr>
-            <th>#</th>
+            <th class="pos">#</th>
             <th class="izq">Equipo</th>
             <th>PJ</th>
             <th>PG</th>
@@ -44,10 +44,14 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let e of tablaPosiciones; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td class="izq">
-              <span class="escudo" [ngStyle]="{'background-color': e.color1, 'border-color': e.color2}"></span>
+          <tr class="fila-tabla"
+              *ngFor="let e of tablaPosiciones; let i = index"
+              [class.lider]="i === 0"
+              [ngStyle]="{'animation-delay': (i * 45) + 'ms'}">
+            <td class="pos">{{ i + 1 }}</td>
+            <td class="izq equipo">
+                <span class="camiseta"
+                      [ngStyle]="{'background': 'repeating-linear-gradient(90deg, ' + e.color1 + ' 0, ' + e.color1 + ' 5px, ' + e.color2 + ' 5px, ' + e.color2 + ' 10px)'}"></span>
               {{ e.nombre }}
             </td>
             <td>{{ e.pj }}</td>
@@ -62,114 +66,118 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   </div>
 
-  <div class="col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.7s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-calendar-event-fill t-azul"></i> Próximos partidos</h2>
-      <div class="partido" *ngFor="let p of proximosPartidos">
-        <div class="equipos">
-          <strong>{{ p.local }}</strong>
-          <span class="vs">vs</span>
-          <strong>{{ p.visitante }}</strong>
-        </div>
-        <small><i class="bi bi-clock"></i> {{ p.fecha }} · {{ p.hora }}</small>
-        <small><i class="bi bi-geo-alt-fill"></i> {{ p.estadio }}</small>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="row g-3 mb-4">
-
-  <div class="col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-bullseye t-rojo"></i> Goleadores</h2>
-      <div class="fila" *ngFor="let g of goleadores; let i = index">
-        <span class="puesto">{{ i + 1 }}</span>
-        <div class="dato">
-          <strong>{{ g.nombre }}</strong>
-          <small>{{ g.equipo }}</small>
-        </div>
-        <span class="cifra">{{ g.goles }}</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 0.9s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-exclamation-triangle-fill t-amarillo"></i> Disciplina</h2>
-      <div class="fila" *ngFor="let d of disciplina; let i = index">
-        <span class="puesto">{{ i + 1 }}</span>
-        <div class="dato">
-          <strong>{{ d.nombre }}</strong>
-          <small>{{ d.equipo }}</small>
-        </div>
-        <span class="carta amarilla">{{ d.amarillas }}</span>
-        <span class="carta roja">{{ d.rojas }}</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 1s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-people-fill t-verde"></i> Jugadores por posición</h2>
-      <div class="barra-bloque" *ngFor="let p of jugadoresPorPosicion">
-        <div class="barra-texto">
-          <span>{{ p.posicion }}</span>
-          <span>{{ p.cantidad }} ({{ porcentaje(p.cantidad) }}%)</span>
-        </div>
-        <div class="barra-fondo">
-          <div class="barra-relleno" [ngStyle]="{'width': porcentaje(p.cantidad) + '%', 'background-color': p.color}"></div>
-        </div>
-      </div>
-    </div>
+  <div class="col-xl-4">
+    <section class="bloque">
+      <h2 class="bloque-titulo">Próximos partidos</h2>
+      <ul>
+        <li class="encuentro" *ngFor="let p of proximosPartidos">
+          <span class="encuentro-fecha">{{ p.fecha }}</span>
+          <span class="encuentro-equipos">{{ p.local }} vs {{ p.visitante }}</span>
+          <span class="encuentro-sitio">{{ p.hora }}, {{ p.estadio }}</span>
+        </li>
+      </ul>
+    </section>
   </div>
 
 </div>
 
-
-<div class="row g-3">
-
-  <div class="col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 1.1s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-flag-fill t-azul"></i> Últimos resultados</h2>
-      <div class="resultado" *ngFor="let r of ultimosResultados">
-        <span class="nombre-local">{{ r.local }}</span>
-        <span class="marcador">{{ r.golesLocal }} - {{ r.golesVisitante }}</span>
-        <span class="nombre-visitante">{{ r.visitante }}</span>
-      </div>
+<section class="bloque">
+  <h2 class="bloque-titulo">Jugadores por posición</h2>
+  <p class="bloque-nota">De portero a atacante, de arco a arco.</p>
+  <div class="campo">
+    <div class="tramo"
+         *ngFor="let p of jugadoresPorPosicion"
+         [ngStyle]="{'flex-basis': porcentaje(p.cantidad) + '%'}">
+      <span class="tramo-cantidad">{{ p.cantidad }}</span>
+      <span class="tramo-nombre">{{ p.posicion }}, {{ porcentaje(p.cantidad) }}%</span>
     </div>
   </div>
+</section>
 
-  <div class="col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 1.2s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-building t-verde"></i> Estadios</h2>
-      <div class="fila" *ngFor="let e of estadios">
-        <div class="dato">
-          <strong>{{ e.nombre }}</strong>
-          <small>{{ e.ciudad }} · {{ e.capacidad }} personas</small>
-        </div>
-        <span class="cifra">{{ e.partidos }}</span>
-      </div>
-      <small class="nota">Cifra = partidos disputados</small>
-    </div>
+
+<div class="row g-5">
+
+  <div class="col-lg-4">
+    <section class="bloque">
+      <h2 class="bloque-titulo">Goleadores</h2>
+      <ol>
+        <li class="ranking-fila" *ngFor="let g of goleadores; let i = index" [class.primero]="i === 0">
+          <span class="ranking-nombre">
+            {{ g.nombre }}
+            <small>{{ g.equipo }}</small>
+          </span>
+          <span class="ranking-cifra">{{ g.goles }}</span>
+        </li>
+      </ol>
+    </section>
   </div>
 
-  <div class="col-lg-4 animate__animated animate__fadeInUp" style="animation-delay: 1.3s">
-    <div class="tarjeta">
-      <h2 class="subtitulo"><i class="bi bi-person-badge-fill t-amarillo"></i> Árbitros</h2>
-      <div class="fila" *ngFor="let a of arbitros">
-        <div class="dato">
-          <strong>{{ a.nombre }}</strong>
-          <small>{{ a.categoria }}</small>
-        </div>
-        <span class="cifra">{{ a.partidos }}</span>
-      </div>
-      <small class="nota">Cifra = partidos designados</small>
-    </div>
+  <div class="col-lg-4">
+    <section class="bloque">
+      <h2 class="bloque-titulo">Disciplina</h2>
+      <ol>
+        <li class="ranking-fila" *ngFor="let d of disciplina">
+          <span class="ranking-nombre">
+            {{ d.nombre }}
+            <small>{{ d.equipo }}</small>
+          </span>
+          <span class="cartulinas">
+            <span class="cartulina amarilla">{{ d.amarillas }}</span>
+            <span class="cartulina roja">{{ d.rojas }}</span>
+          </span>
+        </li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="col-lg-4">
+    <section class="bloque">
+      <h2 class="bloque-titulo">Últimos resultados</h2>
+      <ul>
+        <li class="resultado" *ngFor="let r of ultimosResultados">
+          <span class="res-local">{{ r.local }}</span>
+          <span class="res-marcador">{{ r.golesLocal }} - {{ r.golesVisitante }}</span>
+          <span class="res-visitante">{{ r.visitante }}</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+</div>
+
+<div class="row g-5">
+
+  <div class="col-lg-6">
+    <section class="bloque">
+      <h2 class="bloque-titulo">Estadios</h2>
+      <p class="bloque-nota">Partidos disputados en cada uno.</p>
+      <ul>
+        <li class="programa-fila" *ngFor="let e of estadios">
+          <span class="programa-nombre">{{ e.nombre }}</span>
+          <span class="programa-puntos"></span>
+          <span class="programa-valor">{{ e.partidos }}</span>
+          <small class="programa-detalle">{{ e.ciudad }}, {{ e.capacidad }} personas</small>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="col-lg-6">
+    <section class="bloque">
+      <h2 class="bloque-titulo">Árbitros</h2>
+      <p class="bloque-nota">Partidos designados a cada uno.</p>
+      <ul>
+        <li class="programa-fila" *ngFor="let a of arbitros">
+          <span class="programa-nombre">{{ a.nombre }}</span>
+          <span class="programa-puntos"></span>
+          <span class="programa-valor">{{ a.partidos }}</span>
+          <small class="programa-detalle">Categoría {{ a.categoria }}</small>
+        </li>
+      </ul>
+    </section>
   </div>
 
 </div>
