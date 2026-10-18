@@ -1,0 +1,99 @@
+.lateral {
+  width: 250px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--superficie);
+  border-right: 1px solid var(--borde);
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+}
+
+.logo-icono {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--azul), var(--amarillo));
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: var(--fondo);
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-texto small {
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: var(--texto-suave);
+  font-weight: 500;
+  transition: all var(--transicion);
+  position: relative;
+}
+
+.opcion i {
+  font-size: 18px;
+}
+
+.opcion:not(.deshabilitada):hover {
+  background: var(--superficie-2);
+  color: var(--texto);
+  transform: translateX(4px);
+}
+
+.opcion.activa {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--azul);
+}
+
+.opcion.activa::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 20%;
+  height: 60%;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--azul);
+}
+
+.deshabilitada {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.deshabilitada em {
+  margin-left: auto;
+  font-size: 10px;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--amarillo);
+}

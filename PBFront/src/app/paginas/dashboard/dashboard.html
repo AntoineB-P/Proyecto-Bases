@@ -1,0 +1,30 @@
+<section class="encabezado animar">
+  <h1>Dashboard</h1>
+  <p>Resumen general de la liga</p>
+</section>
+
+<section class="indicadores">
+  @for (ind of indicadores; track ind.titulo; let i = $index) {
+    <article class="tarjeta indicador animar" [style.animation-delay]="(i * 90) + 'ms'">
+      <div class="icono {{ ind.color }}">
+        <i class="bi {{ ind.icono }}"></i>
+      </div>
+      <div>
+        <span class="titulo">{{ ind.titulo }}</span>
+        <strong class="valor">{{ ind.valor }}</strong>
+      </div>
+    </article>
+  }
+</section>
+
+<section class="paneles">
+  <article class="tarjeta panel animar" style="animation-delay: 400ms">
+    <h2>Tabla de posiciones</h2>
+    <p class="vacio">Aquí irá la tabla calculada desde los resultados.</p>
+  </article>
+
+  <article class="tarjeta panel animar" style="animation-delay: 500ms">
+    <h2>Próximos partidos</h2>
+    <p class="vacio">Aquí irán los partidos programados.</p>
+  </article>
+</section>

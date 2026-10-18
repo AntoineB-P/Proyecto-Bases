@@ -1,0 +1,26 @@
+<aside class="lateral">
+  <div class="logo">
+    <span class="logo-icono">PB</span>
+    <div class="logo-texto">
+      <strong>Liga BetPlay</strong>
+      <small>Panel de gestión</small>
+    </div>
+  </div>
+
+  <nav class="menu">
+    @for (op of opciones; track op.ruta) {
+      @if (op.listo) {
+        <a class="opcion" [routerLink]="op.ruta" routerLinkActive="activa">
+          <i class="bi {{ op.icono }}"></i>
+          <span>{{ op.nombre }}</span>
+        </a>
+      } @else {
+        <span class="opcion deshabilitada">
+          <i class="bi {{ op.icono }}"></i>
+          <span>{{ op.nombre }}</span>
+          <em>pronto</em>
+        </span>
+      }
+    }
+  </nav>
+</aside>

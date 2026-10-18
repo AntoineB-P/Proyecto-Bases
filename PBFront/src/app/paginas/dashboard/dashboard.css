@@ -1,0 +1,71 @@
+.encabezado {
+  margin-bottom: 24px;
+}
+
+.encabezado h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.encabezado p {
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.indicador {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icono {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+.icono.azul     { background: rgba(59, 130, 246, 0.15); color: var(--azul); }
+.icono.verde    { background: rgba(34, 197, 94, 0.15);  color: var(--verde); }
+.icono.amarillo { background: rgba(250, 204, 21, 0.15); color: var(--amarillo); }
+.icono.rojo     { background: rgba(239, 68, 68, 0.15);  color: var(--rojo); }
+
+.titulo {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.valor {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.paneles {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+.panel h2 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+
+.vacio {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .paneles { grid-template-columns: 1fr; }
+}
