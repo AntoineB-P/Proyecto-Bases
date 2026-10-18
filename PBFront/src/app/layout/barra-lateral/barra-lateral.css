@@ -1,32 +1,33 @@
 .lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 250px;
   height: 100vh;
-  position: sticky;
-  top: 0;
-  background: var(--superficie);
-  border-right: 1px solid var(--borde);
+  background-color: #111A2F;
+  border-right: 1px solid #22304F;
   padding: 22px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+  z-index: 20;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   padding: 0 8px;
+  margin-bottom: 28px;
 }
 
 .logo-icono {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--azul), var(--amarillo));
-  display: grid;
-  place-items: center;
+  background: linear-gradient(135deg, #3B82F6, #FACC15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
-  color: var(--fondo);
+  color: #0A0F1E;
+  margin-right: 12px;
 }
 
 .logo-texto {
@@ -36,57 +37,53 @@
 }
 
 .logo-texto small {
-  color: var(--texto-suave);
+  color: #8FA0C2;
   font-size: 12px;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .opcion {
   display: flex;
   align-items: center;
-  gap: 12px;
   padding: 12px 14px;
+  margin-bottom: 4px;
   border-radius: 10px;
-  color: var(--texto-suave);
+  border-left: 4px solid transparent;
+  color: #8FA0C2;
   font-weight: 500;
-  transition: all var(--transicion);
-  position: relative;
+  transition: all 0.25s ease;
 }
 
 .opcion i {
   font-size: 18px;
+  margin-right: 12px;
 }
 
-.opcion:not(.deshabilitada):hover {
-  background: var(--superficie-2);
-  color: var(--texto);
+.opcion:hover {
+  background-color: #17233D;
+  color: #E8EEF9;
   transform: translateX(4px);
 }
 
 .opcion.activa {
-  background: rgba(59, 130, 246, 0.15);
-  color: var(--azul);
-}
-
-.opcion.activa::before {
-  content: '';
-  position: absolute;
-  left: -14px;
-  top: 20%;
-  height: 60%;
-  width: 4px;
-  border-radius: 0 4px 4px 0;
-  background: var(--azul);
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #3B82F6;
+  border-left: 4px solid #3B82F6;
 }
 
 .deshabilitada {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+.deshabilitada:hover {
+  background-color: transparent;
+  color: #8FA0C2;
+  transform: none;
 }
 
 .deshabilitada em {
@@ -95,5 +92,5 @@
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--amarillo);
+  color: #FACC15;
 }

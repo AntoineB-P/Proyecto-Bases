@@ -8,19 +8,19 @@
   </div>
 
   <nav class="menu">
-    @for (op of opciones; track op.ruta) {
-      @if (op.listo) {
-        <a class="opcion" [routerLink]="op.ruta" routerLinkActive="activa">
-          <i class="bi {{ op.icono }}"></i>
-          <span>{{ op.nombre }}</span>
-        </a>
-      } @else {
-        <span class="opcion deshabilitada">
-          <i class="bi {{ op.icono }}"></i>
-          <span>{{ op.nombre }}</span>
-          <em>pronto</em>
-        </span>
-      }
-    }
+    <ng-container *ngFor="let op of opciones">
+
+      <a class="opcion" *ngIf="op.listo" [routerLink]="op.ruta" routerLinkActive="activa">
+        <i class="bi {{ op.icono }}"></i>
+        <span>{{ op.nombre }}</span>
+      </a>
+
+      <span class="opcion deshabilitada" *ngIf="!op.listo">
+        <i class="bi {{ op.icono }}"></i>
+        <span>{{ op.nombre }}</span>
+        <em>pronto</em>
+      </span>
+
+    </ng-container>
   </nav>
 </aside>
