@@ -1,0 +1,42 @@
+/* el balón vive en la esquina derecha del estadio, por encima de él */
+:host {
+  position: absolute;
+  top: 12%;
+  right: 9%;
+  z-index: 3;
+  width: clamp(220px, 26vw, 420px);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;   /* así el mouse sigue girando el estadio por debajo */
+}
+
+.capa,
+.entra,
+.flota,
+.balon {
+  width: 100%;
+  height: 100%;
+}
+
+.flota {
+  animation: flotar 6s ease-in-out infinite;
+}
+
+.balon {
+  display: block;
+  --poster-color: transparent;
+  --progress-bar-color: transparent;
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.55));
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-18px); }
+}
+
+@media (max-width: 900px) {
+  :host {
+    top: 8%;
+    right: 10%;
+    width: 42vw;
+  }
+}

@@ -110,6 +110,19 @@ input:focus-visible {
   border-radius: 8px;
 }
 
+/* ---------- INTRO DEL BALÓN ---------- Cuando la intro termina, la clase se quita
+   y todo arranca en orden. */
+body.intro-activa .principal,
+body.intro-activa .principal *,
+body.intro-activa .principal *::before,
+body.intro-activa .principal *::after,
+body.intro-activa .lateral,
+body.intro-activa .lateral *,
+body.intro-activa .lateral *::before,
+body.intro-activa .lateral *::after {
+  animation-play-state: paused !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
