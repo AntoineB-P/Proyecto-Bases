@@ -145,3 +145,21 @@
     margin-right: 22px;
   }
 }
+.logo-fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  flex-shrink: 0;
+  width: 40px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 900px) {
+  .logo-img {
+    width: 30px;
+  }
+}
