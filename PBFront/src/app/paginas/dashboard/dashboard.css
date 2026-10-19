@@ -1,0 +1,601 @@
+/* ---------- PORTADA ---------- */
+.portada {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 72px;
+}
+
+/* ondas doradas que se expanden desde el centro, como el eco de un estadio */
+.ondas {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  width: 460px;
+  height: 460px;
+  margin-top: -230px;
+  pointer-events: none;
+}
+
+.onda {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid var(--oro);
+  border-radius: 50%;
+  opacity: 0;
+  animation: onda 5s ease-out infinite;
+}
+
+.onda:nth-child(2) { animation-delay: 1.6s; }
+.onda:nth-child(3) { animation-delay: 3.2s; }
+
+@keyframes onda {
+  from { transform: scale(0.3); opacity: 0.6; }
+  to   { transform: scale(1.5); opacity: 0; }
+}
+
+.portada-etiqueta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 17px;
+  color: var(--oro2);
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: var(--oro2);
+}
+
+.portada-temporada {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.portada-equipos {
+  position: relative;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.equipo-local,
+.equipo-visita {
+  display: block;
+  font-size: clamp(60px, 11vw, 170px);
+}
+
+.equipo-local {
+  color: var(--crema);
+}
+
+.equipo-visita {
+  color: var(--oro2);
+}
+
+.vs-fila {
+  display: flex;
+  align-items: center;
+  margin: 14px 0;
+}
+
+/* línea dorada que sale del "vs" */
+.vs-fila::after {
+  content: '';
+  flex: 1;
+  max-width: 420px;
+  height: 2px;
+  margin-left: 16px;
+  background: linear-gradient(to right, var(--oro), transparent);
+  transform-origin: left;
+  animation: crece 900ms 900ms var(--salida) backwards;
+}
+
+.vs {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--oro2);
+  color: var(--negro);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.portada-detalle {
+  position: relative;
+  margin-top: 26px;
+  font-size: 20px;
+  color: var(--crema);
+}
+
+/* ---------- CINTA DE RESULTADOS ---------- */
+.cinta {
+  margin: 0 -48px 56px;
+  padding: 16px 0;
+  overflow: hidden;
+  background-color: var(--carbon);
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+}
+
+/* width: max-content = el contenedor mide lo que mide todo su contenido */
+.cinta-pista {
+  display: flex;
+  width: max-content;
+  animation: cinta 36s linear infinite;
+}
+
+.cinta-grupo {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.cinta-item {
+  white-space: nowrap;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.cinta-item strong {
+  margin: 0 6px;
+  font-weight: 900;
+  color: var(--oro2);
+}
+
+.cinta-item::after {
+  content: '\25C6';
+  margin: 0 36px;
+  font-size: 14px;
+  vertical-align: middle;
+  color: var(--oro);
+}
+
+/* hay 4 copias, así que movemos 1/4 y el bucle no se nota */
+@keyframes cinta {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-25%); }
+}
+
+@media (hover: hover) {
+  .cinta:hover .cinta-pista {
+    animation-play-state: paused;
+  }
+}
+
+/* ---------- CIFRAS ---------- */
+.cifras {
+  margin-bottom: 64px;
+}
+
+.cifra {
+  position: relative;
+  height: 100%;
+  padding: 22px 20px;
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  background: linear-gradient(160deg, rgba(212, 175, 114, 0.08), transparent 60%);
+  transition: border-color 200ms ease;
+}
+
+.cifra::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--oro2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 350ms var(--salida);
+}
+
+@media (hover: hover) {
+  .cifra:hover {
+    border-color: var(--oro);
+  }
+
+  .cifra:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.cifra-valor {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 0.95;
+  color: var(--crema);
+}
+
+.cifra-nombre {
+  font-size: 15px;
+  color: var(--suave);
+}
+
+/* ---------- BLOQUES ---------- */
+.bloque {
+  margin-bottom: 64px;
+}
+
+.bloque-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.bloque-titulo::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 12px 0 22px;
+  background-color: var(--oro);
+  transform-origin: left;
+  animation: crece 800ms 600ms var(--salida) backwards;
+}
+
+.bloque-nota {
+  margin: -8px 0 20px;
+  font-size: 15px;
+  color: var(--suave);
+}
+
+/* ---------- TABLA ---------- */
+.tabla-envoltura {
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabla th {
+  padding: 0 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--suave);
+  border-bottom: 2px solid var(--oro);
+}
+
+.tabla td {
+  padding: 14px 8px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--linea);
+}
+
+.tabla .izq {
+  text-align: left;
+}
+
+.tabla .pos {
+  width: 40px;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--suave);
+}
+
+.equipo {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.camiseta {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 234, 216, 0.4);
+}
+
+.puntos {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 32px;
+  color: var(--crema);
+}
+
+.lider {
+  background: linear-gradient(90deg, rgba(212, 175, 114, 0.18), transparent 70%);
+}
+
+.lider .pos,
+.lider .puntos {
+  color: var(--oro2);
+}
+
+.estrella {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  color: var(--oro2);
+}
+
+.fila-tabla {
+  transition: background-color 120ms ease;
+}
+
+@media (hover: hover) {
+  .fila-tabla:hover {
+    background-color: rgba(212, 175, 114, 0.08);
+  }
+}
+
+/* ---------- PRÓXIMOS PARTIDOS ---------- */
+.encuentro {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--linea);
+  transition: transform 200ms var(--salida);
+}
+
+@media (hover: hover) {
+  .encuentro:hover {
+    transform: translateX(6px);
+  }
+}
+
+.encuentro-fecha {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--oro2);
+}
+
+.encuentro-equipos {
+  display: block;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--crema);
+}
+
+.encuentro-sitio {
+  display: block;
+  font-size: 14px;
+  color: var(--suave);
+}
+
+/* ---------- CANCHA DE POSICIONES ---------- */
+.campo {
+  display: flex;
+  height: 150px;
+  border: 1px solid var(--linea);
+}
+
+.tramo {
+  flex-grow: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px;
+  color: var(--negro);
+  border-right: 3px solid var(--negro);
+}
+
+.tramo:last-child {
+  border-right: none;
+}
+
+/* el portero usa otra camiseta, por eso el amarillo */
+.tramo:nth-child(1) { background-color: var(--amarilla); }
+.tramo:nth-child(2) { background-color: var(--crema); }
+.tramo:nth-child(3) { background-color: var(--oro2); }
+.tramo:nth-child(4) { background-color: var(--oro); }
+
+.tramo-cantidad {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 0.9;
+}
+
+.tramo-nombre {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ---------- RANKINGS ---------- */
+.ranking-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.ranking-nombre {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--crema);
+}
+
+.ranking-nombre small {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.ranking-cifra {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 34px;
+  color: var(--crema);
+}
+
+/* el máximo goleador se lee primero porque es mucho más grande */
+.ranking-fila.primero .ranking-nombre {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.ranking-fila.primero .ranking-cifra {
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 0.9;
+  color: var(--oro2);
+}
+
+.cartulinas {
+  display: flex;
+}
+
+.cartulina {
+  width: 26px;
+  height: 34px;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cartulina.amarilla {
+  background-color: var(--amarilla);
+  color: var(--negro);
+}
+
+.cartulina.roja {
+  background-color: var(--roja);
+  color: var(--crema);
+}
+
+/* ---------- RESULTADOS ---------- */
+.resultado {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.res-local,
+.res-visitante {
+  flex: 1;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.res-local {
+  text-align: right;
+}
+
+.res-marcador {
+  margin: 0 14px;
+  padding: 2px 14px;
+  border: 1px solid var(--oro);
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 30px;
+  font-variant-numeric: tabular-nums;
+  color: var(--oro2);
+}
+
+/* ---------- PROGRAMA (estadios y árbitros) ---------- */
+.programa-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 12px 0;
+}
+
+.programa-nombre {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--crema);
+}
+
+.programa-puntos {
+  flex: 1;
+  margin: 0 10px 8px;
+  border-bottom: 2px dotted var(--linea);
+}
+
+.programa-valor {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--oro2);
+}
+
+.programa-detalle {
+  flex-basis: 100%;
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--suave);
+}
+
+/* ---------- PANTALLAS PEQUEÑAS ---------- */
+@media (max-width: 900px) {
+  .portada {
+    padding: 44px 0 48px;
+  }
+
+  .ondas {
+    right: -220px;
+  }
+
+  .cinta {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .campo {
+    height: 120px;
+  }
+
+  .tramo {
+    padding: 8px;
+  }
+
+  .tramo-cantidad {
+    font-size: 40px;
+  }
+
+  .cifra-valor {
+    font-size: 56px;
+  }
+}
