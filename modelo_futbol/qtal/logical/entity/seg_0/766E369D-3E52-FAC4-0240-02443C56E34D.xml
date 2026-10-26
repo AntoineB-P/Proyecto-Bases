@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="766E369D-3E52-FAC4-0240-02443C56E34D" name="EQUIPO TORNEO">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></commentInRDBMS>
+<generatorID>B1C55D4C-30D6-C45B-B0F1-F6EE0ADADB82</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id equipo" id="2A2E0B95-FAC1-CD78-F299-DEBCED334EEE">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo que participa en el torneo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo que participa en el torneo.]]></commentInRDBMS>
+<generatorID>3105CCBB-D4CF-5BA7-962C-0D515B003EFE</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>D7558503-8436-8B62-86FC-DA902EC09F10</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id torneo" id="9EE7F25B-0D7F-C8BF-565E-4BA9564C548F">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que participa el equipo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que participa el equipo.]]></commentInRDBMS>
+<generatorID>7ECD8196-E6C6-6C35-2318-FE3290026FD6</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>D2BC9C88-35B4-4448-9AA4-300F2E8CC171</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E25DE9C5-FF4C-3BF3-32BD-DF5B7D043061" name="pk equipo torneo">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>7C9F796F-CFE3-39C0-6836-2C74DB7AD102</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2A2E0B95-FAC1-CD78-F299-DEBCED334EEE</attributeRef>
+<attributeRef>9EE7F25B-0D7F-C8BF-565E-4BA9564C548F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

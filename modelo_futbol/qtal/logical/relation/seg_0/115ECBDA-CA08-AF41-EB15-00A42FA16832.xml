@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_arbitraje_arbitro" directorySegmentName="seg_0" id="115ECBDA-CA08-AF41-EB15-00A42FA16832">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>C515AFD3-5149-69A4-7723-E58846D1CCD0</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>BE491ADC-F615-2078-E0FD-78EBBEB52CC5</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>11AE7B2B-FCD2-DE91-1EE0-F6F050DD6D65</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9A30AF3B-87ED-2A28-29C6-CDB95ED0F305</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

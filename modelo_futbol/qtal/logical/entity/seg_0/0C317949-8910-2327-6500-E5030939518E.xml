@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0C317949-8910-2327-6500-E5030939518E" name="EQUIPO COLOR">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color que tiene un equipo, ya que un equipo puede tener varios colores.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color que tiene un equipo, ya que un equipo puede tener varios colores.]]></commentInRDBMS>
+<generatorID>3EF28AE2-1C6D-2F51-5456-49D8E0C1A90C</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id equipo" id="51B3585D-978C-B483-ABDF-51B41EC38D46">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: indica a qué equipo pertenece el color.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: indica a qué equipo pertenece el color.]]></commentInRDBMS>
+<generatorID>3DDA1338-FEA3-334D-15FC-37B9AE3BBFAF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>D7558503-8436-8B62-86FC-DA902EC09F10</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="color" id="233C1F43-EDB4-2767-91C3-09DF039233FA">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Nombre del color del equipo (por ejemplo rojo o blanco). Parte de la llave primaria para que un color no se repita en el mismo equipo.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del color del equipo (por ejemplo rojo o blanco). Parte de la llave primaria para que un color no se repita en el mismo equipo.]]></commentInRDBMS>
+<generatorID>19A11529-F0E2-2876-A64C-1B2B3EB4936B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8A7307C1-CBE0-05BF-2880-68885528AA4A" name="pk equipo color">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>A5547C08-C59B-21D1-0BFB-F931FAC677E6</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>51B3585D-978C-B483-ABDF-51B41EC38D46</attributeRef>
+<attributeRef>233C1F43-EDB4-2767-91C3-09DF039233FA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

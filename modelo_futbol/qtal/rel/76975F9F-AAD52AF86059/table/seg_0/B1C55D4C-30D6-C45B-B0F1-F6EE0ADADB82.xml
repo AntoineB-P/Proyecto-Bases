@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B1C55D4C-30D6-C45B-B0F1-F6EE0ADADB82" name="EQUIPO_TORNEO">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>15553C76-7B09-ABAB-FBD7-063864471598</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_equipo" id="0715D761-9DC0-360A-6ABB-71DFEEA93B66">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo que participa en el torneo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo que participa en el torneo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>52904D3B-6E00-D7BB-FE71-E689E2703988</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B438F083-4879-4A83-B1D2-ED1F8E7E51C4" referredColumn="1C99FEF3-970A-A90D-D3C7-CEA128A3DF0B"/>
+</associations>
+</Column>
+<Column name="id_torneo" id="87308575-C660-7560-722C-D3191C7249FD">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que participa el equipo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que participa el equipo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>D63AD5FD-AC55-35B2-922A-58E9CA4B63BC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D5D93CB-11FD-23CB-DB91-7CCB8F9967E0" referredColumn="0C9271B7-6D1C-DAD8-5A28-A6CC89961F29"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7C9F796F-CFE3-39C0-6836-2C74DB7AD102" name="pk_equipo_torneo">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>8E1290E7-3897-CC1C-078F-8E71222713DA</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0715D761-9DC0-360A-6ABB-71DFEEA93B66"/>
+<colUsage columnID="87308575-C660-7560-722C-D3191C7249FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7A20C9CE-75DF-F359-70DB-0AB52032EC55" name="fk_eqtor_equipo">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0715D761-9DC0-360A-6ABB-71DFEEA93B66"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2ABF63E9-29CA-F172-AD5E-D5E04417DAFC" name="fk_eqtor_torneo">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87308575-C660-7560-722C-D3191C7249FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

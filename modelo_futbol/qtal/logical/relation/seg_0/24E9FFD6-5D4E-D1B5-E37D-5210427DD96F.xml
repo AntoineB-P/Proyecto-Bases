@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_equipo_tecnico" directorySegmentName="seg_0" id="24E9FFD6-5D4E-D1B5-E37D-5210427DD96F">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>3907BB24-AEF4-C99C-64EF-6240057454C2</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>3A7A11DD-4A9F-DEAE-EEDD-FC21AC70B4AA</sourcePk>
+<dominantRole>93B16C8C-AB65-7E1F-9B19-1CA79C27441D</dominantRole>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>93B16C8C-AB65-7E1F-9B19-1CA79C27441D</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>BDCE6D7A-A1A6-58F7-4A9E-706D656E3928</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

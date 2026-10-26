@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="372F96FD-5EED-8F88-6FC9-B5308CD6379C" name="ESTADIO">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Estadios donde se juegan los partidos y que sirven de sede a los equipos. Guarda su capacidad y su ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Estadios donde se juegan los partidos y que sirven de sede a los equipos. Guarda su capacidad y su ubicación.]]></commentInRDBMS>
+<generatorID>BF57ED86-E8CA-FA20-8F98-177424DFA11B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id estadio" id="8A599E8D-E3BD-8F17-4731-B15776B3F603">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Identificador único del estadio (llave primaria). Lo referencian EQUIPO (sede) y PARTIDO (lugar del encuentro).]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del estadio (llave primaria). Lo referencian EQUIPO (sede) y PARTIDO (lugar del encuentro).]]></commentInRDBMS>
+<generatorID>5988961C-D7A6-5925-783E-E9410F07F6F4</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="42BAE781-3679-0177-4B10-6710B6655CAC">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></commentInRDBMS>
+<generatorID>D0E54BCC-2108-5AC9-BD4A-EE94278E64C0</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>37295B5A-B98F-4E1E-4B3D-9957453D07D0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="capacidad" id="2A8ACAE3-E6AA-93AC-CAB2-741156129EB3">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></comment>
+<commentInRDBMS><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></commentInRDBMS>
+<generatorID>36A5174F-54AE-4B89-7EF7-A45E2BA1C2ED</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>D01953A7-60AA-1796-CFA7-4D95D6856E19</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="D0E760F5-12D3-1C41-7749-CFD19528E7F1">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></comment>
+<commentInRDBMS><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></commentInRDBMS>
+<generatorID>1B927DEA-7D73-B700-36B5-7CABD1D548B2</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E1829C36-DA73-2FB3-5BDB-0CB51DC48411</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ciudad" id="9EC634C4-B11C-6EDF-CF29-6E10133139EA">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></commentInRDBMS>
+<generatorID>B06326E7-9D17-BE1D-03D6-627EB67648E0</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="barrio" id="52DBC228-C2D2-E359-744D-5F6A2D2F9F35">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></comment>
+<commentInRDBMS><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></commentInRDBMS>
+<generatorID>E53FA96F-6594-49C3-D849-544B916DB3E1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5B2AD168-5DE9-2660-9347-22F646778D6E" name="pk estadio">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>1EE7B756-58FB-353B-7855-56AF0F8BE01A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8A599E8D-E3BD-8F17-4731-B15776B3F603</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

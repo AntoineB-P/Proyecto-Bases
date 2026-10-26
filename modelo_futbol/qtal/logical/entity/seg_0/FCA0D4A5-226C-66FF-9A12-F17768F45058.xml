@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FCA0D4A5-226C-66FF-9A12-F17768F45058" name="TIPO TARJETA">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Catálogo de tipos de tarjeta (por ejemplo amarilla y roja). Evita repetir el color en cada tarjeta que se registra.]]></comment>
+<commentInRDBMS><![CDATA[Catálogo de tipos de tarjeta (por ejemplo amarilla y roja). Evita repetir el color en cada tarjeta que se registra.]]></commentInRDBMS>
+<generatorID>46CE574E-5362-F0E3-E4B2-FE38F8A80E99</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id tipo" id="2B436D69-49C2-0C42-CCA3-51212B21EB5F">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Identificador único del tipo de tarjeta (llave primaria). TARJETA lo referencia.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del tipo de tarjeta (llave primaria). TARJETA lo referencia.]]></commentInRDBMS>
+<generatorID>4B8260F1-59D1-3564-D102-9DA61C8FFC0A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="color" id="1D6B9A73-321E-8599-450D-C1202905A23F">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Color del tipo de tarjeta (por ejemplo amarilla o roja). Es el nombre con el que se reconoce el tipo.]]></comment>
+<commentInRDBMS><![CDATA[Color del tipo de tarjeta (por ejemplo amarilla o roja). Es el nombre con el que se reconoce el tipo.]]></commentInRDBMS>
+<generatorID>A7805529-DA47-CE3A-B934-1410A791A5C6</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>74EE2182-BCA2-DEB9-ED82-5EC71C531986</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FB4D0729-04F6-9DE3-60C7-E3FEBDDC1A6C" name="pk tipo tarjeta">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>B535B001-05D0-5087-FA22-D8FCF9E702AF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2B436D69-49C2-0C42-CCA3-51212B21EB5F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

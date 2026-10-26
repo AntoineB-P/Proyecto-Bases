@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_equipo_estadio" directorySegmentName="seg_0" id="F7A3926D-D1EA-5DD3-799E-5D733450BDAC">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>F67BE21C-74D5-682E-908E-360463CCFCA1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>5B2AD168-5DE9-2660-9347-22F646778D6E</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>372F96FD-5EED-8F88-6FC9-B5308CD6379C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BDCE6D7A-A1A6-58F7-4A9E-706D656E3928</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

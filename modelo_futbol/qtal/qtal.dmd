@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="qtal" id="9C3C838E-8EC4-D23F-3815-1DC0ACAC854A" version="3.5">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:13:13 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>9C3C838E-8EC4-D23F-3815-1DC0ACAC854A</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="C806D1AB-324C-E473-8486-3CBDEABA71B3">
+<designStoragePath>C:\01_modelo_futbol</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

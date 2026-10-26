@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="797DC619-1B0C-3FA7-E2FE-6B71F7EEFDEE" name="INSCRIPCION">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Resuelve la relación ternaria Inscribir (M:N:M) entre EQUIPO, TORNEO y JUGADOR: registra con qué equipo y en qué torneo está inscrito cada jugador, con su dorsal y las fechas de vigencia.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación ternaria Inscribir (M:N:M) entre EQUIPO, TORNEO y JUGADOR: registra con qué equipo y en qué torneo está inscrito cada jugador, con su dorsal y las fechas de vigencia.]]></commentInRDBMS>
+<generatorID>D853FFAF-249A-21C4-0CEA-3CC2671F2521</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id equipo" id="1F731071-BCBE-6FFF-47DD-71F8189EBADF">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo con el que se inscribe el jugador.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo con el que se inscribe el jugador.]]></commentInRDBMS>
+<generatorID>B0CC6D49-41F8-B92E-5663-C10C961592ED</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>D7558503-8436-8B62-86FC-DA902EC09F10</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id torneo" id="E00FF96F-8B9C-42E2-4FC9-5BD6AD520EB9">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que se inscribe el jugador.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que se inscribe el jugador.]]></commentInRDBMS>
+<generatorID>04A07B8A-8DF3-8E67-6FDA-D4F28C3D6928</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>D2BC9C88-35B4-4448-9AA4-300F2E8CC171</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id jugador" id="1730D12E-69F5-58FD-8048-72C885278F23">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria: jugador que se inscribe.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria: jugador que se inscribe.]]></commentInRDBMS>
+<generatorID>21375983-D635-568E-0DEA-B5F6F8BD8B72</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>B35A81FF-EF2A-7380-9621-33EED46008A2</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha inicio" id="42DBD342-633F-B9FC-7536-CE2219C56A4F">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Fecha desde la que el jugador está inscrito con el equipo en ese torneo (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Fecha desde la que el jugador está inscrito con el equipo en ese torneo (opcional).]]></commentInRDBMS>
+<generatorID>6F84ABE7-B5AD-6161-D7F2-D2C820650E96</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha fin" id="B332B977-D12A-B7A6-F2D2-E7EDB87B4276">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Fecha hasta la que el jugador estuvo inscrito con el equipo en ese torneo (opcional). Permite conservar el historial de traspasos.]]></comment>
+<commentInRDBMS><![CDATA[Fecha hasta la que el jugador estuvo inscrito con el equipo en ese torneo (opcional). Permite conservar el historial de traspasos.]]></commentInRDBMS>
+<generatorID>7E67EBA4-A72E-034F-1230-13C4E208FE46</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dorsal" id="37220B67-5D9C-1F9C-9D8D-06F455C3003C">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Número de camiseta que usa el jugador con ese equipo en ese torneo (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Número de camiseta que usa el jugador con ese equipo en ese torneo (opcional).]]></commentInRDBMS>
+<generatorID>D00CA03D-ED03-D54A-EB4A-953ED0774A50</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D7EBF253-0CE7-4CC1-E90B-54BF42E02190" name="pk inscripcion">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>C3E09234-EB2B-BD48-0C77-7F796C3934C1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1F731071-BCBE-6FFF-47DD-71F8189EBADF</attributeRef>
+<attributeRef>E00FF96F-8B9C-42E2-4FC9-5BD6AD520EB9</attributeRef>
+<attributeRef>1730D12E-69F5-58FD-8048-72C885278F23</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_equipocolor_equipo" directorySegmentName="seg_0" id="3DDA1338-FEA3-334D-15FC-37B9AE3BBFAF">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>5E8F866B-82DB-3E4A-3927-686B8C0ED92A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>7B8D1ADA-6C1E-476E-361C-5716C713DFF8</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BDCE6D7A-A1A6-58F7-4A9E-706D656E3928</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0C317949-8910-2327-6500-E5030939518E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

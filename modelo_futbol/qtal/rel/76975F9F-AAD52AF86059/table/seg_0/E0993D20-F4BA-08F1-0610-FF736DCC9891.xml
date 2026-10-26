@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E0993D20-F4BA-08F1-0610-FF736DCC9891" name="JUGADOR">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Jugadores registrados en el sistema. Se inscriben a equipos en cada torneo (INSCRIPCION) y participan en los partidos (PARTICIPACION).]]></comment>
+<commentInRDBMS><![CDATA[Jugadores registrados en el sistema. Se inscriben a equipos en cada torneo (INSCRIPCION) y participan en los partidos (PARTICIPACION).]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>4C862799-5F00-40E8-3A78-E217393D721D</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_jugador" id="90F45DBA-B061-46E6-27DA-C8E20A79E61A">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>64B10226-5753-7BD8-4A54-AFCD753B37FA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombres" id="ACE89614-749B-AF2B-B097-1941464D835A">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Nombres de pila del jugador. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></comment>
+<commentInRDBMS><![CDATA[Nombres de pila del jugador. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>8616C953-27A9-F140-CE54-E6794D3E93C4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="E01F667A-39C4-37B7-EFD9-62D69B4EB92A">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Apellidos del jugador. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></comment>
+<commentInRDBMS><![CDATA[Apellidos del jugador. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>3ABE041A-062A-A44D-9E5E-B8F81F0103CA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nacionalidad" id="78613528-1C62-7FF6-40EE-945093DA6894">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[País de origen del jugador (opcional). Sirve para reportes y estadísticas, por ejemplo jugadores extranjeros por equipo.]]></comment>
+<commentInRDBMS><![CDATA[País de origen del jugador (opcional). Sirve para reportes y estadísticas, por ejemplo jugadores extranjeros por equipo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>1692338F-1192-8BBA-961D-D6B9F2B91BE8</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>07CBE735-7AD7-66DF-ECEF-E4EFF1950C41</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_nacimiento" id="1142C2D0-E742-1F75-8B49-F0F9C9C7ECCC">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Fecha de nacimiento del jugador (opcional). Es la base para calcular el atributo derivado edad.]]></comment>
+<commentInRDBMS><![CDATA[Fecha de nacimiento del jugador (opcional). Es la base para calcular el atributo derivado edad.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>3F7F0B76-3D08-A086-7417-1D7D4260C6B2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="posicion" id="5CE4D3D1-10EB-150C-55A6-C887A0E57D87">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Posición en la que juega (por ejemplo portero, defensa, volante o delantero) (opcional). Sirve para armar alineaciones y filtrar jugadores.]]></comment>
+<commentInRDBMS><![CDATA[Posición en la que juega (por ejemplo portero, defensa, volante o delantero) (opcional). Sirve para armar alineaciones y filtrar jugadores.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>83D18F14-AAF0-0BEA-2C71-81EF67BEBA48</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="edad" id="BD84AD2B-F087-4D97-9F8F-188528B73F2C">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-26 02:40:00 UTC</createdTime>
+<comment><![CDATA[ATRIBUTO DERIVADO: edad en años del jugador, calculada a partir de fecha_nacimiento y la fecha actual. Se incluye porque aparece en el diagrama; para que no quede desactualizado conviene calcularlo en consultas o vistas en vez de capturarlo a mano.]]></comment>
+<commentInRDBMS><![CDATA[ATRIBUTO DERIVADO: edad en años del jugador, calculada a partir de fecha_nacimiento y la fecha actual. Se incluye porque aparece en el diagrama; para que no quede desactualizado conviene calcularlo en consultas o vistas en vez de capturarlo a mano.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>D01953A7-60AA-1796-CFA7-4D95D6856E19</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C534EA7B-C32A-48F2-5C1E-3F6DEEF52318" name="pk_jugador">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>D5C053FA-1CF6-7A1B-C706-750A7C4E1C4D</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90F45DBA-B061-46E6-27DA-C8E20A79E61A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
