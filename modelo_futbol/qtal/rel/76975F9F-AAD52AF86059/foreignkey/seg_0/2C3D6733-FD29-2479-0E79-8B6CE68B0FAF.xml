@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2C3D6733-FD29-2479-0E79-8B6CE68B0FAF" containerWithKeyObject="E1DE8C11-25C9-C1CF-DA4E-E7BED5996981" localFKIndex="26BFFA92-7337-F13F-153F-41A61622FEE1" name="fk_tarjeta_particip">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>00DF3D02-535F-F9E0-9039-6E2B1A82836A</importedID>
+<referredTableLongName>PARTICIPACION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9E992E26-5775-5330-D352-E23019BFC1CF</referredTableID>
+<keyObject>AAB8CD34-8D29-DCB1-E812-83A14B8AC6EA</keyObject>
+<referredKeyID>AAB8CD34-8D29-DCB1-E812-83A14B8AC6EA</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_participacion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

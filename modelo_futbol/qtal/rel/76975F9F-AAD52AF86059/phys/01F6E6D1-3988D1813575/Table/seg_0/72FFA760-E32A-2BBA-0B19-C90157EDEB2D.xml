@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="TECNICO" directorySegmentName="seg_0" id="72FFA760-E32A-2BBA-0B19-C90157EDEB2D">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="nacionalidad" id="016B438A-790E-537F-DAA5-2C627E77409A">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="apellidos" id="52403885-7D95-2542-AE31-8C909457B19B">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="fecha_nacimiento" id="611783CD-F0EE-9C74-D48B-0C96FE50F1D3">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nombres" id="9FEE11C2-43F7-A92E-2BEC-3F519F973577">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_tecnico" id="A9E6238C-3AFC-721C-AE8B-0339B5C4D137">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="pk_tecnico" id="D9FD1241-3F62-8F5F-6EE8-8B3545782849">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

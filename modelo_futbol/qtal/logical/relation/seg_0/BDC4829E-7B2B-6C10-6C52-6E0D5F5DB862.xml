@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_particip_jugador" directorySegmentName="seg_0" id="BDC4829E-7B2B-6C10-6C52-6E0D5F5DB862">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>422033D5-A664-7335-5B06-80C3057C8EF2</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>8E054127-E8AB-B886-954D-144533A1F18F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>23AFDAFD-FD3A-749E-EC62-7D425FAAEFEF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>79CFD44D-0CC9-85D3-DCBB-0FF27015A4D3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_partido_torneo" directorySegmentName="seg_0" id="FE0D4573-0E27-A0DD-BE4D-C7189BBE9220">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>639F2951-8406-D921-C1F5-2718AE8B28AB</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>37131A0C-22AD-0046-A94B-AD57F80118AF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E1442125-5883-42CF-F4D1-B8211F551349</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DCFD96BC-3A68-8A45-0983-0BDC930C92F1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

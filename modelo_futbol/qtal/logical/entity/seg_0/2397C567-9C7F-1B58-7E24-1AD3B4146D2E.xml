@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2397C567-9C7F-1B58-7E24-1AD3B4146D2E" name="GOL">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Goles anotados en un partido. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido en que se anotó.]]></comment>
+<commentInRDBMS><![CDATA[Goles anotados en un partido. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido en que se anotó.]]></commentInRDBMS>
+<generatorID>CA34D550-B661-777E-6EAE-91EB74EE1085</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id participacion" id="FD8C475B-04A7-380A-6A88-5C2A10AE9C20">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó el gol.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó el gol.]]></commentInRDBMS>
+<generatorID>8F522291-9B7B-1AD7-2301-8481C3F4EA44</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>CA7C0187-41F7-E3CB-F6B8-A78FA94F8A2B</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id gol" id="9ABB1B0E-AC69-0EF6-0499-9698828D1DAD">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Identificador del gol; junto con id_participacion forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Identificador del gol; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
+<generatorID>9F8C0915-FB7F-CCCC-44E0-8823CB84BA67</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="E2BFF6FF-39ED-906E-8BA4-C72478A1EA9E">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Tipo de gol (por ejemplo jugada, penal, tiro libre o autogol) (opcional). Sirve para estadísticas.]]></comment>
+<commentInRDBMS><![CDATA[Tipo de gol (por ejemplo jugada, penal, tiro libre o autogol) (opcional). Sirve para estadísticas.]]></commentInRDBMS>
+<generatorID>10851BBD-0082-7FB9-CCCA-C8E3B26EFCB3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="minuto" id="132CA83B-873C-0608-D3B8-A963C62AB10B">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Minuto del partido en que se anotó el gol (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Minuto del partido en que se anotó el gol (opcional).]]></commentInRDBMS>
+<generatorID>9EAF9A14-8C51-2E58-A15E-EB811A769D8D</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B4F84A36-E590-36F5-A7B7-7BA03D5C9374" name="pk gol">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>95445C58-03A4-D6DD-4AEA-257689BF9B49</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FD8C475B-04A7-380A-6A88-5C2A10AE9C20</attributeRef>
+<attributeRef>9ABB1B0E-AC69-0EF6-0499-9698828D1DAD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

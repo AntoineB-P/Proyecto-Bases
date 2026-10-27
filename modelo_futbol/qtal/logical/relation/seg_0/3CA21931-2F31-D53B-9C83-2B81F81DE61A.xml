@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_tarjeta_particip" directorySegmentName="seg_0" id="3CA21931-2F31-D53B-9C83-2B81F81DE61A">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>2C3D6733-FD29-2479-0E79-8B6CE68B0FAF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>D1E5617C-9674-4DA0-C7F3-F1B1AC90C983</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>79CFD44D-0CC9-85D3-DCBB-0FF27015A4D3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F8A5B18D-5B47-5B5E-1608-ABE7A78F8CF5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

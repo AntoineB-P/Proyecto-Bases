@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_particip_partido" directorySegmentName="seg_0" id="DADABEEF-EEFD-6B1C-9ACD-D4607CC187A1">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>1FE11680-1327-E605-D1D0-D895B9F21E4E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>25422067-A380-0BD4-F2F0-2156C177E0E7</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DCFD96BC-3A68-8A45-0983-0BDC930C92F1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>79CFD44D-0CC9-85D3-DCBB-0FF27015A4D3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

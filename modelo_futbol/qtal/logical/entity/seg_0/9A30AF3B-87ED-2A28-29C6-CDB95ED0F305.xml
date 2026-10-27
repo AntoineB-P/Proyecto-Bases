@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9A30AF3B-87ED-2A28-29C6-CDB95ED0F305" name="ARBITRAJE">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: registra qué árbitros dirigen cada partido y con qué rol.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: registra qué árbitros dirigen cada partido y con qué rol.]]></commentInRDBMS>
+<generatorID>79083653-29A2-9446-B48F-28E0F6E6C2F7</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id partido" id="F02AC061-032D-C25C-25F0-4A36B1143CD7">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se arbitra.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se arbitra.]]></commentInRDBMS>
+<generatorID>0ADD30E1-2BDE-447E-BD77-3532A91FAF3B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>13E567B1-0662-DD1A-347C-90DACA39095A</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cedula" id="DE7C7541-3D7C-59D3-BD7D-9FAA82B71D2C">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro asignado al partido.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro asignado al partido.]]></commentInRDBMS>
+<generatorID>115ECBDA-CA08-AF41-EB15-00A42FA16832</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>AEE0200C-3D6E-0D63-9193-25E1629DDEB8</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B506D4B9-FD63-CF9B-FA6C-4E6D47A7E3E9</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rol" id="5B5D3591-23E8-830C-543F-8649BD56D3E9">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Función del árbitro en ese partido (por ejemplo central, asistente o cuarto árbitro) (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Función del árbitro en ese partido (por ejemplo central, asistente o cuarto árbitro) (opcional).]]></commentInRDBMS>
+<generatorID>EE1A4C75-C412-CBD3-7763-666A8737580F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="943EDD61-DB3D-9A43-0B9B-7BE6D1DE5110" name="pk arbitraje">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>E6450D4C-38BE-96DC-ED6F-C397E48D03BA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F02AC061-032D-C25C-25F0-4A36B1143CD7</attributeRef>
+<attributeRef>DE7C7541-3D7C-59D3-BD7D-9FAA82B71D2C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

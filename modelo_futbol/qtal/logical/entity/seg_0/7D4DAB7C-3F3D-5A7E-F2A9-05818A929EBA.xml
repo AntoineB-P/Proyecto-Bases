@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7D4DAB7C-3F3D-5A7E-F2A9-05818A929EBA" name="RESULTADO">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener): guarda los goles de cada equipo para determinar el ganador y calcular posiciones.]]></comment>
+<commentInRDBMS><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener): guarda los goles de cada equipo para determinar el ganador y calcular posiciones.]]></commentInRDBMS>
+<generatorID>E368EC52-0174-BC2C-3043-9A701E984032</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id partido" id="631CB741-1824-16CC-FCC5-79ACE0B86FA9">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Además es única: cada partido tiene como máximo un resultado.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Además es única: cada partido tiene como máximo un resultado.]]></commentInRDBMS>
+<generatorID>57BDD7A7-3C2E-7E0A-58E6-FE6EECE0B55E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>13E567B1-0662-DD1A-347C-90DACA39095A</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id resultado" id="7A7AC537-4601-4D75-7645-E1FD938C3251">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Identificador del resultado; junto con id_partido forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Identificador del resultado; junto con id_partido forma la llave primaria.]]></commentInRDBMS>
+<generatorID>508AD264-6CD4-1063-9CEC-D39F86E0B83A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="goles local" id="16B7EA11-E45C-5C82-6B86-94527CCD1A96">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Cantidad de goles anotados por el equipo local en el partido (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo local en el partido (opcional).]]></commentInRDBMS>
+<generatorID>620820F6-B091-7103-A584-8EA8D42FD4B3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="goles visitante" id="49DBA44B-9567-ABFE-AAB6-A49D241AD53B">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Cantidad de goles anotados por el equipo visitante en el partido (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo visitante en el partido (opcional).]]></commentInRDBMS>
+<generatorID>515A1F58-A70A-2D82-C750-A8864A6A1FDA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B163B67D-9445-810F-B464-2D8079E53BBD" name="pk resultado">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>7F13F2F3-5A0E-DD6D-473D-B10713050ADF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>631CB741-1824-16CC-FCC5-79ACE0B86FA9</attributeRef>
+<attributeRef>7A7AC537-4601-4D75-7645-E1FD938C3251</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="A71A222A-FB01-F04A-7453-F94C25631126" name="uq resultado partido">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>B5773D75-DA7D-5FA4-F432-3871C1AB1AE1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>631CB741-1824-16CC-FCC5-79ACE0B86FA9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

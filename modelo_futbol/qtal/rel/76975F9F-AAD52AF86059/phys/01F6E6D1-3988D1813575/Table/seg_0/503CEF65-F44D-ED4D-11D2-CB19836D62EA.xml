@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="EQUIPO" directorySegmentName="seg_0" id="503CEF65-F44D-ED4D-11D2-CB19836D62EA">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="id_equipo" id="1C99FEF3-970A-A90D-D3C7-CEA128A3DF0B">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="fecha_fundacion" id="873126EA-6874-B0B0-1E94-5CD0EE30812F">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ciudad" id="93B5A63D-1787-BDF7-DBAD-9EF93F330EDC">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_tecnico" id="A8897653-9AEB-8631-6C73-AA5413DF5D91">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nombre" id="C284384D-1BF7-A897-324C-45EB0B3E7CEC">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_estadio" id="DCFB958F-7AB9-2EA2-1CD2-6657DDC0F799">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fk_equipo_tecnico" id="821E8D1A-67FF-D1C2-08DC-1FD61ECFBE55">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fk_equipo_estadio" id="BD8F5919-E371-04A0-DCEA-1CFB32C9015A">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="pk_equipo" id="C960DEF5-427B-FF32-0CFC-17F2E1733E66">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="uq_equipo_tecnico" id="34CCDF13-0A74-49AE-BA77-28DF55F5CF6A">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-26 02:40:00 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BDCE6D7A-A1A6-58F7-4A9E-706D656E3928" name="EQUIPO">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Equipos (clubes) que participan en los torneos. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></comment>
+<commentInRDBMS><![CDATA[Equipos (clubes) que participan en los torneos. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></commentInRDBMS>
+<generatorID>503CEF65-F44D-ED4D-11D2-CB19836D62EA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id equipo" id="D7558503-8436-8B62-86FC-DA902EC09F10">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></commentInRDBMS>
+<generatorID>1C99FEF3-970A-A90D-D3C7-CEA128A3DF0B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="9D4035F8-18F0-7972-49FA-44E4D4595424">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Nombre del equipo. Se usa para identificarlo en calendarios, resultados y reportes.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del equipo. Se usa para identificarlo en calendarios, resultados y reportes.]]></commentInRDBMS>
+<generatorID>C284384D-1BF7-A897-324C-45EB0B3E7CEC</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>37295B5A-B98F-4E1E-4B3D-9957453D07D0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha fundacion" id="F51A2AEB-7E70-7130-47CE-92953BCB1221">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Fecha en que se fundó el equipo (opcional). Dato histórico del club.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que se fundó el equipo (opcional). Dato histórico del club.]]></commentInRDBMS>
+<generatorID>873126EA-6874-B0B0-1E94-5CD0EE30812F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ciudad" id="4EF866EA-7D8F-6DCB-EA13-A157564E8F22">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></commentInRDBMS>
+<generatorID>93B5A63D-1787-BDF7-DBAD-9EF93F330EDC</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id tecnico" id="4E220AAA-DC97-9F3E-57C6-73B9C07A67A6">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TECNICO: técnico que dirige al equipo (relación Dirigir 1:1). Es obligatoria y única: un equipo tiene exactamente un técnico y un técnico dirige como máximo un equipo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TECNICO: técnico que dirige al equipo (relación Dirigir 1:1). Es obligatoria y única: un equipo tiene exactamente un técnico y un técnico dirige como máximo un equipo.]]></commentInRDBMS>
+<generatorID>24E9FFD6-5D4E-D1B5-E37D-5210427DD96F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>2531126D-9B9C-4004-AB66-1F3CF8B2E486</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id estadio" id="60263612-8F54-B27B-B017-F723E2ED3734">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Es obligatoria; un estadio puede ser sede de varios equipos.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Es obligatoria; un estadio puede ser sede de varios equipos.]]></commentInRDBMS>
+<generatorID>F7A3926D-D1EA-5DD3-799E-5D733450BDAC</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>8A599E8D-E3BD-8F17-4731-B15776B3F603</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7B8D1ADA-6C1E-476E-361C-5716C713DFF8" name="pk equipo">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>C960DEF5-427B-FF32-0CFC-17F2E1733E66</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D7558503-8436-8B62-86FC-DA902EC09F10</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="22AA5B08-9BDD-4A15-91EF-A973926C3D94" name="uq equipo tecnico">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-26 02:40:00 UTC</createdTime>
+<generatorID>34CCDF13-0A74-49AE-BA77-28DF55F5CF6A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>4E220AAA-DC97-9F3E-57C6-73B9C07A67A6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

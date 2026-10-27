@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="72FFA760-E32A-2BBA-0B19-C90157EDEB2D" name="TECNICO">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Directores técnicos (entrenadores) del torneo. Cada técnico dirige como máximo un equipo (relación 1:1 Dirigir) y sirve para saber quién está a cargo de cada equipo.]]></comment>
+<commentInRDBMS><![CDATA[Directores técnicos (entrenadores) del torneo. Cada técnico dirige como máximo un equipo (relación 1:1 Dirigir) y sirve para saber quién está a cargo de cada equipo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>D9F60131-C629-A466-0C74-966147D7BD75</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tecnico" id="A9E6238C-3AFC-721C-AE8B-0339B5C4D137">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Identificador único del técnico (llave primaria). EQUIPO lo referencia para indicar qué técnico dirige a cada equipo.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del técnico (llave primaria). EQUIPO lo referencia para indicar qué técnico dirige a cada equipo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>24D1866B-0401-E94F-8761-C951A0A23DDF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombres" id="9FEE11C2-43F7-A92E-2BEC-3F519F973577">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Nombres de pila del técnico. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></comment>
+<commentInRDBMS><![CDATA[Nombres de pila del técnico. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>8032B8D1-63F2-2C81-C782-A075A7A6B4CD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="52403885-7D95-2542-AE31-8C909457B19B">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Apellidos del técnico. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></comment>
+<commentInRDBMS><![CDATA[Apellidos del técnico. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>8489B48F-5881-08D2-290C-35C6942259DD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nacionalidad" id="016B438A-790E-537F-DAA5-2C627E77409A">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[País de origen del técnico (opcional). Sirve para reportes y estadísticas, por ejemplo cuántos técnicos extranjeros hay.]]></comment>
+<commentInRDBMS><![CDATA[País de origen del técnico (opcional). Sirve para reportes y estadísticas, por ejemplo cuántos técnicos extranjeros hay.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>7BAB9BA5-5206-2BB8-721F-7030CAD7A2F2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>07CBE735-7AD7-66DF-ECEF-E4EFF1950C41</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_nacimiento" id="611783CD-F0EE-9C74-D48B-0C96FE50F1D3">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Fecha de nacimiento del técnico (opcional). Permite conocer y calcular su edad.]]></comment>
+<commentInRDBMS><![CDATA[Fecha de nacimiento del técnico (opcional). Permite conocer y calcular su edad.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>58348CE1-D8EF-2FCA-A609-B5D42B9F735B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D9FD1241-3F62-8F5F-6EE8-8B3545782849" name="pk_tecnico">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>FBCAA781-C21B-2F18-F941-C3C87729F2CB</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A9E6238C-3AFC-721C-AE8B-0339B5C4D137"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F8A5B18D-5B47-5B5E-1608-ABE7A78F8CF5" name="TARJETA">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Tarjetas disciplinarias mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></comment>
+<commentInRDBMS><![CDATA[Tarjetas disciplinarias mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></commentInRDBMS>
+<generatorID>E1DE8C11-25C9-C1CF-DA4E-E7BED5996981</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id participacion" id="00B1FC12-79BA-4BF7-72F9-B5326E2CF38E">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador sancionado.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador sancionado.]]></commentInRDBMS>
+<generatorID>3CA21931-2F31-D53B-9C83-2B81F81DE61A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>CA7C0187-41F7-E3CB-F6B8-A78FA94F8A2B</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id tarjeta" id="08A29755-AC78-2DA7-751F-BC5914F2C573">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Identificador de la tarjeta; junto con id_participacion forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Identificador de la tarjeta; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
+<generatorID>2B0BD34E-E540-AB0B-8082-3CAE34E12B3F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="motivo" id="A2A2F651-A512-F351-4537-E1CDD6AA8C79">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Razón por la que se mostró la tarjeta (opcional). Sirve para el control disciplinario.]]></comment>
+<commentInRDBMS><![CDATA[Razón por la que se mostró la tarjeta (opcional). Sirve para el control disciplinario.]]></commentInRDBMS>
+<generatorID>C5DC1BB9-45D9-B9ED-CCDB-616639188534</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E1829C36-DA73-2FB3-5BDB-0CB51DC48411</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="minuto" id="1309C667-5F6B-3694-8658-0867EADB8F0F">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></commentInRDBMS>
+<generatorID>2D34401D-0248-720A-E70F-7CD9B4B86D5D</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id tipo" id="15944BD4-462E-ED82-B2B4-43341D7DB083">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla, roja, etc. (relación Ser). Es obligatoria.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla, roja, etc. (relación Ser). Es obligatoria.]]></commentInRDBMS>
+<generatorID>A386C1D8-92B6-7C29-63D4-897913022B8F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>2B436D69-49C2-0C42-CCA3-51212B21EB5F</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9127416D-2F13-A890-289F-9FBE5622C85E" name="pk tarjeta">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:48:54 UTC</createdTime>
+<generatorID>D446F04A-8B0B-FF69-8F6E-2D641626DA3D</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>00B1FC12-79BA-4BF7-72F9-B5326E2CF38E</attributeRef>
+<attributeRef>08A29755-AC78-2DA7-751F-BC5914F2C573</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

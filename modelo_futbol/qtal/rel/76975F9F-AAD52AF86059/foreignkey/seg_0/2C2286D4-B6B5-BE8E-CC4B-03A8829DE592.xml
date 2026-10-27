@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2C2286D4-B6B5-BE8E-CC4B-03A8829DE592" containerWithKeyObject="E1DE8C11-25C9-C1CF-DA4E-E7BED5996981" localFKIndex="53D3EB4C-B7A0-8EAF-CB6A-1FF69D18A00C" name="fk_tarjeta_tipo">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>D26B931D-670F-D031-8DE9-429CFB0920F5</importedID>
+<referredTableLongName>TIPO_TARJETA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>46CE574E-5362-F0E3-E4B2-FE38F8A80E99</referredTableID>
+<keyObject>B535B001-05D0-5087-FA22-D8FCF9E702AF</keyObject>
+<referredKeyID>B535B001-05D0-5087-FA22-D8FCF9E702AF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_tipo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

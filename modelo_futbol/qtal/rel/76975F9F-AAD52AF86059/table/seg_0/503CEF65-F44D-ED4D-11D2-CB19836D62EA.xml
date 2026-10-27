@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="503CEF65-F44D-ED4D-11D2-CB19836D62EA" name="EQUIPO">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Equipos (clubes) que participan en los torneos. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></comment>
+<commentInRDBMS><![CDATA[Equipos (clubes) que participan en los torneos. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>13A6096D-4D1B-4FB9-909F-E4C55B52314D</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_equipo" id="1C99FEF3-970A-A90D-D3C7-CEA128A3DF0B">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>6DBD57C8-EDF0-615B-2631-C5ED8BD14B71</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="C284384D-1BF7-A897-324C-45EB0B3E7CEC">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Nombre del equipo. Se usa para identificarlo en calendarios, resultados y reportes.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del equipo. Se usa para identificarlo en calendarios, resultados y reportes.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>444A73F2-8985-6458-3C1B-3113C00067DF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>37295B5A-B98F-4E1E-4B3D-9957453D07D0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_fundacion" id="873126EA-6874-B0B0-1E94-5CD0EE30812F">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Fecha en que se fundó el equipo (opcional). Dato histórico del club.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que se fundó el equipo (opcional). Dato histórico del club.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>641990CE-0F77-BCE8-C782-E514E3DE727E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ciudad" id="93B5A63D-1787-BDF7-DBAD-9EF93F330EDC">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>ACB11A47-4547-C236-7107-32EF2F371C1D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_tecnico" id="A8897653-9AEB-8631-6C73-AA5413DF5D91">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TECNICO: técnico que dirige al equipo (relación Dirigir 1:1). Es obligatoria y única: un equipo tiene exactamente un técnico y un técnico dirige como máximo un equipo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TECNICO: técnico que dirige al equipo (relación Dirigir 1:1). Es obligatoria y única: un equipo tiene exactamente un técnico y un técnico dirige como máximo un equipo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>91B8366D-DE96-9ABD-08F1-A0EE875F6ED6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3907BB24-AEF4-C99C-64EF-6240057454C2" referredColumn="A9E6238C-3AFC-721C-AE8B-0339B5C4D137"/>
+</associations>
+</Column>
+<Column name="id_estadio" id="DCFB958F-7AB9-2EA2-1CD2-6657DDC0F799">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<comment><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Es obligatoria; un estadio puede ser sede de varios equipos.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Es obligatoria; un estadio puede ser sede de varios equipos.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>1FD9B524-FE26-8262-F673-2982EBCD4EA1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F67BE21C-74D5-682E-908E-360463CCFCA1" referredColumn="5988961C-D7A6-5925-783E-E9410F07F6F4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C960DEF5-427B-FF32-0CFC-17F2E1733E66" name="pk_equipo">
+<sourceDDLFile>01_modelo_futbol.sql</sourceDDLFile>
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<importedID>57934AFC-4705-85AF-AF76-8A0424989E05</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C99FEF3-970A-A90D-D3C7-CEA128A3DF0B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BD8F5919-E371-04A0-DCEA-1CFB32C9015A" name="fk_equipo_estadio">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCFB958F-7AB9-2EA2-1CD2-6657DDC0F799"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="821E8D1A-67FF-D1C2-08DC-1FD61ECFBE55" name="fk_equipo_tecnico">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-18 03:34:31 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8897653-9AEB-8631-6C73-AA5413DF5D91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="34CCDF13-0A74-49AE-BA77-28DF55F5CF6A" name="uq_equipo_tecnico">
+<createdBy>felip</createdBy>
+<createdTime>2026-10-26 02:40:00 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8897653-9AEB-8631-6C73-AA5413DF5D91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
