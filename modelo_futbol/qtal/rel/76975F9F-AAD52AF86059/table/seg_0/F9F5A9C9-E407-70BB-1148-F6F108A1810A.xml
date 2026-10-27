@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F9F5A9C9-E407-70BB-1148-F6F108A1810A" name="MEDIOCAMPISTA">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los mediocampistas]]></commentInRDBMS>
+<generatorID>3B333E98-778C-16D4-1DE0-8D862DBCF9D1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pases" id="4B5897D8-8D36-5067-1A2B-911E33C76431">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad de pases realizados por el mediocampista]]></commentInRDBMS>
+<generatorID>AC0B22F9-C9A0-A5D2-B816-EAF5D757C9C5</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>FC0AD790-24E6-4C6B-0123-7C5340B051B5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="JUGADOR_id_jugador" id="77DF6E86-823B-9F7D-601B-C93456D9AE14">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador del jugador que juega de mediocampista. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<generatorID>162ABED6-FACD-6CBB-1C6D-1558B27F24E7</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="978D4C96-2888-8529-2689-B56D4777661C" referredColumn="3434629E-5973-649D-3186-501E2400561E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8FC48BAE-3BE1-A1A4-7FAF-DB05D19FE894" name="MEDIOCAMPISTA_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>10232520-17A8-3FB5-051F-51C61F4CE632</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77DF6E86-823B-9F7D-601B-C93456D9AE14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="82312DC9-65A5-6C4A-8733-3980F5353FC6" name="MEDIOCAMPISTA_JUGADOR_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>A8C86C0A-20EB-74E4-C89E-B52F6DB088F3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77DF6E86-823B-9F7D-601B-C93456D9AE14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

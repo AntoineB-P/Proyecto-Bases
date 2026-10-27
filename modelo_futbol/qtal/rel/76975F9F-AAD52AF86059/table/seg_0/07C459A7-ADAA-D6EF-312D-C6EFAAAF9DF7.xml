@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="07C459A7-ADAA-D6EF-312D-C6EFAAAF9DF7" name="PORTERO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los porteros]]></commentInRDBMS>
+<generatorID>F0D07261-C728-7309-4A8D-2EA24C6BB108</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="porteria_imbatida" id="29464FCC-6877-B5A0-59BC-32091D23C521">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad de partidos en los que el portero mantuvo la portería en cero]]></commentInRDBMS>
+<generatorID>C6FCE2F2-A9F0-6BB0-A540-150AE9A46345</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>FC0AD790-24E6-4C6B-0123-7C5340B051B5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="JUGADOR_id_jugador" id="8D0D55A5-3A53-68C2-27EB-18B4E897BA48">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador del jugador que juega de portero. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<generatorID>BD9C8EDF-F763-D86C-3315-1CEE115D2E42</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1CE57CCA-3D1B-5C3F-4315-4467A5852165" referredColumn="3434629E-5973-649D-3186-501E2400561E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="884C22DA-57D8-DB5D-77F2-2FE87EE1A5B4" name="PORTERO_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>F639D40B-1AD9-1257-6E7E-4D19B6D8071A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D0D55A5-3A53-68C2-27EB-18B4E897BA48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="232D50C2-A78E-3FA7-B7F5-DA9C3685FE95" name="PORTERO_JUGADOR_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>5FF0B850-7435-1BAB-8EC9-717EE7F8D036</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D0D55A5-3A53-68C2-27EB-18B4E897BA48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="69B57DA3-A192-281F-2FC3-5103F0CD7F75" containerWithKeyObject="B5C09E58-6CB4-CDC6-7884-3B89B0D27633" localFKIndex="E12C3E54-3FFD-286C-50EA-82B4D37F8EF4" name="ARBITRAJE_ARBITRO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>115ECBDA-CA08-AF41-EB15-00A42FA16832</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<referredTableLongName>ARBITRO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>881474B5-77E9-1F79-E29E-98D1EDF2876C</referredTableID>
+<keyObject>4E8C1B0A-04EA-28ED-3C4A-38E51B2054C8</keyObject>
+<referredKeyID>4E8C1B0A-04EA-28ED-3C4A-38E51B2054C8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cedula</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

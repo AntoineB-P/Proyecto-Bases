@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1213FF7F-1B2F-32F6-A34E-6B33C149B8FF" name="ESTADIO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Estadios donde se juegan los partidos y que sirven de sede a los equipos. Guarda su capacidad y su ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Estadios donde se juegan los partidos y que sirven de sede a los equipos. Guarda su capacidad y su ubicación.]]></commentInRDBMS>
+<generatorID>372F96FD-5EED-8F88-6FC9-B5308CD6379C</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_estadio" id="AF912E0C-0EFA-984E-E3B1-BDA7D31D4C41">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del estadio (llave primaria). Lo referencian EQUIPO (sede) y PARTIDO (lugar del encuentro).]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del estadio (llave primaria). Lo referencian EQUIPO (sede) y PARTIDO (lugar del encuentro).]]></commentInRDBMS>
+<generatorID>8A599E8D-E3BD-8F17-4731-B15776B3F603</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="3CFEB80A-F1DA-7601-D4DB-681213D091F3">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></commentInRDBMS>
+<generatorID>42BAE781-3679-0177-4B10-6710B6655CAC</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>37295B5A-B98F-4E1E-4B3D-9957453D07D0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="50B127A1-D5EB-8643-1A0B-9B6D1C494375">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></comment>
+<commentInRDBMS><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></commentInRDBMS>
+<generatorID>2A8ACAE3-E6AA-93AC-CAB2-741156129EB3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>D01953A7-60AA-1796-CFA7-4D95D6856E19</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="direccion" id="432A8063-D9F2-3CB6-4C24-0B1411556480">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></comment>
+<commentInRDBMS><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></commentInRDBMS>
+<generatorID>D0E760F5-12D3-1C41-7749-CFD19528E7F1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E1829C36-DA73-2FB3-5BDB-0CB51DC48411</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ciudad" id="80692DB0-4F80-7C67-42DB-B2EC5EEE365E">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></commentInRDBMS>
+<generatorID>9EC634C4-B11C-6EDF-CF29-6E10133139EA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="barrio" id="8E18D0FB-9449-9693-04E5-C7D8CCB0183B">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></comment>
+<commentInRDBMS><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></commentInRDBMS>
+<generatorID>52DBC228-C2D2-E359-744D-5F6A2D2F9F35</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CA3C0C77-B533-C844-5C7E-A4E5D2F09E78" name="ESTADIO_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>5B2AD168-5DE9-2660-9347-22F646778D6E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF912E0C-0EFA-984E-E3B1-BDA7D31D4C41"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

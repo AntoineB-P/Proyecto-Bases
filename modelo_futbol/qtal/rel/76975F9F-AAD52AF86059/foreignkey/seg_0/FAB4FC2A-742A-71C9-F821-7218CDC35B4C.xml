@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FAB4FC2A-742A-71C9-F821-7218CDC35B4C" containerWithKeyObject="B5C09E58-6CB4-CDC6-7884-3B89B0D27633" localFKIndex="C4F69E73-526A-145E-FCE6-D8568804DFCD" name="ARBITRAJE_PARTIDO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>0ADD30E1-2BDE-447E-BD77-3532A91FAF3B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<referredTableLongName>PARTIDO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6787AB1E-AFAF-A977-78BA-4BC9D3300E14</referredTableID>
+<keyObject>2ED38C52-AE97-0CA3-741F-A7EE287F22AC</keyObject>
+<referredKeyID>2ED38C52-AE97-0CA3-741F-A7EE287F22AC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_partido</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

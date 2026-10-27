@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B5C09E58-6CB4-CDC6-7884-3B89B0D27633" name="ARBITRAJE">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: registra qué árbitros dirigen cada partido y con qué rol.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: registra qué árbitros dirigen cada partido y con qué rol.]]></commentInRDBMS>
+<generatorID>9A30AF3B-87ED-2A28-29C6-CDB95ED0F305</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PARTIDO_id_partido" id="3974B6DE-E1EA-AED1-04B9-545B1F870CE7">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se arbitra.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se arbitra.]]></commentInRDBMS>
+<generatorID>F02AC061-032D-C25C-25F0-4A36B1143CD7</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FAB4FC2A-742A-71C9-F821-7218CDC35B4C" referredColumn="90FE4243-5C09-843F-49FF-504001BDB679"/>
+</associations>
+</Column>
+<Column name="ARBITRO_cedula" id="2A89DA2C-B995-8443-EE87-8E7E016D27B2">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro asignado al partido.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro asignado al partido.]]></commentInRDBMS>
+<generatorID>DE7C7541-3D7C-59D3-BD7D-9FAA82B71D2C</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B506D4B9-FD63-CF9B-FA6C-4E6D47A7E3E9</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="69B57DA3-A192-281F-2FC3-5103F0CD7F75" referredColumn="FB223331-DBFC-339D-D945-34D144A77E37"/>
+</associations>
+</Column>
+<Column name="rol" id="3D86B232-A78A-E050-2BEB-DC3C68BB6B58">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Función del árbitro en ese partido (por ejemplo central, asistente o cuarto árbitro) (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Función del árbitro en ese partido (por ejemplo central, asistente o cuarto árbitro) (opcional).]]></commentInRDBMS>
+<generatorID>5B5D3591-23E8-830C-543F-8649BD56D3E9</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="541A1DE6-2B7E-E8F2-BBF5-B8EB06CA1B3E" name="ARBITRAJE_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>943EDD61-DB3D-9A43-0B9B-7BE6D1DE5110</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3974B6DE-E1EA-AED1-04B9-545B1F870CE7"/>
+<colUsage columnID="2A89DA2C-B995-8443-EE87-8E7E016D27B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E12C3E54-3FFD-286C-50EA-82B4D37F8EF4" name="ARBITRAJE_ARBITRO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>115ECBDA-CA08-AF41-EB15-00A42FA16832</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A89DA2C-B995-8443-EE87-8E7E016D27B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C4F69E73-526A-145E-FCE6-D8568804DFCD" name="ARBITRAJE_PARTIDO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>0ADD30E1-2BDE-447E-BD77-3532A91FAF3B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3974B6DE-E1EA-AED1-04B9-545B1F870CE7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
