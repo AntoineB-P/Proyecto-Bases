@@ -116,5 +116,12 @@ public class InscripcionDTO {
 				&& Objects.equals(nombreJugador, other.nombreJugador);
 	}
 
+	@Override
+	public String toString() {
+		return "InscripcionDTO [idEquipo=" + idEquipo + ", nombreEquipo=" + nombreEquipo + ", idTorneo=" + idTorneo
+				+ ", idJugador=" + idJugador + ", nombreJugador=" + nombreJugador + ", dorsal=" + dorsal
+				+ ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + "]";
+	}
+
 	
 }
