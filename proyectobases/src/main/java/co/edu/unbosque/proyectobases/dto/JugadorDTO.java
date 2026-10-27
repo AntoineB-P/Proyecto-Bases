@@ -12,13 +12,20 @@ public class JugadorDTO {
 	private LocalDate fechaNacimiento;
 	private Integer edad; // derivado
 	private String posicion;
-	
+	private Integer tirosPuerta; // solo ATACANTE
+	private Integer pases; // solo MEDIOCAMPISTA
+	private Integer entradasOportunas; // solo DEFENSA
+	private Integer porteriaImbatida; // solo PORTERO
+
 	public JugadorDTO() {
-		
+
 	}
 
+	
+
 	public JugadorDTO(Long idJugador, String nombres, String apellidos, String nacionalidad, LocalDate fechaNacimiento,
-			Integer edad, String posicion) {
+			Integer edad, String posicion, Integer tirosPuerta, Integer pases, Integer entradasOportunas,
+			Integer porteriaImbatida) {
 		super();
 		this.idJugador = idJugador;
 		this.nombres = nombres;
@@ -27,7 +34,13 @@ public class JugadorDTO {
 		this.fechaNacimiento = fechaNacimiento;
 		this.edad = edad;
 		this.posicion = posicion;
+		this.tirosPuerta = tirosPuerta;
+		this.pases = pases;
+		this.entradasOportunas = entradasOportunas;
+		this.porteriaImbatida = porteriaImbatida;
 	}
+
+
 
 	public Long getIdJugador() {
 		return idJugador;
@@ -85,10 +98,62 @@ public class JugadorDTO {
 		this.posicion = posicion;
 	}
 
+	
+	public Integer getTirosPuerta() {
+		return tirosPuerta;
+	}
+
+
+
+	public void setTirosPuerta(Integer tirosPuerta) {
+		this.tirosPuerta = tirosPuerta;
+	}
+
+
+
+	public Integer getPases() {
+		return pases;
+	}
+
+
+
+	public void setPases(Integer pases) {
+		this.pases = pases;
+	}
+
+
+
+	public Integer getEntradasOportunas() {
+		return entradasOportunas;
+	}
+
+
+
+	public void setEntradasOportunas(Integer entradasOportunas) {
+		this.entradasOportunas = entradasOportunas;
+	}
+
+
+
+	public Integer getPorteriaImbatida() {
+		return porteriaImbatida;
+	}
+
+
+
+	public void setPorteriaImbatida(Integer porteriaImbatida) {
+		this.porteriaImbatida = porteriaImbatida;
+	}
+
+
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(apellidos, edad, fechaNacimiento, idJugador, nacionalidad, nombres, posicion);
+		return Objects.hash(apellidos, edad, entradasOportunas, fechaNacimiento, idJugador, nacionalidad, nombres,
+				pases, porteriaImbatida, posicion, tirosPuerta);
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -100,18 +165,23 @@ public class JugadorDTO {
 			return false;
 		JugadorDTO other = (JugadorDTO) obj;
 		return Objects.equals(apellidos, other.apellidos) && Objects.equals(edad, other.edad)
+				&& Objects.equals(entradasOportunas, other.entradasOportunas)
 				&& Objects.equals(fechaNacimiento, other.fechaNacimiento) && Objects.equals(idJugador, other.idJugador)
 				&& Objects.equals(nacionalidad, other.nacionalidad) && Objects.equals(nombres, other.nombres)
-				&& Objects.equals(posicion, other.posicion);
+				&& Objects.equals(pases, other.pases) && Objects.equals(porteriaImbatida, other.porteriaImbatida)
+				&& Objects.equals(posicion, other.posicion) && Objects.equals(tirosPuerta, other.tirosPuerta);
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "JugadorDTO [idJugador=" + idJugador + ", nombres=" + nombres + ", apellidos=" + apellidos
 				+ ", nacionalidad=" + nacionalidad + ", fechaNacimiento=" + fechaNacimiento + ", edad=" + edad
-				+ ", posicion=" + posicion + "]";
+				+ ", posicion=" + posicion + ", tirosPuerta=" + tirosPuerta + ", pases=" + pases
+				+ ", entradasOportunas=" + entradasOportunas + ", porteriaImbatida=" + porteriaImbatida + "]";
 	}
-	
-	
-	
+
+
+
 }
