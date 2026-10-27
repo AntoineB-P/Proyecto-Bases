@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6787AB1E-AFAF-A977-78BA-4BC9D3300E14" name="PARTIDO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Encuentros entre dos equipos (local y visitante) dentro de un torneo, jugados en un estadio en una fecha y hora. Es el eje del que dependen el resultado, los árbitros y las participaciones.]]></comment>
+<commentInRDBMS><![CDATA[Encuentros entre dos equipos (local y visitante) dentro de un torneo, jugados en un estadio en una fecha y hora. Es el eje del que dependen el resultado, los árbitros y las participaciones.]]></commentInRDBMS>
+<generatorID>DCFD96BC-3A68-8A45-0983-0BDC930C92F1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_partido" id="90FE4243-5C09-843F-49FF-504001BDB679">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del partido (llave primaria). Lo referencian RESULTADO, ARBITRAJE y PARTICIPACION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del partido (llave primaria). Lo referencian RESULTADO, ARBITRAJE y PARTICIPACION.]]></commentInRDBMS>
+<generatorID>13E567B1-0662-DD1A-347C-90DACA39095A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="48B66C64-511F-F893-78CB-CEE04D01E6C2">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Fecha en que se juega el partido (opcional). Sirve para armar el calendario y ordenar los encuentros.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que se juega el partido (opcional). Sirve para armar el calendario y ordenar los encuentros.]]></commentInRDBMS>
+<generatorID>5A795516-5B3E-E1CC-DCE2-01D232E6BFFF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hora" id="2FDB55D0-C834-30EA-BAC6-BBD34DD27180">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Hora programada de inicio del partido, guardada como texto (por ejemplo 15:30) (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Hora programada de inicio del partido, guardada como texto (por ejemplo 15:30) (opcional).]]></commentInRDBMS>
+<generatorID>770EE37E-E994-6221-FC05-49D690AAF410</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>32FF8825-83DF-5996-D944-6B41EFEDD933</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="jornada" id="67E42E35-6D26-8447-3C0B-C68DEBFDCD62">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Número de jornada del torneo a la que pertenece el partido (opcional). Agrupa los partidos del calendario.]]></comment>
+<commentInRDBMS><![CDATA[Número de jornada del torneo a la que pertenece el partido (opcional). Agrupa los partidos del calendario.]]></commentInRDBMS>
+<generatorID>E7A8F322-39FC-C1CE-75DA-135F7627BF38</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TORNEO_id_torneo" id="1A539254-BDEA-D2CB-D58B-804E3B764CF4">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TORNEO: torneo al que pertenece el partido (relación Tener). Es obligatoria.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TORNEO: torneo al que pertenece el partido (relación Tener). Es obligatoria.]]></commentInRDBMS>
+<generatorID>4FCE0BD7-70AB-7F78-D05D-F78C1727DA1D</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7815ECC3-2CED-DB4C-8C2A-5FD7C19AAEA9" referredColumn="6B2E781A-C24B-3303-012D-2D8F8FE7F361"/>
+</associations>
+</Column>
+<Column name="ESTADIO_id_estadio" id="F44A161A-BA38-3B3E-C3B2-366151F3E042">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a ESTADIO: estadio donde se juega el partido (relación Jugar). Es obligatoria; un estadio puede albergar varios partidos.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ESTADIO: estadio donde se juega el partido (relación Jugar). Es obligatoria; un estadio puede albergar varios partidos.]]></commentInRDBMS>
+<generatorID>C98AC96A-ECCC-03E0-6C54-C68A90826FA1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0195DC17-55EF-61AA-883F-5FA7B4E5E2C5" referredColumn="AF912E0C-0EFA-984E-E3B1-BDA7D31D4C41"/>
+</associations>
+</Column>
+<Column name="EQUIPO_id_equipo" id="5A8F8547-2D8F-E3B0-DE6E-47A9DE53F8F8">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO: equipo que juega como local (relación Ser_local). Es obligatoria.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: equipo que juega como local (relación Ser_local). Es obligatoria.]]></commentInRDBMS>
+<generatorID>7BFAAB93-AD3A-3754-1162-BC355BC5D4C8</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="58249742-9015-0A47-B5A1-D314D110D425" referredColumn="264CF2C4-AA65-F2FC-BAD2-DC063AC25ADD"/>
+</associations>
+</Column>
+<Column name="EQUIPO_id_equipo2" id="16B718AA-0E14-675E-5B01-81AC6B7F1CC1">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO: equipo que juega como visitante (relación Ser_visitante). Es obligatoria.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: equipo que juega como visitante (relación Ser_visitante). Es obligatoria.]]></commentInRDBMS>
+<generatorID>A78646B6-4FA3-FF02-182B-DA07140BAA6F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A40D383D-9BEA-F43D-5990-361ED372E44F" referredColumn="264CF2C4-AA65-F2FC-BAD2-DC063AC25ADD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2ED38C52-AE97-0CA3-741F-A7EE287F22AC" name="PARTIDO_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>25422067-A380-0BD4-F2F0-2156C177E0E7</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90FE4243-5C09-843F-49FF-504001BDB679"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="612F6876-FEE5-71A4-C772-A93328F94184" name="PARTIDO_ESTADIO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>73FB242D-90FE-21E6-D077-02BDC66F08FD</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F44A161A-BA38-3B3E-C3B2-366151F3E042"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B1EEE85A-59C1-225A-B3AF-A6ABBBADE598" name="PARTIDO_EQUIPO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>C0932BCC-B386-4D46-ADE4-44F6FA4A20EF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A8F8547-2D8F-E3B0-DE6E-47A9DE53F8F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C9C8EB86-4BAB-5733-B448-27FD77D00F36" name="PARTIDO_TORNEO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>FE0D4573-0E27-A0DD-BE4D-C7189BBE9220</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A539254-BDEA-D2CB-D58B-804E3B764CF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53E6B200-C5A9-388A-3B4D-732B258C7D6D" name="PARTIDO_EQUIPO_FKv2">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>8D92E94F-7C14-8188-9931-43A28503EF97</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16B718AA-0E14-675E-5B01-81AC6B7F1CC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

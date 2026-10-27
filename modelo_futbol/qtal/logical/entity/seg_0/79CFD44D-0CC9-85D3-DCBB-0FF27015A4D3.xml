@@ -120,5 +120,19 @@
 <attributeRef>CA7C0187-41F7-E3CB-F6B8-A78FA94F8A2B</attributeRef>
 </usedAttributes>
 </identifier>
+<identifier id="67A8F077-F8EF-D7E1-D2B4-1EA7FC708C9E" name="uq_participacion_jugador_partido">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 14:50:45 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<newElementsIDs>BDC4829E-7B2B-6C10-6C52-6E0D5F5DB862,DADABEEF-EEFD-6B1C-9ACD-D4607CC187A1</newElementsIDs>
+<usedAttributes>
+<attributeRef>68F78364-20B8-9179-24A8-1EFB6588B84C</attributeRef>
+<attributeRef>CA040BF8-3366-BB5C-4705-E1D228A138AA</attributeRef>
+</usedAttributes>
+</identifier>
 </identifiers>
 </Entity>
