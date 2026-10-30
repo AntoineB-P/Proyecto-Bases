@@ -12,6 +12,8 @@ import { Estadio3d } from './componentes/estadio3dcomponent/estadio3d';
 import { IntroBalon } from './componentes/introbaloncomponent/introbalon';
 import { BalonHero } from './componentes/balonherocomponent/balonhero';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { Login } from './login/login';
+import { Registro } from './registro/registro';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { AuthInterceptor } from './services/auth.interceptor';
     Dashboard,
     Estadio3d,
     IntroBalon,
-    BalonHero
+    BalonHero,
+    Login,
+    Registro,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
-  bootstrap: [App]
+  bootstrap: [App],
 })
 export class AppModule {}
