@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ArbitrajeDTO {
 
-	private Long cedulaArbitro;
+	private String cedulaArbitro;
 	private String nombreArbitro;
 	private Long idPartido;
 	private String rol;
@@ -13,7 +13,7 @@ public class ArbitrajeDTO {
 		
 	}
 
-	public ArbitrajeDTO(Long cedulaArbitro, String nombreArbitro, Long idPartido, String rol) {
+	public ArbitrajeDTO(String cedulaArbitro, String nombreArbitro, Long idPartido, String rol) {
 		super();
 		this.cedulaArbitro = cedulaArbitro;
 		this.nombreArbitro = nombreArbitro;
@@ -21,11 +21,11 @@ public class ArbitrajeDTO {
 		this.rol = rol;
 	}
 
-	public Long getCedulaArbitro() {
+	public String getCedulaArbitro() {
 		return cedulaArbitro;
 	}
 
-	public void setCedulaArbitro(Long cedulaArbitro) {
+	public void setCedulaArbitro(String cedulaArbitro) {
 		this.cedulaArbitro = cedulaArbitro;
 	}
 
