@@ -11,7 +11,7 @@ import { BarraSuperior } from './layout/barra-superior/barra-superior';
 import { Dashboard } from './paginas/dashboard/dashboard';
 import { Estadio3d } from './componentes/estadio3dcomponent/estadio3d';
 import { IntroBalon } from './componentes/introbaloncomponent/intro-balon';
-import { BalonHero } from './componentes/'
+import { BalonHero } from './componentes/balonherocomponent/balon-hero';
 
   'balonherocomponent/balonherocomponent';
 
