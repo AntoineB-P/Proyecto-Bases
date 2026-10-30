@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ArbitroDTO {
 
-	private Long cedula;
+	private String cedula;
 	private String nombres;
 	private String apellidos;
 	private String ciudad;
@@ -14,7 +14,7 @@ public class ArbitroDTO {
 		
 	}
 
-	public ArbitroDTO(Long cedula, String nombres, String apellidos, String ciudad, String categoria) {
+	public ArbitroDTO(String cedula, String nombres, String apellidos, String ciudad, String categoria) {
 		super();
 		this.cedula = cedula;
 		this.nombres = nombres;
@@ -23,11 +23,11 @@ public class ArbitroDTO {
 		this.categoria = categoria;
 	}
 
-	public Long getCedula() {
+	public String getCedula() {
 		return cedula;
 	}
 
-	public void setCedula(Long cedula) {
+	public void setCedula(String cedula) {
 		this.cedula = cedula;
 	}
 
@@ -64,6 +64,12 @@ public class ArbitroDTO {
 	}
 
 	@Override
+	public String toString() {
+		return "ArbitroDTO [cedula=" + cedula + ", nombres=" + nombres + ", apellidos=" + apellidos + ", ciudad="
+				+ ciudad + ", categoria=" + categoria + "]";
+	}
+
+	@Override
 	public int hashCode() {
 		return Objects.hash(apellidos, categoria, cedula, ciudad, nombres);
 	}
@@ -81,12 +87,7 @@ public class ArbitroDTO {
 				&& Objects.equals(cedula, other.cedula) && Objects.equals(ciudad, other.ciudad)
 				&& Objects.equals(nombres, other.nombres);
 	}
-
-	@Override
-	public String toString() {
-		return "ArbitroDTO [cedula=" + cedula + ", nombres=" + nombres + ", apellidos=" + apellidos + ", ciudad="
-				+ ciudad + ", categoria=" + categoria + "]";
-	}
+	
 	
 	
 }
