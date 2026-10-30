@@ -4,5 +4,13 @@
     <input type="text" placeholder="Buscar equipo, jugador o partido...">
   </div>
 
-  <div class="avatar">AB</div>
+  <nav class="acceso" *ngIf="!logueado">
+    <a class="enlace" routerLink="/login">Login</a>
+    <a class="boton" routerLink="/registro">Registrarse</a>
+  </nav>
+
+  <div class="sesion" *ngIf="logueado">
+    <div class="avatar">{{ iniciales }}</div>
+    <button type="button" class="salir" (click)="cerrarSesion()">Salir</button>
+  </div>
 </header>

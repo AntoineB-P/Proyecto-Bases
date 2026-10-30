@@ -15,17 +15,18 @@ import { AuthInterceptor } from './services/auth.interceptor';
 import { Login } from './login/login';
 import { Registro } from './registro/registro';
 
+
 @NgModule({
   declarations: [
     App,
     BarraLateral,
     BarraSuperior,
     Dashboard,
-    Estadio3d,
-    IntroBalon,
-    BalonHero,
     Login,
     Registro,
+    Estadio3d,
+    IntroBalon,
+    BalonHero
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

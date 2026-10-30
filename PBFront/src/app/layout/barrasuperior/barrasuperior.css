@@ -1,64 +1,65 @@
-.superior {
-  height: 76px;
-  padding: 0 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--linea);
-}
-
-.buscador {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--linea);
-  transition: border-color 160ms ease;
-}
-
-.buscador:focus-within {
-  border-bottom-color: var(--oro2);
-}
-
-.buscador i {
-  margin-right: 12px;
-  color: var(--oro);
-}
-
-.buscador input {
-  flex: 1;
-  background: none;
-  border: none;
-  outline: none;
-  color: var(--crema);
-  font-family: var(--fuente-texto);
-  font-size: 15px;
-}
-
-.buscador input::placeholder {
-  color: var(--suave);
-}
-
-.avatar {
+.acceso {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  margin-left: 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1.5px solid var(--oro);
-  background-color: var(--carbon);
+  margin-left: 24px;
+}
+
+.enlace {
+  padding: 8px 16px;
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--crema);
+  transition: color 160ms ease;
+}
+
+.boton {
+  margin-left: 8px;
+  padding: 8px 18px;
+  background-color: var(--oro2);
+  color: var(--negro);
   font-family: var(--fuente-titulo);
   font-weight: 800;
-  font-size: 18px;
-  color: var(--oro2);
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, transform 120ms ease-out;
 }
 
-@media (max-width: 900px) {
-  .superior {
-    padding: 0 20px;
+.boton:active {
+  transform: scale(0.97);
+}
+
+.sesion {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.salir {
+  margin-left: 16px;
+  background: none;
+  border: none;
+  color: var(--suave);
+  font-family: var(--fuente-texto);
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) {
+  .enlace:hover {
+    color: var(--oro2);
+  }
+
+  .boton:hover {
+    background-color: var(--crema);
+  }
+
+  .salir:hover {
+    color: var(--crema);
   }
 }

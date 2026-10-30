@@ -1,10 +1,10 @@
 <app-introbalon></app-introbalon>
 
-<app-barralateral></app-barralateral>
+<app-barralateral *ngIf="!enAcceso"></app-barralateral>
 
-<div class="principal">
-  <app-barrasuperior></app-barrasuperior>
-  <main class="contenido">
+<div class="principal" [class.sinlateral]="enAcceso">
+  <app-barrasuperior *ngIf="!enAcceso"></app-barrasuperior>
+  <main class="contenido" [class.sinmargen]="enAcceso">
     <router-outlet></router-outlet>
   </main>
 </div>
