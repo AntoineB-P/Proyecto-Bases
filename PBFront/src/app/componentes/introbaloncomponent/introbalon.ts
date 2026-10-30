@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-introbaloncomponent',
   standalone: false,
-  templateUrl: './intro-balon.html',
-  styleUrl: './intro-balon.css'
+  selector: 'app-introbalon',
+  templateUrl: './introbalon.html',
+  styleUrls: ['./introbalon.css']
 })
 export class IntroBalon implements OnInit {
 
