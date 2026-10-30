@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Dashboard } from './paginas/dashboard/dashboard';
-import { Login } from './paginas/login/login';
-import { Registro } from './paginas/registro/registro';
+import { Login } from './login/login';
+import { Registro } from './registro/registro';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

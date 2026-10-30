@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BalonHero } from './balon-hero';
+import { BalonHero } from './balonhero';
 
 describe('BalonHero', () => {
   let component: BalonHero;

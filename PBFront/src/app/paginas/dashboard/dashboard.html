@@ -98,7 +98,7 @@
                 [style.animation-delay.ms]="i * 90 + 500">
               <td class="pos">{{ i + 1 }}</td>
               <td class="izq equipo">
-                <span class="camiseta" [style.background]="e.camiseta" aria-hidden="true"></span>
+                <span class="camiseta" [style.background]="e.color1" aria-hidden="true"></span>
                 {{ e.nombre }}
                 <i class="bi bi-star-fill estrella animate__animated animate__heartBeat animate__infinite"
                    style="--animate-duration: 2.4s"
@@ -137,7 +137,6 @@
 
   </div>
 
-  <!-- JUGADORES POR POSICIÓN -->
   <section class="bloque">
     <h2 class="bloque-titulo">Jugadores por posición</h2>
     <p class="bloque-nota">De portero a atacante, de arco a arco.</p>
@@ -147,12 +146,13 @@
            [style.flex]="p.cantidad + ' 1 0%'"
            [style.animation-delay.ms]="i * 120 + 300">
         <span class="tramo-cantidad">{{ p.cantidad }}</span>
-        <span class="tramo-nombre">{{ p.posicion }}, {{ p.porcentaje }}%</span>
+        <span class="tramo-nombre">{{ p.posicion }}, {{ porcentaje(p.cantidad) }}%</span>
       </div>
     </div>
   </section>
 
-  <!-- GOLEADORES, DISCIPLINA, RESULTADOS -->
+
+
   <div class="row g-5">
 
     <div class="col-lg-4">

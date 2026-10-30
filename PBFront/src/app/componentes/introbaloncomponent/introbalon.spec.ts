@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IntroBalon } from './intro-balon';
+import { IntroBalon } from './introbalon';
 
 describe('IntroBalon', () => {
   let component: IntroBalon;
