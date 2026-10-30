@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, ElementRef, HostListener, NgZone, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-balonherocomponent',
   standalone: false,
-  templateUrl: './balon-hero.html',
-  styleUrl: './balon-hero.css'
+  selector: 'app-balonhero',
+  templateUrl: './balonhero.html',
+  styleUrls: ['./balonhero.css']
 })
 export class BalonHero implements AfterViewInit, OnDestroy {
 

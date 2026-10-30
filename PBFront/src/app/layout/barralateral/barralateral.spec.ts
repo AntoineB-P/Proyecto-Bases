@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BarraLateral } from './barra-lateral';
+import { BarraLateral } from './barralateral';
 
 describe('BarraLateral', () => {
   let component: BarraLateral;

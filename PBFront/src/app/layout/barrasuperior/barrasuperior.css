@@ -1,0 +1,65 @@
+.acceso {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+
+.enlace {
+  padding: 8px 16px;
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--crema);
+  transition: color 160ms ease;
+}
+
+.boton {
+  margin-left: 8px;
+  padding: 8px 18px;
+  background-color: var(--oro2);
+  color: var(--negro);
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, transform 120ms ease-out;
+}
+
+.boton:active {
+  transform: scale(0.97);
+}
+
+.sesion {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.salir {
+  margin-left: 16px;
+  background: none;
+  border: none;
+  color: var(--suave);
+  font-family: var(--fuente-texto);
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) {
+  .enlace:hover {
+    color: var(--oro2);
+  }
+
+  .boton:hover {
+    background-color: var(--crema);
+  }
+
+  .salir:hover {
+    color: var(--crema);
+  }
+}

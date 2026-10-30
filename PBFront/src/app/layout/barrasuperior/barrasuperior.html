@@ -1,0 +1,16 @@
+<header class="superior animate__animated animate__fadeInDown">
+  <div class="buscador">
+    <i class="bi bi-search"></i>
+    <input type="text" placeholder="Buscar equipo, jugador o partido...">
+  </div>
+
+  <nav class="acceso" *ngIf="!logueado">
+    <a class="enlace" routerLink="/login">Login</a>
+    <a class="boton" routerLink="/registro">Registrarse</a>
+  </nav>
+
+  <div class="sesion" *ngIf="logueado">
+    <div class="avatar">{{ iniciales }}</div>
+    <button type="button" class="salir" (click)="cerrarSesion()">Salir</button>
+  </div>
+</header>

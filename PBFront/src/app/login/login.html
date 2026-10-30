@@ -1,0 +1,67 @@
+<div class="pagina">
+
+  <section class="marca">
+    <img class="marca-logo animate__animated animate__fadeInDown" src="logo-liga.png" alt="Liga BetPlay Dimayor">
+
+    <h1 class="marca-titulo">
+      <span class="animate__animated animate__fadeInLeft">Entra a</span>
+      <span class="animate__animated animate__fadeInLeft" style="animation-delay: 200ms">la liga</span>
+    </h1>
+
+    <span class="marca-linea"></span>
+
+    <p class="marca-texto animate__animated animate__fadeInUp" style="animation-delay: 500ms">
+      Inicia sesión para entrar al panel con la tabla, los partidos y los goleadores.
+    </p>
+  </section>
+
+  <section class="formulario">
+    <form class="caja animate__animated animate__fadeInUp" style="animation-delay: 300ms" #loginForm="ngForm" (ngSubmit)="enviarFormulario(loginForm)">
+
+      <h2 class="caja-titulo">Iniciar sesión</h2>
+      <p class="caja-ayuda">Usa el usuario y el correo con los que te registraste.</p>
+
+      <div class="campo">
+        <label class="campo-nombre" for="usuario">Usuario</label>
+        <div class="campo-fila">
+          <i class="bi bi-person"></i>
+          <input id="usuario" type="text" placeholder="Tu usuario" name="usuario" [(ngModel)]="formulario.usuario" required>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label class="campo-nombre" for="correo">Correo</label>
+        <div class="campo-fila">
+          <i class="bi bi-envelope"></i>
+          <input id="correo" type="email" placeholder="correo@gmail.com" name="correo" [(ngModel)]="formulario.correo" required>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label class="campo-nombre" for="contrasenia">Contraseña</label>
+        <div class="campo-fila">
+          <i class="bi bi-lock"></i>
+          <input id="contrasenia" [type]="mostrarContrasenia ? 'text' : 'password'" placeholder="Tu contraseña" name="contrasenia" [(ngModel)]="formulario.contrasenia" required>
+          <button type="button" class="ojo" (click)="mostrarContrasenia = !mostrarContrasenia" [attr.aria-label]="mostrarContrasenia ? 'Ocultar contraseña' : 'Mostrar contraseña'">
+            <i class="bi" [ngClass]="mostrarContrasenia ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </button>
+        </div>
+      </div>
+
+      <p class="mensaje error" *ngIf="mensajeError" role="alert">{{ mensajeError }}</p>
+      <p class="mensaje exito" *ngIf="mensajeExito" role="status">{{ mensajeExito }}</p>
+
+      <button type="submit" class="enviar" [disabled]="cargando">
+        {{ cargando ? 'Entrando...' : 'Iniciar sesión' }}
+      </button>
+
+      <div class="enlaces">
+        <span>¿No tienes cuenta? <a routerLink="/registro">Regístrate</a></span>
+        <span>¿Ya tienes código? <a routerLink="/registro" [queryParams]="{ verificar: true }">Verifica tu cuenta</a></span>
+        <a routerLink="/dashboard">Volver al panel</a>
+      </div>
+
+    </form>
+  </section>
+
+</div>

@@ -17,7 +17,7 @@
   --salida: cubic-bezier(0.23, 1, 0.32, 1);
   --ancho-lateral: 250px;
 
-  /* Animate.css dura 1s por defecto, lo bajamos para que se sienta más ágil */
+
   --animate-duration: 700ms;
 }
 
@@ -35,7 +35,6 @@ body {
   overflow-x: hidden;
 }
 
-/* REFLECTORES: dos luces doradas que derivan despacio por el fondo */
 body::before,
 body::after {
   content: '';
@@ -110,7 +109,7 @@ input:focus-visible {
   border-radius: 8px;
 }
 
-/* ---------- INTRO DEL BALÓN ---------- Cuando la intro termina, la clase se quita
+/* ---------- INTRO DEL BALÓN ----------
    y todo arranca en orden. */
 body.intro-activa .principal,
 body.intro-activa .principal *,
@@ -123,10 +122,242 @@ body.intro-activa .lateral *::after {
   animation-play-state: paused !important;
 }
 
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+.pagina {
+  display: flex;
+  min-height: 100vh;
+}
+
+.marca {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 64px;
+}
+
+.marca-logo {
+  width: 72px;
+  margin-bottom: 32px;
+}
+
+.marca-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: clamp(56px, 7vw, 120px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.marca-titulo span {
+  display: block;
+}
+
+.marca-linea {
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 28px 0 20px;
+  background-color: var(--oro);
+  transform-origin: left;
+  animation: crece 900ms 400ms var(--salida) backwards;
+}
+
+.marca-texto {
+  max-width: 380px;
+  font-size: 18px;
+  color: var(--texto);
+}
+
+.formulario {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  background-color: var(--negro2);
+  border-left: 1px solid var(--linea);
+}
+
+.caja {
+  width: 100%;
+  max-width: 400px;
+}
+
+.caja-titulo {
+  margin-bottom: 8px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--crema);
+}
+
+.caja-ayuda {
+  margin-bottom: 28px;
+  font-size: 15px;
+  color: var(--suave);
+}
+
+.requisitos {
+  margin: 12px 0 24px;
+  padding: 12px 14px;
+  border: 1px solid var(--linea);
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.campo {
+  margin-bottom: 22px;
+}
+
+.campo-nombre {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.campo-fila {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--linea);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.campo-fila:focus-within {
+  border-bottom-color: var(--oro2);
+  box-shadow: 0 1px 0 var(--oro2);
+}
+
+.campo-fila i {
+  margin-right: 12px;
+  color: var(--oro);
+}
+
+.campo-fila input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+}
+
+.campo-fila input::placeholder {
+  color: var(--suave);
+}
+
+.ojo {
+  padding: 4px 0 4px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ojo i {
+  margin: 0;
+  color: var(--suave);
+}
+
+.mensaje {
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-left: 3px solid;
+  font-size: 15px;
+  color: var(--crema);
+}
+
+.mensaje.error {
+  border-color: var(--roja);
+  background-color: rgba(179, 58, 51, 0.15);
+}
+
+.mensaje.exito {
+  border-color: var(--oro2);
+  background-color: rgba(212, 175, 114, 0.12);
+}
+
+.enviar {
+  width: 100%;
+  padding: 14px 26px;
+  border: none;
+  background-color: var(--oro2);
+  color: var(--negro);
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 120ms ease-out;
+}
+
+.enviar:active {
+  transform: scale(0.97);
+}
+
+.enviar:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.enlaces {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--suave);
+}
+
+.enlaces a {
+  color: var(--oro2);
+}
+
+@media (hover: hover) {
+  .enviar:hover:not(:disabled) {
+    background-color: var(--crema);
+  }
+
+  .ojo:hover i {
+    color: var(--oro2);
+  }
+
+  .enlaces a:hover {
+    color: var(--crema);
+  }
+}
+
+@media (max-width: 900px) {
+  .pagina {
+    flex-direction: column;
+  }
+
+  .marca {
+    flex: none;
+    padding: 40px 20px 24px;
+  }
+
+  .marca-titulo {
+    font-size: 56px;
+  }
+
+  .formulario {
+    padding: 32px 20px 56px;
+    border-left: none;
+    border-top: 1px solid var(--linea);
   }
 }
