@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, NgZone, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-balon-hero',
+  selector: 'app-balonherocomponent',
   standalone: false,
   templateUrl: './balon-hero.html',
   styleUrl: './balon-hero.css'

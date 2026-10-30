@@ -9,9 +9,11 @@ import { App } from './app';
 import { BarraLateral } from './layout/barra-lateral/barra-lateral';
 import { BarraSuperior } from './layout/barra-superior/barra-superior';
 import { Dashboard } from './paginas/dashboard/dashboard';
-import { Estadio3d } from './componentes/estadio3d/estadio3d';
-import { IntroBalon } from './componentes/intro-balon/intro-balon';
-import { BalonHero } from './componentes/balon-hero/balon-hero';
+import { Estadio3d } from './componentes/estadio3dcomponent/estadio3d';
+import { IntroBalon } from './componentes/introbaloncomponent/intro-balon';
+import { BalonHero } from './componentes/balonherocomponent/balon-hero';
+
+  'balonherocomponent/balonherocomponent';
 
 @NgModule({
   declarations: [App, BarraLateral, BarraSuperior, Dashboard, Estadio3d, IntroBalon, BalonHero],

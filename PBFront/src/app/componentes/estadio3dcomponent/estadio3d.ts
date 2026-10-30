@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 @Component({
-  selector: 'app-estadio3d',
+  selector: 'app-estadio3dcomponent',
   standalone: false,
   templateUrl: './estadio3d.html',
   styleUrl: './estadio3d.css'
