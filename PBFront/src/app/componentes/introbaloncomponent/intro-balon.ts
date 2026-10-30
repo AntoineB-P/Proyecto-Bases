@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-intro-balon',
+  selector: 'app-introbaloncomponent',
   standalone: false,
   templateUrl: './intro-balon.html',
   styleUrl: './intro-balon.css'
