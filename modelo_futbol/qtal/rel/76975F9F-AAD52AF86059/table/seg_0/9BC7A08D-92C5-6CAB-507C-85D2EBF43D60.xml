@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9BC7A08D-92C5-6CAB-507C-85D2EBF43D60" name="INSCRIPCION">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Resuelve la relación ternaria Inscribir (M:N:M) entre EQUIPO, TORNEO y JUGADOR: registra con qué equipo y en qué torneo está inscrito cada jugador, con su dorsal y las fechas de vigencia.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación ternaria Inscribir (M:N:M) entre EQUIPO, TORNEO y JUGADOR: registra con qué equipo y en qué torneo está inscrito cada jugador, con su dorsal y las fechas de vigencia.]]></commentInRDBMS>
+<generatorID>797DC619-1B0C-3FA7-E2FE-6B71F7EEFDEE</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EQUIPO_id_equipo" id="DDA248F7-8A93-A57E-27E3-2E0845E25707">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo con el que se inscribe el jugador.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo con el que se inscribe el jugador.]]></commentInRDBMS>
+<generatorID>1F731071-BCBE-6FFF-47DD-71F8189EBADF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6DCA8925-946F-20A8-7C91-8BA649A38319" referredColumn="264CF2C4-AA65-F2FC-BAD2-DC063AC25ADD"/>
+</associations>
+</Column>
+<Column name="TORNEO_id_torneo" id="CFD14CDE-DD8C-9123-A31B-18573A017417">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que se inscribe el jugador.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que se inscribe el jugador.]]></commentInRDBMS>
+<generatorID>E00FF96F-8B9C-42E2-4FC9-5BD6AD520EB9</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="79A8D20C-E819-55F5-D718-2285F21BCED1" referredColumn="6B2E781A-C24B-3303-012D-2D8F8FE7F361"/>
+</associations>
+</Column>
+<Column name="JUGADOR_id_jugador" id="5F370C6E-EE80-F359-F578-E5D7DBB1039B">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria: jugador que se inscribe.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria: jugador que se inscribe.]]></commentInRDBMS>
+<generatorID>1730D12E-69F5-58FD-8048-72C885278F23</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9C7E37AF-5C65-50D8-39C9-854AC2CD8B30" referredColumn="3434629E-5973-649D-3186-501E2400561E"/>
+</associations>
+</Column>
+<Column name="fecha_inicio" id="39D64093-5BA5-3173-AE50-CE4DAEE3C01A">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Fecha desde la que el jugador está inscrito con el equipo en ese torneo (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Fecha desde la que el jugador está inscrito con el equipo en ese torneo (opcional).]]></commentInRDBMS>
+<generatorID>42DBD342-633F-B9FC-7536-CE2219C56A4F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_fin" id="9BBC9548-741D-F980-73C1-893D9E54A56B">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Fecha hasta la que el jugador estuvo inscrito con el equipo en ese torneo (opcional). Permite conservar el historial de traspasos.]]></comment>
+<commentInRDBMS><![CDATA[Fecha hasta la que el jugador estuvo inscrito con el equipo en ese torneo (opcional). Permite conservar el historial de traspasos.]]></commentInRDBMS>
+<generatorID>B332B977-D12A-B7A6-F2D2-E7EDB87B4276</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dorsal" id="2A74B8F0-8D98-F039-D2C1-9C087965B581">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Número de camiseta que usa el jugador con ese equipo en ese torneo (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Número de camiseta que usa el jugador con ese equipo en ese torneo (opcional).]]></commentInRDBMS>
+<generatorID>37220B67-5D9C-1F9C-9D8D-06F455C3003C</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4626B287-838A-F6E8-F382-AD2C98E8A1E3" name="INSCRIPCION_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>D7EBF253-0CE7-4CC1-E90B-54BF42E02190</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDA248F7-8A93-A57E-27E3-2E0845E25707"/>
+<colUsage columnID="CFD14CDE-DD8C-9123-A31B-18573A017417"/>
+<colUsage columnID="5F370C6E-EE80-F359-F578-E5D7DBB1039B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6AC77807-8877-C002-4B63-0FF54828F7C7" name="INSCRIPCION_EQUIPO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>B0CC6D49-41F8-B92E-5663-C10C961592ED</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDA248F7-8A93-A57E-27E3-2E0845E25707"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5E54475B-6678-A61F-B898-A2D63DE4D5CD" name="INSCRIPCION_JUGADOR_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>21375983-D635-568E-0DEA-B5F6F8BD8B72</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F370C6E-EE80-F359-F578-E5D7DBB1039B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1362426-A5C1-4802-7A4C-33A21EBEB9D0" name="INSCRIPCION_TORNEO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>04A07B8A-8DF3-8E67-6FDA-D4F28C3D6928</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFD14CDE-DD8C-9123-A31B-18573A017417"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

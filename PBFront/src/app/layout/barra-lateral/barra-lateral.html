@@ -1,0 +1,35 @@
+<aside class="lateral">
+  <div class="logo animate__animated animate__fadeInDown">
+    <div class="logo-fila">
+      <img class="logo-img" src="logo-liga.png" alt="Liga BetPlay Dimayor">
+      <div class="logo-texto">
+        <span class="logo-liga">Liga</span>
+        <span class="logo-nombre">BetPlay</span>
+      </div>
+    </div>
+    <span class="logo-linea"></span>
+  </div>
+
+  <nav class="menu">
+    <ng-container *ngFor="let op of opciones; let i = index">
+
+      <a class="opcion animate__animated animate__fadeInLeft"
+         *ngIf="op.listo"
+         [routerLink]="op.ruta"
+         routerLinkActive="activa"
+         [ngStyle]="{'animation-delay': (i * 70 + 200) + 'ms'}">
+        <i class="bi {{ op.icono }}"></i>
+        <span>{{ op.nombre }}</span>
+      </a>
+
+      <span class="opcion deshabilitada animate__animated animate__fadeInLeft"
+            *ngIf="!op.listo"
+            [ngStyle]="{'animation-delay': (i * 70 + 200) + 'ms'}">
+        <i class="bi {{ op.icono }}"></i>
+        <span>{{ op.nombre }}</span>
+        <em>pronto</em>
+      </span>
+
+    </ng-container>
+  </nav>
+</aside>

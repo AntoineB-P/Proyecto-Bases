@@ -1,0 +1,30 @@
+.principal {
+  position: relative;
+  z-index: 1;
+  margin-left: var(--ancho-lateral);
+  min-height: 100vh;
+  transform-origin: 50% 25%;
+  animation: entra-grande 1100ms var(--salida) backwards;
+}
+
+/* la página empieza más grande y se acomoda a su tamaño real */
+@keyframes entra-grande {
+  from {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+}
+
+.contenido {
+  padding: 40px 48px 80px;
+}
+
+@media (max-width: 900px) {
+  .principal {
+    margin-left: 0;
+  }
+
+  .contenido {
+    padding: 28px 20px 60px;
+  }
+}

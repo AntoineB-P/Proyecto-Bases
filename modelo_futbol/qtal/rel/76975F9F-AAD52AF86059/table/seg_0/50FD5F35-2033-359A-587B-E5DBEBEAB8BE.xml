@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="50FD5F35-2033-359A-587B-E5DBEBEAB8BE" name="RESULTADO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener): guarda los goles de cada equipo para determinar el ganador y calcular posiciones.]]></comment>
+<commentInRDBMS><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener): guarda los goles de cada equipo para determinar el ganador y calcular posiciones.]]></commentInRDBMS>
+<generatorID>7D4DAB7C-3F3D-5A7E-F2A9-05818A929EBA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PARTIDO_id_partido" id="5BC4B181-51E6-78C1-2343-E4D83A37B19F">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Además es única: cada partido tiene como máximo un resultado.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Además es única: cada partido tiene como máximo un resultado.]]></commentInRDBMS>
+<generatorID>631CB741-1824-16CC-FCC5-79ACE0B86FA9</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A1FAC14-126B-8ECF-B7D6-799D1D315274" referredColumn="90FE4243-5C09-843F-49FF-504001BDB679"/>
+</associations>
+</Column>
+<Column name="id_resultado" id="52A98E0E-425F-501E-BDFC-DE59820AA5C5">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador del resultado; junto con id_partido forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Identificador del resultado; junto con id_partido forma la llave primaria.]]></commentInRDBMS>
+<generatorID>7A7AC537-4601-4D75-7645-E1FD938C3251</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="goles_local" id="4738A596-AF63-6320-B791-E2698BC2CCEF">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Cantidad de goles anotados por el equipo local en el partido (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo local en el partido (opcional).]]></commentInRDBMS>
+<generatorID>16B7EA11-E45C-5C82-6B86-94527CCD1A96</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="goles_visitante" id="F62F0E4E-32D7-326D-CF21-E4D8087B1D58">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Cantidad de goles anotados por el equipo visitante en el partido (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo visitante en el partido (opcional).]]></commentInRDBMS>
+<generatorID>49DBA44B-9567-ABFE-AAB6-A49D241AD53B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EAD86530-F20F-B5C9-1E7A-7DF748EE3823" name="RESULTADO_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>B163B67D-9445-810F-B464-2D8079E53BBD</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BC4B181-51E6-78C1-2343-E4D83A37B19F"/>
+<colUsage columnID="52A98E0E-425F-501E-BDFC-DE59820AA5C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="87801092-1A8D-4F26-BD6F-E166008D0D0C" name="RESULTADO_id_partido_UN">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>A71A222A-FB01-F04A-7453-F94C25631126</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BC4B181-51E6-78C1-2343-E4D83A37B19F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D4B6423-BA5A-7AC9-2592-9AC666A9D68B" name="RESULTADO_PARTIDO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>57BDD7A7-3C2E-7E0A-58E6-FE6EECE0B55E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BC4B181-51E6-78C1-2343-E4D83A37B19F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

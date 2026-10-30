@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_medoicampista_jugador" directorySegmentName="seg_0" id="A8C86C0A-20EB-74E4-C89E-B52F6DB088F3">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 14:33:37 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>8E054127-E8AB-B886-954D-144533A1F18F</sourcePk>
+<targetPk>10232520-17A8-3FB5-051F-51C61F4CE632</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>23AFDAFD-FD3A-749E-EC62-7D425FAAEFEF</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>3B333E98-778C-16D4-1DE0-8D862DBCF9D1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

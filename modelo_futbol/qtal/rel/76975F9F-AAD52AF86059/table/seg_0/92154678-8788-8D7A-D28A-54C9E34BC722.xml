@@ -1,0 +1,261 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92154678-8788-8D7A-D28A-54C9E34BC722" name="JUGADOR">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Jugadores registrados en el sistema. Se inscriben a equipos en cada torneo (INSCRIPCION) y participan en los partidos (PARTICIPACION).]]></comment>
+<commentInRDBMS><![CDATA[Jugadores registrados en el sistema. Se inscriben a equipos en cada torneo (INSCRIPCION) y participan en los partidos (PARTICIPACION).]]></commentInRDBMS>
+<generatorID>23AFDAFD-FD3A-749E-EC62-7D425FAAEFEF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_jugador" id="3434629E-5973-649D-3186-501E2400561E">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></commentInRDBMS>
+<generatorID>B35A81FF-EF2A-7380-9621-33EED46008A2</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombres" id="1653C05F-6A78-7E91-0FDF-6F9B2CB4338C">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Nombres de pila del jugador. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></comment>
+<commentInRDBMS><![CDATA[Nombres de pila del jugador. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></commentInRDBMS>
+<generatorID>BEF41017-3C37-1BA6-1B4D-7FB6ABA6AB65</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="A70C2804-CED9-5FBB-543C-56503D92CB36">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Apellidos del jugador. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></comment>
+<commentInRDBMS><![CDATA[Apellidos del jugador. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></commentInRDBMS>
+<generatorID>B37A5908-29E1-99CD-9B93-742AFBA40A8F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nacionalidad" id="362ABBDE-4353-532A-66E5-0D5B72352DF9">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[País de origen del jugador (opcional). Sirve para reportes y estadísticas, por ejemplo jugadores extranjeros por equipo.]]></comment>
+<commentInRDBMS><![CDATA[País de origen del jugador (opcional). Sirve para reportes y estadísticas, por ejemplo jugadores extranjeros por equipo.]]></commentInRDBMS>
+<generatorID>D24AF4DB-A1C5-AE6E-3E51-1F209B1C7326</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>07CBE735-7AD7-66DF-ECEF-E4EFF1950C41</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_nacimiento" id="3BFE4E6D-3435-7AA7-50D4-EEB74958E767">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Fecha de nacimiento del jugador (opcional). Es la base para calcular el atributo derivado edad.]]></comment>
+<commentInRDBMS><![CDATA[Fecha de nacimiento del jugador (opcional). Es la base para calcular el atributo derivado edad.]]></commentInRDBMS>
+<generatorID>57E321AC-F004-0095-D857-F17AFA54B782</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="posicion" id="A91E26DA-79EA-9A97-FE30-2A0503D20ED5">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Posición en la que juega (por ejemplo portero, defensa, volante o delantero) (opcional). Sirve para armar alineaciones y filtrar jugadores.]]></comment>
+<commentInRDBMS><![CDATA[Posición en la que juega (por ejemplo portero, defensa, volante o delantero) (opcional). Sirve para armar alineaciones y filtrar jugadores.]]></commentInRDBMS>
+<generatorID>A9618AD0-5E8B-84A0-EB65-95E2BB15CF4F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ATACANTE_JUGADOR_id_jugador" id="5277E560-42CC-4409-8F47-1B7A5F933831">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>B8E92DE0-C9ED-89D0-8835-A5F73152DDB0</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB62A660-55E4-A6E0-DA2B-2247F2BFDAC6" referredColumn="D53F449B-7EA0-CD28-1233-F5CFCFD1CAA3"/>
+</associations>
+</Column>
+<Column name="MEDIOCAMPISTA_JUGADOR_id_jugador" id="F290623A-5CA0-CF06-1F0C-AFF3A4087E60">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>CBF35EC8-270D-92BE-C0FA-BA3F41BBEAF3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BE2D78E0-3314-6F90-7F7A-1D5442199DB9" referredColumn="77DF6E86-823B-9F7D-601B-C93456D9AE14"/>
+</associations>
+</Column>
+<Column name="DEFENSA_JUGADOR_id_jugador" id="63002BAB-F3D7-EBBF-92F7-90024C299CC1">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>A86DD14D-25D9-6CDD-D733-5EB37CE24823</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="978A35BD-1C12-AB57-DC8D-3D2EF89697C1" referredColumn="13272E6A-ADF2-930D-E90B-6BF64D9FD552"/>
+</associations>
+</Column>
+<Column name="PORTERO_JUGADOR_id_jugador" id="0A85F4FF-9AAE-7BAB-E38D-4F15213199B9">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>D263893A-ECC6-AF23-B69E-40446FC9C99D</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E88C4678-54D1-5DB1-E4C7-F08D321E3D98" referredColumn="8D0D55A5-3A53-68C2-27EB-18B4E897BA48"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C2004254-E8B4-A0D8-F788-13F864819BB0" name="JUGADOR_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>8E054127-E8AB-B886-954D-144533A1F18F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3434629E-5973-649D-3186-501E2400561E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EE39297E-1309-53DD-70EC-8D35E9181E8A" name="JUGADOR__IDX">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>4FF94F09-EADC-5267-9407-B7255B507A0E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="5277E560-42CC-4409-8F47-1B7A5F933831"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F33BB977-D94C-E7E3-0BB5-45B8C13F8F37" name="JUGADOR__IDXv1">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>BEBF0D4B-9602-3AD4-E028-7EEDD623C6FA</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="63002BAB-F3D7-EBBF-92F7-90024C299CC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="813BDF37-06A0-AECE-A124-FFFD06A13F68" name="JUGADOR__IDXv2">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A8C86C0A-20EB-74E4-C89E-B52F6DB088F3</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="F290623A-5CA0-CF06-1F0C-AFF3A4087E60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1449C72-AA6F-A11F-7A19-23DE20E3996E" name="JUGADOR__IDXv3">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>5FF0B850-7435-1BAB-8EC9-717EE7F8D036</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="0A85F4FF-9AAE-7BAB-E38D-4F15213199B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="227A89E8-B6AA-2CB3-EC8E-310D348EC44D" name="JUGADOR_ATACANTE_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>4FF94F09-EADC-5267-9407-B7255B507A0E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5277E560-42CC-4409-8F47-1B7A5F933831"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="58D408D0-ADE4-B0FC-9996-037934DAE587" name="JUGADOR_DEFENSA_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>BEBF0D4B-9602-3AD4-E028-7EEDD623C6FA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63002BAB-F3D7-EBBF-92F7-90024C299CC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C0BA236F-CA72-628E-0F75-D2F68F67E855" name="JUGADOR_MEDIOCAMPISTA_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>A8C86C0A-20EB-74E4-C89E-B52F6DB088F3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F290623A-5CA0-CF06-1F0C-AFF3A4087E60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05ECE35A-296F-1EC4-88FA-CDF869F7410B" name="JUGADOR_PORTERO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>5FF0B850-7435-1BAB-8EC9-717EE7F8D036</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A85F4FF-9AAE-7BAB-E38D-4F15213199B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

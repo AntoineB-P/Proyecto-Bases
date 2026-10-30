@@ -1,0 +1,132 @@
+:root {
+  --negro: #0a0a09;
+  --negro2: #111110;
+  --carbon: #1a1917;
+  --crema: #f2ead8;
+  --oro: #b8975a;
+  --oro2: #d4af72;
+  --texto: #c9bfa8;
+  --suave: #9c927c;
+  --linea: rgba(184, 151, 90, 0.28);
+  --amarilla: #f2c94c;
+  --roja: #b33a33;
+
+  --fuente-titulo: 'Big Shoulders Display', sans-serif;
+  --fuente-texto: 'Jost', sans-serif;
+
+  --salida: cubic-bezier(0.23, 1, 0.32, 1);
+  --ancho-lateral: 250px;
+
+  /* Animate.css dura 1s por defecto, lo bajamos para que se sienta más ágil */
+  --animate-duration: 700ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--negro);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+/* REFLECTORES: dos luces doradas que derivan despacio por el fondo */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  width: 70vw;
+  height: 60vh;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(212, 175, 114, 0.17), transparent);
+  pointer-events: none;
+}
+
+body::before {
+  top: -30vh;
+  left: -15vw;
+  animation: deriva 16s ease-in-out infinite alternate;
+}
+
+body::after {
+  top: -25vh;
+  right: -20vw;
+  animation: deriva 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes deriva {
+  from { transform: translateX(-6vw) scale(1); }
+  to   { transform: translateX(8vw) scale(1.15); }
+}
+
+/* rayita dorada que crece desde la izquierda (la usamos en varios sitios) */
+@keyframes crece {
+  from { transform: scaleX(0); }
+}
+
+/* al terminar la animación, el elemento queda libre para usar hover y :active */
+.animate__animated {
+  animation-fill-mode: backwards;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--oro2);
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--negro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--oro);
+  border-radius: 8px;
+}
+
+/* ---------- INTRO DEL BALÓN ---------- Cuando la intro termina, la clase se quita
+   y todo arranca en orden. */
+body.intro-activa .principal,
+body.intro-activa .principal *,
+body.intro-activa .principal *::before,
+body.intro-activa .principal *::after,
+body.intro-activa .lateral,
+body.intro-activa .lateral *,
+body.intro-activa .lateral *::before,
+body.intro-activa .lateral *::after {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

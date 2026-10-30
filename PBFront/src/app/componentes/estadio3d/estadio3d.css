@@ -1,0 +1,163 @@
+:host {
+  display: block;
+}
+
+.estadio {
+  position: relative;
+  margin: -40px -48px 0;
+  height: calc(100vh - 76px);
+  min-height: 540px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(184, 151, 90, 0.28);
+}
+
+.lienzo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+.lienzo:active {
+  cursor: grabbing;
+}
+
+.velo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, #0a0a09 0%, rgba(10, 10, 9, 0.85) 22%, transparent 55%),
+    linear-gradient(to right, rgba(10, 10, 9, 0.75), transparent 55%);
+}
+
+.capa {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.textos {
+  position: absolute;
+  left: 48px;
+  bottom: 72px;
+  max-width: 640px;
+}
+
+.etiqueta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 17px;
+  color: #d4af72;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: #d4af72;
+}
+
+.titulo {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: clamp(52px, 7.2vw, 112px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: #f2ead8;
+}
+
+.linea {
+  display: block;
+}
+
+.oro {
+  color: #d4af72;
+}
+
+.bajada {
+  max-width: 480px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #c9bfa8;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 28px;
+  padding: 14px 26px;
+  border: none;
+  background-color: #d4af72;
+  color: #0a0a09;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color 160ms ease, transform 120ms ease-out;
+}
+
+.boton i {
+  margin-left: 12px;
+}
+
+.boton:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) {
+  .boton:hover {
+    background-color: #f2ead8;
+  }
+}
+
+.pista {
+  position: absolute;
+  right: 48px;
+  bottom: 72px;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 15px;
+  color: #f2ead8;
+  border: 1px solid rgba(184, 151, 90, 0.28);
+  background-color: rgba(10, 10, 9, 0.55);
+}
+
+.pista i {
+  margin-right: 10px;
+  color: #d4af72;
+}
+
+@media (max-width: 900px) {
+  .estadio {
+    margin: -28px -20px 0;
+    height: 80vh;
+  }
+
+  .textos {
+    left: 20px;
+    right: 20px;
+    bottom: 40px;
+  }
+
+  .pista {
+    top: 20px;
+    right: 20px;
+    bottom: auto;
+  }
+}

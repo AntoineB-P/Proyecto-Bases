@@ -118,21 +118,68 @@
 <domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="edad" id="EA05A943-8873-40F6-B60F-31C6516BAD05">
-<createdBy>felip</createdBy>
-<createdTime>2026-10-26 02:40:00 UTC</createdTime>
-<comment><![CDATA[ATRIBUTO DERIVADO: edad en años del jugador, calculada a partir de fecha_nacimiento y la fecha actual. Se incluye porque aparece en el diagrama; para que no quede desactualizado conviene calcularlo en consultas o vistas en vez de capturarlo a mano.]]></comment>
-<commentInRDBMS><![CDATA[ATRIBUTO DERIVADO: edad en años del jugador, calculada a partir de fecha_nacimiento y la fecha actual. Se incluye porque aparece en el diagrama; para que no quede desactualizado conviene calcularlo en consultas o vistas en vez de capturarlo a mano.]]></commentInRDBMS>
-<generatorID>BD84AD2B-F087-4D97-9F8F-188528B73F2C</generatorID>
+<Attribute name="id jugador1" id="B8E92DE0-C9ED-89D0-8835-A5F73152DDB0">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 14:39:09 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>4FF94F09-EADC-5267-9407-B7255B507A0E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
+<referedAttribute>09A5DB11-41BE-E61B-A15F-60C2A2B4F275</referedAttribute>
 <use>0</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>D01953A7-60AA-1796-CFA7-4D95D6856E19</domain>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id jugador2" id="CBF35EC8-270D-92BE-C0FA-BA3F41BBEAF3">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 14:41:24 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>A8C86C0A-20EB-74E4-C89E-B52F6DB088F3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>162ABED6-FACD-6CBB-1C6D-1558B27F24E7</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id jugador3" id="A86DD14D-25D9-6CDD-D733-5EB37CE24823">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 14:41:37 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>BEBF0D4B-9602-3AD4-E028-7EEDD623C6FA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>34B7F442-A3CA-B3F5-8841-2E8A19C657EC</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id jugador4" id="D263893A-ECC6-AF23-B69E-40446FC9C99D">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 14:41:42 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<generatorID>5FF0B850-7435-1BAB-8EC9-717EE7F8D036</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<referedAttribute>BD9C8EDF-F763-D86C-3315-1CEE115D2E42</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

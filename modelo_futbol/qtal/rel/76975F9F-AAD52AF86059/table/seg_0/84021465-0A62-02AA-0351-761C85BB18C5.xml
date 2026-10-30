@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="84021465-0A62-02AA-0351-761C85BB18C5" name="TARJETA">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Tarjetas disciplinarias mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></comment>
+<commentInRDBMS><![CDATA[Tarjetas disciplinarias mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></commentInRDBMS>
+<generatorID>F8A5B18D-5B47-5B5E-1608-ABE7A78F8CF5</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PARTICIPACION_id_participacion" id="DF07FC4F-0918-9974-725E-D9C9A1DE26E9">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador sancionado.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador sancionado.]]></commentInRDBMS>
+<generatorID>00B1FC12-79BA-4BF7-72F9-B5326E2CF38E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="964F7C8E-61E0-8BC6-BD62-70191D9A5457" referredColumn="326F939E-3725-EFF6-392C-80B61502ECF7"/>
+</associations>
+</Column>
+<Column name="id_tarjeta" id="5820550F-0B4A-9090-B19B-AE361D7149BF">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Identificador de la tarjeta; junto con id_participacion forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Identificador de la tarjeta; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
+<generatorID>08A29755-AC78-2DA7-751F-BC5914F2C573</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="motivo" id="23EBAE51-8858-4A81-B4B6-143606A9A881">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Razón por la que se mostró la tarjeta (opcional). Sirve para el control disciplinario.]]></comment>
+<commentInRDBMS><![CDATA[Razón por la que se mostró la tarjeta (opcional). Sirve para el control disciplinario.]]></commentInRDBMS>
+<generatorID>A2A2F651-A512-F351-4537-E1CDD6AA8C79</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E1829C36-DA73-2FB3-5BDB-0CB51DC48411</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="minuto" id="69DE07E4-C831-810E-2F35-4ADBB05980A6">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></commentInRDBMS>
+<generatorID>1309C667-5F6B-3694-8658-0867EADB8F0F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_TARJETA_id_tipo" id="985BDEDB-4DA4-0660-0DFA-92E9828142F7">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla, roja, etc. (relación Ser). Es obligatoria.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla, roja, etc. (relación Ser). Es obligatoria.]]></commentInRDBMS>
+<generatorID>15944BD4-462E-ED82-B2B4-43341D7DB083</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3D94D43C-5500-9865-E77C-4CEEEBA38D0E" referredColumn="7878A60F-9789-1281-279F-22AB1364CCF7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="38D7C1B4-48E0-043A-2614-E60961471376" name="TARJETA_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>9127416D-2F13-A890-289F-9FBE5622C85E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF07FC4F-0918-9974-725E-D9C9A1DE26E9"/>
+<colUsage columnID="5820550F-0B4A-9090-B19B-AE361D7149BF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="72496591-BFA4-9C8D-A23C-B18D1848BBF3" name="TARJETA_PARTICIPACION_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>3CA21931-2F31-D53B-9C83-2B81F81DE61A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF07FC4F-0918-9974-725E-D9C9A1DE26E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B439747D-A1DC-41CA-D649-F79FB092BCA6" name="TARJETA_TIPO_TARJETA_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>A386C1D8-92B6-7C29-63D4-897913022B8F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="985BDEDB-4DA4-0660-0DFA-92E9828142F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

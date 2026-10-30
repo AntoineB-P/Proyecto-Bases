@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="881474B5-77E9-1F79-E29E-98D1EDF2876C" name="ARBITRO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Árbitros que dirigen los partidos. Guarda sus datos personales, su ciudad y su categoría.]]></comment>
+<commentInRDBMS><![CDATA[Árbitros que dirigen los partidos. Guarda sus datos personales, su ciudad y su categoría.]]></commentInRDBMS>
+<generatorID>11AE7B2B-FCD2-DE91-1EE0-F6F050DD6D65</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cedula" id="FB223331-DBFC-339D-D945-34D144A77E37">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Cédula (documento de identidad) del árbitro. Es la llave primaria y la referencia ARBITRAJE.]]></comment>
+<commentInRDBMS><![CDATA[Cédula (documento de identidad) del árbitro. Es la llave primaria y la referencia ARBITRAJE.]]></commentInRDBMS>
+<generatorID>AEE0200C-3D6E-0D63-9193-25E1629DDEB8</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B506D4B9-FD63-CF9B-FA6C-4E6D47A7E3E9</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombres" id="B8AAD082-F21E-316B-4ED5-1296632BDC07">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Nombres de pila del árbitro. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></comment>
+<commentInRDBMS><![CDATA[Nombres de pila del árbitro. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></commentInRDBMS>
+<generatorID>35EEEDA6-7669-5194-9C8F-2C0FB947BFB8</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="7AE995FD-13D3-BE3F-99E5-6C9CCA233267">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Apellidos del árbitro. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></comment>
+<commentInRDBMS><![CDATA[Apellidos del árbitro. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></commentInRDBMS>
+<generatorID>707AF33B-8F2D-0BAE-CFE7-C80CDABFECC4</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ciudad" id="9F087BC5-5F4C-8A92-5AB2-F9844D1727B6">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Ciudad del árbitro (opcional). Permite filtrar árbitros por ubicación al asignarlos a partidos.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad del árbitro (opcional). Permite filtrar árbitros por ubicación al asignarlos a partidos.]]></commentInRDBMS>
+<generatorID>FC07D943-F967-C488-311F-61CBFF24B20F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="categoria" id="4E5BEF66-6D27-86A0-E0E2-0956208C2FB8">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<comment><![CDATA[Categoría o nivel del árbitro (por ejemplo nacional o internacional) (opcional). Sirve para asignar árbitros según la importancia del partido.]]></comment>
+<commentInRDBMS><![CDATA[Categoría o nivel del árbitro (por ejemplo nacional o internacional) (opcional). Sirve para asignar árbitros según la importancia del partido.]]></commentInRDBMS>
+<generatorID>7761B320-0FAD-F1F2-42B6-2615D8661C4B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E8C1B0A-04EA-28ED-3C4A-38E51B2054C8" name="ARBITRO_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<generatorID>BE491ADC-F615-2078-E0FD-78EBBEB52CC5</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB223331-DBFC-339D-D945-34D144A77E37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

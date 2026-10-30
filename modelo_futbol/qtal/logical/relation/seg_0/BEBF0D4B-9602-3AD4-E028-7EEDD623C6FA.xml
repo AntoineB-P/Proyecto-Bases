@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_defensa_jugador" directorySegmentName="seg_0" id="BEBF0D4B-9602-3AD4-E028-7EEDD623C6FA">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-10-27 14:33:49 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>8E054127-E8AB-B886-954D-144533A1F18F</sourcePk>
+<targetPk>0100DB92-C2A7-AF32-248E-068890A8E2E6</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>23AFDAFD-FD3A-749E-EC62-7D425FAAEFEF</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>A24BD1ED-A924-6BD6-98F7-325D810E2F09</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

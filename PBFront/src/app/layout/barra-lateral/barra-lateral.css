@@ -1,0 +1,165 @@
+.lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--ancho-lateral);
+  padding: 34px 26px;
+  background-color: var(--negro2);
+  border-right: 1px solid var(--linea);
+  z-index: 20;
+}
+
+.logo {
+  margin-bottom: 40px;
+}
+
+.logo-liga {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--oro2);
+}
+
+.logo-nombre {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.logo-linea {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 14px;
+  background-color: var(--oro);
+  transform-origin: left;
+  animation: crece 900ms 400ms var(--salida) backwards;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.opcion {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--suave);
+  transition: color 160ms ease, transform 120ms var(--salida);
+}
+
+.opcion i {
+  font-size: 17px;
+  margin-right: 14px;
+}
+
+/* subrayado dorado que se dibuja de izquierda a derecha */
+.opcion::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--oro2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms var(--salida);
+}
+
+.opcion:not(.deshabilitada):active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) {
+  .opcion:not(.deshabilitada):hover {
+    color: var(--crema);
+  }
+
+  .opcion:not(.deshabilitada):hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.opcion.activa {
+  color: var(--oro2);
+}
+
+.opcion.activa::after {
+  transform: scaleX(1);
+}
+
+.deshabilitada {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.deshabilitada em {
+  margin-left: auto;
+  font-family: var(--fuente-texto);
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--oro2);
+}
+
+@media (max-width: 900px) {
+  .lateral {
+    position: static;
+    width: 100%;
+    padding: 20px 20px 0;
+    border-right: none;
+    border-bottom: 1px solid var(--linea);
+  }
+
+  .logo {
+    margin-bottom: 12px;
+  }
+
+  .logo-nombre {
+    font-size: 34px;
+  }
+
+  .menu {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .opcion {
+    white-space: nowrap;
+    margin-right: 22px;
+  }
+}
+.logo-fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  flex-shrink: 0;
+  width: 40px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 900px) {
+  .logo-img {
+    width: 30px;
+  }
+}
