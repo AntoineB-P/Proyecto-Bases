@@ -1,5 +1,6 @@
 package co.edu.unbosque.proyectobases.entity;
 
-public class Rol {
+public enum Rol {
 
+    ADMIN, USUARIO
 }
