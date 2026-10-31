@@ -27,4 +27,14 @@
   .contenido {
     padding: 28px 20px 60px;
   }
+
 }
+.principal.sinlateral {
+  margin-left: 0;
+}
+
+.contenido.sinmargen {
+  padding: 0;
+}
+
+

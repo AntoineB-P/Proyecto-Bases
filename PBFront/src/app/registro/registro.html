@@ -1,0 +1,102 @@
+<div class="pagina">
+
+  <section class="marca">
+    <img class="marca-logo animate__animated animate__fadeInDown" src="logo-liga.png" alt="Liga BetPlay Dimayor">
+
+    <h1 class="marca-titulo">
+      <span class="animate__animated animate__fadeInLeft">Crea tu</span>
+      <span class="animate__animated animate__fadeInLeft" style="animation-delay: 200ms">cuenta</span>
+    </h1>
+
+    <span class="marca-linea"></span>
+
+    <p class="marca-texto animate__animated animate__fadeInUp" style="animation-delay: 500ms">
+      Regístrate con tu correo y verifica el código que te enviamos.
+    </p>
+  </section>
+
+  <section class="formulario">
+    <div class="caja animate__animated animate__fadeInUp" style="animation-delay: 300ms">
+
+      <h2 class="caja-titulo">{{ paso === 1 ? 'Crear cuenta' : 'Verificar cuenta' }}</h2>
+
+      <form #registroForm="ngForm" (ngSubmit)="registrar(registroForm)" *ngIf="paso === 1">
+        <p class="requisitos">
+          Usuario: mínimo 5 letras.<br>
+          Contraseña: mínimo 12 caracteres.<br>
+          Correo: Gmail, Hotmail, Outlook, Yahoo o unbosque.edu.co.
+        </p>
+
+        <div class="campo">
+          <label class="campo-nombre" for="usuario">Usuario</label>
+          <div class="campo-fila">
+            <i class="bi bi-person"></i>
+            <input id="usuario" type="text" placeholder="Juan Garcia" name="usuario" [(ngModel)]="formulario.usuario" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label class="campo-nombre" for="correo">Correo</label>
+          <div class="campo-fila">
+            <i class="bi bi-envelope"></i>
+            <input id="correo" type="email" placeholder="correo@gmail.com" name="correo" [(ngModel)]="formulario.correo" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label class="campo-nombre" for="contrasenia">Contraseña</label>
+          <div class="campo-fila">
+            <i class="bi bi-lock"></i>
+            <input id="contrasenia" [type]="mostrarContrasenia ? 'text' : 'password'" placeholder="Mínimo 12 caracteres" name="contrasenia" [(ngModel)]="formulario.contrasenia" required>
+            <button type="button" class="ojo" (click)="mostrarContrasenia = !mostrarContrasenia" [attr.aria-label]="mostrarContrasenia ? 'Ocultar contraseña' : 'Mostrar contraseña'">
+              <i class="bi" [ngClass]="mostrarContrasenia ? 'bi-eye-slash' : 'bi-eye'"></i>
+            </button>
+          </div>
+        </div>
+
+        <p class="mensaje error" *ngIf="mensajeError" role="alert">{{ mensajeError }}</p>
+
+        <button type="submit" class="enviar" [disabled]="cargando">
+          {{ cargando ? 'Creando...' : 'Crear cuenta' }}
+        </button>
+
+        <div class="enlaces">
+          <span>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></span>
+          <a routerLink="/dashboard">Volver al panel</a>
+        </div>
+      </form>
+
+      <div *ngIf="paso === 2">
+        <p class="mensaje exito" *ngIf="mensajeExito" role="status">{{ mensajeExito }}</p>
+
+        <div class="campo">
+          <label class="campo-nombre" for="correoverificar">Correo</label>
+          <div class="campo-fila">
+            <i class="bi bi-envelope"></i>
+            <input id="correoverificar" type="email" placeholder="correo@gmail.com" name="correoverificar" [(ngModel)]="formulario.correo">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label class="campo-nombre" for="codigo">Código de verificación</label>
+          <div class="campo-fila">
+            <i class="bi bi-key"></i>
+            <input id="codigo" type="text" placeholder="123456" name="codigo" [(ngModel)]="formulario.codigoVerificacion">
+          </div>
+        </div>
+
+        <p class="mensaje error" *ngIf="mensajeError" role="alert">{{ mensajeError }}</p>
+
+        <button type="button" class="enviar" (click)="verificar()" [disabled]="cargando">
+          {{ cargando ? 'Verificando...' : 'Verificar cuenta' }}
+        </button>
+
+        <div class="enlaces">
+          <a routerLink="/login">Ir a iniciar sesión</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>

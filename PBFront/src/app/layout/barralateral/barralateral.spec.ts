@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Estadio3d } from './estadio3d';
+import { BarraLateral } from './barralateral';
 
-describe('Estadio3d', () => {
-  let component: Estadio3d;
-  let fixture: ComponentFixture<Estadio3d>;
+describe('BarraLateral', () => {
+  let component: BarraLateral;
+  let fixture: ComponentFixture<BarraLateral>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Estadio3d],
+      declarations: [BarraLateral],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Estadio3d);
+    fixture = TestBed.createComponent(BarraLateral);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

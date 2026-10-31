@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 })
 export class Dashboard {
 
-  // DATOS DE EJEMPLO: luego los reemplazamos con los del backend
   temporada = 'Temporada de ejemplo';
 
   indicadores = [
@@ -22,7 +21,6 @@ export class Dashboard {
     { titulo: 'Estadios', valor: 18, icono: 'bi-building', color: 'verde' }
   ];
 
-  // pts = 3 * pg + pe  (RN-12)   y   dg = gf - gc
   tablaPosiciones = [
     { nombre: 'Equipo A', color1: '#3B82F6', color2: '#FFFFFF', pj: 10, pg: 7, pe: 2, pp: 1, gf: 20, gc: 8, dg: 12, pts: 23 },
     { nombre: 'Equipo B', color1: '#EF4444', color2: '#FFFFFF', pj: 10, pg: 6, pe: 3, pp: 1, gf: 17, gc: 9, dg: 8, pts: 21 },
@@ -81,6 +79,14 @@ export class Dashboard {
     { nombre: 'Árbitro 3', categoria: 'FIFA', partidos: 6 },
     { nombre: 'Árbitro 4', categoria: 'Nacional', partidos: 6 }
   ];
+
+  ejemplo = false;
+  cargando = false;
+  copiasCinta = [1, 2];
+
+  porNombre(_indice: number, item: { nombre: string }): string {
+    return item.nombre;
+  }
 
   totalJugadores = 0;
 
