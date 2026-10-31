@@ -8,7 +8,6 @@ import { App } from './app';
 import { BarraLateral } from './layout/barralateral/barralateral';
 import { BarraSuperior } from './layout/barrasuperior/barrasuperior';
 import { Dashboard } from './paginas/dashboard/dashboard';
-import { Estadio3d } from './componentes/estadio3dcomponent/estadio3d';
 import { IntroBalon } from './componentes/introbaloncomponent/introbalon';
 import { BalonHero } from './componentes/balonherocomponent/balonhero';
 import { AuthInterceptor } from './services/auth.interceptor';
@@ -24,7 +23,6 @@ import { Estadioimagen } from './componentes/estadioimagen/estadioimagen';
     Dashboard,
     Login,
     Registro,
-    Estadio3d,
     IntroBalon,
     BalonHero,
     Estadioimagen,
