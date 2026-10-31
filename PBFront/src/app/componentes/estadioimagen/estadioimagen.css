@@ -153,7 +153,12 @@
   }
 
   .lado {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
   }
 
   .foto {
@@ -165,6 +170,40 @@
     transform: scale(1.08);
     transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
   }
+
+  .foco {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(212, 175, 114, 0.55), transparent);
+    pointer-events: none;
+    animation: brillo 4s ease-in-out infinite alternate;
+  }
+
+  .foco1 {
+    top: calc(36% - 170px);
+    left: calc(36% - 170px);
+  }
+
+  .foco2 {
+    top: calc(12% - 170px);
+    left: calc(88% - 170px);
+    animation-delay: 1.6s;
+  }
+
+  .velo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(to top, #0a0a09 0%, transparent 35%),
+      linear-gradient(to right, #0a0a09 0%, transparent 45%);
+  }
+
 
   .textos {
     left: 20px;
