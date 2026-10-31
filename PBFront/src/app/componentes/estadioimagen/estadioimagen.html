@@ -1,0 +1,34 @@
+<section class="hero" #contenedor>
+
+  <div class="lado animate__animated animate__fadeIn" style="--animate-duration: 1600ms">
+    <img class="foto" #foto src="imagenes/estadio.webp" alt="Estadio de fútbol de noche con luces doradas">
+    <span class="foco foco1"></span>
+    <span class="foco foco2"></span>
+  </div>
+
+  <div class="velo"></div>
+
+  <app-balonhero></app-balonhero>
+
+  <div class="textos">
+    <p class="etiqueta animate__animated animate__fadeInDown">
+      <span class="punto animate__animated animate__heartBeat animate__infinite animate__slow"></span>
+      Panel de la liga
+    </p>
+
+    <h2 class="titulo">
+      <span class="linea animate__animated animate__fadeInLeft" style="animation-delay: 200ms">La liga,</span>
+      <span class="linea oro animate__animated animate__fadeInLeft" style="animation-delay: 400ms">desde la tribuna</span>
+    </h2>
+
+    <p class="bajada animate__animated animate__fadeInUp" style="animation-delay: 700ms">
+      Tabla, goleadores, partidos y disciplina de la Liga BetPlay en un solo lugar.
+    </p>
+
+    <button type="button" class="boton animate__animated animate__fadeInUp" style="animation-delay: 900ms" (click)="bajar()">
+      Ver estadísticas
+      <i class="bi bi-arrow-down animate__animated animate__bounce animate__infinite"></i>
+    </button>
+  </div>
+
+</section>

@@ -14,7 +14,7 @@ import { BalonHero } from './componentes/balonherocomponent/balonhero';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { Login } from './login/login';
 import { Registro } from './registro/registro';
-
+import { Estadioimagen } from './componentes/estadioimagen/estadioimagen';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { Registro } from './registro/registro';
     Registro,
     Estadio3d,
     IntroBalon,
-    BalonHero
+    BalonHero,
+    Estadioimagen,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
