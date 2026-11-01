@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import co.edu.unbosque.proyectobases.dto.UsuarioDTO;
+import co.edu.unbosque.proyectobases.dto.EquipoDTO;
 import co.edu.unbosque.proyectobases.entity.Equipo;
 import co.edu.unbosque.proyectobases.entity.Rol;
 import co.edu.unbosque.proyectobases.entity.Usuario;
@@ -26,6 +27,9 @@ public class UsuarioService {
 
     @Autowired
     private JwtUtil jwtUtil;
+    
+    @Autowired
+    private EquipoService equipoService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -79,11 +83,11 @@ public class UsuarioService {
         uRep.actualizarFavorito(u.getIdUsuario(), null);
     }
 
-    public Equipo obtenerFavorito(String username) {
+    public EquipoDTO obtenerFavorito(String username) {
         Usuario u = uRep.buscarPorUsuario(username);
         if (u.getIdEquipoFavorito() == null) {
             throw new RecursoNoEncontradoException("No has marcado un club favorito");
         }
-        return equipoRepository.buscarPorId(u.getIdEquipoFavorito());
+        return equipoService.buscarPorId(u.getIdEquipoFavorito());
     }
 }
