@@ -24,4 +24,14 @@ public class ManejadorGlobalExcepciones {
     public ResponseEntity<Map<String, String>> conflicto(ConflictoException e) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", e.getMessage()));
     }
+    
+    @ExceptionHandler(CuentaNoVerificadaException.class)
+    public ResponseEntity<Map<String, String>> noVerificada(CuentaNoVerificadaException e) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", e.getMessage()));
+    }
+
+    @ExceptionHandler(ServicioCorreoException.class)
+    public ResponseEntity<Map<String, String>> errorCorreo(ServicioCorreoException e) {
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(Map.of("error", e.getMessage()));
+    }
 }

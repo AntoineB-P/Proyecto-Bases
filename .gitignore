@@ -37,3 +37,4 @@ application-local.properties
 .settings/
 .factorypath
 .sts4-cache/
+proyectobases/src/main/resources/application.properties

@@ -1,5 +1,6 @@
 package co.edu.unbosque.proyectobases.entity;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,19 +16,69 @@ public class Usuario implements UserDetails {
     private Rol rol;
     private String correo;
     private Long idEquipoFavorito;
+    
+    private boolean verificado;
+    private String codigoVerificacion;
+    private LocalDateTime expiraVerificacion; 
 
     public Usuario() {
     }
 
-    public Usuario(Long idUsuario, String usuario, String contrasenia, Rol rol, String correo) {
-        this.idUsuario = idUsuario;
-        this.usuario = usuario;
-        this.contrasenia = contrasenia;
-        this.rol = rol;
-        this.correo = correo;
-    }
+   
 
-    public Long getIdUsuario() {
+    public Usuario(Long idUsuario, String usuario, String contrasenia, Rol rol, String correo, Long idEquipoFavorito,
+			boolean verificado, String codigoVerificacion, LocalDateTime expiraVerificacion) {
+		super();
+		this.idUsuario = idUsuario;
+		this.usuario = usuario;
+		this.contrasenia = contrasenia;
+		this.rol = rol;
+		this.correo = correo;
+		this.idEquipoFavorito = idEquipoFavorito;
+		this.verificado = verificado;
+		this.codigoVerificacion = codigoVerificacion;
+		this.expiraVerificacion = expiraVerificacion;
+	}
+
+
+
+	public boolean isVerificado() {
+		return verificado;
+	}
+
+
+
+	public void setVerificado(boolean verificado) {
+		this.verificado = verificado;
+	}
+
+
+
+	public String getCodigoVerificacion() {
+		return codigoVerificacion;
+	}
+
+
+
+	public void setCodigoVerificacion(String codigoVerificacion) {
+		this.codigoVerificacion = codigoVerificacion;
+	}
+
+
+
+	public LocalDateTime getExpiraVerificacion() {
+		return expiraVerificacion;
+	}
+
+
+
+	public void setExpiraVerificacion(LocalDateTime expiraVerificacion) {
+		this.expiraVerificacion = expiraVerificacion;
+	}
+
+
+
+	public Long getIdUsuario() {
         return idUsuario;
     }
 

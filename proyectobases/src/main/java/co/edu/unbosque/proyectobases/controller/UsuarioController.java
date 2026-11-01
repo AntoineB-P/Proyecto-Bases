@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.unbosque.proyectobases.dto.EquipoDTO;
 import co.edu.unbosque.proyectobases.dto.UsuarioDTO;
-import co.edu.unbosque.proyectobases.entity.Equipo;
+import co.edu.unbosque.proyectobases.dto.VerificacionDTO;
 import co.edu.unbosque.proyectobases.service.UsuarioService;
 
 @RestController
@@ -28,7 +28,20 @@ public class UsuarioController {
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody UsuarioDTO dto) {
         usuarioService.registrar(dto);
-        return new ResponseEntity<>("Usuario registrado", HttpStatus.CREATED);
+        return new ResponseEntity<>("Usuario registrado. Revisa tu correo para verificar la cuenta",
+                HttpStatus.CREATED);
+    }
+
+    @PostMapping("/verificar")
+    public ResponseEntity<String> verificar(@RequestBody VerificacionDTO dto) {
+        usuarioService.verificar(dto.getCorreo(), dto.getCodigo());
+        return new ResponseEntity<>("Cuenta verificada. Ya puedes iniciar sesión", HttpStatus.OK);
+    }
+
+    @PostMapping("/reenviar-codigo")
+    public ResponseEntity<String> reenviarCodigo(@RequestBody VerificacionDTO dto) {
+        usuarioService.reenviarCodigo(dto.getCorreo());
+        return new ResponseEntity<>("Te enviamos un nuevo código", HttpStatus.OK);
     }
 
     @PostMapping("/login")
