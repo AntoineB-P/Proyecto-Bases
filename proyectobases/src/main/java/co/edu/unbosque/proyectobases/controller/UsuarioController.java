@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.edu.unbosque.proyectobases.dto.EquipoDTO;
 import co.edu.unbosque.proyectobases.dto.UsuarioDTO;
 import co.edu.unbosque.proyectobases.entity.Equipo;
 import co.edu.unbosque.proyectobases.service.UsuarioService;
@@ -54,7 +55,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/favorito")
-    public ResponseEntity<Equipo> obtenerFavorito() {
+    public ResponseEntity<EquipoDTO> obtenerFavorito() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         return new ResponseEntity<>(usuarioService.obtenerFavorito(username), HttpStatus.OK);
     }

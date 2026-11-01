@@ -24,15 +24,7 @@ public class ConsultaRepository {
 	 * suma por equipo. Los equipos sin partidos jugados salen con ceros.
 	 */
 	public List<PosicionDTO> tablaPosiciones(Long idTorneo) {
-		String sql = "WITH r AS ( "
-				+ "  SELECT p.id_local AS id_equipo, res.goles_local AS gf, res.goles_visitante AS gc "
-				+ "  FROM partido p JOIN resultado res ON res.id_partido = p.id_partido "
-				+ "  WHERE p.id_torneo = ? "
-				+ "  UNION ALL "
-				+ "  SELECT p.id_visitante, res.goles_visitante, res.goles_local "
-				+ "  FROM partido p JOIN resultado res ON res.id_partido = p.id_partido "
-				+ "  WHERE p.id_torneo = ? ) "
-				+ "SELECT e.id_equipo, e.nombre_equipo, COUNT(r.gf) AS partidos_jugados, "
+		String sql = "SELECT e.id_equipo, e.nombre_equipo, COUNT(r.gf) AS partidos_jugados, "
 				+ "  NVL(SUM(CASE WHEN r.gf > r.gc THEN 1 ELSE 0 END), 0) AS ganados, "
 				+ "  NVL(SUM(CASE WHEN r.gf = r.gc THEN 1 ELSE 0 END), 0) AS empatados, "
 				+ "  NVL(SUM(CASE WHEN r.gf < r.gc THEN 1 ELSE 0 END), 0) AS perdidos, "
@@ -42,7 +34,15 @@ public class ConsultaRepository {
 				+ "  NVL(SUM(CASE WHEN r.gf > r.gc THEN 3 WHEN r.gf = r.gc THEN 1 ELSE 0 END), 0) AS puntos "
 				+ "FROM equipo_torneo et "
 				+ "JOIN equipo e ON e.id_equipo = et.id_equipo "
-				+ "LEFT JOIN r ON r.id_equipo = e.id_equipo "
+				+ "LEFT JOIN ( "
+				+ "  SELECT p.id_local AS id_equipo, res.goles_local AS gf, res.goles_visitante AS gc "
+				+ "  FROM partido p JOIN resultado res ON res.id_partido = p.id_partido "
+				+ "  WHERE p.id_torneo = ? "
+				+ "  UNION ALL "
+				+ "  SELECT p.id_visitante, res.goles_visitante, res.goles_local "
+				+ "  FROM partido p JOIN resultado res ON res.id_partido = p.id_partido "
+				+ "  WHERE p.id_torneo = ? "
+				+ ") r ON r.id_equipo = e.id_equipo "
 				+ "WHERE et.id_torneo = ? "
 				+ "GROUP BY e.id_equipo, e.nombre_equipo "
 				+ "ORDER BY puntos DESC, diferencia DESC, goles_favor DESC, e.nombre_equipo";
