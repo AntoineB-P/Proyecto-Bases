@@ -19,7 +19,11 @@ export class AuthService {
   }
 
   verificarCuenta(correo: string, codigoVerificacion: string): Observable<string> {
-    return this.http.post(`${this.urlBase}/verificar`, { correo, codigoVerificacion }, { responseType: 'text' });
+    return this.http.post(
+      `${this.urlBase}/verificar`,
+      { correo, codigo: codigoVerificacion },
+      { responseType: 'text' },
+    );
   }
 
   guardarToken(token: string): void {
@@ -65,6 +69,20 @@ export class AuthService {
 
   estaLogueado(): boolean {
     return !!this.obtenerToken();
+  }
+
+  obtenerRol(): string {
+    const token = this.obtenerToken();
+    if (!token) return '';
+    try {
+      return JSON.parse(atob(token.split('.')[1])).role || '';
+    } catch {
+      return '';
+    }
+  }
+
+  esAdmin(): boolean {
+    return this.obtenerRol() === 'ADMIN';
   }
 
   validarCorreo(correo: string): string {
