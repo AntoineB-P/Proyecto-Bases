@@ -1,0 +1,80 @@
+<div class="seccion-cabeza">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="seccion-titulo">Torneos</h1>
+    <p class="seccion-nota">Cada temporada de la Liga BetPlay, con sus fechas.</p>
+  </div>
+  <button type="button" class="boton-oro animate__animated animate__fadeIn" *ngIf="esAdmin && !mostrarFormulario" (click)="nuevo()">
+    <i class="bi bi-plus-lg"></i> Agregar torneo
+  </button>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<section class="panel-admin animate__animated animate__fadeIn" *ngIf="esAdmin && mostrarFormulario">
+  <h2 class="panel-admin-titulo">{{ editando ? 'Editar torneo' : 'Nuevo torneo' }}</h2>
+  <div class="row g-4">
+    <div class="col-md-6 campo-admin">
+      <label for="nombreTorneo">Nombre</label>
+      <input id="nombreTorneo" type="text" [(ngModel)]="formulario.nombre" placeholder="Liga BetPlay Dimayor I-2027">
+    </div>
+    <div class="col-6 col-md-3 campo-admin">
+      <label for="anioTorneo">Año</label>
+      <input id="anioTorneo" type="number" [(ngModel)]="formulario.anio">
+    </div>
+    <div class="col-6 col-md-3 campo-admin">
+      <label for="semestreTorneo">Semestre</label>
+      <select id="semestreTorneo" [(ngModel)]="formulario.semestre">
+        <option [ngValue]="1">I</option>
+        <option [ngValue]="2">II</option>
+      </select>
+    </div>
+    <div class="col-6 campo-admin">
+      <label for="inicioTorneo">Fecha de inicio</label>
+      <input id="inicioTorneo" type="date" [(ngModel)]="formulario.fechaInicio">
+    </div>
+    <div class="col-6 campo-admin">
+      <label for="finTorneo">Fecha de fin</label>
+      <input id="finTorneo" type="date" [(ngModel)]="formulario.fechaFin">
+    </div>
+  </div>
+  <div class="botones-admin">
+    <button type="button" class="boton-oro" [disabled]="guardando" (click)="guardar()">
+      {{ guardando ? 'Guardando...' : 'Guardar' }}
+    </button>
+    <button type="button" class="boton-linea" (click)="cancelar()">Cancelar</button>
+  </div>
+</section>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando torneos...</p>
+
+<ng-container *ngIf="!cargando">
+  <div class="torneo-lista">
+    <article class="torneo animate__animated animate__fadeInUp"
+             *ngFor="let t of torneos; let i = index"
+             [style.animation-delay.ms]="i * 100 + 200">
+      <div class="torneo-temporada">
+        <span class="torneo-anio">{{ t.anio }}</span>
+        <span class="torneo-semestre">{{ t.semestre === 1 ? 'I' : 'II' }}</span>
+      </div>
+      <div class="torneo-datos">
+        <h2 class="torneo-nombre">{{ t.nombre }}</h2>
+        <p class="torneo-fechas">Del {{ t.fechaInicio }} al {{ t.fechaFin }}</p>
+      </div>
+      <div class="torneo-dias">
+        <strong>{{ t.duracionDias }}</strong>
+        <span>días de liga</span>
+      </div>
+      <div class="torneo-acciones" *ngIf="esAdmin">
+        <button type="button" class="boton-icono" (click)="editar(t)" aria-label="Editar torneo">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button type="button" class="boton-icono peligro" (click)="eliminar(t)" aria-label="Eliminar torneo">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </div>
+    </article>
+  </div>
+
+  <p class="vacio" *ngIf="torneos.length === 0">Aún no hay torneos registrados.</p>
+</ng-container>

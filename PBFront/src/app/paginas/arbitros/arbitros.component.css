@@ -1,0 +1,20 @@
+.inicial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: var(--carbon);
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--crema);
+  vertical-align: middle;
+}
+
+.inicial.fifa {
+  background-color: var(--oro2);
+  color: var(--negro);
+}
