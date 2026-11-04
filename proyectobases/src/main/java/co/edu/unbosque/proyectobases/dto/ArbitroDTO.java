@@ -9,18 +9,21 @@ public class ArbitroDTO {
 	private String apellidos;
 	private String ciudad;
 	private String categoria;
+	private Integer partidosDirigidos;
 	
 	public ArbitroDTO() {
 		
 	}
 
-	public ArbitroDTO(String cedula, String nombres, String apellidos, String ciudad, String categoria) {
+	public ArbitroDTO(String cedula, String nombres, String apellidos, String ciudad, String categoria,
+			Integer partidosDirigidos) {
 		super();
 		this.cedula = cedula;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.ciudad = ciudad;
 		this.categoria = categoria;
+		this.partidosDirigidos = partidosDirigidos;
 	}
 
 	public String getCedula() {
@@ -63,15 +66,23 @@ public class ArbitroDTO {
 		this.categoria = categoria;
 	}
 
+	public Integer getPartidosDirigidos() {
+		return partidosDirigidos;
+	}
+
+	public void setPartidosDirigidos(Integer partidosDirigidos) {
+		this.partidosDirigidos = partidosDirigidos;
+	}
+
 	@Override
 	public String toString() {
 		return "ArbitroDTO [cedula=" + cedula + ", nombres=" + nombres + ", apellidos=" + apellidos + ", ciudad="
-				+ ciudad + ", categoria=" + categoria + "]";
+				+ ciudad + ", categoria=" + categoria + ", partidosDirigidos=" + partidosDirigidos + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(apellidos, categoria, cedula, ciudad, nombres);
+		return Objects.hash(apellidos, categoria, cedula, ciudad, nombres, partidosDirigidos);
 	}
 
 	@Override
@@ -85,7 +96,7 @@ public class ArbitroDTO {
 		ArbitroDTO other = (ArbitroDTO) obj;
 		return Objects.equals(apellidos, other.apellidos) && Objects.equals(categoria, other.categoria)
 				&& Objects.equals(cedula, other.cedula) && Objects.equals(ciudad, other.ciudad)
-				&& Objects.equals(nombres, other.nombres);
+				&& Objects.equals(nombres, other.nombres) && Objects.equals(partidosDirigidos, other.partidosDirigidos);
 	}
 	
 	

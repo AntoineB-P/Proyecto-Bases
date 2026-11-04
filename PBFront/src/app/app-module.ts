@@ -14,6 +14,13 @@ import { AuthInterceptor } from './services/auth.interceptor';
 import { Login } from './login/login';
 import { Registro } from './registro/registro';
 import { Estadioimagen } from './componentes/estadioimagen/estadioimagen';
+import { PosicionesComponent } from './paginas/posiciones/posiciones.component';
+import { EquiposComponent } from './paginas/equipos/equipos.component';
+import { JugadoresComponent } from './paginas/jugadores/jugadores.component';
+import { PartidosComponent } from './paginas/partidos/partidos.component';
+import { ArbitrosComponent } from './paginas/arbitros/arbitros.component';
+import { EstadiosComponent } from './paginas/estadios/estadios.component';
+import { TorneosComponent } from './paginas/torneos/torneos.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +33,13 @@ import { Estadioimagen } from './componentes/estadioimagen/estadioimagen';
     IntroBalon,
     BalonHero,
     Estadioimagen,
+    PosicionesComponent,
+    EquiposComponent,
+    JugadoresComponent,
+    PartidosComponent,
+    ArbitrosComponent,
+    EstadiosComponent,
+    TorneosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

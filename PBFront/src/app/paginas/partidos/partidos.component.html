@@ -1,0 +1,127 @@
+<div class="seccion-cabeza">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="seccion-titulo">Partidos</h1>
+    <p class="seccion-nota">Fecha por fecha, con su marcador.</p>
+  </div>
+  <button type="button" class="boton-oro animate__animated animate__fadeIn" *ngIf="esAdmin && !mostrarFormulario" (click)="nuevo()">
+    <i class="bi bi-plus-lg"></i> Programar partido
+  </button>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<section class="panel-admin animate__animated animate__fadeIn" *ngIf="esAdmin && mostrarFormulario">
+  <h2 class="panel-admin-titulo">{{ editando ? 'Editar partido' : 'Programar partido' }}</h2>
+  <div class="row g-4">
+    <div class="col-md-6 campo-admin">
+      <label for="localPartido">Local</label>
+      <select id="localPartido" [(ngModel)]="formulario.idLocal">
+        <option [ngValue]="0" disabled>Elige el equipo local</option>
+        <option *ngFor="let e of equipos" [ngValue]="e.idEquipo">{{ e.nombre }}</option>
+      </select>
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="visitantePartido">Visitante</label>
+      <select id="visitantePartido" [(ngModel)]="formulario.idVisitante">
+        <option [ngValue]="0" disabled>Elige el equipo visitante</option>
+        <option *ngFor="let e of equipos" [ngValue]="e.idEquipo">{{ e.nombre }}</option>
+      </select>
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="estadioPartido">Estadio</label>
+      <select id="estadioPartido" [(ngModel)]="formulario.idEstadio">
+        <option [ngValue]="0" disabled>Elige el estadio</option>
+        <option *ngFor="let e of estadios" [ngValue]="e.idEstadio">{{ e.nombre }} ({{ e.ciudad }})</option>
+      </select>
+    </div>
+    <div class="col-4 col-md-2 campo-admin">
+      <label for="jornadaPartido">Jornada</label>
+      <input id="jornadaPartido" type="number" min="1" [(ngModel)]="formulario.jornada">
+    </div>
+    <div class="col-4 col-md-2 campo-admin">
+      <label for="fechaPartido">Fecha</label>
+      <input id="fechaPartido" type="date" [(ngModel)]="formulario.fecha">
+    </div>
+    <div class="col-4 col-md-2 campo-admin">
+      <label for="horaPartido">Hora</label>
+      <input id="horaPartido" type="time" [(ngModel)]="formulario.hora">
+    </div>
+  </div>
+  <div class="botones-admin">
+    <button type="button" class="boton-oro" [disabled]="guardando" (click)="guardar()">
+      {{ guardando ? 'Guardando...' : 'Guardar' }}
+    </button>
+    <button type="button" class="boton-linea" (click)="cancelar()">Cancelar</button>
+  </div>
+</section>
+
+<nav class="jornadas animate__animated animate__fadeIn" aria-label="Cambiar de jornada">
+  <button type="button" class="flecha" (click)="anterior()" [disabled]="jornada === 1" aria-label="Jornada anterior">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+  <h2 class="jornada-titulo">Jornada {{ jornada }}</h2>
+  <button type="button" class="flecha" (click)="siguiente()" aria-label="Jornada siguiente">
+    <i class="bi bi-chevron-right"></i>
+  </button>
+</nav>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando la jornada {{ jornada }}...</p>
+
+<ng-container *ngIf="!cargando">
+  <p class="vacio" *ngIf="partidos.length === 0">Aún no hay partidos en la jornada {{ jornada }}.</p>
+
+  <ul>
+    <li class="partido animate__animated animate__fadeInUp"
+        *ngFor="let p of partidos; let i = index"
+        [style.animation-delay.ms]="i * 70 + 150">
+
+      <div class="partido-fila">
+        <span class="equipo local">
+          {{ p.nombreLocal }}
+          <img *ngIf="escudoDe(p.idLocal)" [src]="escudoDe(p.idLocal)" alt="" class="escudo-partido">
+        </span>
+
+        <span class="marcador" *ngIf="jugado(p)">{{ p.golesLocal }} - {{ p.golesVisitante }}</span>
+        <span class="marcador pendiente" *ngIf="!jugado(p)">{{ p.hora.substring(0, 5) }}</span>
+
+        <span class="equipo visitante">
+          <img *ngIf="escudoDe(p.idVisitante)" [src]="escudoDe(p.idVisitante)" alt="" class="escudo-partido">
+          {{ p.nombreVisitante }}
+        </span>
+      </div>
+
+      <p class="partido-detalle">
+        {{ p.fecha }} · {{ p.hora.substring(0, 5) }} · {{ p.nombreEstadio }}
+        <span *ngIf="!jugado(p)" class="etiqueta-oro"> · Por jugar</span>
+      </p>
+
+      <div class="partido-acciones" *ngIf="esAdmin">
+        <button type="button" class="boton-icono" (click)="abrirResultado(p)" aria-label="Registrar resultado">
+          <i class="bi bi-clipboard-check"></i>
+        </button>
+        <button type="button" class="boton-icono" (click)="editar(p)" aria-label="Editar partido">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button type="button" class="boton-icono peligro" (click)="eliminar(p)" aria-label="Eliminar partido">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </div>
+
+      <div class="resultado-form animate__animated animate__fadeIn" *ngIf="esAdmin && partidoResultado && partidoResultado.idPartido === p.idPartido">
+        <div class="campo-admin">
+          <label [for]="'golesLocal' + p.idPartido">Goles {{ p.nombreLocal }}</label>
+          <input [id]="'golesLocal' + p.idPartido" type="number" min="0" [(ngModel)]="golesLocal">
+        </div>
+        <div class="campo-admin">
+          <label [for]="'golesVisitante' + p.idPartido">Goles {{ p.nombreVisitante }}</label>
+          <input [id]="'golesVisitante' + p.idPartido" type="number" min="0" [(ngModel)]="golesVisitante">
+        </div>
+        <div class="botones-admin">
+          <button type="button" class="boton-oro" [disabled]="guardando" (click)="guardarResultado()">Guardar resultado</button>
+          <button type="button" class="boton-linea" (click)="partidoResultado = null">Cancelar</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</ng-container>

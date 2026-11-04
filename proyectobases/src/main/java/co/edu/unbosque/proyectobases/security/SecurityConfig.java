@@ -48,7 +48,7 @@ public class SecurityConfig {
                         .permitAll()
                         .requestMatchers("/usuario/favorito", "/usuario/favorito/**")
                         .hasAnyRole("USUARIO", "ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/**").hasAnyRole("USUARIO", "ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/**").permitAll()
                         .anyRequest().hasRole("ADMIN"))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authProvider)

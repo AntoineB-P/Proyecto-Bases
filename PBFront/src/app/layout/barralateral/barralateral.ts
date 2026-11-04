@@ -9,12 +9,12 @@ import { Component } from '@angular/core';
 export class BarraLateral {
   opciones = [
     { nombre: 'Dashboard', icono: 'bi-grid-1x2-fill', ruta: '/dashboard', listo: true },
-    { nombre: 'Posiciones', icono: 'bi-trophy-fill', ruta: '/posiciones', listo: false },
-    { nombre: 'Equipos', icono: 'bi-shield-shaded', ruta: '/equipos', listo: false },
-    { nombre: 'Jugadores', icono: 'bi-person-fill', ruta: '/jugadores', listo: false },
-    { nombre: 'Partidos', icono: 'bi-calendar-event-fill', ruta: '/partidos', listo: false },
-    { nombre: 'Árbitros', icono: 'bi-flag-fill', ruta: '/arbitros', listo: false },
-    { nombre: 'Estadios', icono: 'bi-building', ruta: '/estadios', listo: false },
-    { nombre: 'Torneos', icono: 'bi-award-fill', ruta: '/torneos', listo: false }
+    { nombre: 'Posiciones', icono: 'bi-trophy-fill', ruta: '/posiciones', listo: true },
+    { nombre: 'Equipos', icono: 'bi-shield-shaded', ruta: '/equipos', listo: true },
+    { nombre: 'Jugadores', icono: 'bi-person-fill', ruta: '/jugadores', listo: true },
+    { nombre: 'Partidos', icono: 'bi-calendar-event-fill', ruta: '/partidos', listo: true },
+    { nombre: 'Árbitros', icono: 'bi-flag-fill', ruta: '/arbitros', listo: true },
+    { nombre: 'Estadios', icono: 'bi-building', ruta: '/estadios', listo: true },
+    { nombre: 'Torneos', icono: 'bi-award-fill', ruta: '/torneos', listo: true }
   ];
 }

@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Repository;
 
 import co.edu.unbosque.proyectobases.configuration.ConexionBD;
@@ -144,13 +143,17 @@ public class ConsultaRepository {
 				+ "     JOIN participacion pa ON pa.id_participacion = t.id_participacion "
 				+ "     JOIN partido pt ON pt.id_partido = pa.id_partido "
 				+ "     WHERE pa.id_jugador = j.id_jugador AND pt.id_torneo = ? "
-				+ "       AND tt.color_tarjeta = 'Roja') AS rojas "
+				+ "       AND tt.color_tarjeta = 'Roja') AS rojas, "
+				+ "  (SELECT e.nombre_equipo FROM inscripcion i "
+				+ "     JOIN equipo e ON e.id_equipo = i.id_equipo "
+				+ "     WHERE i.id_jugador = j.id_jugador AND i.id_torneo = ? "
+				+ "       AND i.fecha_fin IS NULL AND ROWNUM = 1) AS nombre_equipo "
 				+ "FROM jugador j "
 				+ "WHERE j.id_jugador IN (SELECT i.id_jugador FROM inscripcion i WHERE i.id_torneo = ?) "
 				+ "ORDER BY goles DESC, nombre_jugador";
 		List<EstadisticaJugadorDTO> lista = new ArrayList<>();
 		try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
-			for (int i = 1; i <= 5; i++) {
+			for (int i = 1; i <= 6; i++) {
 				ps.setLong(i, idTorneo);
 			}
 			try (ResultSet rs = ps.executeQuery()) {
@@ -162,6 +165,7 @@ public class ConsultaRepository {
 					e.setGoles(rs.getInt("goles"));
 					e.setAmarillas(rs.getInt("amarillas"));
 					e.setRojas(rs.getInt("rojas"));
+					e.setNombreEquipo(rs.getString("nombre_equipo"));
 					lista.add(e);
 				}
 			}

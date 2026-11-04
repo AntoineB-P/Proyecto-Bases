@@ -4,6 +4,6 @@ export interface ArbitroModel {
   apellidos: string;
   ciudad: string;
   categoria: string;
+  partidosDirigidos?: number;
 }
-
 export const CATEGORIAS_ARBITRO = ['Nacional', 'FIFA'];
