@@ -25,11 +25,12 @@ public class EquipoRepository {
 		e.setCiudadEquipo(rs.getString("ciudad_equipo"));
 		e.setIdTecnico(rs.getLong("id_tecnico"));
 		e.setIdSede(rs.getLong("id_sede"));
+		e.setEscudoUrl(rs.getString("escudo_url"));
 		return e;
 	}
 
 	public List<Equipo> listar() {
-		String sql = "SELECT id_equipo, nombre_equipo, fecha_fundacion, ciudad_equipo, id_tecnico, id_sede "
+		String sql = "SELECT id_equipo, nombre_equipo, fecha_fundacion, ciudad_equipo, id_tecnico, id_sede, escudo_url "
 				+ "FROM equipo ORDER BY id_equipo";
 		List<Equipo> lista = new ArrayList<>();
 		try (Connection con = ConexionBD.obtener();
@@ -46,7 +47,7 @@ public class EquipoRepository {
 
 	/** Equipos inscritos en un torneo (tabla equipo_torneo). */
 	public List<Equipo> listarPorTorneo(Long idTorneo) {
-		String sql = "SELECT e.id_equipo, e.nombre_equipo, e.fecha_fundacion, e.ciudad_equipo, e.id_tecnico, e.id_sede "
+		String sql = "SELECT e.id_equipo, e.nombre_equipo, e.fecha_fundacion, e.ciudad_equipo, e.id_tecnico, e.id_sede, e.escudo_url "
 				+ "FROM equipo e JOIN equipo_torneo et ON et.id_equipo = e.id_equipo "
 				+ "WHERE et.id_torneo = ? ORDER BY e.nombre_equipo";
 		List<Equipo> lista = new ArrayList<>();
@@ -65,7 +66,7 @@ public class EquipoRepository {
 
 	/** Devuelve null si no existe. */
 	public Equipo buscarPorId(Long id) {
-		String sql = "SELECT id_equipo, nombre_equipo, fecha_fundacion, ciudad_equipo, id_tecnico, id_sede "
+		String sql = "SELECT id_equipo, nombre_equipo, fecha_fundacion, ciudad_equipo, id_tecnico, id_sede, escudo_url "
 				+ "FROM equipo WHERE id_equipo = ?";
 		try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
 			ps.setLong(1, id);
@@ -126,8 +127,8 @@ public class EquipoRepository {
 
 	/** Inserta el equipo y sus colores: o se guardan los dos, o ninguno. */
 	public void insertar(Equipo e, List<String> colores) {
-		String sql = "INSERT INTO equipo (id_equipo, nombre_equipo, fecha_fundacion, ciudad_equipo, id_tecnico, id_sede) "
-				+ "VALUES (?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO equipo (id_equipo, nombre_equipo, fecha_fundacion, ciudad_equipo, id_tecnico, id_sede, escudo_url) "
+				+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
 		Connection con = null;
 		try {
 			con = ConexionBD.obtener();
@@ -139,6 +140,7 @@ public class EquipoRepository {
 				ps.setString(4, e.getCiudadEquipo());
 				ps.setLong(5, e.getIdTecnico());
 				ps.setLong(6, e.getIdSede());
+				ps.setString(7, e.getEscudoUrl());
 				ps.executeUpdate();
 			}
 			insertarColores(con, e.getIdEquipo(), colores);
@@ -154,7 +156,7 @@ public class EquipoRepository {
 	/** Actualiza el equipo y reemplaza todos sus colores. */
 	public void actualizar(Equipo e, List<String> colores) {
 		String sqlEquipo = "UPDATE equipo SET nombre_equipo = ?, fecha_fundacion = ?, ciudad_equipo = ?, "
-				+ "id_tecnico = ?, id_sede = ? WHERE id_equipo = ?";
+				+ "id_tecnico = ?, id_sede = ?, escudo_url = ? WHERE id_equipo = ?";
 		String sqlBorrarColores = "DELETE FROM equipo_color WHERE id_equipo = ?";
 		Connection con = null;
 		try {
@@ -166,7 +168,8 @@ public class EquipoRepository {
 				ps.setString(3, e.getCiudadEquipo());
 				ps.setLong(4, e.getIdTecnico());
 				ps.setLong(5, e.getIdSede());
-				ps.setLong(6, e.getIdEquipo());
+				ps.setString(6, e.getEscudoUrl());
+				ps.setLong(7, e.getIdEquipo());
 				ps.executeUpdate();
 			}
 			try (PreparedStatement ps = con.prepareStatement(sqlBorrarColores)) {

@@ -43,12 +43,14 @@ public class EquipoService {
 		dto.setColores(equipoRepository.listarColores(e.getIdEquipo()));
 		dto.setIdSede(e.getIdSede());
 		dto.setIdTecnico(e.getIdTecnico());
+		dto.setEscudoUrl(e.getEscudoUrl());
 
 		Estadio estadio = estadioRepository.buscarPorId(e.getIdSede());
 		dto.setNombreEstadio(estadio == null ? null : estadio.getNombreEstadio());
 
 		Tecnico tecnico = tecnicoRepository.buscarPorId(e.getIdTecnico());
 		dto.setNombreTecnico(tecnico == null ? null : tecnico.getNombres() + " " + tecnico.getApellidos());
+		
 		return dto;
 	}
 
@@ -60,6 +62,9 @@ public class EquipoService {
 		e.setCiudadEquipo(dto.getCiudad().trim());
 		e.setIdTecnico(dto.getIdTecnico());
 		e.setIdSede(dto.getIdSede());
+		// El escudo es opcional: si llega vacío se guarda como NULL
+		String escudo = dto.getEscudoUrl();
+		e.setEscudoUrl(escudo == null || escudo.isBlank() ? null : escudo.trim());
 		return e;
 	}
 
@@ -92,6 +97,15 @@ public class EquipoService {
 		}
 		if (dto.getIdTecnico() == null || tecnicoRepository.buscarPorId(dto.getIdTecnico()) == null) {
 			throw new DatoInvalidoException("El técnico no existe");
+		}
+		if (dto.getEscudoUrl() != null && !dto.getEscudoUrl().isBlank()) {
+			String url = dto.getEscudoUrl().trim();
+			if (url.length() > 500) {
+				throw new DatoInvalidoException("La URL del escudo no puede pasar de 500 caracteres");
+			}
+			if (!url.startsWith("https://") && !url.startsWith("http://")) {
+				throw new DatoInvalidoException("La URL del escudo debe empezar por http:// o https://");
+			}
 		}
 	}
 

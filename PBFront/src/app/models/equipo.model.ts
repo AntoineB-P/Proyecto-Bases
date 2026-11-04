@@ -8,4 +8,5 @@ export interface EquipoModel {
   nombreEstadio?: string | null; // solo lectura
   idTecnico: number;
   nombreTecnico?: string | null; // solo lectura
+  escudoUrl?: string | null;
 }
