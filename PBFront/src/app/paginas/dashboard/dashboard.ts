@@ -29,11 +29,11 @@ export class Dashboard implements OnInit {
   ];
 
   tablaPosiciones = [
-    { nombre: 'Equipo A', color1: '#3B82F6', color2: '#FFFFFF', pj: 10, pg: 7, pe: 2, pp: 1, gf: 20, gc: 8, dg: 12, pts: 23 },
-    { nombre: 'Equipo B', color1: '#EF4444', color2: '#FFFFFF', pj: 10, pg: 6, pe: 3, pp: 1, gf: 17, gc: 9, dg: 8, pts: 21 },
-    { nombre: 'Equipo C', color1: '#22C55E', color2: '#FFFFFF', pj: 10, pg: 5, pe: 3, pp: 2, gf: 15, gc: 10, dg: 5, pts: 18 },
-    { nombre: 'Equipo D', color1: '#FACC15', color2: '#0A0F1E', pj: 10, pg: 4, pe: 4, pp: 2, gf: 13, gc: 11, dg: 2, pts: 16 },
-    { nombre: 'Equipo E', color1: '#8B5CF6', color2: '#FFFFFF', pj: 10, pg: 4, pe: 2, pp: 4, gf: 12, gc: 14, dg: -2, pts: 14 }
+    { nombre: 'Equipo A', color1: '#3B82F6', color2: '#FFFFFF', escudo: '', pj: 10, pg: 7, pe: 2, pp: 1, gf: 20, gc: 8, dg: 12, pts: 23 },
+    { nombre: 'Equipo B', color1: '#EF4444', color2: '#FFFFFF', escudo: '', pj: 10, pg: 6, pe: 3, pp: 1, gf: 17, gc: 9, dg: 8, pts: 21 },
+    { nombre: 'Equipo C', color1: '#22C55E', color2: '#FFFFFF', escudo: '', pj: 10, pg: 5, pe: 3, pp: 2, gf: 15, gc: 10, dg: 5, pts: 18 },
+    { nombre: 'Equipo D', color1: '#FACC15', color2: '#0A0F1E', escudo: '', pj: 10, pg: 4, pe: 4, pp: 2, gf: 13, gc: 11, dg: 2, pts: 16 },
+    { nombre: 'Equipo E', color1: '#8B5CF6', color2: '#FFFFFF', escudo: '', pj: 10, pg: 4, pe: 2, pp: 4, gf: 12, gc: 14, dg: -2, pts: 14 }
   ];
 
   proximosPartidos = [
@@ -154,16 +154,21 @@ export class Dashboard implements OnInit {
             for (let p of posiciones) {
               let color1 = '#FFFFFF';
               let color2 = '#FFFFFF';
+              let escudo = '';
               for (let e of equipos) {
-                if (e.idEquipo === p.idEquipo && e.colores.length > 0) {
-                  color1 = this.coloresCamiseta[e.colores[0]] || '#FFFFFF';
-                  color2 = this.coloresCamiseta[e.colores[e.colores.length - 1]] || '#FFFFFF';
+                if (e.idEquipo === p.idEquipo) {
+                  escudo = e.escudoUrl || '';
+                  if (e.colores.length > 0) {
+                    color1 = this.coloresCamiseta[e.colores[0]] || '#FFFFFF';
+                    color2 = this.coloresCamiseta[e.colores[e.colores.length - 1]] || '#FFFFFF';
+                  }
                 }
               }
               tabla.push({
                 nombre: p.equipo,
                 color1: color1,
                 color2: color2,
+                escudo: escudo,
                 pj: p.partidosJugados,
                 pg: p.ganados,
                 pe: p.empatados,
