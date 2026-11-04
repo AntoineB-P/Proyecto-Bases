@@ -11,6 +11,7 @@ public class Equipo {
 	private String ciudadEquipo;
 	private Long idTecnico;
 	private Long idSede;
+	private String escudoUrl;
 	
 	public Equipo(){
 		
@@ -25,6 +26,18 @@ public class Equipo {
 		this.ciudadEquipo = ciudadEquipo;
 		this.idTecnico = idTecnico;
 		this.idSede = idSede;
+	}
+
+	public Equipo(Long idEquipo, String nombreEquipo, LocalDate fechaFundacion, String ciudadEquipo, Long idTecnico,
+			Long idSede, String escudoUrl) {
+		super();
+		this.idEquipo = idEquipo;
+		this.nombreEquipo = nombreEquipo;
+		this.fechaFundacion = fechaFundacion;
+		this.ciudadEquipo = ciudadEquipo;
+		this.idTecnico = idTecnico;
+		this.idSede = idSede;
+		this.escudoUrl = escudoUrl;
 	}
 
 	public Long getIdEquipo() {
@@ -75,9 +88,17 @@ public class Equipo {
 		this.idSede = idSede;
 	}
 
+	public String getEscudoUrl() {
+		return escudoUrl;
+	}
+
+	public void setEscudoUrl(String escudoUrl) {
+		this.escudoUrl = escudoUrl;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(ciudadEquipo, fechaFundacion, idEquipo, idSede, idTecnico, nombreEquipo);
+		return Objects.hash(ciudadEquipo, escudoUrl, fechaFundacion, idEquipo, idSede, idTecnico, nombreEquipo);
 	}
 
 	@Override
@@ -89,15 +110,17 @@ public class Equipo {
 		if (getClass() != obj.getClass())
 			return false;
 		Equipo other = (Equipo) obj;
-		return Objects.equals(ciudadEquipo, other.ciudadEquipo) && Objects.equals(fechaFundacion, other.fechaFundacion)
-				&& Objects.equals(idEquipo, other.idEquipo) && Objects.equals(idSede, other.idSede)
-				&& Objects.equals(idTecnico, other.idTecnico) && Objects.equals(nombreEquipo, other.nombreEquipo);
+		return Objects.equals(ciudadEquipo, other.ciudadEquipo) && Objects.equals(escudoUrl, other.escudoUrl)
+				&& Objects.equals(fechaFundacion, other.fechaFundacion) && Objects.equals(idEquipo, other.idEquipo)
+				&& Objects.equals(idSede, other.idSede) && Objects.equals(idTecnico, other.idTecnico)
+				&& Objects.equals(nombreEquipo, other.nombreEquipo);
 	}
 
 	@Override
 	public String toString() {
 		return "Equipo [idEquipo=" + idEquipo + ", nombreEquipo=" + nombreEquipo + ", fechaFundacion=" + fechaFundacion
-				+ ", ciudadEquipo=" + ciudadEquipo + ", idTecnico=" + idTecnico + ", idSede=" + idSede + "]";
+				+ ", ciudadEquipo=" + ciudadEquipo + ", idTecnico=" + idTecnico + ", idSede=" + idSede
+				+ ", escudoUrl=" + escudoUrl + "]";
 	}
 	
 	
