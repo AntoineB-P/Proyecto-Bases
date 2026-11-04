@@ -239,14 +239,9 @@ export class EquiposComponent implements OnInit {
     if (err.status === 401 || err.status === 403) {
       return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
     }
-    let cuerpo = err.error;
-    if (typeof cuerpo === 'string') {
-      try {
-        cuerpo = JSON.parse(cuerpo);
-      } catch {
-        return 'No se pudo completar la acción.';
-      }
+    if (err.error && err.error.error) {
+      return err.error.error;
     }
-    return cuerpo && cuerpo.error ? cuerpo.error : 'No se pudo completar la acción.';
+    return 'No se pudo completar la acción.';
   }
 }

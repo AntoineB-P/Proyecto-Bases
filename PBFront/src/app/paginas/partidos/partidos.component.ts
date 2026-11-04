@@ -139,24 +139,31 @@ export class PartidosComponent implements OnInit {
   guardar(): void {
     this.guardando = true;
     this.mensajeError = '';
-    const peticion = this.editando
-      ? this.partidoService.putActualizar(this.idEditando, this.formulario)
-      : this.partidoService.postCrear(this.formulario);
+    if (this.editando) {
+      this.partidoService.putActualizar(this.idEditando, this.formulario).subscribe({
+        next: () => this.guardado('Partido actualizado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    } else {
+      this.partidoService.postCrear(this.formulario).subscribe({
+        next: () => this.guardado('Partido creado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    }
+  }
 
-    peticion.subscribe({
-      next: () => {
-        this.mensajeExito = this.editando ? 'Partido actualizado.' : 'Partido creado.';
-        this.mostrarFormulario = false;
-        this.guardando = false;
-        this.jornada = this.formulario.jornada;
-        this.cargar();
-      },
-      error: (err) => {
-        this.mensajeError = this.leerError(err);
-        this.guardando = false;
-        this.cdr.detectChanges();
-      }
-    });
+  guardado(mensaje: string): void {
+    this.mensajeExito = mensaje;
+    this.mostrarFormulario = false;
+    this.guardando = false;
+    this.jornada = this.formulario.jornada;
+    this.cargar();
+  }
+
+  falloGuardar(err: any): void {
+    this.mensajeError = this.leerError(err);
+    this.guardando = false;
+    this.cdr.detectChanges();
   }
 
   abrirResultado(partido: PartidoModel): void {
@@ -174,24 +181,25 @@ export class PartidosComponent implements OnInit {
     }
     const idPartido = this.partidoResultado.idPartido || 0;
     const resultado = { idPartido: idPartido, golesLocal: this.golesLocal, golesVisitante: this.golesVisitante };
-    const peticion = this.jugado(this.partidoResultado)
-      ? this.resultadoService.putActualizar(idPartido, resultado)
-      : this.resultadoService.postCrear(resultado);
-
     this.guardando = true;
-    peticion.subscribe({
-      next: () => {
-        this.mensajeExito = 'Resultado guardado.';
-        this.partidoResultado = null;
-        this.guardando = false;
-        this.cargar();
-      },
-      error: (err) => {
-        this.mensajeError = this.leerError(err);
-        this.guardando = false;
-        this.cdr.detectChanges();
-      }
-    });
+    if (this.jugado(this.partidoResultado)) {
+      this.resultadoService.putActualizar(idPartido, resultado).subscribe({
+        next: () => this.resultadoGuardado(),
+        error: (err) => this.falloGuardar(err)
+      });
+    } else {
+      this.resultadoService.postCrear(resultado).subscribe({
+        next: () => this.resultadoGuardado(),
+        error: (err) => this.falloGuardar(err)
+      });
+    }
+  }
+
+  resultadoGuardado(): void {
+    this.mensajeExito = 'Resultado guardado.';
+    this.partidoResultado = null;
+    this.guardando = false;
+    this.cargar();
   }
 
   eliminar(partido: PartidoModel): void {
@@ -214,14 +222,9 @@ export class PartidosComponent implements OnInit {
     if (err.status === 401 || err.status === 403) {
       return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
     }
-    let cuerpo = err.error;
-    if (typeof cuerpo === 'string') {
-      try {
-        cuerpo = JSON.parse(cuerpo);
-      } catch {
-        return 'No se pudo completar la acción.';
-      }
+    if (err.error && err.error.error) {
+      return err.error.error;
     }
-    return cuerpo && cuerpo.error ? cuerpo.error : 'No se pudo completar la acción.';
+    return 'No se pudo completar la acción.';
   }
 }

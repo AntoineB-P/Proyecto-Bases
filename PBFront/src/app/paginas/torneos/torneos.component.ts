@@ -78,23 +78,30 @@ export class TorneosComponent implements OnInit {
   guardar(): void {
     this.guardando = true;
     this.mensajeError = '';
-    const peticion = this.editando
-      ? this.torneoService.putActualizar(this.idEditando, this.formulario)
-      : this.torneoService.postCrear(this.formulario);
+    if (this.editando) {
+      this.torneoService.putActualizar(this.idEditando, this.formulario).subscribe({
+        next: () => this.guardado('Torneo actualizado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    } else {
+      this.torneoService.postCrear(this.formulario).subscribe({
+        next: () => this.guardado('Torneo creado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    }
+  }
 
-    peticion.subscribe({
-      next: () => {
-        this.mensajeExito = this.editando ? 'Torneo actualizado.' : 'Torneo creado.';
-        this.mostrarFormulario = false;
-        this.guardando = false;
-        this.cargar();
-      },
-      error: (err) => {
-        this.mensajeError = this.leerError(err);
-        this.guardando = false;
-        this.cdr.detectChanges();
-      }
-    });
+  guardado(mensaje: string): void {
+    this.mensajeExito = mensaje;
+    this.mostrarFormulario = false;
+    this.guardando = false;
+    this.cargar();
+  }
+
+  falloGuardar(err: any): void {
+    this.mensajeError = this.leerError(err);
+    this.guardando = false;
+    this.cdr.detectChanges();
   }
 
   eliminar(torneo: TorneoModel): void {
@@ -117,14 +124,9 @@ export class TorneosComponent implements OnInit {
     if (err.status === 401 || err.status === 403) {
       return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
     }
-    let cuerpo = err.error;
-    if (typeof cuerpo === 'string') {
-      try {
-        cuerpo = JSON.parse(cuerpo);
-      } catch {
-        return 'No se pudo completar la acción.';
-      }
+    if (err.error && err.error.error) {
+      return err.error.error;
     }
-    return cuerpo && cuerpo.error ? cuerpo.error : 'No se pudo completar la acción.';
+    return 'No se pudo completar la acción.';
   }
 }

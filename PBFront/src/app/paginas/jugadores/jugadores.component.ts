@@ -54,23 +54,30 @@ export class JugadoresComponent implements OnInit {
 
   cargar(): void {
     this.cargando = true;
-    const peticion = this.filtroEquipo > 0
-      ? this.jugadorService.getPlantilla(this.filtroEquipo, this.idTorneo)
-      : this.jugadorService.getListar();
+    if (this.filtroEquipo > 0) {
+      this.jugadorService.getPlantilla(this.filtroEquipo, this.idTorneo).subscribe({
+        next: (lista) => this.mostrar(lista),
+        error: () => this.falloCargar()
+      });
+    } else {
+      this.jugadorService.getListar().subscribe({
+        next: (lista) => this.mostrar(lista),
+        error: () => this.falloCargar()
+      });
+    }
+  }
 
-    peticion.subscribe({
-      next: (lista) => {
-        this.todos = lista;
-        this.filtrar();
-        this.cargando = false;
-        this.cdr.detectChanges();
-      },
-      error: () => {
-        this.mensajeError = 'No se pudieron cargar los jugadores. Revisa que el back esté prendido.';
-        this.cargando = false;
-        this.cdr.detectChanges();
-      }
-    });
+  mostrar(lista: JugadorModel[]): void {
+    this.todos = lista;
+    this.filtrar();
+    this.cargando = false;
+    this.cdr.detectChanges();
+  }
+
+  falloCargar(): void {
+    this.mensajeError = 'No se pudieron cargar los jugadores. Revisa que el back esté prendido.';
+    this.cargando = false;
+    this.cdr.detectChanges();
   }
 
   filtrar(): void {
@@ -131,23 +138,30 @@ export class JugadoresComponent implements OnInit {
   guardar(): void {
     this.guardando = true;
     this.mensajeError = '';
-    const peticion = this.editando
-      ? this.jugadorService.putActualizar(this.idEditando, this.formulario)
-      : this.jugadorService.postCrear(this.formulario);
+    if (this.editando) {
+      this.jugadorService.putActualizar(this.idEditando, this.formulario).subscribe({
+        next: () => this.guardado('Jugador actualizado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    } else {
+      this.jugadorService.postCrear(this.formulario).subscribe({
+        next: () => this.guardado('Jugador creado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    }
+  }
 
-    peticion.subscribe({
-      next: () => {
-        this.mensajeExito = this.editando ? 'Jugador actualizado.' : 'Jugador creado.';
-        this.mostrarFormulario = false;
-        this.guardando = false;
-        this.cargar();
-      },
-      error: (err) => {
-        this.mensajeError = this.leerError(err);
-        this.guardando = false;
-        this.cdr.detectChanges();
-      }
-    });
+  guardado(mensaje: string): void {
+    this.mensajeExito = mensaje;
+    this.mostrarFormulario = false;
+    this.guardando = false;
+    this.cargar();
+  }
+
+  falloGuardar(err: any): void {
+    this.mensajeError = this.leerError(err);
+    this.guardando = false;
+    this.cdr.detectChanges();
   }
 
   eliminar(jugador: JugadorModel): void {
@@ -170,14 +184,9 @@ export class JugadoresComponent implements OnInit {
     if (err.status === 401 || err.status === 403) {
       return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
     }
-    let cuerpo = err.error;
-    if (typeof cuerpo === 'string') {
-      try {
-        cuerpo = JSON.parse(cuerpo);
-      } catch {
-        return 'No se pudo completar la acción.';
-      }
+    if (err.error && err.error.error) {
+      return err.error.error;
     }
-    return cuerpo && cuerpo.error ? cuerpo.error : 'No se pudo completar la acción.';
+    return 'No se pudo completar la acción.';
   }
 }
