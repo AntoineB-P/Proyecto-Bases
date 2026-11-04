@@ -49,6 +49,7 @@ public class EquipoService {
 
 		Tecnico tecnico = tecnicoRepository.buscarPorId(e.getIdTecnico());
 		dto.setNombreTecnico(tecnico == null ? null : tecnico.getNombres() + " " + tecnico.getApellidos());
+		
 		return dto;
 	}
 

@@ -15,6 +15,7 @@ public class EquipoDTO {
 	private String nombreEstadio;
 	private Long idTecnico;
 	private String nombreTecnico;
+	private String escudoUrl;
 	
 	public EquipoDTO() {
 		
@@ -32,6 +33,14 @@ public class EquipoDTO {
 		this.nombreEstadio = nombreEstadio;
 		this.idTecnico = idTecnico;
 		this.nombreTecnico = nombreTecnico;
+	}
+
+	public String getEscudoUrl() {
+		return escudoUrl;
+	}
+
+	public void setEscudoUrl(String escudoUrl) {
+		this.escudoUrl = escudoUrl;
 	}
 
 	public Long getIdEquipo() {
