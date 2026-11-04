@@ -89,23 +89,30 @@ export class ArbitrosComponent implements OnInit {
   guardar(): void {
     this.guardando = true;
     this.mensajeError = '';
-    const peticion = this.editando
-      ? this.arbitroService.putActualizar(this.formulario.cedula, this.formulario)
-      : this.arbitroService.postCrear(this.formulario);
+    if (this.editando) {
+      this.arbitroService.putActualizar(this.formulario.cedula, this.formulario).subscribe({
+        next: () => this.guardado('Árbitro actualizado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    } else {
+      this.arbitroService.postCrear(this.formulario).subscribe({
+        next: () => this.guardado('Árbitro creado.'),
+        error: (err) => this.falloGuardar(err)
+      });
+    }
+  }
 
-    peticion.subscribe({
-      next: () => {
-        this.mensajeExito = this.editando ? 'Árbitro actualizado.' : 'Árbitro creado.';
-        this.mostrarFormulario = false;
-        this.guardando = false;
-        this.cargar();
-      },
-      error: (err) => {
-        this.mensajeError = this.leerError(err);
-        this.guardando = false;
-        this.cdr.detectChanges();
-      }
-    });
+  guardado(mensaje: string): void {
+    this.mensajeExito = mensaje;
+    this.mostrarFormulario = false;
+    this.guardando = false;
+    this.cargar();
+  }
+
+  falloGuardar(err: any): void {
+    this.mensajeError = this.leerError(err);
+    this.guardando = false;
+    this.cdr.detectChanges();
   }
 
   eliminar(arbitro: ArbitroModel): void {
@@ -128,14 +135,9 @@ export class ArbitrosComponent implements OnInit {
     if (err.status === 401 || err.status === 403) {
       return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
     }
-    let cuerpo = err.error;
-    if (typeof cuerpo === 'string') {
-      try {
-        cuerpo = JSON.parse(cuerpo);
-      } catch {
-        return 'No se pudo completar la acción.';
-      }
+    if (err.error && err.error.error) {
+      return err.error.error;
     }
-    return cuerpo && cuerpo.error ? cuerpo.error : 'No se pudo completar la acción.';
+    return 'No se pudo completar la acción.';
   }
 }
