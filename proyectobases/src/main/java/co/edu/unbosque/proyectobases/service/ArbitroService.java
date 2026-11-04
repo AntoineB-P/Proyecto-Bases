@@ -2,23 +2,24 @@ package co.edu.unbosque.proyectobases.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import co.edu.unbosque.proyectobases.dto.ArbitroDTO;
 import co.edu.unbosque.proyectobases.entity.Arbitro;
 import co.edu.unbosque.proyectobases.exception.ConflictoException;
 import co.edu.unbosque.proyectobases.exception.DatoInvalidoException;
 import co.edu.unbosque.proyectobases.exception.RecursoNoEncontradoException;
+import co.edu.unbosque.proyectobases.repository.ArbitrajeRepository;
 import co.edu.unbosque.proyectobases.repository.ArbitroRepository;
 
 @Service
 public class ArbitroService {
 
 	private final ArbitroRepository arbitroRepository;
+	private final ArbitrajeRepository arbitrajeRepository;
 
-	public ArbitroService(ArbitroRepository arbitroRepository) {
+	public ArbitroService(ArbitroRepository arbitroRepository, ArbitrajeRepository arbitrajeRepository) {
 		this.arbitroRepository = arbitroRepository;
+		this.arbitrajeRepository = arbitrajeRepository;
 	}
 
 	private ArbitroDTO aDTO(Arbitro a) {
@@ -28,6 +29,7 @@ public class ArbitroService {
 		dto.setApellidos(a.getApellidos());
 		dto.setCiudad(a.getCiudadArbitro());
 		dto.setCategoria(a.getCategoria());
+		dto.setPartidosDirigidos(arbitrajeRepository.listarPorArbitro(a.getCedula()).size());
 		return dto;
 	}
 
@@ -72,7 +74,7 @@ public class ArbitroService {
 	public ArbitroDTO actualizar(String cedula, ArbitroDTO dto) {
 		buscarPorCedula(cedula);
 		if (dto != null) {
-			dto.setCedula(cedula); // la cédula no se cambia
+			dto.setCedula(cedula);
 		}
 		Arbitro a = aEntity(dto);
 		arbitroRepository.actualizar(a);

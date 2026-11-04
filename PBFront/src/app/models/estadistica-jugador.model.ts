@@ -5,4 +5,5 @@ export interface EstadisticaJugadorModel {
   goles: number;
   amarillas: number;
   rojas: number;
+  nombreEquipo: string;
 }

@@ -10,13 +10,14 @@ public class EstadisticaJugadorDTO {
 	private Integer goles;
 	private Integer amarillas;
 	private Integer rojas;
+	private String nombreEquipo;
 	
 	public EstadisticaJugadorDTO() {
 		
 	}
 
 	public EstadisticaJugadorDTO(Long idJugador, String nombreJugador, Integer partidosJugados, Integer goles,
-			Integer amarillas, Integer rojas) {
+			Integer amarillas, Integer rojas, String nombreEquipo) {
 		super();
 		this.idJugador = idJugador;
 		this.nombreJugador = nombreJugador;
@@ -24,6 +25,7 @@ public class EstadisticaJugadorDTO {
 		this.goles = goles;
 		this.amarillas = amarillas;
 		this.rojas = rojas;
+		this.nombreEquipo = nombreEquipo;
 	}
 
 	public Long getIdJugador() {
@@ -74,9 +76,17 @@ public class EstadisticaJugadorDTO {
 		this.rojas = rojas;
 	}
 
+	public String getNombreEquipo() {
+		return nombreEquipo;
+	}
+
+	public void setNombreEquipo(String nombreEquipo) {
+		this.nombreEquipo = nombreEquipo;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(amarillas, goles, idJugador, nombreJugador, partidosJugados, rojas);
+		return Objects.hash(amarillas, goles, idJugador, nombreEquipo, nombreJugador, partidosJugados, rojas);
 	}
 
 	@Override
@@ -89,7 +99,8 @@ public class EstadisticaJugadorDTO {
 			return false;
 		EstadisticaJugadorDTO other = (EstadisticaJugadorDTO) obj;
 		return Objects.equals(amarillas, other.amarillas) && Objects.equals(goles, other.goles)
-				&& Objects.equals(idJugador, other.idJugador) && Objects.equals(nombreJugador, other.nombreJugador)
+				&& Objects.equals(idJugador, other.idJugador) && Objects.equals(nombreEquipo, other.nombreEquipo)
+				&& Objects.equals(nombreJugador, other.nombreJugador)
 				&& Objects.equals(partidosJugados, other.partidosJugados) && Objects.equals(rojas, other.rojas);
 	}
 
@@ -97,9 +108,7 @@ public class EstadisticaJugadorDTO {
 	public String toString() {
 		return "EstadisticaJugadorDTO [idJugador=" + idJugador + ", nombreJugador=" + nombreJugador
 				+ ", partidosJugados=" + partidosJugados + ", goles=" + goles + ", amarillas=" + amarillas + ", rojas="
-				+ rojas + "]";
+				+ rojas + ", nombreEquipo=" + nombreEquipo + "]";
 	}
 	
-	
-
 }
