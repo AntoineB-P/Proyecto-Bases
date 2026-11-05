@@ -1,0 +1,133 @@
+<div class="cabeza-admin">
+  <h2 class="subtitulo-liga">Detalle de partido</h2>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<div class="filtros-liga">
+  <div class="campo-admin jornada-campo">
+    <label for="jornadaDetalle">Jornada</label>
+    <input id="jornadaDetalle" type="number" min="1" class="filtro-liga" [(ngModel)]="jornada" (change)="cargarPartidos()">
+  </div>
+  <div class="campo-admin">
+    <label for="partidoDetalle">Partido</label>
+    <select id="partidoDetalle" class="filtro-liga" [(ngModel)]="partido" (change)="elegirPartido()">
+      <option [ngValue]="null" disabled>Elige un partido</option>
+      <option *ngFor="let p of partidos" [ngValue]="p">{{ p.nombreLocal }} vs {{ p.nombreVisitante }}</option>
+    </select>
+  </div>
+</div>
+
+<p class="vacio" *ngIf="partido == null">Elige una jornada y un partido para editar su detalle.</p>
+
+<div class="row g-4" *ngIf="partido != null">
+
+  <div class="col-xl-6">
+    <section class="caja-detalle">
+      <h3 class="caja-titulo">Árbitros</h3>
+      <ul>
+        <li class="linea-detalle" *ngFor="let a of arbitrajes">
+          <span><strong>{{ a.rol }}</strong> {{ a.nombreArbitro }}</span>
+          <button type="button" class="boton-icono peligro" (click)="quitarArbitraje(a)" aria-label="Quitar árbitro">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="formulario-detalle">
+        <select class="filtro-liga" [(ngModel)]="nuevoArbitraje.cedulaArbitro" aria-label="Árbitro">
+          <option value="" disabled>Árbitro</option>
+          <option *ngFor="let a of arbitros" [value]="a.cedula">{{ a.nombres }} {{ a.apellidos }}</option>
+        </select>
+        <select class="filtro-liga" [(ngModel)]="nuevoArbitraje.rol" aria-label="Rol del árbitro">
+          <option *ngFor="let r of rolesArbitraje" [value]="r">{{ r }}</option>
+        </select>
+        <button type="button" class="boton-oro" (click)="agregarArbitraje()">Asignar</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-xl-6">
+    <section class="caja-detalle">
+      <h3 class="caja-titulo">Alineación</h3>
+      <ul class="lista-larga">
+        <li class="linea-detalle" *ngFor="let p of participaciones">
+          <span><strong>{{ p.titular ? 'Titular' : 'Suplente' }}</strong> {{ p.nombreJugador }} · {{ p.minutosJugados }}'</span>
+          <button type="button" class="boton-icono peligro" (click)="quitarParticipacion(p)" aria-label="Quitar de la alineación">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="formulario-detalle">
+        <select class="filtro-liga" [(ngModel)]="nuevaParticipacion.idJugador" aria-label="Jugador">
+          <option [ngValue]="0" disabled>Jugador</option>
+          <option *ngFor="let j of jugadores" [ngValue]="j.idJugador">{{ j.nombres }} {{ j.apellidos }}</option>
+        </select>
+        <select class="filtro-liga" [(ngModel)]="nuevaParticipacion.titular" aria-label="Titular o suplente">
+          <option [ngValue]="true">Titular</option>
+          <option [ngValue]="false">Suplente</option>
+        </select>
+        <input type="number" min="0" max="120" class="filtro-liga minutos" [(ngModel)]="nuevaParticipacion.minutosJugados" aria-label="Minutos jugados">
+        <button type="button" class="boton-oro" (click)="agregarParticipacion()">Agregar</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-xl-6">
+    <section class="caja-detalle">
+      <h3 class="caja-titulo">Goles</h3>
+      <ul>
+        <li class="linea-detalle" *ngFor="let g of goles">
+          <span><strong>{{ g.minuto }}'</strong> {{ nombreDe(g.idParticipacion) }} · {{ g.tipo }}</span>
+          <button type="button" class="boton-icono peligro" (click)="quitarGol(g)" aria-label="Eliminar gol">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </li>
+      </ul>
+      <p class="vacio" *ngIf="participaciones.length === 0">Primero agrega jugadores a la alineación.</p>
+      <div class="formulario-detalle" *ngIf="participaciones.length > 0">
+        <select class="filtro-liga" [(ngModel)]="nuevoGol.idParticipacion" aria-label="Goleador">
+          <option [ngValue]="0" disabled>Goleador</option>
+          <option *ngFor="let p of participaciones" [ngValue]="p.idParticipacion">{{ p.nombreJugador }}</option>
+        </select>
+        <select class="filtro-liga" [(ngModel)]="nuevoGol.tipo" aria-label="Tipo de gol">
+          <option *ngFor="let t of tiposGol" [value]="t">{{ t }}</option>
+        </select>
+        <input type="number" min="1" max="120" class="filtro-liga minutos" [(ngModel)]="nuevoGol.minuto" aria-label="Minuto">
+        <button type="button" class="boton-oro" (click)="agregarGol()">Registrar</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-xl-6">
+    <section class="caja-detalle">
+      <h3 class="caja-titulo">Tarjetas</h3>
+      <ul>
+        <li class="linea-detalle" *ngFor="let t of tarjetas">
+          <span>
+            <span class="cartulina" [class.roja]="t.idTipo === 2" aria-hidden="true"></span>
+            <strong>{{ t.minuto }}'</strong> {{ nombreDe(t.idParticipacion) }} · {{ t.motivo }}
+          </span>
+          <button type="button" class="boton-icono peligro" (click)="quitarTarjeta(t)" aria-label="Eliminar tarjeta">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </li>
+      </ul>
+      <p class="vacio" *ngIf="participaciones.length === 0">Primero agrega jugadores a la alineación.</p>
+      <div class="formulario-detalle" *ngIf="participaciones.length > 0">
+        <select class="filtro-liga" [(ngModel)]="nuevaTarjeta.idParticipacion" aria-label="Jugador amonestado">
+          <option [ngValue]="0" disabled>Jugador</option>
+          <option *ngFor="let p of participaciones" [ngValue]="p.idParticipacion">{{ p.nombreJugador }}</option>
+        </select>
+        <select class="filtro-liga" [(ngModel)]="nuevaTarjeta.idTipo" aria-label="Color de la tarjeta">
+          <option [ngValue]="1">Amarilla</option>
+          <option [ngValue]="2">Roja</option>
+        </select>
+        <input type="text" class="filtro-liga" [(ngModel)]="nuevaTarjeta.motivo" aria-label="Motivo">
+        <input type="number" min="1" max="120" class="filtro-liga minutos" [(ngModel)]="nuevaTarjeta.minuto" aria-label="Minuto">
+        <button type="button" class="boton-oro" (click)="agregarTarjeta()">Registrar</button>
+      </div>
+    </section>
+  </div>
+
+</div>

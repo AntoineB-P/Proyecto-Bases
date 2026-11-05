@@ -17,12 +17,7 @@
   --salida: cubic-bezier(0.23, 1, 0.32, 1);
   --ancho-lateral: 250px;
 
-  /* Animate.css dura 1s por defecto, lo bajamos para que se sienta más ágil */
   --animate-duration: 700ms;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
@@ -35,7 +30,6 @@ body {
   overflow-x: hidden;
 }
 
-/* REFLECTORES: dos luces doradas que derivan despacio por el fondo */
 body::before,
 body::after {
   content: '';
@@ -65,12 +59,10 @@ body::after {
   to   { transform: translateX(8vw) scale(1.15); }
 }
 
-/* rayita dorada que crece desde la izquierda (la usamos en varios sitios) */
 @keyframes crece {
   from { transform: scaleX(0); }
 }
 
-/* al terminar la animación, el elemento queda libre para usar hover y :active */
 .animate__animated {
   animation-fill-mode: backwards;
 }
@@ -110,8 +102,6 @@ input:focus-visible {
   border-radius: 8px;
 }
 
-/* ---------- INTRO DEL BALÓN ---------- Cuando la intro termina, la clase se quita
-   y todo arranca en orden. */
 body.intro-activa .principal,
 body.intro-activa .principal *,
 body.intro-activa .principal *::before,
@@ -128,5 +118,525 @@ body.intro-activa .lateral *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+.pagina {
+  display: flex;
+  min-height: 100vh;
+}
+
+.marca {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 64px;
+}
+
+.marca-logo {
+  width: 72px;
+  margin-bottom: 32px;
+}
+
+.marca-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: clamp(56px, 7vw, 120px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.marca-titulo span {
+  display: block;
+}
+
+.marca-linea {
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 28px 0 20px;
+  background-color: var(--oro);
+  transform-origin: left;
+  animation: crece 900ms 400ms var(--salida) backwards;
+}
+
+.marca-texto {
+  max-width: 380px;
+  font-size: 18px;
+  color: var(--texto);
+}
+
+.formulario {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  background-color: var(--negro2);
+  border-left: 1px solid var(--linea);
+}
+
+.caja {
+  width: 100%;
+  max-width: 400px;
+}
+
+.caja-titulo {
+  margin-bottom: 8px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--crema);
+}
+
+.caja-ayuda {
+  margin-bottom: 28px;
+  font-size: 15px;
+  color: var(--suave);
+}
+
+.requisitos {
+  margin: 12px 0 24px;
+  padding: 12px 14px;
+  border: 1px solid var(--linea);
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.campo,
+.campo-admin {
+  margin-bottom: 22px;
+}
+
+.campo-nombre,
+.campo-admin label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.campo-fila {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--linea);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.campo-fila:focus-within {
+  border-bottom-color: var(--oro2);
+  box-shadow: 0 1px 0 var(--oro2);
+}
+
+.campo-fila i {
+  margin-right: 12px;
+  color: var(--oro);
+}
+
+.campo-fila input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+}
+
+.campo-fila input::placeholder,
+.campo-admin input:disabled {
+  color: var(--suave);
+}
+
+.ojo {
+  padding: 4px 0 4px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ojo i {
+  margin: 0;
+  color: var(--suave);
+}
+
+.mensaje {
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-left: 3px solid;
+  font-size: 15px;
+  color: var(--crema);
+}
+
+.mensaje.error {
+  border-color: var(--roja);
+  background-color: rgba(179, 58, 51, 0.15);
+}
+
+.mensaje.exito {
+  border-color: var(--oro2);
+  background-color: rgba(212, 175, 114, 0.12);
+}
+
+.enviar {
+  width: 100%;
+  padding: 14px 26px;
+  border: none;
+  background-color: var(--oro2);
+  color: var(--negro);
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 120ms ease-out;
+}
+
+.enviar:active {
+  transform: scale(0.97);
+}
+
+.enviar:disabled,
+.boton-oro:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.enlaces {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--suave);
+}
+
+.enlaces a {
+  color: var(--oro2);
+}
+
+@media (max-width: 900px) {
+  .pagina {
+    flex-direction: column;
+  }
+
+  .marca {
+    flex: none;
+    padding: 40px 20px 24px;
+  }
+
+  .marca-titulo {
+    font-size: 56px;
+  }
+
+  .formulario {
+    padding: 32px 20px 56px;
+    border-left: none;
+    border-top: 1px solid var(--linea);
+  }
+}
+
+.seccion-cabeza {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.seccion-titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.seccion-titulo::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin-top: 16px;
+  background-color: var(--oro);
+  transform-origin: left;
+  animation: crece 800ms 400ms var(--salida) backwards;
+}
+
+.seccion-nota {
+  margin-top: 14px;
+  font-size: 17px;
+  color: var(--texto);
+}
+
+.subtitulo-liga {
+  margin-bottom: 18px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.estado-pagina {
+  padding: 60px 0;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--suave);
+  animation: pulso-pagina 1.4s ease-in-out infinite;
+}
+
+@keyframes pulso-pagina {
+  50% { opacity: 0.4; }
+}
+
+.vacio {
+  padding: 28px 0;
+  font-size: 16px;
+  color: var(--suave);
+  border-bottom: 1px solid var(--linea);
+}
+
+.tabla-envoltura {
+  overflow-x: auto;
+}
+
+.tabla-liga {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabla-liga th {
+  padding: 0 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--suave);
+  border-bottom: 2px solid var(--oro);
+  white-space: nowrap;
+}
+
+.tabla-liga td {
+  padding: 14px 10px;
+  font-size: 16px;
+  color: var(--texto);
+  border-bottom: 1px solid var(--linea);
+  vertical-align: middle;
+}
+
+.tabla-liga .num {
+  text-align: right;
+}
+
+.tabla-liga .fuerte {
+  font-weight: 600;
+  color: var(--crema);
+}
+
+.tabla-liga .grande {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--crema);
+}
+
+.tabla-liga .acciones {
+  width: 1%;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.fila-liga {
+  transition: background-color 120ms ease;
+}
+
+.fila-liga.elegida {
+  background-color: rgba(212, 175, 114, 0.12);
+}
+
+.fila-clic {
+  cursor: pointer;
+}
+
+.escudo-mini {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.color-punto {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 234, 216, 0.4);
+}
+
+.etiqueta-oro {
+  color: var(--oro2);
+  font-weight: 600;
+}
+
+.boton-oro,
+.boton-linea {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, transform 120ms ease-out;
+}
+
+.boton-oro {
+  border: none;
+  background-color: var(--oro2);
+  color: var(--negro);
+}
+
+.boton-linea {
+  border: 1px solid var(--oro);
+  background: none;
+  color: var(--crema);
+}
+
+.boton-oro:active,
+.boton-linea:active,
+.boton-icono:active {
+  transform: scale(0.96);
+}
+
+.boton-icono {
+  padding: 6px 9px;
+  border: none;
+  background: none;
+  font-size: 17px;
+  color: var(--suave);
+  cursor: pointer;
+  transition: color 160ms ease, transform 120ms ease-out;
+}
+
+.cabeza-admin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cabeza-admin .subtitulo-liga {
+  margin-bottom: 0;
+}
+
+.panel-admin {
+  margin-bottom: 40px;
+  padding: 28px 28px 8px;
+  background-color: var(--negro2);
+  border-left: 3px solid var(--oro2);
+}
+
+.panel-admin-titulo {
+  margin-bottom: 22px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.campo-admin input,
+.campo-admin select,
+.filtro-liga {
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--linea);
+  border-radius: 0;
+  outline: none;
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  transition: border-color 160ms ease;
+}
+
+.campo-admin input:focus,
+.campo-admin select:focus,
+.filtro-liga:focus {
+  border-bottom-color: var(--oro2);
+}
+
+.campo-admin select option,
+.filtro-liga option {
+  background-color: var(--negro2);
+  color: var(--crema);
+}
+
+.botones-admin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filtros-liga {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.filtros-liga .campo-admin {
+  flex: 1 1 200px;
+  margin-bottom: 0;
+}
+
+@media (hover: hover) {
+  .enviar:hover:not(:disabled),
+  .boton-oro:hover:not(:disabled) {
+    background-color: var(--crema);
+  }
+
+  .boton-linea:hover {
+    background-color: var(--oro2);
+    color: var(--negro);
+  }
+
+  .ojo:hover i,
+  .boton-icono:hover {
+    color: var(--oro2);
+  }
+
+  .boton-icono.peligro:hover {
+    color: var(--roja);
+  }
+
+  .enlaces a:hover {
+    color: var(--crema);
+  }
+
+  .fila-liga:hover {
+    background-color: rgba(212, 175, 114, 0.08);
   }
 }

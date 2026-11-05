@@ -1,0 +1,67 @@
+<div class="cabeza-admin">
+  <h2 class="subtitulo-liga">Técnicos</h2>
+  <button type="button" class="boton-oro" *ngIf="!mostrarFormulario" (click)="nuevo()">
+    <i class="bi bi-plus-lg"></i> Agregar técnico
+  </button>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<section class="panel-admin animate__animated animate__fadeIn" *ngIf="mostrarFormulario">
+  <h3 class="panel-admin-titulo">{{ editando ? 'Editar técnico' : 'Nuevo técnico' }}</h3>
+  <div class="row g-4">
+    <div class="col-md-3 campo-admin">
+      <label for="nombresTecnico">Nombres</label>
+      <input id="nombresTecnico" type="text" [(ngModel)]="formulario.nombres">
+    </div>
+    <div class="col-md-3 campo-admin">
+      <label for="apellidosTecnico">Apellidos</label>
+      <input id="apellidosTecnico" type="text" [(ngModel)]="formulario.apellidos">
+    </div>
+    <div class="col-md-3 campo-admin">
+      <label for="nacionalidadTecnico">Nacionalidad</label>
+      <input id="nacionalidadTecnico" type="text" [(ngModel)]="formulario.nacionalidad">
+    </div>
+    <div class="col-md-3 campo-admin">
+      <label for="nacimientoTecnico">Fecha de nacimiento</label>
+      <input id="nacimientoTecnico" type="date" [(ngModel)]="formulario.fechaNacimiento">
+    </div>
+  </div>
+  <div class="botones-admin">
+    <button type="button" class="boton-oro" [disabled]="guardando" (click)="guardar()">
+      {{ guardando ? 'Guardando...' : 'Guardar' }}
+    </button>
+    <button type="button" class="boton-linea" (click)="mostrarFormulario = false">Cancelar</button>
+  </div>
+</section>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando técnicos...</p>
+
+<div class="tabla-envoltura" *ngIf="!cargando">
+  <table class="tabla-liga">
+    <thead>
+    <tr>
+      <th scope="col">Técnico</th>
+      <th scope="col">Nacionalidad</th>
+      <th scope="col">Nacimiento</th>
+      <th scope="col"><span class="visually-hidden">Acciones</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="fila-liga" *ngFor="let t of tecnicos">
+      <td class="fuerte">{{ t.nombres }} {{ t.apellidos }}</td>
+      <td>{{ t.nacionalidad }}</td>
+      <td>{{ t.fechaNacimiento }}</td>
+      <td class="acciones">
+        <button type="button" class="boton-icono" (click)="editar(t)" aria-label="Editar técnico">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button type="button" class="boton-icono peligro" (click)="eliminar(t)" aria-label="Eliminar técnico">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

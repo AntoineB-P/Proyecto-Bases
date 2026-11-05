@@ -1,0 +1,36 @@
+<div class="cabeza-admin">
+  <h2 class="subtitulo-liga">Usuarios</h2>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando usuarios...</p>
+
+<div class="tabla-envoltura" *ngIf="!cargando && usuarios.length > 0">
+  <table class="tabla-liga">
+    <thead>
+    <tr>
+      <th scope="col">Usuario</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Verificado</th>
+      <th scope="col">Rol</th>
+      <th scope="col"><span class="visually-hidden">Acciones</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="fila-liga" *ngFor="let u of usuarios">
+      <td class="fuerte">{{ u.usuario }}</td>
+      <td>{{ u.correo }}</td>
+      <td>{{ u.verificado ? 'Sí' : 'No' }}</td>
+      <td [class.etiqueta-oro]="u.rol === 'ADMIN'">{{ u.rol }}</td>
+      <td class="acciones">
+        <button type="button" class="boton-linea" *ngIf="u.usuario !== miUsuario" (click)="cambiarRol(u)">
+          {{ u.rol === 'ADMIN' ? 'Quitar admin' : 'Hacer admin' }}
+        </button>
+        <span class="etiqueta-oro" *ngIf="u.usuario === miUsuario">Tú</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

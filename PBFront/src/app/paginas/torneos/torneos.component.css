@@ -1,0 +1,68 @@
+.torneo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.torneo-temporada {
+  display: flex;
+  align-items: flex-start;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--oro2);
+}
+
+.torneo-anio {
+  font-size: clamp(72px, 9vw, 128px);
+}
+
+.torneo-semestre {
+  margin-left: 8px;
+  font-size: 40px;
+  color: var(--crema);
+}
+
+.torneo-datos {
+  flex: 1 1 260px;
+}
+
+.torneo-nombre {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.torneo-fechas {
+  margin-top: 10px;
+  font-size: 17px;
+  color: var(--texto);
+}
+
+.torneo-dias {
+  text-align: right;
+}
+
+.torneo-dias strong {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--crema);
+}
+
+.torneo-dias span {
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.torneo-acciones {
+  display: flex;
+}

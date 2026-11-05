@@ -1,0 +1,128 @@
+<div class="seccion-cabeza">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="seccion-titulo">Jugadores</h1>
+    <p class="seccion-nota" *ngIf="!cargando">Mostrando {{ jugadores.length }} de {{ todos.length }} jugadores.</p>
+  </div>
+  <button type="button" class="boton-oro animate__animated animate__fadeIn" *ngIf="esAdmin && !mostrarFormulario" (click)="nuevo()">
+    <i class="bi bi-plus-lg"></i> Agregar jugador
+  </button>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<section class="panel-admin animate__animated animate__fadeIn" *ngIf="esAdmin && mostrarFormulario">
+  <h2 class="panel-admin-titulo">{{ editando ? 'Editar jugador' : 'Nuevo jugador' }}</h2>
+  <div class="row g-4">
+    <div class="col-md-4 campo-admin">
+      <label for="nombresJugador">Nombres</label>
+      <input id="nombresJugador" type="text" [(ngModel)]="formulario.nombres">
+    </div>
+    <div class="col-md-4 campo-admin">
+      <label for="apellidosJugador">Apellidos</label>
+      <input id="apellidosJugador" type="text" [(ngModel)]="formulario.apellidos">
+    </div>
+    <div class="col-md-4 campo-admin">
+      <label for="nacionalidadJugador">Nacionalidad</label>
+      <input id="nacionalidadJugador" type="text" [(ngModel)]="formulario.nacionalidad">
+    </div>
+    <div class="col-md-4 campo-admin">
+      <label for="nacimientoJugador">Fecha de nacimiento</label>
+      <input id="nacimientoJugador" type="date" [(ngModel)]="formulario.fechaNacimiento">
+    </div>
+    <div class="col-md-4 campo-admin">
+      <label for="posicionJugador">Posición</label>
+      <select id="posicionJugador" [(ngModel)]="formulario.posicion">
+        <option *ngFor="let p of posiciones" [value]="p">{{ p }}</option>
+      </select>
+    </div>
+    <div class="col-md-4 campo-admin" *ngIf="formulario.posicion === 'Atacante'">
+      <label for="tirosJugador">Tiros a puerta</label>
+      <input id="tirosJugador" type="number" min="0" [(ngModel)]="formulario.tirosPuerta">
+    </div>
+    <div class="col-md-4 campo-admin" *ngIf="formulario.posicion === 'Mediocampista'">
+      <label for="pasesJugador">Pases</label>
+      <input id="pasesJugador" type="number" min="0" [(ngModel)]="formulario.pases">
+    </div>
+    <div class="col-md-4 campo-admin" *ngIf="formulario.posicion === 'Defensa'">
+      <label for="entradasJugador">Entradas oportunas</label>
+      <input id="entradasJugador" type="number" min="0" [(ngModel)]="formulario.entradasOportunas">
+    </div>
+    <div class="col-md-4 campo-admin" *ngIf="formulario.posicion === 'Portero'">
+      <label for="imbatidaJugador">Vallas invictas</label>
+      <input id="imbatidaJugador" type="number" min="0" [(ngModel)]="formulario.porteriaImbatida">
+    </div>
+  </div>
+  <div class="botones-admin">
+    <button type="button" class="boton-oro" [disabled]="guardando" (click)="guardar()">
+      {{ guardando ? 'Guardando...' : 'Guardar' }}
+    </button>
+    <button type="button" class="boton-linea" (click)="cancelar()">Cancelar</button>
+  </div>
+</section>
+
+<div class="filtros-liga animate__animated animate__fadeIn">
+  <div class="campo-admin">
+    <label for="filtroEquipo">Equipo</label>
+    <select id="filtroEquipo" class="filtro-liga" [(ngModel)]="filtroEquipo" (change)="cambiarEquipo()">
+      <option [ngValue]="0">Todos los equipos</option>
+      <option *ngFor="let e of equipos" [ngValue]="e.idEquipo">{{ e.nombre }}</option>
+    </select>
+  </div>
+  <div class="campo-admin">
+    <label for="filtroPosicion">Posición</label>
+    <select id="filtroPosicion" class="filtro-liga" [(ngModel)]="filtroPosicion" (change)="filtrar()">
+      <option value="">Todas</option>
+      <option *ngFor="let p of posiciones" [value]="p">{{ p }}</option>
+    </select>
+  </div>
+  <div class="campo-admin">
+    <label for="filtroNombre">Buscar por nombre</label>
+    <input id="filtroNombre" type="text" class="filtro-liga" [(ngModel)]="filtroNombre" (input)="filtrar()" placeholder="Ej. Falcao">
+  </div>
+</div>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando jugadores...</p>
+
+<div class="tabla-envoltura animate__animated animate__fadeIn" *ngIf="!cargando && jugadores.length > 0">
+  <table class="tabla-liga">
+    <caption class="visually-hidden">Jugadores de la liga</caption>
+    <thead>
+    <tr>
+      <th scope="col">Jugador</th>
+      <th scope="col">Posición</th>
+      <th scope="col">Nacionalidad</th>
+      <th scope="col" class="num">Edad</th>
+      <th scope="col" class="num" title="Partidos jugados">PJ</th>
+      <th scope="col" class="num">Goles</th>
+      <th scope="col" class="num" title="Tarjetas amarillas">TA</th>
+      <th scope="col" class="num" title="Tarjetas rojas">TR</th>
+      <th scope="col">Dato de su posición</th>
+      <th scope="col" *ngIf="esAdmin"><span class="visually-hidden">Acciones</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="fila-liga" *ngFor="let j of jugadores">
+      <td class="fuerte">{{ j.nombres }} {{ j.apellidos }}</td>
+      <td><span class="posicion" [class.portero]="j.posicion === 'Portero'">{{ j.posicion }}</span></td>
+      <td>{{ j.nacionalidad }}</td>
+      <td class="num">{{ j.edad }}</td>
+      <td class="num">{{ numero(j, 'partidosJugados') }}</td>
+      <td class="num grande">{{ numero(j, 'goles') }}</td>
+      <td class="num">{{ numero(j, 'amarillas') }}</td>
+      <td class="num">{{ numero(j, 'rojas') }}</td>
+      <td>{{ datoPosicion(j) }}</td>
+      <td class="acciones" *ngIf="esAdmin">
+        <button type="button" class="boton-icono" (click)="editar(j)" aria-label="Editar jugador">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button type="button" class="boton-icono peligro" (click)="eliminar(j)" aria-label="Eliminar jugador">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="vacio" *ngIf="!cargando && jugadores.length === 0">No hay jugadores con esos filtros.</p>

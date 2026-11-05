@@ -1,11 +1,9 @@
-/* ---------- PORTADA ---------- */
 .portada {
   position: relative;
   overflow: hidden;
   padding: 64px 0 72px;
 }
 
-/* ondas doradas que se expanden desde el centro, como el eco de un estadio */
 .ondas {
   position: absolute;
   top: 50%;
@@ -90,7 +88,6 @@
   margin: 14px 0;
 }
 
-/* línea dorada que sale del "vs" */
 .vs-fila::after {
   content: '';
   flex: 1;
@@ -122,7 +119,6 @@
   color: var(--crema);
 }
 
-/* ---------- CINTA DE RESULTADOS ---------- */
 .cinta {
   margin: 0 -48px 56px;
   padding: 16px 0;
@@ -132,7 +128,6 @@
   border-bottom: 1px solid var(--linea);
 }
 
-/* width: max-content = el contenedor mide lo que mide todo su contenido */
 .cinta-pista {
   display: flex;
   width: max-content;
@@ -167,7 +162,6 @@
   color: var(--oro);
 }
 
-/* hay 4 copias, así que movemos 1/4 y el bucle no se nota */
 @keyframes cinta {
   from { transform: translateX(0); }
   to   { transform: translateX(-25%); }
@@ -179,7 +173,6 @@
   }
 }
 
-/* ---------- CIFRAS ---------- */
 .cifras {
   margin-bottom: 64px;
 }
@@ -231,7 +224,6 @@
   color: var(--suave);
 }
 
-/* ---------- BLOQUES ---------- */
 .bloque {
   margin-bottom: 64px;
 }
@@ -260,11 +252,6 @@
   margin: -8px 0 20px;
   font-size: 15px;
   color: var(--suave);
-}
-
-/* ---------- TABLA ---------- */
-.tabla-envoltura {
-  overflow-x: auto;
 }
 
 .tabla {
@@ -353,7 +340,6 @@
   }
 }
 
-/* ---------- PRÓXIMOS PARTIDOS ---------- */
 .encuentro {
   display: block;
   padding: 14px 0;
@@ -389,7 +375,6 @@
   color: var(--suave);
 }
 
-/* ---------- CANCHA DE POSICIONES ---------- */
 .campo {
   display: flex;
   height: 150px;
@@ -406,13 +391,13 @@
   padding: 14px;
   color: var(--negro);
   border-right: 3px solid var(--negro);
+  overflow: hidden;
 }
 
 .tramo:last-child {
   border-right: none;
 }
 
-/* el portero usa otra camiseta, por eso el amarillo */
 .tramo:nth-child(1) { background-color: var(--amarilla); }
 .tramo:nth-child(2) { background-color: var(--crema); }
 .tramo:nth-child(3) { background-color: var(--oro2); }
@@ -428,9 +413,11 @@
 .tramo-nombre {
   font-size: 14px;
   font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-/* ---------- RANKINGS ---------- */
 .ranking-fila {
   display: flex;
   align-items: center;
@@ -459,7 +446,6 @@
   color: var(--crema);
 }
 
-/* el máximo goleador se lee primero porque es mucho más grande */
 .ranking-fila.primero .ranking-nombre {
   font-family: var(--fuente-titulo);
   font-weight: 800;
@@ -500,7 +486,6 @@
   color: var(--crema);
 }
 
-/* ---------- RESULTADOS ---------- */
 .resultado {
   display: flex;
   align-items: center;
@@ -533,7 +518,6 @@
   color: var(--oro2);
 }
 
-/* ---------- PROGRAMA (estadios y árbitros) ---------- */
 .programa-fila {
   display: flex;
   flex-wrap: wrap;
@@ -568,7 +552,6 @@
   color: var(--suave);
 }
 
-/* ---------- PANTALLAS PEQUEÑAS ---------- */
 @media (max-width: 900px) {
   .portada {
     padding: 44px 0 48px;
@@ -599,53 +582,10 @@
     font-size: 56px;
   }
 }
-/* ---------- AVISO DE DATOS DE EJEMPLO Y CARGA ---------- */
-.aviso-ejemplo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
-  padding: 10px 16px;
-  font-size: 14px;
-  color: var(--oro2);
-  border: 1px dashed var(--linea);
-  background-color: rgba(212, 175, 114, 0.06);
-}
-
-.aviso-ejemplo i {
-  margin-right: 10px;
-}
-
-.estado-carga {
-  padding: 80px 0;
-  text-align: center;
-  font-family: var(--fuente-titulo);
-  font-weight: 700;
-  font-size: 24px;
-  text-transform: uppercase;
-  color: var(--suave);
-  animation: pulso 1.4s ease-in-out infinite;
-}
-
-@keyframes pulso {
-  50% { opacity: 0.4; }
-}
-
-/* ---------- ICONO DE LAS CIFRAS ---------- */
 .cifra-icono {
   position: absolute;
   top: 18px;
   right: 18px;
   font-size: 22px;
   color: var(--oro);
-}
-
-/* ---------- TRAMOS DE LA CANCHA (el texto ya no se desborda) ---------- */
-.tramo {
-  overflow: hidden;
-}
-
-.tramo-nombre {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }

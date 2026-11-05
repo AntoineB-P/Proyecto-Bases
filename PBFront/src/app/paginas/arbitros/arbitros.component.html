@@ -1,0 +1,90 @@
+<div class="seccion-cabeza">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="seccion-titulo">Árbitros</h1>
+    <p class="seccion-nota" *ngIf="!cargando">
+      {{ arbitros.length }} árbitros, {{ totalFifa }} con escarapela FIFA.
+    </p>
+  </div>
+  <button type="button" class="boton-oro animate__animated animate__fadeIn" *ngIf="esAdmin && !mostrarFormulario" (click)="nuevo()">
+    <i class="bi bi-plus-lg"></i> Agregar árbitro
+  </button>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<section class="panel-admin animate__animated animate__fadeIn" *ngIf="esAdmin && mostrarFormulario">
+  <h2 class="panel-admin-titulo">{{ editando ? 'Editar árbitro' : 'Nuevo árbitro' }}</h2>
+  <div class="row g-4">
+    <div class="col-md-4 campo-admin">
+      <label for="cedulaArbitro">Cédula</label>
+      <input id="cedulaArbitro" type="text" [(ngModel)]="formulario.cedula" [disabled]="editando">
+    </div>
+    <div class="col-md-4 campo-admin">
+      <label for="nombresArbitro">Nombres</label>
+      <input id="nombresArbitro" type="text" [(ngModel)]="formulario.nombres">
+    </div>
+    <div class="col-md-4 campo-admin">
+      <label for="apellidosArbitro">Apellidos</label>
+      <input id="apellidosArbitro" type="text" [(ngModel)]="formulario.apellidos">
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="ciudadArbitro">Ciudad</label>
+      <input id="ciudadArbitro" type="text" [(ngModel)]="formulario.ciudad">
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="categoriaArbitro">Categoría</label>
+      <select id="categoriaArbitro" [(ngModel)]="formulario.categoria">
+        <option *ngFor="let c of categorias" [value]="c">{{ c }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="botones-admin">
+    <button type="button" class="boton-oro" [disabled]="guardando" (click)="guardar()">
+      {{ guardando ? 'Guardando...' : 'Guardar' }}
+    </button>
+    <button type="button" class="boton-linea" (click)="cancelar()">Cancelar</button>
+  </div>
+</section>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando árbitros...</p>
+
+<div class="tabla-envoltura" *ngIf="!cargando && arbitros.length > 0">
+  <table class="tabla-liga">
+    <caption class="visually-hidden">Árbitros ordenados por partidos dirigidos</caption>
+    <thead>
+    <tr>
+      <th scope="col">Árbitro</th>
+      <th scope="col">Cédula</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Categoría</th>
+      <th scope="col" class="num">Partidos dirigidos</th>
+      <th scope="col" *ngIf="esAdmin"><span class="visually-hidden">Acciones</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="fila-liga animate__animated animate__fadeInUp"
+        *ngFor="let a of arbitros; let i = index"
+        [style.animation-delay.ms]="i * 40 + 200">
+      <td class="fuerte">
+        <span class="inicial" [class.fifa]="a.categoria === 'FIFA'" aria-hidden="true">{{ iniciales(a) }}</span>
+        {{ a.nombres }} {{ a.apellidos }}
+      </td>
+      <td>{{ a.cedula }}</td>
+      <td>{{ a.ciudad }}</td>
+      <td [class.etiqueta-oro]="a.categoria === 'FIFA'">{{ a.categoria }}</td>
+      <td class="num grande">{{ a.partidosDirigidos || 0 }}</td>
+      <td class="acciones" *ngIf="esAdmin">
+        <button type="button" class="boton-icono" (click)="editar(a)" aria-label="Editar árbitro">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button type="button" class="boton-icono peligro" (click)="eliminar(a)" aria-label="Eliminar árbitro">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="vacio" *ngIf="!cargando && arbitros.length === 0">Aún no hay árbitros registrados.</p>
