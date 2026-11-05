@@ -11,6 +11,7 @@ public class Jugador {
 	private String nacionalidad;
 	private LocalDate fechaNacimiento;
 	private String posicion;
+	private Integer estadistica;
 	
 	public Jugador() {
 		
@@ -73,6 +74,14 @@ public class Jugador {
 
 	public void setPosicion(String posicion) {
 		this.posicion = posicion;
+	}
+
+	public Integer getEstadistica() {
+		return estadistica;
+	}
+
+	public void setEstadistica(Integer estadistica) {
+		this.estadistica = estadistica;
 	}
 
 	@Override
