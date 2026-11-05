@@ -563,6 +563,19 @@ body.intro-activa .lateral *::after {
 }
 
 /* panel del administrador */
+.cabeza-admin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cabeza-admin .subtitulo-liga {
+  margin-bottom: 0;
+}
+
 .panel-admin {
   margin-bottom: 40px;
   padding: 28px 28px 8px;

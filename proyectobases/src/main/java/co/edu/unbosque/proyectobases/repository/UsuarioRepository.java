@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -139,6 +141,31 @@ public class UsuarioRepository {
         try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setLong(1, idUsuario);
             ps.executeUpdate();
+        } catch (SQLException e) {
+            throw ErrorBD.traducir(e);
+        }
+    }
+
+    public List<Usuario> listar() {
+        String sql = SELECT + "ORDER BY u.id_usuario";
+        List<Usuario> lista = new ArrayList<>();
+        try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                lista.add(mapear(rs));
+            }
+        } catch (SQLException e) {
+            throw ErrorBD.traducir(e);
+        }
+        return lista;
+    }
+
+    public int actualizarRol(Long idUsuario, String rol) {
+        String sql = "UPDATE usuario SET id_rol = (SELECT id_rol FROM rol WHERE nombre_rol = ?) WHERE id_usuario = ?";
+        try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, rol);
+            ps.setLong(2, idUsuario);
+            return ps.executeUpdate();
         } catch (SQLException e) {
             throw ErrorBD.traducir(e);
         }

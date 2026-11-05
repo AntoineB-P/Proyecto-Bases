@@ -1,0 +1,34 @@
+.pestanas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+  border-bottom: 2px solid var(--oro);
+}
+
+.pestana {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--suave);
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.pestana.activa {
+  background-color: var(--oro2);
+  color: var(--negro);
+}
+
+@media (hover: hover) {
+  .pestana:hover:not(.activa) {
+    color: var(--crema);
+  }
+}
