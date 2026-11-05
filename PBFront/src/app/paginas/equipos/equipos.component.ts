@@ -7,7 +7,7 @@ import { JugadorService } from '../../services/jugador.service';
 import { EquipoTorneoService } from '../../services/equipo-torneo.service';
 import { AuthService } from '../../services/auth.service';
 import { UsuarioService } from '../../services/usuario.service';
-import { EquipoModel } from '../../models/equipo.model';
+import { EquipoModel, COLORES_CAMISETA } from '../../models/equipo.model';
 import { EstadioModel } from '../../models/estadio.model';
 import { TecnicoModel } from '../../models/tecnico.model';
 
@@ -41,20 +41,7 @@ export class EquiposComponent implements OnInit {
   mensajeError = '';
   mensajeExito = '';
 
-  coloresCamiseta: any = {
-    'Amarillo': '#FACC15',
-    'Azul': '#2563EB',
-    'Azul claro': '#60A5FA',
-    'Azul oscuro': '#1E3A8A',
-    'Blanco': '#FFFFFF',
-    'Dorado': '#D4AF37',
-    'Naranja': '#F97316',
-    'Negro': '#111111',
-    'Rojo': '#DC2626',
-    'Rojo escarlata': '#B91C1C',
-    'Verde': '#16A34A',
-    'Vinotinto': '#7F1D1D'
-  };
+  coloresCamiseta = COLORES_CAMISETA;
 
   constructor(
     private equipoService: EquipoService,
@@ -120,7 +107,7 @@ export class EquiposComponent implements OnInit {
           this.cdr.detectChanges();
         },
         error: (err) => {
-          this.mensajeError = this.leerError(err);
+          this.mensajeError = this.authService.leerError(err);
           this.cdr.detectChanges();
         }
       });
@@ -132,7 +119,7 @@ export class EquiposComponent implements OnInit {
           this.cdr.detectChanges();
         },
         error: (err) => {
-          this.mensajeError = this.leerError(err);
+          this.mensajeError = this.authService.leerError(err);
           this.cdr.detectChanges();
         }
       });
@@ -255,7 +242,7 @@ export class EquiposComponent implements OnInit {
   }
 
   falloGuardar(err: any): void {
-    this.mensajeError = this.leerError(err);
+    this.mensajeError = this.authService.leerError(err);
     this.guardando = false;
     this.cdr.detectChanges();
   }
@@ -271,19 +258,9 @@ export class EquiposComponent implements OnInit {
         this.cargar();
       },
       error: (err) => {
-        this.mensajeError = this.leerError(err);
+        this.mensajeError = this.authService.leerError(err);
         this.cdr.detectChanges();
       }
     });
-  }
-
-  leerError(err: any): string {
-    if (err.status === 401 || err.status === 403) {
-      return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
-    }
-    if (err.error && err.error.error) {
-      return err.error.error;
-    }
-    return 'No se pudo completar la acción.';
   }
 }

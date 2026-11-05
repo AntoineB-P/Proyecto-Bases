@@ -44,27 +44,7 @@ export class AuthService {
 
   cerrarSesion(): void {
     localStorage.removeItem('token');
-    localStorage.removeItem('clienteId');
     localStorage.removeItem('usuarioNombre');
-  }
-
-  obtenerIdDesdeToken(): number {
-    const token = this.obtenerToken();
-    if (!token) return 0;
-    try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      return payload.id || payload.clienteId || 0;
-    } catch {
-      return 0;
-    }
-  }
-
-  guardarClienteId(id: number): void {
-    localStorage.setItem('clienteId', String(id));
-  }
-
-  obtenerClienteId(): number {
-    return Number(localStorage.getItem('clienteId')) || 0;
   }
 
   estaLogueado(): boolean {
@@ -83,6 +63,16 @@ export class AuthService {
 
   esAdmin(): boolean {
     return this.obtenerRol() === 'ADMIN';
+  }
+
+  leerError(err: any): string {
+    if (err.status === 401 || err.status === 403) {
+      return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
+    }
+    if (err.error && err.error.error) {
+      return err.error.error;
+    }
+    return 'No se pudo completar la acción.';
   }
 
   validarCorreo(correo: string): string {

@@ -9,10 +9,6 @@ export class UsuarioService {
   private cliente = inject(HttpClient);
   private readonly urlbase = API_URL + '/usuario';
 
-  postReenviarCodigo(correo: string) {
-    return this.cliente.post(this.urlbase + '/reenviar-codigo', { correo }, { responseType: 'text' });
-  }
-
   getFavorito() {
     return this.cliente.get<EquipoModel>(this.urlbase + '/favorito');
   }

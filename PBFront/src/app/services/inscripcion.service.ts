@@ -18,14 +18,6 @@ export class InscripcionService {
     );
   }
 
-  getPorJugador(idJugador: number) {
-    return this.cliente.get<InscripcionModel[]>(this.urlbase + '/jugador/' + idJugador);
-  }
-
-  getBuscar(idEquipo: number, idTorneo: number, idJugador: number) {
-    return this.cliente.get<InscripcionModel>(this.ruta(idEquipo, idTorneo, idJugador));
-  }
-
   postCrear(inscripcion: InscripcionModel) {
     return this.cliente.post<InscripcionModel>(this.urlbase, inscripcion);
   }

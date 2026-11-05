@@ -35,7 +35,7 @@ export class AdminUsuariosComponent implements OnInit {
         this.cdr.detectChanges();
       },
       error: (err) => {
-        this.mensajeError = this.leerError(err);
+        this.mensajeError = this.authService.leerError(err);
         this.cargando = false;
         this.cdr.detectChanges();
       }
@@ -56,19 +56,9 @@ export class AdminUsuariosComponent implements OnInit {
         this.cargar();
       },
       error: (err) => {
-        this.mensajeError = this.leerError(err);
+        this.mensajeError = this.authService.leerError(err);
         this.cdr.detectChanges();
       }
     });
-  }
-
-  leerError(err: any): string {
-    if (err.status === 401 || err.status === 403) {
-      return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
-    }
-    if (err.error && err.error.error) {
-      return err.error.error;
-    }
-    return 'No se pudo completar la acción.';
   }
 }

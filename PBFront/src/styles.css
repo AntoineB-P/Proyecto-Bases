@@ -17,12 +17,7 @@
   --salida: cubic-bezier(0.23, 1, 0.32, 1);
   --ancho-lateral: 250px;
 
-
   --animate-duration: 700ms;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
@@ -107,8 +102,6 @@ input:focus-visible {
   border-radius: 8px;
 }
 
-/* ---------- INTRO DEL BALÓN ----------
-   y todo arranca en orden. */
 body.intro-activa .principal,
 body.intro-activa .principal *,
 body.intro-activa .principal *::before,
@@ -119,7 +112,6 @@ body.intro-activa .lateral *::before,
 body.intro-activa .lateral *::after {
   animation-play-state: paused !important;
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -214,11 +206,13 @@ body.intro-activa .lateral *::after {
   color: var(--suave);
 }
 
-.campo {
+.campo,
+.campo-admin {
   margin-bottom: 22px;
 }
 
-.campo-nombre {
+.campo-nombre,
+.campo-admin label {
   display: block;
   margin-bottom: 4px;
   font-size: 14px;
@@ -254,7 +248,8 @@ body.intro-activa .lateral *::after {
   font-size: 16px;
 }
 
-.campo-fila input::placeholder {
+.campo-fila input::placeholder,
+.campo-admin input:disabled {
   color: var(--suave);
 }
 
@@ -307,7 +302,8 @@ body.intro-activa .lateral *::after {
   transform: scale(0.97);
 }
 
-.enviar:disabled {
+.enviar:disabled,
+.boton-oro:disabled {
   opacity: 0.6;
   cursor: wait;
 }
@@ -323,20 +319,6 @@ body.intro-activa .lateral *::after {
 
 .enlaces a {
   color: var(--oro2);
-}
-
-@media (hover: hover) {
-  .enviar:hover:not(:disabled) {
-    background-color: var(--crema);
-  }
-
-  .ojo:hover i {
-    color: var(--oro2);
-  }
-
-  .enlaces a:hover {
-    color: var(--crema);
-  }
 }
 
 @media (max-width: 900px) {
@@ -360,7 +342,6 @@ body.intro-activa .lateral *::after {
   }
 }
 
-/*  PÁGINAS LIGA */
 .seccion-cabeza {
   display: flex;
   flex-wrap: wrap;
@@ -427,7 +408,6 @@ body.intro-activa .lateral *::after {
   border-bottom: 1px solid var(--linea);
 }
 
-/* tabla */
 .tabla-envoltura {
   overflow-x: auto;
 }
@@ -513,7 +493,6 @@ body.intro-activa .lateral *::after {
   font-weight: 600;
 }
 
-/* botones */
 .boton-oro,
 .boton-linea {
   display: inline-flex;
@@ -547,11 +526,6 @@ body.intro-activa .lateral *::after {
   transform: scale(0.96);
 }
 
-.boton-oro:disabled {
-  opacity: 0.6;
-  cursor: wait;
-}
-
 .boton-icono {
   padding: 6px 9px;
   border: none;
@@ -562,7 +536,6 @@ body.intro-activa .lateral *::after {
   transition: color 160ms ease, transform 120ms ease-out;
 }
 
-/* panel del administrador */
 .cabeza-admin {
   display: flex;
   flex-wrap: wrap;
@@ -592,17 +565,6 @@ body.intro-activa .lateral *::after {
   color: var(--crema);
 }
 
-.campo-admin {
-  margin-bottom: 22px;
-}
-
-.campo-admin label {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 14px;
-  color: var(--suave);
-}
-
 .campo-admin input,
 .campo-admin select,
 .filtro-liga {
@@ -623,10 +585,6 @@ body.intro-activa .lateral *::after {
 .campo-admin select:focus,
 .filtro-liga:focus {
   border-bottom-color: var(--oro2);
-}
-
-.campo-admin input:disabled {
-  color: var(--suave);
 }
 
 .campo-admin select option,
@@ -655,6 +613,7 @@ body.intro-activa .lateral *::after {
 }
 
 @media (hover: hover) {
+  .enviar:hover:not(:disabled),
   .boton-oro:hover:not(:disabled) {
     background-color: var(--crema);
   }
@@ -664,12 +623,17 @@ body.intro-activa .lateral *::after {
     color: var(--negro);
   }
 
+  .ojo:hover i,
   .boton-icono:hover {
     color: var(--oro2);
   }
 
   .boton-icono.peligro:hover {
     color: var(--roja);
+  }
+
+  .enlaces a:hover {
+    color: var(--crema);
   }
 
   .fila-liga:hover {

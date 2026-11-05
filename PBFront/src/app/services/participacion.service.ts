@@ -8,16 +8,8 @@ export class ParticipacionService {
   private cliente = inject(HttpClient);
   private readonly urlbase = API_URL + '/participaciones';
 
-  getPorId(id: number) {
-    return this.cliente.get<ParticipacionModel>(this.urlbase + '/' + id);
-  }
-
   getPorPartido(idPartido: number) {
     return this.cliente.get<ParticipacionModel[]>(this.urlbase + '/partido/' + idPartido);
-  }
-
-  getPorJugador(idJugador: number) {
-    return this.cliente.get<ParticipacionModel[]>(this.urlbase + '/jugador/' + idJugador);
   }
 
   postCrear(participacion: ParticipacionModel) {

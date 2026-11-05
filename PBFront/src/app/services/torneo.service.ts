@@ -12,10 +12,6 @@ export class TorneoService {
     return this.cliente.get<TorneoModel[]>(this.urlbase);
   }
 
-  getPorId(id: number) {
-    return this.cliente.get<TorneoModel>(this.urlbase + '/' + id);
-  }
-
   postCrear(torneo: TorneoModel) {
     return this.cliente.post<TorneoModel>(this.urlbase, torneo);
   }

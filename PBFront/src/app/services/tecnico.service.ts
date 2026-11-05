@@ -12,10 +12,6 @@ export class TecnicoService {
     return this.cliente.get<TecnicoModel[]>(this.urlbase);
   }
 
-  getPorId(id: number) {
-    return this.cliente.get<TecnicoModel>(this.urlbase + '/' + id);
-  }
-
   postCrear(tecnico: TecnicoModel) {
     return this.cliente.post<TecnicoModel>(this.urlbase, tecnico);
   }

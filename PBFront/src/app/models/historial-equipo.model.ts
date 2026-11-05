@@ -3,8 +3,8 @@ export interface HistorialEquipoModel {
   fecha: string;
   jornada: number;
   rival: string;
-  condicion: string; // 'LOCAL' | 'VISITANTE'
+  condicion: string;
   golesFavor: number;
   golesContra: number;
-  resultado: string; // 'G' | 'E' | 'P'
+  resultado: string;
 }

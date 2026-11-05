@@ -147,7 +147,7 @@ public class ConsultaRepository {
 				+ "  (SELECT e.nombre_equipo FROM inscripcion i "
 				+ "     JOIN equipo e ON e.id_equipo = i.id_equipo "
 				+ "     WHERE i.id_jugador = j.id_jugador AND i.id_torneo = ? "
-				+ "       AND i.fecha_fin IS NULL AND ROWNUM = 1) AS nombre_equipo "
+				+ "       AND i.fecha_fin IS NULL FETCH FIRST 1 ROWS ONLY) AS nombre_equipo "
 				+ "FROM jugador j "
 				+ "WHERE j.id_jugador IN (SELECT i.id_jugador FROM inscripcion i WHERE i.id_torneo = ?) "
 				+ "ORDER BY goles DESC, nombre_jugador";

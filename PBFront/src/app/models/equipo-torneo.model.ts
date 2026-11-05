@@ -1,6 +1,6 @@
 export interface EquipoTorneoModel {
   idEquipo: number;
-  nombreEquipo?: string | null; // solo lectura
+  nombreEquipo?: string | null;
   idTorneo: number;
-  nombreTorneo?: string | null; // solo lectura
+  nombreTorneo?: string | null;
 }

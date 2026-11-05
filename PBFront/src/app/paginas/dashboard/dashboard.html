@@ -1,11 +1,7 @@
-<app-estadio3d></app-estadio3d>
 <app-estadioimagen></app-estadioimagen>
-<p class="aviso-ejemplo" *ngIf="ejemplo && !cargando" role="status">
-  <i class="bi bi-info-circle" aria-hidden="true"></i>
-  Mostrando datos de ejemplo: no se pudo conectar con el backend.
-</p>
+<p class="mensaje error" *ngIf="sinConexion && !cargando">No se pudo conectar con el backend.</p>
 
-<p class="estado-carga" *ngIf="cargando" role="status">Cargando datos de la liga...</p>
+<p class="estado-pagina text-center" *ngIf="cargando" role="status">Cargando datos de la liga...</p>
 
 <ng-container *ngIf="!cargando">
 
@@ -53,7 +49,6 @@
     </div>
   </section>
 
-  <!-- CIFRAS -->
   <section class="row g-3 cifras" aria-label="Cifras generales de la liga">
     <div class="col-6 col-lg-3 animate__animated animate__zoomIn"
          *ngFor="let ind of indicadores; let i = index"
@@ -66,7 +61,6 @@
     </div>
   </section>
 
-  <!-- TABLA + PRÓXIMOS PARTIDOS -->
   <div class="row g-5">
 
     <div class="col-xl-8">
@@ -150,8 +144,6 @@
     </div>
   </section>
 
-
-
   <div class="row g-5">
 
     <div class="col-lg-4">
@@ -213,7 +205,6 @@
 
   </div>
 
-  <!-- ESTADIOS Y ÁRBITROS -->
   <div class="row g-5">
 
     <div class="col-lg-6">
