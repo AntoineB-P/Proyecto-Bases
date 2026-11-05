@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { JugadorService } from '../../services/jugador.service';
 import { EquipoService } from '../../services/equipo.service';
+import { ConsultaService } from '../../services/consulta.service';
 import { AuthService } from '../../services/auth.service';
 import { JugadorModel, POSICIONES_JUGADOR } from '../../models/jugador.model';
 import { EquipoModel } from '../../models/equipo.model';
@@ -18,6 +19,7 @@ export class JugadoresComponent implements OnInit {
   equipos: EquipoModel[] = [];
   posiciones = POSICIONES_JUGADOR;
   idTorneo = 1;
+  numeros: any = {};
 
   filtroEquipo = 0;
   filtroPosicion = '';
@@ -36,6 +38,7 @@ export class JugadoresComponent implements OnInit {
   constructor(
     private jugadorService: JugadorService,
     private equipoService: EquipoService,
+    private consultaService: ConsultaService,
     private authService: AuthService,
     private cdr: ChangeDetectorRef
   ) {}
@@ -50,6 +53,36 @@ export class JugadoresComponent implements OnInit {
       },
       error: () => {}
     });
+    this.consultaService.getEstadisticasJugadores(this.idTorneo).subscribe({
+      next: (lista) => {
+        for (let e of lista) {
+          this.numeros[e.idJugador] = e;
+        }
+        this.cdr.detectChanges();
+      },
+      error: () => {}
+    });
+  }
+
+  numero(jugador: JugadorModel, campo: string): number {
+    let estadistica = this.numeros[jugador.idJugador || 0];
+    if (estadistica) {
+      return estadistica[campo];
+    }
+    return 0;
+  }
+
+  datoPosicion(jugador: JugadorModel): string {
+    if (jugador.posicion === 'Atacante') {
+      return (jugador.tirosPuerta || 0) + ' tiros a puerta';
+    }
+    if (jugador.posicion === 'Mediocampista') {
+      return (jugador.pases || 0) + ' pases';
+    }
+    if (jugador.posicion === 'Defensa') {
+      return (jugador.entradasOportunas || 0) + ' entradas';
+    }
+    return (jugador.porteriaImbatida || 0) + ' vallas invictas';
   }
 
   cargar(): void {
@@ -159,7 +192,7 @@ export class JugadoresComponent implements OnInit {
   }
 
   falloGuardar(err: any): void {
-    this.mensajeError = this.leerError(err);
+    this.mensajeError = this.authService.leerError(err);
     this.guardando = false;
     this.cdr.detectChanges();
   }
@@ -174,19 +207,9 @@ export class JugadoresComponent implements OnInit {
         this.cargar();
       },
       error: (err) => {
-        this.mensajeError = this.leerError(err);
+        this.mensajeError = this.authService.leerError(err);
         this.cdr.detectChanges();
       }
     });
-  }
-
-  leerError(err: any): string {
-    if (err.status === 401 || err.status === 403) {
-      return 'Tu sesión expiró o no eres administrador. Inicia sesión de nuevo.';
-    }
-    if (err.error && err.error.error) {
-      return err.error.error;
-    }
-    return 'No se pudo completar la acción.';
   }
 }

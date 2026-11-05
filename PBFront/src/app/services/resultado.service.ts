@@ -12,10 +12,6 @@ export class ResultadoService {
     return this.cliente.get<ResultadoModel>(this.urlbase + '/partido/' + idPartido);
   }
 
-  getPorTorneo(idTorneo: number) {
-    return this.cliente.get<ResultadoModel[]>(this.urlbase + '/torneo/' + idTorneo);
-  }
-
   postCrear(resultado: ResultadoModel) {
     return this.cliente.post<ResultadoModel>(this.urlbase, resultado);
   }

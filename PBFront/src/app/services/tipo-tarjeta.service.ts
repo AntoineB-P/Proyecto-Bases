@@ -12,10 +12,6 @@ export class TipoTarjetaService {
     return this.cliente.get<TipoTarjetaModel[]>(this.urlbase);
   }
 
-  getPorId(id: number) {
-    return this.cliente.get<TipoTarjetaModel>(this.urlbase + '/' + id);
-  }
-
   postCrear(tipo: TipoTarjetaModel) {
     return this.cliente.post<TipoTarjetaModel>(this.urlbase, tipo);
   }

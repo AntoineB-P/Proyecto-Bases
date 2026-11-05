@@ -1,5 +1,7 @@
 package co.edu.unbosque.proyectobases.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -71,5 +73,16 @@ public class UsuarioController {
     public ResponseEntity<EquipoDTO> obtenerFavorito() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         return new ResponseEntity<>(usuarioService.obtenerFavorito(username), HttpStatus.OK);
+    }
+
+    @GetMapping("/todos")
+    public ResponseEntity<List<UsuarioDTO>> listar() {
+        return new ResponseEntity<>(usuarioService.listar(), HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}/rol/{rol}")
+    public ResponseEntity<String> cambiarRol(@PathVariable Long id, @PathVariable String rol) {
+        usuarioService.cambiarRol(id, rol);
+        return new ResponseEntity<>("Rol actualizado", HttpStatus.OK);
     }
 }

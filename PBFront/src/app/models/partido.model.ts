@@ -2,14 +2,14 @@ export interface PartidoModel {
   idPartido?: number;
   idTorneo: number;
   fecha: string;
-  hora: string; // "19:30"
+  hora: string;
   jornada: number;
   idEstadio: number;
-  nombreEstadio?: string | null; // solo lectura
+  nombreEstadio?: string | null;
   idLocal: number;
-  nombreLocal?: string | null; // solo lectura
+  nombreLocal?: string | null;
   idVisitante: number;
-  nombreVisitante?: string | null; // solo lectura
-  golesLocal?: number | null; // null si no se ha jugado
+  nombreVisitante?: string | null;
+  golesLocal?: number | null;
   golesVisitante?: number | null;
 }

@@ -12,16 +12,6 @@ export class ArbitrajeService {
     return this.cliente.get<ArbitrajeModel[]>(this.urlbase + '/partido/' + idPartido);
   }
 
-  getPorArbitro(cedula: string) {
-    return this.cliente.get<ArbitrajeModel[]>(this.urlbase + '/arbitro/' + cedula);
-  }
-
-  getBuscar(idPartido: number, cedula: string) {
-    return this.cliente.get<ArbitrajeModel>(
-      this.urlbase + '/partido/' + idPartido + '/arbitro/' + cedula,
-    );
-  }
-
   postCrear(arbitraje: ArbitrajeModel) {
     return this.cliente.post<ArbitrajeModel>(this.urlbase, arbitraje);
   }

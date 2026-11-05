@@ -10,6 +10,7 @@ import { PartidosComponent } from './paginas/partidos/partidos.component';
 import { ArbitrosComponent } from './paginas/arbitros/arbitros.component';
 import { EstadiosComponent } from './paginas/estadios/estadios.component';
 import { TorneosComponent } from './paginas/torneos/torneos.component';
+import { AdminComponent } from './paginas/admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'arbitros', component: ArbitrosComponent },
   { path: 'estadios', component: EstadiosComponent },
   { path: 'torneos', component: TorneosComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'login', component: Login },
   { path: 'registro', component: Registro },
   { path: '**', redirectTo: 'dashboard' }

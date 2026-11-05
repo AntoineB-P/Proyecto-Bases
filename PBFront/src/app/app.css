@@ -7,7 +7,6 @@
   animation: entra-grande 1100ms var(--salida) backwards;
 }
 
-/* la página empieza más grande y se acomoda a su tamaño real */
 @keyframes entra-grande {
   from {
     opacity: 0;
@@ -36,5 +35,3 @@
 .contenido.sinmargen {
   padding: 0;
 }
-
-

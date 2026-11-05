@@ -8,17 +8,12 @@ export class EquipoService {
   private cliente = inject(HttpClient);
   private readonly urlbase = API_URL + '/equipos';
 
-  /** Con idTorneo trae solo los equipos de ese torneo. */
   getListar(idTorneo?: number) {
     let params = new HttpParams();
     if (idTorneo != null) {
       params = params.set('idTorneo', idTorneo.toString());
     }
     return this.cliente.get<EquipoModel[]>(this.urlbase, { params });
-  }
-
-  getPorId(id: number) {
-    return this.cliente.get<EquipoModel>(this.urlbase + '/' + id);
   }
 
   postCrear(equipo: EquipoModel) {

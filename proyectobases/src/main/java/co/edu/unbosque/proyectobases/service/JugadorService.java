@@ -33,6 +33,15 @@ public class JugadorService {
 		dto.setFechaNacimiento(j.getFechaNacimiento());
 		dto.setEdad(Period.between(j.getFechaNacimiento(), LocalDate.now()).getYears());
 		dto.setPosicion(j.getPosicion());
+		if (j.getPosicion().equals("Atacante")) {
+			dto.setTirosPuerta(j.getEstadistica());
+		} else if (j.getPosicion().equals("Mediocampista")) {
+			dto.setPases(j.getEstadistica());
+		} else if (j.getPosicion().equals("Defensa")) {
+			dto.setEntradasOportunas(j.getEstadistica());
+		} else if (j.getPosicion().equals("Portero")) {
+			dto.setPorteriaImbatida(j.getEstadistica());
+		}
 		return dto;
 	}
 
@@ -47,6 +56,18 @@ public class JugadorService {
 		Validador.fechaNoFutura(dto.getFechaNacimiento(), "fecha de nacimiento");
 		j.setFechaNacimiento(dto.getFechaNacimiento());
 		j.setPosicion(Validador.opcion(dto.getPosicion(), "posición", POSICIONES));
+		Integer estadistica = dto.getTirosPuerta();
+		if (j.getPosicion().equals("Mediocampista")) {
+			estadistica = dto.getPases();
+		} else if (j.getPosicion().equals("Defensa")) {
+			estadistica = dto.getEntradasOportunas();
+		} else if (j.getPosicion().equals("Portero")) {
+			estadistica = dto.getPorteriaImbatida();
+		}
+		if (estadistica != null && estadistica < 0) {
+			throw new DatoInvalidoException("La estadística del jugador no puede ser negativa");
+		}
+		j.setEstadistica(estadistica);
 		return j;
 	}
 

@@ -8,7 +8,6 @@ export class PartidoService {
   private cliente = inject(HttpClient);
   private readonly urlbase = API_URL + '/partidos';
 
-  /** Sin filtros trae todos. jornada exige idTorneo. */
   getListar(filtros?: { idTorneo?: number; jornada?: number; idEquipo?: number }) {
     let params = new HttpParams();
     if (filtros?.idTorneo != null) {
@@ -21,10 +20,6 @@ export class PartidoService {
       params = params.set('idEquipo', filtros.idEquipo.toString());
     }
     return this.cliente.get<PartidoModel[]>(this.urlbase, { params });
-  }
-
-  getPorId(id: number) {
-    return this.cliente.get<PartidoModel>(this.urlbase + '/' + id);
   }
 
   postCrear(partido: PartidoModel) {

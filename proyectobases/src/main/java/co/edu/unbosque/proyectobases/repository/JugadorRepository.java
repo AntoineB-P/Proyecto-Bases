@@ -17,6 +17,14 @@ import co.edu.unbosque.proyectobases.exception.ErrorBD;
 @Repository
 public class JugadorRepository {
 
+	private static final String SELECT = "SELECT j.id_jugador, j.nombres, j.apellidos, j.nacionalidad, j.fecha_nacimiento, "
+			+ "j.posicion, COALESCE(a.tiros_puerta, m.pases, d.entradas_oportunas, p.porteria_imbatida) AS estadistica "
+			+ "FROM jugador j "
+			+ "LEFT JOIN atacante a ON a.id_jugador = j.id_jugador "
+			+ "LEFT JOIN mediocampista m ON m.id_jugador = j.id_jugador "
+			+ "LEFT JOIN defensa d ON d.id_jugador = j.id_jugador "
+			+ "LEFT JOIN portero p ON p.id_jugador = j.id_jugador ";
+
 	private Jugador mapear(ResultSet rs) throws SQLException {
 		Jugador j = new Jugador();
 		j.setIdJugador(rs.getLong("id_jugador"));
@@ -25,12 +33,15 @@ public class JugadorRepository {
 		j.setNacionalidad(rs.getString("nacionalidad"));
 		j.setFechaNacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
 		j.setPosicion(rs.getString("posicion"));
+		int estadistica = rs.getInt("estadistica");
+		if (!rs.wasNull()) {
+			j.setEstadistica(estadistica);
+		}
 		return j;
 	}
 
 	public List<Jugador> listar() {
-		String sql = "SELECT id_jugador, nombres, apellidos, nacionalidad, fecha_nacimiento, posicion "
-				+ "FROM jugador ORDER BY id_jugador";
+		String sql = SELECT + "ORDER BY j.id_jugador";
 		List<Jugador> lista = new ArrayList<>();
 		try (Connection con = ConexionBD.obtener();
 				PreparedStatement ps = con.prepareStatement(sql);
@@ -46,8 +57,7 @@ public class JugadorRepository {
 
 	/** Devuelve null si no existe. */
 	public Jugador buscarPorId(Long id) {
-		String sql = "SELECT id_jugador, nombres, apellidos, nacionalidad, fecha_nacimiento, posicion "
-				+ "FROM jugador WHERE id_jugador = ?";
+		String sql = SELECT + "WHERE j.id_jugador = ?";
 		try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
 			ps.setLong(1, id);
 			try (ResultSet rs = ps.executeQuery()) {
@@ -63,8 +73,7 @@ public class JugadorRepository {
 
 	/** Plantilla de un equipo en un torneo (se obtiene por la tabla inscripcion). */
 	public List<Jugador> listarPorEquipoYTorneo(Long idEquipo, Long idTorneo) {
-		String sql = "SELECT j.id_jugador, j.nombres, j.apellidos, j.nacionalidad, j.fecha_nacimiento, j.posicion "
-				+ "FROM jugador j JOIN inscripcion i ON i.id_jugador = j.id_jugador "
+		String sql = SELECT + "JOIN inscripcion i ON i.id_jugador = j.id_jugador "
 				+ "WHERE i.id_equipo = ? AND i.id_torneo = ? ORDER BY j.apellidos, j.nombres";
 		List<Jugador> lista = new ArrayList<>();
 		try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
@@ -82,8 +91,7 @@ public class JugadorRepository {
 	}
 
 	public List<Jugador> listarPorPosicion(String posicion) {
-		String sql = "SELECT id_jugador, nombres, apellidos, nacionalidad, fecha_nacimiento, posicion "
-				+ "FROM jugador WHERE posicion = ? ORDER BY apellidos, nombres";
+		String sql = SELECT + "WHERE j.posicion = ? ORDER BY j.apellidos, j.nombres";
 		List<Jugador> lista = new ArrayList<>();
 		try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
 			ps.setString(1, posicion);
@@ -120,7 +128,9 @@ public class JugadorRepository {
 			ps.setString(4, j.getNacionalidad());
 			ps.setDate(5, Date.valueOf(j.getFechaNacimiento()));
 			ps.setString(6, j.getPosicion());
-			return ps.executeUpdate();
+			int filas = ps.executeUpdate();
+			guardarEspecializacion(con, j);
+			return filas;
 		} catch (SQLException e) {
 			throw ErrorBD.traducir(e);
 		}
@@ -136,15 +146,46 @@ public class JugadorRepository {
 			ps.setDate(4, Date.valueOf(j.getFechaNacimiento()));
 			ps.setString(5, j.getPosicion());
 			ps.setLong(6, j.getIdJugador());
-			return ps.executeUpdate();
+			int filas = ps.executeUpdate();
+			guardarEspecializacion(con, j);
+			return filas;
 		} catch (SQLException e) {
 			throw ErrorBD.traducir(e);
+		}
+	}
+
+	private void borrarEspecializacion(Connection con, Long idJugador) throws SQLException {
+		String[] tablas = { "atacante", "mediocampista", "defensa", "portero" };
+		for (String tabla : tablas) {
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM " + tabla + " WHERE id_jugador = ?")) {
+				ps.setLong(1, idJugador);
+				ps.executeUpdate();
+			}
+		}
+	}
+
+	private void guardarEspecializacion(Connection con, Jugador j) throws SQLException {
+		borrarEspecializacion(con, j.getIdJugador());
+
+		String sql = "INSERT INTO atacante (id_jugador, tiros_puerta) VALUES (?, ?)";
+		if (j.getPosicion().equals("Mediocampista")) {
+			sql = "INSERT INTO mediocampista (id_jugador, pases) VALUES (?, ?)";
+		} else if (j.getPosicion().equals("Defensa")) {
+			sql = "INSERT INTO defensa (id_jugador, entradas_oportunas) VALUES (?, ?)";
+		} else if (j.getPosicion().equals("Portero")) {
+			sql = "INSERT INTO portero (id_jugador, porteria_imbatida) VALUES (?, ?)";
+		}
+		try (PreparedStatement ps = con.prepareStatement(sql)) {
+			ps.setLong(1, j.getIdJugador());
+			ps.setInt(2, j.getEstadistica() == null ? 0 : j.getEstadistica());
+			ps.executeUpdate();
 		}
 	}
 
 	public int eliminar(Long id) {
 		String sql = "DELETE FROM jugador WHERE id_jugador = ?";
 		try (Connection con = ConexionBD.obtener(); PreparedStatement ps = con.prepareStatement(sql)) {
+			borrarEspecializacion(con, id);
 			ps.setLong(1, id);
 			return ps.executeUpdate();
 		} catch (SQLException e) {

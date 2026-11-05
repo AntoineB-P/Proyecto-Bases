@@ -43,7 +43,6 @@ export class Login {
     this.authService.iniciarSesion(this.formulario.usuario, this.formulario.contrasenia, this.formulario.correo).subscribe({
       next: (token) => {
         this.authService.guardarToken(token);
-        this.authService.guardarClienteId(this.authService.obtenerIdDesdeToken());
         this.authService.guardarUsuario(this.formulario.usuario);
         this.mensajeExito = 'Sesión iniciada.';
         this.cargando = false;

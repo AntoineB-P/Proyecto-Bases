@@ -4,7 +4,7 @@ export interface JugadorModel {
   apellidos: string;
   nacionalidad: string;
   fechaNacimiento: string;
-  edad?: number; // derivado, solo lectura
+  edad?: number;
   posicion: string;
   tirosPuerta?: number | null;
   pases?: number | null;

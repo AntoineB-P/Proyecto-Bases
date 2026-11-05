@@ -8,18 +8,8 @@ export class GolService {
   private cliente = inject(HttpClient);
   private readonly urlbase = API_URL + '/goles';
 
-  getPorParticipacion(idParticipacion: number) {
-    return this.cliente.get<GolModel[]>(this.urlbase + '/participacion/' + idParticipacion);
-  }
-
   getPorPartido(idPartido: number) {
     return this.cliente.get<GolModel[]>(this.urlbase + '/partido/' + idPartido);
-  }
-
-  getBuscar(idParticipacion: number, idGol: number) {
-    return this.cliente.get<GolModel>(
-      this.urlbase + '/participacion/' + idParticipacion + '/gol/' + idGol,
-    );
   }
 
   postCrear(gol: GolModel) {

@@ -2,6 +2,8 @@ package co.edu.unbosque.proyectobases.service;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -154,5 +156,26 @@ public class UsuarioService {
             throw new RecursoNoEncontradoException("No has marcado un club favorito");
         }
         return equipoService.buscarPorId(u.getIdEquipoFavorito());
+    }
+
+    public List<UsuarioDTO> listar() {
+        List<UsuarioDTO> lista = new ArrayList<>();
+        for (Usuario u : uRep.listar()) {
+            UsuarioDTO dto = new UsuarioDTO();
+            dto.setIdUsuario(u.getIdUsuario());
+            dto.setUsuario(u.getUsuario());
+            dto.setCorreo(u.getCorreo());
+            dto.setRol(u.getRol().name());
+            dto.setVerificado(u.isVerificado());
+            lista.add(dto);
+        }
+        return lista;
+    }
+
+    public void cambiarRol(Long idUsuario, String rol) {
+        String valido = Validador.opcion(rol, "rol", "ADMIN", "USUARIO");
+        if (uRep.actualizarRol(idUsuario, valido) == 0) {
+            throw new RecursoNoEncontradoException("No existe el usuario con id " + idUsuario);
+        }
     }
 }

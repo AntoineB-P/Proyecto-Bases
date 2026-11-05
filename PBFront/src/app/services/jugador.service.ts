@@ -12,21 +12,11 @@ export class JugadorService {
     return this.cliente.get<JugadorModel[]>(this.urlbase);
   }
 
-  /** El back exige idEquipo e idTorneo juntos. */
   getPlantilla(idEquipo: number, idTorneo: number) {
     const params = new HttpParams()
       .set('idEquipo', idEquipo.toString())
       .set('idTorneo', idTorneo.toString());
     return this.cliente.get<JugadorModel[]>(this.urlbase, { params });
-  }
-
-  getPorPosicion(posicion: string) {
-    const params = new HttpParams().set('posicion', posicion);
-    return this.cliente.get<JugadorModel[]>(this.urlbase, { params });
-  }
-
-  getPorId(id: number) {
-    return this.cliente.get<JugadorModel>(this.urlbase + '/' + id);
   }
 
   postCrear(jugador: JugadorModel) {

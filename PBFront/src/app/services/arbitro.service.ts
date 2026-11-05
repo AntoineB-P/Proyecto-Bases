@@ -12,10 +12,6 @@ export class ArbitroService {
     return this.cliente.get<ArbitroModel[]>(this.urlbase);
   }
 
-  getPorCedula(cedula: string) {
-    return this.cliente.get<ArbitroModel>(this.urlbase + '/' + cedula);
-  }
-
   postCrear(arbitro: ArbitroModel) {
     return this.cliente.post<ArbitroModel>(this.urlbase, arbitro);
   }

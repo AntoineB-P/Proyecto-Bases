@@ -67,7 +67,6 @@
   margin-right: 14px;
 }
 
-/* subrayado dorado que se dibuja de izquierda a derecha */
 .opcion::after {
   content: '';
   position: absolute;

@@ -12,10 +12,6 @@ export class EstadioService {
     return this.cliente.get<EstadioModel[]>(this.urlbase);
   }
 
-  getPorId(id: number) {
-    return this.cliente.get<EstadioModel>(this.urlbase + '/' + id);
-  }
-
   postCrear(estadio: EstadioModel) {
     return this.cliente.post<EstadioModel>(this.urlbase, estadio);
   }

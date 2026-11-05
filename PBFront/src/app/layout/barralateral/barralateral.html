@@ -14,7 +14,7 @@
     <ng-container *ngFor="let op of opciones; let i = index">
 
       <a class="opcion animate__animated animate__fadeInLeft"
-         *ngIf="op.listo"
+         *ngIf="op.listo && (!op.soloAdmin || esAdmin)"
          [routerLink]="op.ruta"
          routerLinkActive="activa"
          [ngStyle]="{'animation-delay': (i * 70 + 200) + 'ms'}">

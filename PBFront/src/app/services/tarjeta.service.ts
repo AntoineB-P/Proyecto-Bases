@@ -12,16 +12,8 @@ export class TarjetaService {
     return this.urlbase + '/participacion/' + idParticipacion + '/tarjeta/' + idTarjeta;
   }
 
-  getPorParticipacion(idParticipacion: number) {
-    return this.cliente.get<TarjetaModel[]>(this.urlbase + '/participacion/' + idParticipacion);
-  }
-
   getPorPartido(idPartido: number) {
     return this.cliente.get<TarjetaModel[]>(this.urlbase + '/partido/' + idPartido);
-  }
-
-  getBuscar(idParticipacion: number, idTarjeta: number) {
-    return this.cliente.get<TarjetaModel>(this.ruta(idParticipacion, idTarjeta));
   }
 
   postCrear(tarjeta: TarjetaModel) {

@@ -5,5 +5,5 @@ export interface TorneoModel {
   semestre: number;
   fechaInicio: string;
   fechaFin: string;
-  duracionDias?: number; // derivado, solo lectura
+  duracionDias?: number;
 }

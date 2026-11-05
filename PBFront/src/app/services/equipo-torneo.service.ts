@@ -8,14 +8,6 @@ export class EquipoTorneoService {
   private cliente = inject(HttpClient);
   private readonly urlbase = API_URL + '/equipo-torneo';
 
-  getPorTorneo(idTorneo: number) {
-    return this.cliente.get<EquipoTorneoModel[]>(this.urlbase + '/torneo/' + idTorneo);
-  }
-
-  getPorEquipo(idEquipo: number) {
-    return this.cliente.get<EquipoTorneoModel[]>(this.urlbase + '/equipo/' + idEquipo);
-  }
-
   postCrear(equipoTorneo: EquipoTorneoModel) {
     return this.cliente.post<EquipoTorneoModel>(this.urlbase, equipoTorneo);
   }
