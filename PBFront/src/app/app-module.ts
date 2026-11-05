@@ -21,6 +21,11 @@ import { PartidosComponent } from './paginas/partidos/partidos.component';
 import { ArbitrosComponent } from './paginas/arbitros/arbitros.component';
 import { EstadiosComponent } from './paginas/estadios/estadios.component';
 import { TorneosComponent } from './paginas/torneos/torneos.component';
+import { AdminComponent } from './paginas/admin/admin.component';
+import { AdminTecnicosComponent } from './paginas/admintecnicos/admintecnicos.component';
+import { AdminInscripcionesComponent } from './paginas/admininscripciones/admininscripciones.component';
+import { AdminPartidoComponent } from './paginas/adminpartido/adminpartido.component';
+import { AdminUsuariosComponent } from './paginas/adminusuarios/adminusuarios.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,11 @@ import { TorneosComponent } from './paginas/torneos/torneos.component';
     ArbitrosComponent,
     EstadiosComponent,
     TorneosComponent,
+    AdminComponent,
+    AdminTecnicosComponent,
+    AdminInscripcionesComponent,
+    AdminPartidoComponent,
+    AdminUsuariosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

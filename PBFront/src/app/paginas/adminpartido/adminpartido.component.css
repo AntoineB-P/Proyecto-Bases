@@ -1,0 +1,69 @@
+.jornada-campo {
+  flex: 0 0 120px;
+}
+
+.caja-detalle {
+  height: 100%;
+  padding: 24px;
+  background-color: var(--negro2);
+}
+
+.caja-titulo {
+  margin-bottom: 12px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--oro2);
+}
+
+.lista-larga {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.linea-detalle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 15px;
+  color: var(--texto);
+  border-bottom: 1px solid var(--linea);
+}
+
+.linea-detalle strong {
+  margin-right: 6px;
+  color: var(--crema);
+}
+
+.formulario-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.formulario-detalle .filtro-liga {
+  flex: 1 1 140px;
+  width: auto;
+}
+
+.formulario-detalle .minutos {
+  flex: 0 0 70px;
+}
+
+.cartulina {
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 2px;
+  background-color: var(--amarilla);
+}
+
+.cartulina.roja {
+  background-color: var(--roja);
+}

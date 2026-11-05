@@ -1,0 +1,72 @@
+<div class="cabeza-admin">
+  <h2 class="subtitulo-liga">Inscripciones</h2>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<div class="filtros-liga">
+  <div class="campo-admin">
+    <label for="equipoInscripcion">Equipo</label>
+    <select id="equipoInscripcion" class="filtro-liga" [(ngModel)]="idEquipo" (change)="cargar()">
+      <option [ngValue]="0" disabled>{{ equipos.length === 0 ? 'Cargando equipos...' : 'Elige un equipo' }}</option>
+      <option *ngFor="let e of equipos" [ngValue]="e.idEquipo">{{ e.nombre }}</option>
+    </select>
+  </div>
+</div>
+
+<ng-container *ngIf="idEquipo > 0">
+  <section class="panel-admin">
+    <h3 class="panel-admin-titulo">Inscribir jugador</h3>
+    <div class="row g-4">
+      <div class="col-md-6 campo-admin">
+        <label for="jugadorInscripcion">Jugador</label>
+        <select id="jugadorInscripcion" [(ngModel)]="formulario.idJugador">
+          <option [ngValue]="0" disabled>Elige un jugador</option>
+          <option *ngFor="let j of jugadores" [ngValue]="j.idJugador">{{ j.apellidos }}, {{ j.nombres }} ({{ j.posicion }})</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-2 campo-admin">
+        <label for="dorsalInscripcion">Dorsal</label>
+        <input id="dorsalInscripcion" type="number" min="1" max="99" [(ngModel)]="formulario.dorsal">
+      </div>
+      <div class="col-6 col-md-4 campo-admin">
+        <label for="inicioInscripcion">Desde</label>
+        <input id="inicioInscripcion" type="date" [(ngModel)]="formulario.fechaInicio">
+      </div>
+    </div>
+    <div class="botones-admin">
+      <button type="button" class="boton-oro" [disabled]="guardando" (click)="inscribir()">
+        {{ guardando ? 'Guardando...' : 'Inscribir' }}
+      </button>
+    </div>
+  </section>
+
+  <p class="estado-pagina" *ngIf="cargando">Cargando plantilla...</p>
+
+  <div class="tabla-envoltura" *ngIf="!cargando">
+    <table class="tabla-liga">
+      <thead>
+      <tr>
+        <th scope="col" class="num">Dorsal</th>
+        <th scope="col">Jugador</th>
+        <th scope="col">Desde</th>
+        <th scope="col"><span class="visually-hidden">Acciones</span></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="fila-liga" *ngFor="let i of inscripciones">
+        <td class="num grande">{{ i.dorsal }}</td>
+        <td class="fuerte">{{ i.nombreJugador }}</td>
+        <td>{{ i.fechaInicio }}</td>
+        <td class="acciones">
+          <button type="button" class="boton-icono peligro" (click)="quitar(i)" aria-label="Quitar inscripción">
+            <i class="bi bi-trash3"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <p class="vacio" *ngIf="inscripciones.length === 0">Este equipo aún no tiene jugadores inscritos.</p>
+  </div>
+</ng-container>
