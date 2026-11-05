@@ -6,6 +6,7 @@ import { InscripcionService } from '../../services/inscripcion.service';
 import { JugadorService } from '../../services/jugador.service';
 import { EquipoTorneoService } from '../../services/equipo-torneo.service';
 import { AuthService } from '../../services/auth.service';
+import { UsuarioService } from '../../services/usuario.service';
 import { EquipoModel } from '../../models/equipo.model';
 import { EstadioModel } from '../../models/estadio.model';
 import { TecnicoModel } from '../../models/tecnico.model';
@@ -30,6 +31,8 @@ export class EquiposComponent implements OnInit {
   coloresTexto = '';
   idTorneo = 1;
   esAdmin = false;
+  logueado = false;
+  idFavorito = 0;
   cargando = true;
   mostrarFormulario = false;
   editando = false;
@@ -61,12 +64,23 @@ export class EquiposComponent implements OnInit {
     private jugadorService: JugadorService,
     private equipoTorneoService: EquipoTorneoService,
     private authService: AuthService,
+    private usuarioService: UsuarioService,
     private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.esAdmin = this.authService.esAdmin();
+    this.logueado = this.authService.estaLogueado();
     this.cargar();
+    if (this.logueado) {
+      this.usuarioService.getFavorito().subscribe({
+        next: (equipo) => {
+          this.idFavorito = equipo.idEquipo || 0;
+          this.cdr.detectChanges();
+        },
+        error: () => this.idFavorito = 0
+      });
+    }
     if (this.esAdmin) {
       this.estadioService.getListar().subscribe({
         next: (lista) => this.estadios = lista,
@@ -95,6 +109,34 @@ export class EquiposComponent implements OnInit {
         this.cdr.detectChanges();
       }
     });
+  }
+
+  cambiarFavorito(equipo: EquipoModel): void {
+    if (this.idFavorito === equipo.idEquipo) {
+      this.usuarioService.deleteQuitarFavorito().subscribe({
+        next: () => {
+          this.idFavorito = 0;
+          this.mensajeExito = equipo.nombre + ' ya no es tu equipo favorito.';
+          this.cdr.detectChanges();
+        },
+        error: (err) => {
+          this.mensajeError = this.leerError(err);
+          this.cdr.detectChanges();
+        }
+      });
+    } else {
+      this.usuarioService.putMarcarFavorito(equipo.idEquipo || 0).subscribe({
+        next: () => {
+          this.idFavorito = equipo.idEquipo || 0;
+          this.mensajeExito = equipo.nombre + ' es ahora tu equipo favorito.';
+          this.cdr.detectChanges();
+        },
+        error: (err) => {
+          this.mensajeError = this.leerError(err);
+          this.cdr.detectChanges();
+        }
+      });
+    }
   }
 
   colorDe(nombre: string): string {
