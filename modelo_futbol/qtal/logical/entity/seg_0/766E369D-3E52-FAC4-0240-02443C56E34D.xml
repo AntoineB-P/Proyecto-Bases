@@ -31,9 +31,9 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>D7558503-8436-8B62-86FC-DA902EC09F10</referedAttribute>
-<use>0</use>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id torneo" id="9EE7F25B-0D7F-C8BF-565E-4BA9564C548F">
@@ -48,9 +48,9 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>D2BC9C88-35B4-4448-9AA4-300F2E8CC171</referedAttribute>
-<use>0</use>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

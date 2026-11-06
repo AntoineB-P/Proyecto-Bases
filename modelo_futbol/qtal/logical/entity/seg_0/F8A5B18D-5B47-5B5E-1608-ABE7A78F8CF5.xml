@@ -31,9 +31,10 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>CA7C0187-41F7-E3CB-F6B8-A78FA94F8A2B</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id tarjeta" id="08A29755-AC78-2DA7-751F-BC5914F2C573">
@@ -47,10 +48,11 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="motivo" id="A2A2F651-A512-F351-4537-E1CDD6AA8C79">
 <createdBy>felip</createdBy>
@@ -64,12 +66,13 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>E1829C36-DA73-2FB3-5BDB-0CB51DC48411</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="minuto" id="1309C667-5F6B-3694-8658-0867EADB8F0F">
+<Attribute name="minuto_tarjeta" id="1309C667-5F6B-3694-8658-0867EADB8F0F">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
 <comment><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></comment>
@@ -81,10 +84,11 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>DA586607-A2B7-5CB6-532D-7555828C393D</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id tipo" id="15944BD4-462E-ED82-B2B4-43341D7DB083">
 <createdBy>felip</createdBy>
@@ -98,9 +102,9 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>2B436D69-49C2-0C42-CCA3-51212B21EB5F</referedAttribute>
-<use>0</use>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

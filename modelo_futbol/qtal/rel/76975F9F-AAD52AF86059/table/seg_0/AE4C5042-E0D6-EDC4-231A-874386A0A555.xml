@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE4C5042-E0D6-EDC4-231A-874386A0A555" name="EQUIPO_COLOR">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color que tiene un equipo, ya que un equipo puede tener varios colores.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color que tiene un equipo, ya que un equipo puede tener varios colores.]]></commentInRDBMS>
+<generatorID>0C317949-8910-2327-6500-E5030939518E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_equipo" id="57A5DC5C-EEBF-B0A3-51B9-7DD006A120DA">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: indica a qué equipo pertenece el color.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: indica a qué equipo pertenece el color.]]></commentInRDBMS>
+<generatorID>51B3585D-978C-B483-ABDF-51B41EC38D46</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="45954B71-791A-61D9-8BE8-11AE68A0646E" referredColumn="7FCD9DF5-67EF-DB54-912C-E89D6C79B1F1"/>
+</associations>
+</Column>
+<Column name="color" id="AC26FA11-DF55-9D2C-D0AB-2D3D754FDB15">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Nombre del color del equipo (por ejemplo rojo o blanco). Parte de la llave primaria para que un color no se repita en el mismo equipo.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del color del equipo (por ejemplo rojo o blanco). Parte de la llave primaria para que un color no se repita en el mismo equipo.]]></commentInRDBMS>
+<generatorID>233C1F43-EDB4-2767-91C3-09DF039233FA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="58788EE1-8A1E-F36C-72E1-55DD9724AD47" name="EQUIPO_COLOR_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>8A7307C1-CBE0-05BF-2880-68885528AA4A</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57A5DC5C-EEBF-B0A3-51B9-7DD006A120DA"/>
+<colUsage columnID="AC26FA11-DF55-9D2C-D0AB-2D3D754FDB15"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E4CEA3D-3317-09B3-AF4F-4E8E70C2A594" name="EQUIPO_COLOR_EQUIPO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>3DDA1338-FEA3-334D-15FC-37B9AE3BBFAF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57A5DC5C-EEBF-B0A3-51B9-7DD006A120DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

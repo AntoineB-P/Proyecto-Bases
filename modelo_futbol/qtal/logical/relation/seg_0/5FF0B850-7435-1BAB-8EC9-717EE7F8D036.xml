@@ -9,8 +9,9 @@
 </engineerTo>
 <sourcePk>8E054127-E8AB-B886-954D-144533A1F18F</sourcePk>
 <targetPk>F639D40B-1AD9-1257-6E7E-4D19B6D8071A</targetPk>
-<identifying>false</identifying>
-<optionalSource>false</optionalSource>
+<dominantRole>23AFDAFD-FD3A-749E-EC62-7D425FAAEFEF</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>23AFDAFD-FD3A-749E-EC62-7D425FAAEFEF</sourceEntity>

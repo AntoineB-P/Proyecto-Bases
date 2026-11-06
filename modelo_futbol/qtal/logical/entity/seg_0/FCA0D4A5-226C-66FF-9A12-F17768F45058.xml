@@ -30,12 +30,13 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="color" id="1D6B9A73-321E-8599-450D-C1202905A23F">
+<Attribute name="color_tarjeta" id="1D6B9A73-321E-8599-450D-C1202905A23F">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
 <comment><![CDATA[Color del tipo de tarjeta (por ejemplo amarilla o roja). Es el nombre con el que se reconoce el tipo.]]></comment>
@@ -46,10 +47,11 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>74EE2182-BCA2-DEB9-ED82-5EC71C531986</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

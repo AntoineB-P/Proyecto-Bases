@@ -16,27 +16,29 @@
 <generatorID>C6FCE2F2-A9F0-6BB0-A540-150AE9A46345</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <domain>FC0AD790-24E6-4C6B-0123-7C5340B051B5</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="JUGADOR_id_jugador" id="8D0D55A5-3A53-68C2-27EB-18B4E897BA48">
+<Column name="id_jugador" id="8D0D55A5-3A53-68C2-27EB-18B4E897BA48">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 15:05:35 UTC</createdTime>
 <comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
 <commentInRDBMS><![CDATA[Identificador del jugador que juega de portero. PK y FK hacia JUGADOR]]></commentInRDBMS>
 <generatorID>BD9C8EDF-F763-D86C-3315-1CEE115D2E42</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="1CE57CCA-3D1B-5C3F-4315-4467A5852165" referredColumn="3434629E-5973-649D-3186-501E2400561E"/>
+<colAssociation fkAssociation="3645B4B1-5FAB-5199-B8DA-DD867B59A274" referredColumn="D4A40DFF-8017-A69C-2D7B-8A232316BA7A"/>
 </associations>
 </Column>
 </columns>
@@ -53,9 +55,9 @@
 <colUsage columnID="8D0D55A5-3A53-68C2-27EB-18B4E897BA48"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="232D50C2-A78E-3FA7-B7F5-DA9C3685FE95" name="PORTERO_JUGADOR_FK">
+<ind_PK_UK id="1A4CAA23-C603-7010-F961-CEB2BFDDAD3B" name="PORTERO_JUGADOR_FK">
 <createdBy>Daniel</createdBy>
-<createdTime>2026-10-27 15:05:35 UTC</createdTime>
+<createdTime>2026-11-06 07:43:26 UTC</createdTime>
 <generatorID>5FF0B850-7435-1BAB-8EC9-717EE7F8D036</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <indexState>Foreign Key</indexState>

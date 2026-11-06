@@ -31,9 +31,10 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>13E567B1-0662-DD1A-347C-90DACA39095A</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cedula" id="DE7C7541-3D7C-59D3-BD7D-9FAA82B71D2C">
@@ -48,9 +49,10 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>AEE0200C-3D6E-0D63-9193-25E1629DDEB8</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>B506D4B9-FD63-CF9B-FA6C-4E6D47A7E3E9</domain>
+<dataTypeSize>15</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="rol" id="5B5D3591-23E8-830C-543F-8649BD56D3E9">
@@ -65,10 +67,11 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

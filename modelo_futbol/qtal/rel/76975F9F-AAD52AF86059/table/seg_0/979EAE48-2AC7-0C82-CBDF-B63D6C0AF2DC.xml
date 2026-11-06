@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="979EAE48-2AC7-0C82-CBDF-B63D6C0AF2DC" name="ATACANTE">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los atacantes]]></commentInRDBMS>
+<generatorID>D2878316-EAE8-B804-A65B-3F1AF3E8EC56</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tiros_puerta" id="2C4004C4-59FD-A4D2-4600-2BC4717C7017">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Cantidad de tiros a puerta realizados por el atacante]]></commentInRDBMS>
+<generatorID>37724501-9DDC-ED9D-FDB3-83EF4A9CE35B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_jugador" id="AE918D8D-3CB5-960F-1EBE-3DA56AA8821E">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador del jugador que juega de atacante. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<generatorID>09A5DB11-41BE-E61B-A15F-60C2A2B4F275</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5452E12D-2305-66D5-7BEC-44DB4A611A38" referredColumn="D4A40DFF-8017-A69C-2D7B-8A232316BA7A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="75F82AF0-A66F-3D30-561B-9A59FBDBA249" name="ATACANTE_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>5C7C4F07-3FAF-4A9C-3591-4637580D6AC9</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE918D8D-3CB5-960F-1EBE-3DA56AA8821E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8BAA3D2-8D0A-2CF8-7C3E-3808F3051640" name="ATACANTE_JUGADOR_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>4FF94F09-EADC-5267-9407-B7255B507A0E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE918D8D-3CB5-960F-1EBE-3DA56AA8821E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

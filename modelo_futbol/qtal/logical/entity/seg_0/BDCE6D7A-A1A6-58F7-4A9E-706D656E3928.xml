@@ -30,12 +30,13 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nombre" id="9D4035F8-18F0-7972-49FA-44E4D4595424">
+<Attribute name="nombre_equipo" id="9D4035F8-18F0-7972-49FA-44E4D4595424">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
 <comment><![CDATA[Nombre del equipo. Se usa para identificarlo en calendarios, resultados y reportes.]]></comment>
@@ -46,10 +47,11 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>37295B5A-B98F-4E1E-4B3D-9957453D07D0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="fecha fundacion" id="F51A2AEB-7E70-7130-47CE-92953BCB1221">
 <createdBy>felip</createdBy>
@@ -63,12 +65,12 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ciudad" id="4EF866EA-7D8F-6DCB-EA13-A157564E8F22">
+<Attribute name="ciudad_equipo" id="4EF866EA-7D8F-6DCB-EA13-A157564E8F22">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
 <comment><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></comment>
@@ -80,10 +82,11 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id tecnico" id="4E220AAA-DC97-9F3E-57C6-73B9C07A67A6">
 <createdBy>felip</createdBy>
@@ -97,10 +100,12 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>2531126D-9B9C-4004-AB66-1F3CF8B2E486</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>10</dataTypeScale>
+<ownDataTypeParameters>,,10</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id estadio" id="60263612-8F54-B27B-B017-F723E2ED3734">
 <createdBy>felip</createdBy>
@@ -114,10 +119,27 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <referedAttribute>8A599E8D-E3BD-8F17-4731-B15776B3F603</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="escudo_url" id="C1313751-0BB9-CC9F-14D1-5EB220A780C2">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:52:24 UTC</createdTime>
+<commentInRDBMS><![CDATA[Enlace (URL) a la imagen del escudo del club (opcional). Se usa para mostrar el escudo en la aplicación.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

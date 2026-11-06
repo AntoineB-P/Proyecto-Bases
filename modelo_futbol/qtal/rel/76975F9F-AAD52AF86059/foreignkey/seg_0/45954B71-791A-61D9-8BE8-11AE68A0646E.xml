@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="45954B71-791A-61D9-8BE8-11AE68A0646E" containerWithKeyObject="AE4C5042-E0D6-EDC4-231A-874386A0A555" localFKIndex="7E4CEA3D-3317-09B3-AF4F-4E8E70C2A594" name="EQUIPO_COLOR_EQUIPO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>3DDA1338-FEA3-334D-15FC-37B9AE3BBFAF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<referredTableLongName>EQUIPO</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>73B0EABA-F19D-6557-F321-324671509713</referredTableID>
+<keyObject>4CFDB5DF-D771-CB24-E54F-EE3A1C7E2DF4</keyObject>
+<referredKeyID>4CFDB5DF-D771-CB24-E54F-EE3A1C7E2DF4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_equipo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

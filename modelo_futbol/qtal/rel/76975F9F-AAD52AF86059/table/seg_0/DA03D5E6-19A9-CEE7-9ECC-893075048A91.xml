@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA03D5E6-19A9-CEE7-9ECC-893075048A91" name="ESTADIO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Estadios donde se juegan los partidos y que sirven de sede a los equipos. Guarda su capacidad y su ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Estadios donde se juegan los partidos y que sirven de sede a los equipos. Guarda su capacidad y su ubicación.]]></commentInRDBMS>
+<generatorID>372F96FD-5EED-8F88-6FC9-B5308CD6379C</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_estadio" id="EEE37525-6714-B22C-69AF-C51CD699163A">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Identificador único del estadio (llave primaria). Lo referencian EQUIPO (sede) y PARTIDO (lugar del encuentro).]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del estadio (llave primaria). Lo referencian EQUIPO (sede) y PARTIDO (lugar del encuentro).]]></commentInRDBMS>
+<generatorID>8A599E8D-E3BD-8F17-4731-B15776B3F603</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre_estadio" id="689B114E-1906-9E34-6A67-891FAEDBD6A0">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></commentInRDBMS>
+<generatorID>42BAE781-3679-0177-4B10-6710B6655CAC</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="AB239990-233D-92B8-1DE5-16E0BE39CD0C">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></comment>
+<commentInRDBMS><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></commentInRDBMS>
+<generatorID>2A8ACAE3-E6AA-93AC-CAB2-741156129EB3</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="direccion" id="1F6714BD-BFB5-6232-E63C-17B392597C65">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></comment>
+<commentInRDBMS><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></commentInRDBMS>
+<generatorID>D0E760F5-12D3-1C41-7749-CFD19528E7F1</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ciudad_estadio" id="2BF009EA-CD9C-A3A0-A76E-AEE9928C1C91">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></commentInRDBMS>
+<generatorID>9EC634C4-B11C-6EDF-CF29-6E10133139EA</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="barrio" id="A0B79E47-5C7C-EB8D-C696-79AD51A4D10A">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></comment>
+<commentInRDBMS><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></commentInRDBMS>
+<generatorID>52DBC228-C2D2-E359-744D-5F6A2D2F9F35</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="72E976E5-CCB7-6E7F-DCC7-771EEE9ACF87" name="ESTADIO_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>5B2AD168-5DE9-2660-9347-22F646778D6E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EEE37525-6714-B22C-69AF-C51CD699163A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

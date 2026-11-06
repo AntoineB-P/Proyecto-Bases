@@ -30,10 +30,11 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nombres" id="BEF41017-3C37-1BA6-1B4D-7FB6ABA6AB65">
 <createdBy>felip</createdBy>
@@ -46,10 +47,11 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="apellidos" id="B37A5908-29E1-99CD-9B93-742AFBA40A8F">
 <createdBy>felip</createdBy>
@@ -62,10 +64,11 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>4E00CC69-C71A-356D-7B2F-4E0D61135B8E</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nacionalidad" id="D24AF4DB-A1C5-AE6E-3E51-1F209B1C7326">
 <createdBy>felip</createdBy>
@@ -79,10 +82,11 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>07CBE735-7AD7-66DF-ECEF-E4EFF1950C41</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="fecha nacimiento" id="57E321AC-F004-0095-D857-F17AFA54B782">
 <createdBy>felip</createdBy>
@@ -96,9 +100,9 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="posicion" id="A9618AD0-5E8B-84A0-EB65-95E2BB15CF4F">
@@ -113,74 +117,11 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>9E3FC606-2659-9BCB-5F4D-DF4BD4E19926</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id jugador1" id="B8E92DE0-C9ED-89D0-8835-A5F73152DDB0">
-<createdBy>Daniel</createdBy>
-<createdTime>2026-10-27 14:39:09 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<generatorID>4FF94F09-EADC-5267-9407-B7255B507A0E</generatorID>
-<ownerDesignName>qtal</ownerDesignName>
-<engineerTo>
-<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
-<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
-</engineerTo>
-<referedAttribute>09A5DB11-41BE-E61B-A15F-60C2A2B4F275</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id jugador2" id="CBF35EC8-270D-92BE-C0FA-BA3F41BBEAF3">
-<createdBy>Daniel</createdBy>
-<createdTime>2026-10-27 14:41:24 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<generatorID>A8C86C0A-20EB-74E4-C89E-B52F6DB088F3</generatorID>
-<ownerDesignName>qtal</ownerDesignName>
-<engineerTo>
-<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
-<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
-</engineerTo>
-<referedAttribute>162ABED6-FACD-6CBB-1C6D-1558B27F24E7</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id jugador3" id="A86DD14D-25D9-6CDD-D733-5EB37CE24823">
-<createdBy>Daniel</createdBy>
-<createdTime>2026-10-27 14:41:37 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<generatorID>BEBF0D4B-9602-3AD4-E028-7EEDD623C6FA</generatorID>
-<ownerDesignName>qtal</ownerDesignName>
-<engineerTo>
-<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
-<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
-</engineerTo>
-<referedAttribute>34B7F442-A3CA-B3F5-8841-2E8A19C657EC</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id jugador4" id="D263893A-ECC6-AF23-B69E-40446FC9C99D">
-<createdBy>Daniel</createdBy>
-<createdTime>2026-10-27 14:41:42 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<generatorID>5FF0B850-7435-1BAB-8EC9-717EE7F8D036</generatorID>
-<ownerDesignName>qtal</ownerDesignName>
-<engineerTo>
-<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
-<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
-</engineerTo>
-<referedAttribute>BD9C8EDF-F763-D86C-3315-1CEE115D2E42</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

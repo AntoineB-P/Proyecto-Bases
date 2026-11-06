@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EQUIPO_TORNEO a INSCRIPCION" directorySegmentName="seg_0" id="AF40C615-EC4C-F36F-D3E0-14CD27E4A33E">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:20:06 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>E25DE9C5-FF4C-3BF3-32BD-DF5B7D043061</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>766E369D-3E52-FAC4-0240-02443C56E34D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>797DC619-1B0C-3FA7-E2FE-6B71F7EEFDEE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

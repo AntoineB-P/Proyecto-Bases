@@ -30,12 +30,13 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>7FF4015F-C8AD-67A7-AE6F-30294917B4B0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nombre" id="5D844288-1C0E-AFDD-7947-E907D3644FAC">
+<Attribute name="nombre_torneo" id="5D844288-1C0E-AFDD-7947-E907D3644FAC">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
 <comment><![CDATA[Nombre del torneo o campeonato. Se usa para identificarlo en calendarios y reportes.]]></comment>
@@ -46,10 +47,11 @@
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>37295B5A-B98F-4E1E-4B3D-9957453D07D0</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="anio" id="A9216386-6DD0-01E9-20E3-DBDFA4376CA3">
 <createdBy>felip</createdBy>
@@ -63,10 +65,11 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>FC0AD790-24E6-4C6B-0123-7C5340B051B5</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="semestre" id="3A2E27B3-C35A-E131-091F-DFBA8F65312A">
 <createdBy>felip</createdBy>
@@ -80,12 +83,13 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>47FF62CA-4D4C-AAEB-79D2-3D57AB9541D6</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha inicio" id="A8FA7BD2-272C-DE5C-9ACE-498E4AED7AE3">
+<Attribute name="fecha inicio_torneo" id="A8FA7BD2-272C-DE5C-9ACE-498E4AED7AE3">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
 <comment><![CDATA[Fecha en que arranca el torneo (opcional). Se usa para calcular la duración del torneo.]]></comment>
@@ -97,12 +101,12 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha fin" id="E7648C6B-ADF9-6A07-0318-ED0C5EE3E1EF">
+<Attribute name="fecha fin_torneo" id="E7648C6B-ADF9-6A07-0318-ED0C5EE3E1EF">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
 <comment><![CDATA[Fecha en que termina el torneo (opcional). Se usa para calcular la duración del torneo.]]></comment>
@@ -114,26 +118,9 @@
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>7ADCF9CA-344B-A373-A7FE-0F379F3E5BBA</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="duracion dias" id="77351BDE-36BD-49DD-B167-2A060DB0650A">
-<createdBy>felip</createdBy>
-<createdTime>2026-10-26 02:40:00 UTC</createdTime>
-<comment><![CDATA[ATRIBUTO DERIVADO: duración del torneo en días, calculada como fecha_fin menos fecha_inicio. Se incluye porque aparece en el diagrama; conviene calcularlo en consultas o vistas para que siempre sea consistente con las fechas.]]></comment>
-<commentInRDBMS><![CDATA[ATRIBUTO DERIVADO: duración del torneo en días, calculada como fecha_fin menos fecha_inicio. Se incluye porque aparece en el diagrama; conviene calcularlo en consultas o vistas para que siempre sea consistente con las fechas.]]></commentInRDBMS>
-<generatorID>A420DFE2-8DDD-43D7-84BA-DD91972075EF</generatorID>
-<ownerDesignName>qtal</ownerDesignName>
-<engineerTo>
-<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
-<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>D01953A7-60AA-1796-CFA7-4D95D6856E19</domain>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
