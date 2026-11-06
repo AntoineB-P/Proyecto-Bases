@@ -46,6 +46,9 @@ public class EquipoDTO {
 	/** Nombre del técnico encargado del equipo. */
 	private String nombreTecnico;
 
+	/** Enlace a la imagen del escudo del equipo. */
+	private String escudoUrl;
+
 	/**
 	 * Constructor vacío de la clase EquipoDTO.
 	 * Permite crear un objeto sin inicializar sus atributos.
@@ -242,6 +245,24 @@ public class EquipoDTO {
 	 */
 	public void setNombreTecnico(String nombreTecnico) {
 		this.nombreTecnico = nombreTecnico;
+	}
+
+	/**
+	 * Obtiene el enlace del escudo del equipo.
+	 *
+	 * @return enlace a la imagen del escudo.
+	 */
+	public String getEscudoUrl() {
+		return escudoUrl;
+	}
+
+	/**
+	 * Modifica el enlace del escudo del equipo.
+	 *
+	 * @param escudoUrl nuevo enlace a la imagen del escudo.
+	 */
+	public void setEscudoUrl(String escudoUrl) {
+		this.escudoUrl = escudoUrl;
 	}
 
 	/**
