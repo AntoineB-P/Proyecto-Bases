@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DEA917F3-B837-D81B-C348-A11D847FD9C4" name="GOL">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Goles anotados en un partido. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido en que se anotó.]]></comment>
+<commentInRDBMS><![CDATA[Goles anotados en un partido. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido en que se anotó.]]></commentInRDBMS>
+<generatorID>2397C567-9C7F-1B58-7E24-1AD3B4146D2E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_participacion" id="08093B48-2963-777C-2C57-4BD1FA7A4655">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó el gol.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó el gol.]]></commentInRDBMS>
+<generatorID>FD8C475B-04A7-380A-6A88-5C2A10AE9C20</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70BB5979-25F6-E6C1-9FD5-4B2D15201F33" referredColumn="1089BB00-A55B-F07A-FB60-2C6ADE1350E2"/>
+</associations>
+</Column>
+<Column name="id_gol" id="096F1C42-ED40-00F9-312D-4C2F06D25CA5">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Identificador del gol; junto con id_participacion forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Identificador del gol; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
+<generatorID>9ABB1B0E-AC69-0EF6-0499-9698828D1DAD</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_gol" id="1B7179A1-232E-F85E-6C11-567588B3CB37">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Tipo de gol (por ejemplo jugada, penal, tiro libre o autogol) (opcional). Sirve para estadísticas.]]></comment>
+<commentInRDBMS><![CDATA[Tipo de gol (por ejemplo jugada, penal, tiro libre o autogol) (opcional). Sirve para estadísticas.]]></commentInRDBMS>
+<generatorID>E2BFF6FF-39ED-906E-8BA4-C72478A1EA9E</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="minuto_gol" id="ADCC181C-DEAA-1374-998E-7729878D7C81">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Minuto del partido en que se anotó el gol (opcional).]]></comment>
+<commentInRDBMS><![CDATA[Minuto del partido en que se anotó el gol (opcional).]]></commentInRDBMS>
+<generatorID>132CA83B-873C-0608-D3B8-A963C62AB10B</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5AFAA7E1-2C4E-FCA2-111F-8914DDFE1E15" name="GOL_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>B4F84A36-E590-36F5-A7B7-7BA03D5C9374</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="08093B48-2963-777C-2C57-4BD1FA7A4655"/>
+<colUsage columnID="096F1C42-ED40-00F9-312D-4C2F06D25CA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B1B1F751-56C4-B758-8A20-936468F33B4E" name="GOL_PARTICIPACION_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>8F522291-9B7B-1AD7-2301-8481C3F4EA44</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="08093B48-2963-777C-2C57-4BD1FA7A4655"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

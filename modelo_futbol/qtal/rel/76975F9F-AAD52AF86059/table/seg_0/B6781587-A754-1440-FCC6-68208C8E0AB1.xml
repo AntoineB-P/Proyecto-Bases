@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B6781587-A754-1440-FCC6-68208C8E0AB1" name="EQUIPO_TORNEO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></commentInRDBMS>
+<generatorID>766E369D-3E52-FAC4-0240-02443C56E34D</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_equipo" id="AA5BABBF-F82D-CE38-081D-140867BC1507">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo que participa en el torneo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo que participa en el torneo.]]></commentInRDBMS>
+<generatorID>2A2E0B95-FAC1-CD78-F299-DEBCED334EEE</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="67C3BB55-9C72-DD72-1874-5DF106C07F55" referredColumn="7FCD9DF5-67EF-DB54-912C-E89D6C79B1F1"/>
+</associations>
+</Column>
+<Column name="id_torneo" id="4C285597-28A0-490B-2BF3-B8578C85EA4A">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que participa el equipo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que participa el equipo.]]></commentInRDBMS>
+<generatorID>9EE7F25B-0D7F-C8BF-565E-4BA9564C548F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB737BDD-9E29-6EBD-3715-3BC08B5187E4" referredColumn="E3A24E78-B193-6D7A-6D2C-B6A7A2DFD8CA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A479197A-9E36-2997-A135-E9A5B315F1B5" name="EQUIPO_TORNEO_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>E25DE9C5-FF4C-3BF3-32BD-DF5B7D043061</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA5BABBF-F82D-CE38-081D-140867BC1507"/>
+<colUsage columnID="4C285597-28A0-490B-2BF3-B8578C85EA4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60360D5F-B28E-394C-2A88-D4E023D8E59A" name="EQUIPO_TORNEO_EQUIPO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>3105CCBB-D4CF-5BA7-962C-0D515B003EFE</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA5BABBF-F82D-CE38-081D-140867BC1507"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5354B0E6-42EC-CC98-F40E-B00729FDF08D" name="EQUIPO_TORNEO_TORNEO_FK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>7ECD8196-E6C6-6C35-2318-FE3290026FD6</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C285597-28A0-490B-2BF3-B8578C85EA4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

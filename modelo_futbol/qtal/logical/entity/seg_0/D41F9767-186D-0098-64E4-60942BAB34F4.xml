@@ -1,0 +1,206 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D41F9767-186D-0098-64E4-60942BAB34F4" name="USUARIO">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:27:49 UTC</createdTime>
+<commentInRDBMS><![CDATA[Personas que usan el sistema. Guarda sus datos de acceso (usuario, contraseña cifrada y correo), si ya confirmaron su correo, su rol y, de forma opcional, su equipo favorito.
+]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id equipo" id="C8DF7652-7EAE-2A8D-6E07-146D2D500859">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:29:35 UTC</createdTime>
+<comment><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></comment>
+<generatorID>97224146-8A41-8A1C-3897-76E557D1C425</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>D7558503-8436-8B62-86FC-DA902EC09F10</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="6D38070D-FEA7-743C-B1BC-791E5E4333AB">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:47:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Identificador único del usuario (llave primaria).]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario" id="27BA49B0-B040-E697-60D1-C4C2EA1650B9">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:48:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Nombre de usuario con el que inicia sesión. Es único: no puede repetirse entre usuarios]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contrasenia" id="92533AC4-5259-FD47-6CB3-840DF0532F6C">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:48:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[Contraseña del usuario, guardada cifrada (hash), nunca en texto plano. La longitud de la columna permite guardar el hash completo.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo" id="EFDA4F46-E39B-B004-A658-2919F2E1BF53">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:48:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Correo electrónico del usuario. Es único y es donde se envía el código para confirmar la cuenta.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="verificado" id="AE9196CA-1AC6-DC71-FA69-E435BB17509C">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:48:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[Indica si el usuario ya confirmó su correo: S si ya lo confirmó y N si no (por defecto N). Solo puede iniciar sesión cuando está verificado.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo_verificacion" id="5FE980D9-3F3B-19E5-639A-100F2DA1AE99">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:49:01 UTC</createdTime>
+<commentInRDBMS><![CDATA[Código de 6 dígitos que se envía al correo para confirmar la cuenta (opcional). Se guarda como texto para conservar los ceros iniciales.]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+<ownDataTypeParameters>6,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="expira_verificacion" id="691D4707-91BC-7E95-0602-4D8C554B477F">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:49:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Fecha y hora en que vence el código de verificación (opcional). El código dura 15 minutos.
+]]></commentInRDBMS>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_rol" id="20C25879-1F32-EDB8-E4C7-004BE6106A7C">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 04:03:16 UTC</createdTime>
+<commentInRDBMS><![CDATA[Llave foránea a ROL: rol del usuario (relación Tener_rol). Es obligatoria: todo usuario tiene exactamente un rol.]]></commentInRDBMS>
+<generatorID>60445F17-8FCE-8976-D0BD-A26B1B96FA9C</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>2E474433-237E-B21E-47A8-1AB286A58B78</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B5670201-7766-3A08-2C55-F147FDE8BB94" name="USUARIO PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:48:06 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6D38070D-FEA7-743C-B1BC-791E5E4333AB</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="BA437817-FC3E-9563-E453-CDBBDBABB717" name="uk_usuario">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:16:52 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<newElementsIDs>27BA49B0-B040-E697-60D1-C4C2EA1650B9</newElementsIDs>
+<usedAttributes>
+<attributeRef>27BA49B0-B040-E697-60D1-C4C2EA1650B9</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="276C0985-8365-390A-B17D-386B96775D7D" name="uk_correo">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:17:23 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<newElementsIDs>EFDA4F46-E39B-B004-A658-2919F2E1BF53</newElementsIDs>
+<usedAttributes>
+<attributeRef>EFDA4F46-E39B-B004-A658-2919F2E1BF53</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

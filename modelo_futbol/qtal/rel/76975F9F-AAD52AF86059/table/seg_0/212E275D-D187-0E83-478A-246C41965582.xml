@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="212E275D-D187-0E83-478A-246C41965582" name="JUGADOR">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Jugadores registrados en el sistema. Se inscriben a equipos en cada torneo (INSCRIPCION) y participan en los partidos (PARTICIPACION).]]></comment>
+<commentInRDBMS><![CDATA[Jugadores registrados en el sistema. Se inscriben a equipos en cada torneo (INSCRIPCION) y participan en los partidos (PARTICIPACION).]]></commentInRDBMS>
+<generatorID>23AFDAFD-FD3A-749E-EC62-7D425FAAEFEF</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_jugador" id="D4A40DFF-8017-A69C-2D7B-8A232316BA7A">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></commentInRDBMS>
+<generatorID>B35A81FF-EF2A-7380-9621-33EED46008A2</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombres" id="6EF0FAF3-F865-2D2F-E13F-5482D5201E50">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Nombres de pila del jugador. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></comment>
+<commentInRDBMS><![CDATA[Nombres de pila del jugador. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></commentInRDBMS>
+<generatorID>BEF41017-3C37-1BA6-1B4D-7FB6ABA6AB65</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="7993B3B2-9804-2532-C3FE-604DD7565918">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Apellidos del jugador. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></comment>
+<commentInRDBMS><![CDATA[Apellidos del jugador. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></commentInRDBMS>
+<generatorID>B37A5908-29E1-99CD-9B93-742AFBA40A8F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nacionalidad" id="B6B1CE86-4655-14EC-E9D9-5C816917FB9C">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[País de origen del jugador (opcional). Sirve para reportes y estadísticas, por ejemplo jugadores extranjeros por equipo.]]></comment>
+<commentInRDBMS><![CDATA[País de origen del jugador (opcional). Sirve para reportes y estadísticas, por ejemplo jugadores extranjeros por equipo.]]></commentInRDBMS>
+<generatorID>D24AF4DB-A1C5-AE6E-3E51-1F209B1C7326</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_nacimiento" id="0DC5FB9D-44BB-1948-E5C6-451BC6B5E5B5">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Fecha de nacimiento del jugador (opcional). Es la base para calcular el atributo derivado edad.]]></comment>
+<commentInRDBMS><![CDATA[Fecha de nacimiento del jugador (opcional). Es la base para calcular el atributo derivado edad.]]></commentInRDBMS>
+<generatorID>57E321AC-F004-0095-D857-F17AFA54B782</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="posicion" id="1FAD9BF9-05A8-D2EA-2DD4-13ABA382A01B">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Posición en la que juega (por ejemplo portero, defensa, volante o delantero) (opcional). Sirve para armar alineaciones y filtrar jugadores.]]></comment>
+<commentInRDBMS><![CDATA[Posición en la que juega (por ejemplo portero, defensa, volante o delantero) (opcional). Sirve para armar alineaciones y filtrar jugadores.]]></commentInRDBMS>
+<generatorID>A9618AD0-5E8B-84A0-EB65-95E2BB15CF4F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="58D6AC25-E543-E851-E5BF-3628628272E2" name="JUGADOR_PK">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<generatorID>8E054127-E8AB-B886-954D-144533A1F18F</generatorID>
+<ownerDesignName>qtal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4A40DFF-8017-A69C-2D7B-8A232316BA7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

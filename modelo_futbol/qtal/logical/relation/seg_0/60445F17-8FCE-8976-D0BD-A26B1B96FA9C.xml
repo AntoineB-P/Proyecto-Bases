@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TENER_ROL" directorySegmentName="seg_0" id="60445F17-8FCE-8976-D0BD-A26B1B96FA9C">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-06 03:28:24 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<engineerTo>
+<item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
+<item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
+</engineerTo>
+<sourcePk>C371F717-6BEC-542E-FA94-CBB71BB52480</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>652EA174-922A-698D-812E-5ECAFADC7141</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D41F9767-186D-0098-64E4-60942BAB34F4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
