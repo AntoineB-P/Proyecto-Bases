@@ -1,0 +1,132 @@
+.puesto {
+  width: 48px;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--suave);
+}
+
+.clasifica .puesto {
+  color: var(--oro2);
+  box-shadow: inset 3px 0 0 var(--oro2);
+}
+
+.corte td {
+  border-bottom: 2px dashed var(--oro);
+}
+
+.equipo {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.puntos {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 28px;
+  color: var(--crema);
+}
+
+.campana {
+  position: sticky;
+  top: 24px;
+  padding: 28px;
+  background-color: var(--negro2);
+}
+
+.campana-cabeza {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.campana-escudo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.campana-nombre {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.campana-puntos {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--suave);
+}
+
+.racha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.racha-letra {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 20px;
+  background-color: var(--carbon);
+  color: var(--crema);
+}
+
+.racha-letra.gano {
+  background-color: var(--oro2);
+  color: var(--negro);
+}
+
+.racha-letra.perdio {
+  background-color: var(--roja);
+  color: var(--crema);
+}
+
+.encuentro {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.encuentro-jornada {
+  width: 44px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--suave);
+}
+
+.encuentro-rival {
+  flex: 1;
+  font-size: 16px;
+  color: var(--texto);
+}
+
+.encuentro-marcador {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--crema);
+}
+
+.encuentro-marcador.gano {
+  color: var(--oro2);
+}
+
+.encuentro-marcador.perdio {
+  color: var(--roja);
+}

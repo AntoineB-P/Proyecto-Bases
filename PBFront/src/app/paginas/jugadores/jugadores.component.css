@@ -1,0 +1,12 @@
+.posicion {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 14px;
+  color: var(--crema);
+  background-color: var(--carbon);
+}
+
+.posicion.portero {
+  background-color: var(--amarilla);
+  color: var(--negro);
+}

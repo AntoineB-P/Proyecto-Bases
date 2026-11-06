@@ -18,7 +18,7 @@ import java.util.Objects;
 public class ArbitrajeDTO {
 
     /** Número de cédula que identifica al árbitro. */
-    private Long cedulaArbitro;
+    private String cedulaArbitro;
 
     /** Nombre completo del árbitro asignado al partido. */
     private String nombreArbitro;

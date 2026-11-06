@@ -1,0 +1,102 @@
+.ciudad {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--suave);
+  margin-left: 42px;
+}
+
+.escudo-campo {
+  display: flex;
+  align-items: center;
+}
+
+.estrella-favorito {
+  margin-left: 6px;
+  color: var(--oro2);
+}
+
+.boton-favorito {
+  margin-bottom: 20px;
+}
+
+.boton-favorito.activo {
+  background-color: var(--oro2);
+  color: var(--negro);
+}
+
+.plantilla {
+  position: sticky;
+  top: 24px;
+  padding: 28px;
+  background-color: var(--negro2);
+}
+
+.plantilla-cabeza {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.plantilla-escudo {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+}
+
+.plantilla-nombre {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--crema);
+}
+
+.plantilla-dato {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--suave);
+}
+
+.grupo {
+  margin-bottom: 8px;
+}
+
+.grupo-titulo {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0 6px;
+  padding-bottom: 6px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: var(--oro2);
+  border-bottom: 2px solid var(--oro);
+}
+
+.grupo-titulo span {
+  color: var(--suave);
+}
+
+.jugador {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.dorsal {
+  width: 44px;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--crema);
+}
+
+.jugador-nombre {
+  font-size: 16px;
+  color: var(--texto);
+}

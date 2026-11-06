@@ -1,0 +1,97 @@
+<div class="seccion-cabeza">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="seccion-titulo">Posiciones</h1>
+    <p class="seccion-nota">Los {{ clasificados }} primeros pasan a los cuadrangulares. Toca un equipo para ver su campaña.</p>
+  </div>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando la tabla...</p>
+
+<div class="row g-5" *ngIf="!cargando">
+
+  <div class="col-xl-8">
+    <div class="tabla-envoltura">
+      <table class="tabla-liga">
+        <caption class="visually-hidden">Tabla de posiciones ordenada por puntos, diferencia de gol y goles a favor</caption>
+        <thead>
+        <tr>
+          <th scope="col" class="num">#</th>
+          <th scope="col">Equipo</th>
+          <th scope="col" class="num" title="Partidos jugados">PJ</th>
+          <th scope="col" class="num" title="Partidos ganados">PG</th>
+          <th scope="col" class="num" title="Partidos empatados">PE</th>
+          <th scope="col" class="num" title="Partidos perdidos">PP</th>
+          <th scope="col" class="num" title="Goles a favor">GF</th>
+          <th scope="col" class="num" title="Goles en contra">GC</th>
+          <th scope="col" class="num" title="Diferencia de gol">DG</th>
+          <th scope="col" class="num" title="Puntos">Pts</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="fila-liga fila-clic animate__animated animate__fadeInRight"
+            *ngFor="let e of tabla; let i = index"
+            [class.elegida]="elegido && elegido.idEquipo === e.idEquipo"
+            [class.clasifica]="i < clasificados"
+            [class.corte]="i === clasificados - 1"
+            [style.animation-delay.ms]="i * 50 + 200"
+            (click)="verHistorial(e)">
+          <td class="num puesto">{{ i + 1 }}</td>
+          <td class="fuerte equipo">
+            <img *ngIf="escudoDe(e.idEquipo)" [src]="escudoDe(e.idEquipo)" alt="" class="escudo-mini">
+            {{ e.equipo }}
+          </td>
+          <td class="num">{{ e.partidosJugados }}</td>
+          <td class="num">{{ e.ganados }}</td>
+          <td class="num">{{ e.empatados }}</td>
+          <td class="num">{{ e.perdidos }}</td>
+          <td class="num">{{ e.golesFavor }}</td>
+          <td class="num">{{ e.golesContra }}</td>
+          <td class="num">{{ e.diferencia > 0 ? '+' : '' }}{{ e.diferencia }}</td>
+          <td class="num puntos">{{ e.puntos }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="vacio" *ngIf="tabla.length === 0">Aún no hay equipos inscritos en el torneo.</p>
+  </div>
+
+  <div class="col-xl-4">
+    <section class="campana" *ngIf="elegido">
+      <div class="campana-cabeza animate__animated animate__fadeIn">
+        <img *ngIf="escudoDe(elegido.idEquipo)" [src]="escudoDe(elegido.idEquipo)" alt="" class="campana-escudo">
+        <div>
+          <h2 class="campana-nombre">{{ elegido.equipo }}</h2>
+          <p class="campana-puntos">{{ elegido.puntos }} puntos en {{ elegido.partidosJugados }} partidos</p>
+        </div>
+      </div>
+
+      <div class="racha" *ngIf="historial.length > 0" aria-label="Racha de resultados">
+        <span class="racha-letra animate__animated animate__bounceIn"
+              *ngFor="let h of historial; let i = index"
+              [class.gano]="h.resultado === 'G'"
+              [class.empato]="h.resultado === 'E'"
+              [class.perdio]="h.resultado === 'P'"
+              [style.animation-delay.ms]="i * 80"
+              [title]="textoResultado(h.resultado) + ' contra ' + h.rival">{{ h.resultado }}</span>
+      </div>
+
+      <p class="estado-pagina" *ngIf="cargandoHistorial">Cargando campaña...</p>
+      <p class="vacio" *ngIf="!cargandoHistorial && historial.length === 0">Este equipo aún no ha jugado.</p>
+
+      <ul *ngIf="!cargandoHistorial">
+        <li class="encuentro" *ngFor="let h of historial">
+          <span class="encuentro-jornada">J{{ h.jornada }}</span>
+          <span class="encuentro-rival">
+            {{ h.condicion === 'LOCAL' ? 'vs' : 'en' }} {{ h.rival }}
+          </span>
+          <span class="encuentro-marcador"
+                [class.gano]="h.resultado === 'G'"
+                [class.perdio]="h.resultado === 'P'">{{ h.golesFavor }} - {{ h.golesContra }}</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+</div>

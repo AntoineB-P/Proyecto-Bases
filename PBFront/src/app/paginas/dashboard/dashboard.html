@@ -1,15 +1,10 @@
-<app-estadio3d></app-estadio3d>
+<app-estadioimagen></app-estadioimagen>
+<p class="mensaje error" *ngIf="sinConexion && !cargando">No se pudo conectar con el backend.</p>
 
-<p class="aviso-ejemplo" *ngIf="ejemplo && !cargando" role="status">
-  <i class="bi bi-info-circle" aria-hidden="true"></i>
-  Mostrando datos de ejemplo: no se pudo conectar con el backend.
-</p>
-
-<p class="estado-carga" *ngIf="cargando" role="status">Cargando datos de la liga...</p>
+<p class="estado-pagina text-center" *ngIf="cargando" role="status">Cargando datos de la liga...</p>
 
 <ng-container *ngIf="!cargando">
 
-  <!-- PORTADA: el próximo partido -->
   <section class="portada" *ngIf="proximosPartidos[0] as proximo">
 
     <div class="ondas" aria-hidden="true">
@@ -40,11 +35,10 @@
     </p>
   </section>
 
-  <!-- CINTA DE RESULTADOS (se desplaza sola) -->
   <section class="cinta animate__animated animate__fadeIn" style="animation-delay: 600ms"
            aria-label="Últimos resultados" *ngIf="ultimosResultados.length > 0">
     <div class="cinta-pista">
-      <!-- solo la primera copia la leen los lectores de pantalla -->
+
       <div class="cinta-grupo"
            *ngFor="let copia of copiasCinta; let c = index"
            [attr.aria-hidden]="c > 0 ? 'true' : null">
@@ -55,7 +49,6 @@
     </div>
   </section>
 
-  <!-- CIFRAS -->
   <section class="row g-3 cifras" aria-label="Cifras generales de la liga">
     <div class="col-6 col-lg-3 animate__animated animate__zoomIn"
          *ngFor="let ind of indicadores; let i = index"
@@ -68,7 +61,6 @@
     </div>
   </section>
 
-  <!-- TABLA + PRÓXIMOS PARTIDOS -->
   <div class="row g-5">
 
     <div class="col-xl-8">
@@ -98,7 +90,8 @@
                 [style.animation-delay.ms]="i * 90 + 500">
               <td class="pos">{{ i + 1 }}</td>
               <td class="izq equipo">
-                <span class="camiseta" [style.background]="e.camiseta" aria-hidden="true"></span>
+                <img *ngIf="e.escudo" [src]="e.escudo" alt="" width="28" height="28" class="me-3 align-middle object-fit-contain">
+                <span *ngIf="!e.escudo" class="camiseta" [style.background]="e.color1" aria-hidden="true"></span>
                 {{ e.nombre }}
                 <i class="bi bi-star-fill estrella animate__animated animate__heartBeat animate__infinite"
                    style="--animate-duration: 2.4s"
@@ -137,7 +130,6 @@
 
   </div>
 
-  <!-- JUGADORES POR POSICIÓN -->
   <section class="bloque">
     <h2 class="bloque-titulo">Jugadores por posición</h2>
     <p class="bloque-nota">De portero a atacante, de arco a arco.</p>
@@ -147,12 +139,11 @@
            [style.flex]="p.cantidad + ' 1 0%'"
            [style.animation-delay.ms]="i * 120 + 300">
         <span class="tramo-cantidad">{{ p.cantidad }}</span>
-        <span class="tramo-nombre">{{ p.posicion }}, {{ p.porcentaje }}%</span>
+        <span class="tramo-nombre">{{ p.posicion }}, {{ porcentaje(p.cantidad) }}%</span>
       </div>
     </div>
   </section>
 
-  <!-- GOLEADORES, DISCIPLINA, RESULTADOS -->
   <div class="row g-5">
 
     <div class="col-lg-4">
@@ -214,7 +205,6 @@
 
   </div>
 
-  <!-- ESTADIOS Y ÁRBITROS -->
   <div class="row g-5">
 
     <div class="col-lg-6">

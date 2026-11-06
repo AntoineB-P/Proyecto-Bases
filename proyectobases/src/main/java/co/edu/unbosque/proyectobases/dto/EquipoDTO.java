@@ -251,8 +251,8 @@ public class EquipoDTO {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(ciudad, colores, fechaFundacion, idEquipo, idSede, idTecnico, nombre, nombreEstadio,
-				nombreTecnico);
+		return Objects.hash(ciudad, colores, escudoUrl, fechaFundacion, idEquipo, idSede, idTecnico, nombre,
+				nombreEstadio, nombreTecnico);
 	}
 
 	/**
@@ -273,6 +273,7 @@ public class EquipoDTO {
 			return false;
 		EquipoDTO other = (EquipoDTO) obj;
 		return Objects.equals(ciudad, other.ciudad) && Objects.equals(colores, other.colores)
+				&& Objects.equals(escudoUrl, other.escudoUrl)
 				&& Objects.equals(fechaFundacion, other.fechaFundacion) && Objects.equals(idEquipo, other.idEquipo)
 				&& Objects.equals(idSede, other.idSede) && Objects.equals(idTecnico, other.idTecnico)
 				&& Objects.equals(nombre, other.nombre) && Objects.equals(nombreEstadio, other.nombreEstadio)
@@ -289,7 +290,8 @@ public class EquipoDTO {
 	public String toString() {
 		return "EquipoDTO [idEquipo=" + idEquipo + ", nombre=" + nombre + ", fechaFundacion=" + fechaFundacion
 				+ ", ciudad=" + ciudad + ", colores=" + colores + ", idSede=" + idSede + ", nombreEstadio="
-				+ nombreEstadio + ", idTecnico=" + idTecnico + ", nombreTecnico=" + nombreTecnico + "]";
+				+ nombreEstadio + ", idTecnico=" + idTecnico + ", nombreTecnico=" + nombreTecnico
+				+ ", escudoUrl=" + escudoUrl + "]";
 	}
 
 

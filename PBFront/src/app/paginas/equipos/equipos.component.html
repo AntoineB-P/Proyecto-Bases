@@ -1,0 +1,153 @@
+<div class="seccion-cabeza">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="seccion-titulo">Equipos</h1>
+    <p class="seccion-nota" *ngIf="!cargando">{{ equipos.length }} clubes. Elige uno para ver su plantilla.</p>
+  </div>
+  <button type="button" class="boton-oro animate__animated animate__fadeIn" *ngIf="esAdmin && !mostrarFormulario" (click)="nuevo()">
+    <i class="bi bi-plus-lg"></i> Agregar equipo
+  </button>
+</div>
+
+<p class="mensaje error" *ngIf="mensajeError">{{ mensajeError }}</p>
+<p class="mensaje exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+
+<section class="panel-admin animate__animated animate__fadeIn" *ngIf="esAdmin && mostrarFormulario">
+  <h2 class="panel-admin-titulo">{{ editando ? 'Editar equipo' : 'Nuevo equipo' }}</h2>
+  <div class="row g-4">
+    <div class="col-md-6 campo-admin">
+      <label for="nombreEquipo">Nombre</label>
+      <input id="nombreEquipo" type="text" [(ngModel)]="formulario.nombre">
+    </div>
+    <div class="col-6 col-md-3 campo-admin">
+      <label for="ciudadEquipo">Ciudad</label>
+      <input id="ciudadEquipo" type="text" [(ngModel)]="formulario.ciudad">
+    </div>
+    <div class="col-6 col-md-3 campo-admin">
+      <label for="fundacionEquipo">Fundación</label>
+      <input id="fundacionEquipo" type="date" [(ngModel)]="formulario.fechaFundacion">
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="sedeEquipo">Estadio sede</label>
+      <select id="sedeEquipo" [(ngModel)]="formulario.idSede">
+        <option [ngValue]="0" disabled>Elige un estadio</option>
+        <option *ngFor="let e of estadios" [ngValue]="e.idEstadio">{{ e.nombre }} ({{ e.ciudad }})</option>
+      </select>
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="tecnicoEquipo">Técnico</label>
+      <select id="tecnicoEquipo" [(ngModel)]="formulario.idTecnico">
+        <option [ngValue]="0" disabled>Elige un técnico</option>
+        <option *ngFor="let t of tecnicos" [ngValue]="t.idTecnico">{{ t.nombres }} {{ t.apellidos }}</option>
+      </select>
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="coloresEquipo">Colores, separados por coma</label>
+      <input id="coloresEquipo" type="text" [(ngModel)]="coloresTexto" placeholder="Rojo, Blanco">
+    </div>
+    <div class="col-md-6 campo-admin">
+      <label for="escudoEquipo">Link del escudo</label>
+      <div class="escudo-campo">
+        <img *ngIf="formulario.escudoUrl" [src]="formulario.escudoUrl" alt="" class="escudo-mini">
+        <input id="escudoEquipo" type="text" [(ngModel)]="formulario.escudoUrl" placeholder="https://...">
+      </div>
+    </div>
+  </div>
+  <div class="botones-admin">
+    <button type="button" class="boton-oro" [disabled]="guardando" (click)="guardar()">
+      {{ guardando ? 'Guardando...' : 'Guardar' }}
+    </button>
+    <button type="button" class="boton-linea" (click)="cancelar()">Cancelar</button>
+  </div>
+</section>
+
+<p class="estado-pagina" *ngIf="cargando">Cargando equipos...</p>
+
+<div class="row g-5" *ngIf="!cargando">
+
+  <div class="col-xl-7">
+    <div class="tabla-envoltura">
+      <table class="tabla-liga">
+        <caption class="visually-hidden">Equipos de la liga</caption>
+        <thead>
+        <tr>
+          <th scope="col">Equipo</th>
+          <th scope="col">Estadio</th>
+          <th scope="col">Técnico</th>
+          <th scope="col">Colores</th>
+          <th scope="col" *ngIf="esAdmin"><span class="visually-hidden">Acciones</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="fila-liga fila-clic animate__animated animate__fadeInUp"
+            *ngFor="let e of equipos; let i = index"
+            [class.elegida]="elegido && elegido.idEquipo === e.idEquipo"
+            [style.animation-delay.ms]="i * 40 + 200"
+            (click)="verPlantilla(e)">
+          <td class="fuerte">
+            <img *ngIf="e.escudoUrl" [src]="e.escudoUrl" alt="" class="escudo-mini">
+            {{ e.nombre }}
+            <i class="bi bi-star-fill estrella-favorito" *ngIf="idFavorito === e.idEquipo" title="Tu equipo favorito"></i>
+            <small class="d-block ciudad">{{ e.ciudad }}</small>
+          </td>
+          <td>{{ e.nombreEstadio }}</td>
+          <td>{{ e.nombreTecnico }}</td>
+          <td>
+            <span class="color-punto" *ngFor="let c of e.colores" [style.background]="colorDe(c)" [title]="c"></span>
+          </td>
+          <td class="acciones" *ngIf="esAdmin">
+            <button type="button" class="boton-icono" (click)="editar(e); $event.stopPropagation()" aria-label="Editar equipo">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button type="button" class="boton-icono peligro" (click)="eliminar(e); $event.stopPropagation()" aria-label="Eliminar equipo">
+              <i class="bi bi-trash3"></i>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="vacio" *ngIf="equipos.length === 0">Aún no hay equipos registrados.</p>
+  </div>
+
+  <div class="col-xl-5">
+    <section class="plantilla" *ngIf="elegido">
+      <div class="plantilla-cabeza animate__animated animate__fadeIn">
+        <img *ngIf="elegido.escudoUrl" [src]="elegido.escudoUrl" alt="" class="plantilla-escudo">
+        <div>
+          <h2 class="plantilla-nombre">{{ elegido.nombre }}</h2>
+          <p class="plantilla-dato">
+            Fundado el {{ elegido.fechaFundacion }} en {{ elegido.ciudad }}
+          </p>
+        </div>
+      </div>
+
+      <button type="button" class="boton-linea boton-favorito" *ngIf="logueado"
+              [class.activo]="idFavorito === elegido.idEquipo" (click)="cambiarFavorito(elegido)">
+        <i class="bi bi-star-fill" *ngIf="idFavorito === elegido.idEquipo"></i>
+        <i class="bi bi-star" *ngIf="idFavorito !== elegido.idEquipo"></i>
+        {{ idFavorito === elegido.idEquipo ? 'Es tu favorito' : 'Marcar como favorito' }}
+      </button>
+      <p class="plantilla-dato" *ngIf="!logueado">Inicia sesión para elegir tu equipo favorito.</p>
+
+      <p class="estado-pagina" *ngIf="cargandoPlantilla">Cargando plantilla...</p>
+
+      <ng-container *ngIf="!cargandoPlantilla">
+        <p class="vacio" *ngIf="plantilla.length === 0">Este equipo aún no tiene jugadores inscritos.</p>
+
+        <div class="grupo" *ngFor="let p of posiciones">
+          <ng-container *ngIf="jugadoresDe(p).length > 0">
+            <h3 class="grupo-titulo">{{ p }} <span>{{ jugadoresDe(p).length }}</span></h3>
+            <ul>
+              <li class="jugador animate__animated animate__fadeInRight" *ngFor="let j of jugadoresDe(p); let i = index"
+                  [style.animation-delay.ms]="i * 50">
+                <span class="dorsal">{{ j.dorsal }}</span>
+                <span class="jugador-nombre">{{ j.nombre }}</span>
+              </li>
+            </ul>
+          </ng-container>
+        </div>
+      </ng-container>
+    </section>
+  </div>
+
+</div>

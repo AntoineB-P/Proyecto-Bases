@@ -1,0 +1,24 @@
+.barrio {
+  font-size: 14px;
+  color: var(--suave);
+}
+
+.capacidad {
+  min-width: 160px;
+}
+
+.barra {
+  display: block;
+  height: 4px;
+  margin-top: 8px;
+  background-color: var(--carbon);
+}
+
+.barra-relleno {
+  display: block;
+  height: 100%;
+  margin-left: auto;
+  background-color: var(--oro2);
+  transform-origin: right;
+  animation: crece 900ms 400ms var(--salida) backwards;
+}

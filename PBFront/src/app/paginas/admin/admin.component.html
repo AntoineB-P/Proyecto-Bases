@@ -1,0 +1,18 @@
+<div class="seccion-cabeza">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="seccion-titulo">Panel admin</h1>
+    <p class="seccion-nota">Lo que no se edita desde las otras páginas.</p>
+  </div>
+</div>
+
+<nav class="pestanas animate__animated animate__fadeIn" aria-label="Secciones del panel">
+  <button type="button" class="pestana" *ngFor="let s of secciones"
+          [class.activa]="seccion === s.id" (click)="seccion = s.id">
+    <i class="bi {{ s.icono }}"></i> {{ s.nombre }}
+  </button>
+</nav>
+
+<admintecnicos *ngIf="seccion === 'tecnicos'"></admintecnicos>
+<admininscripciones *ngIf="seccion === 'inscripciones'"></admininscripciones>
+<adminpartido *ngIf="seccion === 'partido'"></adminpartido>
+<adminusuarios *ngIf="seccion === 'usuarios'"></adminusuarios>
