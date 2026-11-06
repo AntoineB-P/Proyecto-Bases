@@ -4,8 +4,10 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 /**
  * Clase encargada de manejar globalmente las excepciones generadas
@@ -58,5 +60,21 @@ public class ManejadorGlobalExcepciones {
     @ExceptionHandler(ServicioCorreoException.class)
     public ResponseEntity<Map<String, String>> errorCorreo(ServicioCorreoException e) {
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(Map.of("error", e.getMessage()));
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<Map<String, String>> formatoInvalido(HttpMessageNotReadableException e) {
+        return ResponseEntity.badRequest().body(Map.of("error",
+                "Algún dato tiene un formato inválido: revisa que los números no tengan letras y que las fechas existan"));
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<Map<String, String>> tipoInvalido(MethodArgumentTypeMismatchException e) {
+        return ResponseEntity.badRequest().body(Map.of("error", "El valor '" + e.getValue() + "' no es válido para " + e.getName()));
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, String>> errorGeneral(RuntimeException e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("error", "Ocurrió un error inesperado en el servidor"));
     }
 }

@@ -35,9 +35,9 @@ public class TecnicoService {
 			throw new DatoInvalidoException("Los datos del técnico son obligatorios");
 		}
 		Tecnico t = new Tecnico();
-		t.setNombres(Validador.texto(dto.getNombres(), "nombres", 80));
-		t.setApellidos(Validador.texto(dto.getApellidos(), "apellidos", 80));
-		t.setNacionalidad(Validador.texto(dto.getNacionalidad(), "nacionalidad", 50));
+		t.setNombres(Validador.soloLetras(dto.getNombres(), "nombres", 80));
+		t.setApellidos(Validador.soloLetras(dto.getApellidos(), "apellidos", 80));
+		t.setNacionalidad(Validador.soloLetras(dto.getNacionalidad(), "nacionalidad", 50));
 		Validador.fechaNoFutura(dto.getFechaNacimiento(), "fecha de nacimiento");
 		t.setFechaNacimiento(dto.getFechaNacimiento());
 		return t;

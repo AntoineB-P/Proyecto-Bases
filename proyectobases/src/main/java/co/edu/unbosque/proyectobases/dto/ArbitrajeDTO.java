@@ -46,7 +46,7 @@ public class ArbitrajeDTO {
      * @param idPartido identificador del partido correspondiente.
      * @param rol función que desempeña el árbitro en el partido.
      */
-    public ArbitrajeDTO(Long cedulaArbitro, String nombreArbitro, Long idPartido, String rol) {
+    public ArbitrajeDTO(String cedulaArbitro, String nombreArbitro, Long idPartido, String rol) {
         super();
         this.cedulaArbitro = cedulaArbitro;
         this.nombreArbitro = nombreArbitro;
@@ -59,7 +59,7 @@ public class ArbitrajeDTO {
      *
      * @return número de identificación del árbitro.
      */
-    public Long getCedulaArbitro() {
+    public String getCedulaArbitro() {
         return cedulaArbitro;
     }
 
@@ -68,7 +68,7 @@ public class ArbitrajeDTO {
      *
      * @param cedulaArbitro nuevo número de identificación.
      */
-    public void setCedulaArbitro(Long cedulaArbitro) {
+    public void setCedulaArbitro(String cedulaArbitro) {
         this.cedulaArbitro = cedulaArbitro;
     }
 

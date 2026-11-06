@@ -115,9 +115,7 @@ public class PartidoService {
 		if (dto.getHora() == null) {
 			throw new DatoInvalidoException("La hora del partido es obligatoria");
 		}
-		if (dto.getJornada() == null || dto.getJornada() <= 0) {
-			throw new DatoInvalidoException("La jornada debe ser un número mayor que 0");
-		}
+		Validador.rango(dto.getJornada(), "jornada", 1, 50);
 		if (dto.getIdTorneo() == null || torneoRepository.buscarPorId(dto.getIdTorneo()) == null) {
 			throw new DatoInvalidoException("El torneo no existe");
 		}

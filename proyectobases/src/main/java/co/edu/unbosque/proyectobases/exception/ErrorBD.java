@@ -18,6 +18,8 @@ public class ErrorBD {
 			return new DatoInvalidoException("Falta un dato obligatorio");
 		case 12899:
 			return new DatoInvalidoException("Algún texto es demasiado largo");
+		case 1438:
+			return new DatoInvalidoException("Algún número es demasiado grande");
 		default:
 			return new RuntimeException("Error de base de datos: " + e.getMessage(), e);
 		}

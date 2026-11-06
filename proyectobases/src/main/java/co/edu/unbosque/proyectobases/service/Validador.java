@@ -18,6 +18,22 @@ public class Validador {
 		return limpio;
 	}
 
+	public static String soloLetras(String valor, String campo, int max) {
+		String limpio = texto(valor, campo, max);
+		if (!limpio.matches("[A-Za-zÁÉÍÓÚáéíóúÑñÜü .'-]+")) {
+			throw new DatoInvalidoException("El campo " + campo + " solo puede tener letras");
+		}
+		return limpio;
+	}
+
+	public static String soloNumeros(String valor, String campo, int min, int max) {
+		String limpio = texto(valor, campo, max);
+		if (!limpio.matches("[0-9]+") || limpio.length() < min) {
+			throw new DatoInvalidoException("El campo " + campo + " solo puede tener números (entre " + min + " y " + max + " dígitos)");
+		}
+		return limpio;
+	}
+
 	public static void obligatorio(Object valor, String campo) {
 		if (valor == null) {
 			throw new DatoInvalidoException("El campo " + campo + " es obligatorio");
