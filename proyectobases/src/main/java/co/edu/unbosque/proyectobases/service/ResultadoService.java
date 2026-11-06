@@ -37,11 +37,8 @@ public class ResultadoService {
 		if (dto == null) {
 			throw new DatoInvalidoException("Los datos del resultado son obligatorios");
 		}
-		Validador.obligatorio(dto.getGolesLocal(), "goles del local");
-		Validador.obligatorio(dto.getGolesVisitante(), "goles del visitante");
-		if (dto.getGolesLocal() < 0 || dto.getGolesVisitante() < 0) {
-			throw new DatoInvalidoException("Los goles no pueden ser negativos");
-		}
+		Validador.rango(dto.getGolesLocal(), "goles del local", 0, 30);
+		Validador.rango(dto.getGolesVisitante(), "goles del visitante", 0, 30);
 	}
 
 	public ResultadoDTO buscarPorPartido(Long idPartido) {

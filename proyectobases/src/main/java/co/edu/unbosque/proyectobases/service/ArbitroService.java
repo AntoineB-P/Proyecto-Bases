@@ -38,10 +38,10 @@ public class ArbitroService {
 			throw new DatoInvalidoException("Los datos del árbitro son obligatorios");
 		}
 		Arbitro a = new Arbitro();
-		a.setCedula(Validador.texto(dto.getCedula(), "cédula", 15));
-		a.setNombres(Validador.texto(dto.getNombres(), "nombres", 80));
-		a.setApellidos(Validador.texto(dto.getApellidos(), "apellidos", 80));
-		a.setCiudadArbitro(Validador.texto(dto.getCiudad(), "ciudad", 60));
+		a.setCedula(Validador.soloNumeros(dto.getCedula(), "cédula", 6, 15));
+		a.setNombres(Validador.soloLetras(dto.getNombres(), "nombres", 80));
+		a.setApellidos(Validador.soloLetras(dto.getApellidos(), "apellidos", 80));
+		a.setCiudadArbitro(Validador.soloLetras(dto.getCiudad(), "ciudad", 60));
 		a.setCategoria(Validador.opcion(dto.getCategoria(), "categoría", "Nacional", "FIFA"));
 		return a;
 	}

@@ -50,9 +50,9 @@ public class JugadorService {
 			throw new DatoInvalidoException("Los datos del jugador son obligatorios");
 		}
 		Jugador j = new Jugador();
-		j.setNombres(Validador.texto(dto.getNombres(), "nombres", 80));
-		j.setApellidos(Validador.texto(dto.getApellidos(), "apellidos", 80));
-		j.setNacionalidad(Validador.texto(dto.getNacionalidad(), "nacionalidad", 50));
+		j.setNombres(Validador.soloLetras(dto.getNombres(), "nombres", 80));
+		j.setApellidos(Validador.soloLetras(dto.getApellidos(), "apellidos", 80));
+		j.setNacionalidad(Validador.soloLetras(dto.getNacionalidad(), "nacionalidad", 50));
 		Validador.fechaNoFutura(dto.getFechaNacimiento(), "fecha de nacimiento");
 		j.setFechaNacimiento(dto.getFechaNacimiento());
 		j.setPosicion(Validador.opcion(dto.getPosicion(), "posición", POSICIONES));

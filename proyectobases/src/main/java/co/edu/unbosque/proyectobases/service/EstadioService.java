@@ -36,14 +36,14 @@ public class EstadioService {
 		if (dto == null) {
 			throw new DatoInvalidoException("Los datos del estadio son obligatorios");
 		}
-		if (dto.getCapacidad() <= 0) {
-			throw new DatoInvalidoException("La capacidad debe ser mayor que 0");
+		if (dto.getCapacidad() <= 0 || dto.getCapacidad() > 150000) {
+			throw new DatoInvalidoException("La capacidad debe estar entre 1 y 150000");
 		}
 		Estadio e = new Estadio();
 		e.setNombreEstadio(Validador.texto(dto.getNombre(), "nombre", 100));
 		e.setCapacidad(dto.getCapacidad());
 		e.setDireccion(Validador.texto(dto.getDireccion(), "dirección", 150));
-		e.setCiudadEstadio(Validador.texto(dto.getCiudad(), "ciudad", 60));
+		e.setCiudadEstadio(Validador.soloLetras(dto.getCiudad(), "ciudad", 60));
 		e.setBarrio(Validador.texto(dto.getBarrio(), "barrio", 60));
 		return e;
 	}

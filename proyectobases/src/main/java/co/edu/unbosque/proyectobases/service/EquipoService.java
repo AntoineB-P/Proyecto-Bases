@@ -80,12 +80,7 @@ public class EquipoService {
 		if (dto.getNombre().trim().length() > 100) {
 			throw new DatoInvalidoException("El nombre del equipo no puede pasar de 100 caracteres");
 		}
-		if (dto.getCiudad() == null || dto.getCiudad().isBlank()) {
-			throw new DatoInvalidoException("La ciudad del equipo es obligatoria");
-		}
-		if (dto.getCiudad().trim().length() > 60) {
-			throw new DatoInvalidoException("La ciudad no puede pasar de 60 caracteres");
-		}
+		Validador.soloLetras(dto.getCiudad(), "ciudad", 60);
 		if (dto.getFechaFundacion() == null) {
 			throw new DatoInvalidoException("La fecha de fundación es obligatoria");
 		}
@@ -117,10 +112,7 @@ public class EquipoService {
 		Set<String> limpios = new LinkedHashSet<>();
 		for (String c : colores) {
 			if (c != null && !c.isBlank()) {
-				String color = c.trim();
-				if (color.length() > 30) {
-					throw new DatoInvalidoException("Un color no puede pasar de 30 caracteres");
-				}
+				String color = Validador.soloLetras(c, "color", 30);
 				limpios.add(color);
 			}
 		}
