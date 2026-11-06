@@ -36,6 +36,9 @@ public class EstadisticaJugadorDTO {
 	/** Cantidad de tarjetas rojas recibidas por el jugador. */
 	private Integer rojas;
 
+	/** Nombre del equipo en el que está inscrito el jugador. */
+	private String nombreEquipo;
+
 	/**
 	 * Constructor vacío de la clase EstadisticaJugadorDTO.
 	 * Permite crear un objeto sin inicializar sus atributos.
@@ -54,6 +57,7 @@ public class EstadisticaJugadorDTO {
 	 * @param goles cantidad de goles anotados.
 	 * @param amarillas cantidad de tarjetas amarillas recibidas.
 	 * @param rojas cantidad de tarjetas rojas recibidas.
+	 * @param nombreEquipo nombre del equipo del jugador.
 	 */
 	public EstadisticaJugadorDTO(Long idJugador, String nombreJugador, Integer partidosJugados, Integer goles,
 			Integer amarillas, Integer rojas, String nombreEquipo) {
@@ -173,6 +177,24 @@ public class EstadisticaJugadorDTO {
 	 */
 	public void setRojas(Integer rojas) {
 		this.rojas = rojas;
+	}
+
+	/**
+	 * Obtiene el nombre del equipo del jugador.
+	 *
+	 * @return nombre del equipo.
+	 */
+	public String getNombreEquipo() {
+		return nombreEquipo;
+	}
+
+	/**
+	 * Modifica el nombre del equipo del jugador.
+	 *
+	 * @param nombreEquipo nuevo nombre del equipo.
+	 */
+	public void setNombreEquipo(String nombreEquipo) {
+		this.nombreEquipo = nombreEquipo;
 	}
 
 	/**

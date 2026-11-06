@@ -7,7 +7,8 @@ import java.util.Objects;
  * correspondiente a un árbitro.
  *
  * Contiene los datos personales y profesionales del árbitro, incluyendo
- * su número de cédula, nombres, apellidos, ciudad y categoría.
+ * su número de cédula, nombres, apellidos, ciudad, categoría y la cantidad
+ * de partidos que ha dirigido.
  *
  * Implementa los métodos equals(), hashCode() y toString() para permitir
  * la comparación y representación textual de los objetos.
@@ -18,7 +19,7 @@ import java.util.Objects;
 public class ArbitroDTO {
 
     /** Número de cédula que identifica al árbitro. */
-    private Long cedula;
+    private String cedula;
 
     /** Nombres del árbitro. */
     private String nombres;
@@ -31,6 +32,9 @@ public class ArbitroDTO {
 
     /** Categoría profesional o clasificación del árbitro. */
     private String categoria;
+
+    /** Cantidad de partidos que ha dirigido el árbitro. */
+    private Integer partidosDirigidos;
 
     /**
      * Constructor vacío de la clase ArbitroDTO.
@@ -49,14 +53,17 @@ public class ArbitroDTO {
      * @param apellidos apellidos del árbitro.
      * @param ciudad ciudad de procedencia o residencia.
      * @param categoria categoría profesional del árbitro.
+     * @param partidosDirigidos cantidad de partidos dirigidos.
      */
-    public ArbitroDTO(Long cedula, String nombres, String apellidos, String ciudad, String categoria) {
+    public ArbitroDTO(String cedula, String nombres, String apellidos, String ciudad, String categoria,
+            Integer partidosDirigidos) {
         super();
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.ciudad = ciudad;
         this.categoria = categoria;
+        this.partidosDirigidos = partidosDirigidos;
     }
 
     /**
@@ -64,7 +71,7 @@ public class ArbitroDTO {
      *
      * @return número de identificación del árbitro.
      */
-    public Long getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
@@ -73,7 +80,7 @@ public class ArbitroDTO {
      *
      * @param cedula nuevo número de identificación.
      */
-    public void setCedula(Long cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -150,13 +157,31 @@ public class ArbitroDTO {
     }
 
     /**
+     * Obtiene la cantidad de partidos dirigidos por el árbitro.
+     *
+     * @return número de partidos dirigidos.
+     */
+    public Integer getPartidosDirigidos() {
+        return partidosDirigidos;
+    }
+
+    /**
+     * Modifica la cantidad de partidos dirigidos por el árbitro.
+     *
+     * @param partidosDirigidos nueva cantidad de partidos dirigidos.
+     */
+    public void setPartidosDirigidos(Integer partidosDirigidos) {
+        this.partidosDirigidos = partidosDirigidos;
+    }
+
+    /**
      * Genera un código hash utilizando los atributos de la clase.
      *
      * @return código hash correspondiente al objeto ArbitroDTO.
      */
     @Override
     public int hashCode() {
-        return Objects.hash(apellidos, categoria, cedula, ciudad, nombres);
+        return Objects.hash(apellidos, categoria, cedula, ciudad, nombres, partidosDirigidos);
     }
 
     /**
@@ -177,7 +202,7 @@ public class ArbitroDTO {
         ArbitroDTO other = (ArbitroDTO) obj;
         return Objects.equals(apellidos, other.apellidos) && Objects.equals(categoria, other.categoria)
                 && Objects.equals(cedula, other.cedula) && Objects.equals(ciudad, other.ciudad)
-                && Objects.equals(nombres, other.nombres);
+                && Objects.equals(nombres, other.nombres) && Objects.equals(partidosDirigidos, other.partidosDirigidos);
     }
 
     /**
@@ -189,7 +214,7 @@ public class ArbitroDTO {
     @Override
     public String toString() {
         return "ArbitroDTO [cedula=" + cedula + ", nombres=" + nombres + ", apellidos=" + apellidos + ", ciudad="
-                + ciudad + ", categoria=" + categoria + "]";
+                + ciudad + ", categoria=" + categoria + ", partidosDirigidos=" + partidosDirigidos + "]";
     }
 
 }
