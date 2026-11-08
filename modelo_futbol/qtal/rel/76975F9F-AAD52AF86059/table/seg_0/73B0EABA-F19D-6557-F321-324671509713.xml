@@ -34,8 +34,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>80</dataTypeSize>
-<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="fecha_fundacion" id="D023F05A-C5B5-9061-79BF-88F2838640C0">
@@ -45,7 +45,6 @@
 <commentInRDBMS><![CDATA[Fecha en que se fundó el equipo (opcional). Dato histórico del club.]]></commentInRDBMS>
 <generatorID>F51A2AEB-7E70-7130-47CE-92953BCB1221</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -59,7 +58,6 @@
 <commentInRDBMS><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></commentInRDBMS>
 <generatorID>4EF866EA-7D8F-6DCB-EA13-A157564E8F22</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -140,6 +138,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="9CFAFEA3-4D31-D9C1-8A25-BD2FE8119522"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5EC81734-B0E5-465A-F74F-4D94D0777DB1" name="EQUIPO_nombre_UNv1">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-08 00:54:38 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB8FB18E-A7B2-A413-8ECD-FCB065E1ADAA"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="E7BACE96-90E8-0F94-C300-4BF98BB3BD34" name="EQUIPO_ESTADIO_FK">

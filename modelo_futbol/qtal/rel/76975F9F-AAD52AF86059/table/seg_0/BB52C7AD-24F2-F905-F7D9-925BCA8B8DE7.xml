@@ -53,12 +53,11 @@
 <commentInRDBMS><![CDATA[Función del árbitro en ese partido (por ejemplo central, asistente o cuarto árbitro) (opcional).]]></commentInRDBMS>
 <generatorID>5B5D3591-23E8-830C-543F-8649BD56D3E9</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

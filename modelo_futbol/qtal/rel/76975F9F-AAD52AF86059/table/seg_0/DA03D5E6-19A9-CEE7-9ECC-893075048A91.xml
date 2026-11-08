@@ -34,8 +34,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>80</dataTypeSize>
-<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="capacidad" id="AB239990-233D-92B8-1DE5-16E0BE39CD0C">
@@ -45,12 +45,11 @@
 <commentInRDBMS><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></commentInRDBMS>
 <generatorID>2A8ACAE3-E6AA-93AC-CAB2-741156129EB3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>7</dataTypePrecision>
-<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="direccion" id="1F6714BD-BFB5-6232-E63C-17B392597C65">
@@ -60,12 +59,11 @@
 <commentInRDBMS><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></commentInRDBMS>
 <generatorID>D0E760F5-12D3-1C41-7749-CFD19528E7F1</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>120</dataTypeSize>
-<ownDataTypeParameters>120,,</ownDataTypeParameters>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ciudad_estadio" id="2BF009EA-CD9C-A3A0-A76E-AEE9928C1C91">
@@ -75,7 +73,6 @@
 <commentInRDBMS><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></commentInRDBMS>
 <generatorID>9EC634C4-B11C-6EDF-CF29-6E10133139EA</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -90,7 +87,6 @@
 <commentInRDBMS><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></commentInRDBMS>
 <generatorID>52DBC228-C2D2-E359-744D-5F6A2D2F9F35</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -110,6 +106,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="EEE37525-6714-B22C-69AF-C51CD699163A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E2E2C9F1-3D4A-7675-8E3A-1AC35DC1DFF1" name="ESTADIO__UN">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-08 00:51:10 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="689B114E-1906-9E34-6A67-891FAEDBD6A0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

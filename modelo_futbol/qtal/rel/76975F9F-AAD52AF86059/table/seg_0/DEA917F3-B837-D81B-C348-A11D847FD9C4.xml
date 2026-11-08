@@ -49,7 +49,6 @@
 <commentInRDBMS><![CDATA[Tipo de gol (por ejemplo jugada, penal, tiro libre o autogol) (opcional). Sirve para estadísticas.]]></commentInRDBMS>
 <generatorID>E2BFF6FF-39ED-906E-8BA4-C72478A1EA9E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -64,7 +63,6 @@
 <commentInRDBMS><![CDATA[Minuto del partido en que se anotó el gol (opcional).]]></commentInRDBMS>
 <generatorID>132CA83B-873C-0608-D3B8-A963C62AB10B</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>

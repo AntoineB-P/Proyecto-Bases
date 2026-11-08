@@ -52,5 +52,24 @@
 <colUsage columnID="550AE63F-8387-0B98-391D-200C58030B90"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="F8332447-C1D8-0804-6F52-85413C87E3FF" name="TIPO_TARJETA__UN">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-08 00:51:50 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23A1FA1C-5B3E-D6C0-360C-C91DF88A8AE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2835F135-75EF-2CBD-3410-2752B94D5AE9" name="COLOR_TARJETA__UN">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-08 00:51:37 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23A1FA1C-5B3E-D6C0-360C-C91DF88A8AE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
 </indexes>
 </Table>

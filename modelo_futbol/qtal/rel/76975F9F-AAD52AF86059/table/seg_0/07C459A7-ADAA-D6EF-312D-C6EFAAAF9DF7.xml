@@ -17,10 +17,10 @@
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
-<use>0</use>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>FC0AD790-24E6-4C6B-0123-7C5340B051B5</domain>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="id_jugador" id="8D0D55A5-3A53-68C2-27EB-18B4E897BA48">

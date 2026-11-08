@@ -35,7 +35,6 @@
 <commentInRDBMS><![CDATA[Fecha desde la que el jugador está inscrito con el equipo en ese torneo (opcional).]]></commentInRDBMS>
 <generatorID>42DBD342-633F-B9FC-7536-CE2219C56A4F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -63,12 +62,11 @@
 <commentInRDBMS><![CDATA[Número de camiseta que usa el jugador con ese equipo en ese torneo (opcional).]]></commentInRDBMS>
 <generatorID>37220B67-5D9C-1F9C-9D8D-06F455C3003C</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="id_equipo" id="5F96A95E-FC26-EFBE-5247-1B278CCA4069">
@@ -133,6 +131,17 @@
 <colUsage columnID="3ED77066-E341-69CA-C1CC-C1AAF153AB30"/>
 <colUsage columnID="5F96A95E-FC26-EFBE-5247-1B278CCA4069"/>
 <colUsage columnID="6A981675-AC9F-AC3C-82E5-6131BBF30962"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A11F5DC3-A99C-F988-915D-59759520399D" name="jugador_torneo_UN">
+<createdBy>Daniel</createdBy>
+<createdTime>2026-11-08 01:14:18 UTC</createdTime>
+<ownerDesignName>qtal</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3ED77066-E341-69CA-C1CC-C1AAF153AB30"/>
+<colUsage columnID="9FE06DE5-3A1D-C550-F968-87F01843AF6D"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BF47466B-E37C-4B58-9383-EE3A85C0229C" name="unq_dorsal">

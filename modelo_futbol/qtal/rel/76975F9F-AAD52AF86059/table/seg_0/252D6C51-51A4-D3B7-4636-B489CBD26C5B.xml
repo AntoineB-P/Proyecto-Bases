@@ -34,8 +34,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>60</dataTypeSize>
-<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="apellidos" id="0FB9E33D-D7EA-72D7-8C56-069D18FF11CE">
@@ -48,8 +48,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>60</dataTypeSize>
-<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ciudad_arbitro" id="66F4B5B8-5A89-767B-97A2-A4A85E798EB6">
@@ -59,7 +59,6 @@
 <commentInRDBMS><![CDATA[Ciudad del árbitro (opcional). Permite filtrar árbitros por ubicación al asignarlos a partidos.]]></commentInRDBMS>
 <generatorID>FC07D943-F967-C488-311F-61CBFF24B20F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -74,7 +73,6 @@
 <commentInRDBMS><![CDATA[Categoría o nivel del árbitro (por ejemplo nacional o internacional) (opcional). Sirve para asignar árbitros según la importancia del partido.]]></commentInRDBMS>
 <generatorID>7761B320-0FAD-F1F2-42B6-2615D8661C4B</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

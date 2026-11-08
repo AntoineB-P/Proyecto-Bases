@@ -49,12 +49,11 @@
 <commentInRDBMS><![CDATA[Razón por la que se mostró la tarjeta (opcional). Sirve para el control disciplinario.]]></commentInRDBMS>
 <generatorID>A2A2F651-A512-F351-4537-E1CDD6AA8C79</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>120</dataTypeSize>
-<ownDataTypeParameters>120,,</ownDataTypeParameters>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="minuto_tarjeta" id="DA085040-268D-9938-14A5-B1A7085D546B">
@@ -64,7 +63,6 @@
 <commentInRDBMS><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></commentInRDBMS>
 <generatorID>1309C667-5F6B-3694-8658-0867EADB8F0F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
