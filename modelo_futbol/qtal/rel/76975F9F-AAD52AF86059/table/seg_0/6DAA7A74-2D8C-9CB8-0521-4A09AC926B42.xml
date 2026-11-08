@@ -49,13 +49,12 @@
 <commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo local en el partido (opcional).]]></commentInRDBMS>
 <generatorID>16B7EA11-E45C-5C82-6B86-94527CCD1A96</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
+<dataTypePrecision>2</dataTypePrecision>
 <defaultValue>0</defaultValue>
-<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="goles_visitante" id="F92F1331-F89F-D9D6-CEFF-12E5E72F907B">
@@ -65,13 +64,12 @@
 <commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo visitante en el partido (opcional).]]></commentInRDBMS>
 <generatorID>49DBA44B-9567-ABFE-AAB6-A49D241AD53B</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
+<dataTypePrecision>2</dataTypePrecision>
 <defaultValue>0</defaultValue>
-<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

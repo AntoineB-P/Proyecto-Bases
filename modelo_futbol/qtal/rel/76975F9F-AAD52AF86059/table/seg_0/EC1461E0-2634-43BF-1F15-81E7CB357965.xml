@@ -31,7 +31,6 @@
 <commentInRDBMS><![CDATA[Fecha en que se juega el partido (opcional). Sirve para armar el calendario y ordenar los encuentros.]]></commentInRDBMS>
 <generatorID>5A795516-5B3E-E1CC-DCE2-01D232E6BFFF</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -45,7 +44,6 @@
 <commentInRDBMS><![CDATA[Hora programada de inicio del partido, guardada como texto (por ejemplo 15:30) (opcional).]]></commentInRDBMS>
 <generatorID>770EE37E-E994-6221-FC05-49D690AAF410</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -60,7 +58,6 @@
 <commentInRDBMS><![CDATA[Número de jornada del torneo a la que pertenece el partido (opcional). Agrupa los partidos del calendario.]]></commentInRDBMS>
 <generatorID>E7A8F322-39FC-C1CE-75DA-135F7627BF38</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
