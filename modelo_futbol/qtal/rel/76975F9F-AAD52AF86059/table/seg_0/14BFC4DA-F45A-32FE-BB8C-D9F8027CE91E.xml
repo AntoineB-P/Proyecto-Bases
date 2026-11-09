@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="14BFC4DA-F45A-32FE-BB8C-D9F8027CE91E" name="TORNEO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Torneos o campeonatos organizados por periodo (año y semestre). Agrupan los equipos participantes, los jugadores inscritos y los partidos que se juegan.]]></comment>
-<commentInRDBMS><![CDATA[Torneos o campeonatos organizados por periodo (año y semestre). Agrupan los equipos participantes, los jugadores inscritos y los partidos que se juegan.]]></commentInRDBMS>
+<comment><![CDATA[Ediciones de la liga, identificadas por año y semestre. Agrupan los equipos participantes, las inscripciones y los partidos.]]></comment>
+<commentInRDBMS><![CDATA[Ediciones de la liga, identificadas por año y semestre. Agrupan los equipos participantes, las inscripciones y los partidos.]]></commentInRDBMS>
 <generatorID>E1442125-5883-42CF-F4D1-B8211F551349</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -27,25 +27,24 @@
 <Column name="nombre_torneo" id="07963219-360C-0077-C67C-CE913DECCA26">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Nombre del torneo o campeonato. Se usa para identificarlo en calendarios y reportes.]]></comment>
-<commentInRDBMS><![CDATA[Nombre del torneo o campeonato. Se usa para identificarlo en calendarios y reportes.]]></commentInRDBMS>
+<comment><![CDATA[Nombre del torneo, por ejemplo Liga BetPlay Dimayor II-2026.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del torneo, por ejemplo Liga BetPlay Dimayor II-2026.]]></commentInRDBMS>
 <generatorID>5D844288-1C0E-AFDD-7947-E907D3644FAC</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="anio" id="1945BEFC-1D6F-0C8B-F901-E1285312DA4B">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Año en que se juega el torneo (opcional). Sirve para ordenar y filtrar torneos por periodo.]]></comment>
-<commentInRDBMS><![CDATA[Año en que se juega el torneo (opcional). Sirve para ordenar y filtrar torneos por periodo.]]></commentInRDBMS>
+<comment><![CDATA[Año en que se juega el torneo.]]></comment>
+<commentInRDBMS><![CDATA[Año en que se juega el torneo.]]></commentInRDBMS>
 <generatorID>A9216386-6DD0-01E9-20E3-DBDFA4376CA3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -56,11 +55,10 @@
 <Column name="semestre" id="E9156B4C-08FA-42D6-BC4E-44F327B8AEAF">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Semestre del año en que se juega el torneo, por ejemplo 1 o 2 (opcional). Complementa al año para distinguir torneos del mismo año.]]></comment>
-<commentInRDBMS><![CDATA[Semestre del año en que se juega el torneo, por ejemplo 1 o 2 (opcional). Complementa al año para distinguir torneos del mismo año.]]></commentInRDBMS>
+<comment><![CDATA[Semestre del año en que se juega el torneo: 1 o 2.]]></comment>
+<commentInRDBMS><![CDATA[Semestre del año en que se juega el torneo: 1 o 2.]]></commentInRDBMS>
 <generatorID>3A2E27B3-C35A-E131-091F-DFBA8F65312A</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -71,11 +69,10 @@
 <Column name="fecha_inicio_torneo" id="6CB88A4B-A12C-D4AC-7BB9-F36E666A194D">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Fecha en que arranca el torneo (opcional). Se usa para calcular la duración del torneo.]]></comment>
-<commentInRDBMS><![CDATA[Fecha en que arranca el torneo (opcional). Se usa para calcular la duración del torneo.]]></commentInRDBMS>
+<comment><![CDATA[Fecha en que empieza el torneo.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que empieza el torneo.]]></commentInRDBMS>
 <generatorID>A8FA7BD2-272C-DE5C-9ACE-498E4AED7AE3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -85,11 +82,10 @@
 <Column name="fecha_fin_torneo" id="A8D4A91F-DB75-D995-5E05-41DDEE98F889">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Fecha en que termina el torneo (opcional). Se usa para calcular la duración del torneo.]]></comment>
-<commentInRDBMS><![CDATA[Fecha en que termina el torneo (opcional). Se usa para calcular la duración del torneo.]]></commentInRDBMS>
+<comment><![CDATA[Fecha en que termina el torneo. Junto con la de inicio permite calcular la duración, que no se guarda por ser derivada.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que termina el torneo. Junto con la de inicio permite calcular la duración, que no se guarda por ser derivada.]]></commentInRDBMS>
 <generatorID>E7648C6B-ADF9-6A07-0318-ED0C5EE3E1EF</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>

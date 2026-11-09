@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="73B0EABA-F19D-6557-F321-324671509713" name="EQUIPO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Equipos (clubes) que participan en los torneos. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></comment>
-<commentInRDBMS><![CDATA[Equipos (clubes) que participan en los torneos. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></commentInRDBMS>
+<comment><![CDATA[Clubes que participan en la liga. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></comment>
+<commentInRDBMS><![CDATA[Clubes que participan en la liga. Es la entidad central: juega partidos como local o visitante, tiene un técnico, un estadio sede, colores y jugadores inscritos.]]></commentInRDBMS>
 <generatorID>BDCE6D7A-A1A6-58F7-4A9E-706D656E3928</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -13,8 +13,8 @@
 <Column name="id_equipo" id="7FCD9DF5-67EF-DB54-912C-E89D6C79B1F1">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></comment>
-<commentInRDBMS><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></commentInRDBMS>
+<comment><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR, INSCRIPCION y USUARIO.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR, INSCRIPCION y USUARIO.]]></commentInRDBMS>
 <generatorID>D7558503-8436-8B62-86FC-DA902EC09F10</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -27,8 +27,8 @@
 <Column name="nombre_equipo" id="DB8FB18E-A7B2-A413-8ECD-FCB065E1ADAA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Nombre del equipo. Se usa para identificarlo en calendarios, resultados y reportes.]]></comment>
-<commentInRDBMS><![CDATA[Nombre del equipo. Se usa para identificarlo en calendarios, resultados y reportes.]]></commentInRDBMS>
+<comment><![CDATA[Nombre del club. Es único: no puede haber dos equipos con el mismo nombre.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del club. Es único: no puede haber dos equipos con el mismo nombre.]]></commentInRDBMS>
 <generatorID>9D4035F8-18F0-7972-49FA-44E4D4595424</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -41,8 +41,8 @@
 <Column name="fecha_fundacion" id="D023F05A-C5B5-9061-79BF-88F2838640C0">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Fecha en que se fundó el equipo (opcional). Dato histórico del club.]]></comment>
-<commentInRDBMS><![CDATA[Fecha en que se fundó el equipo (opcional). Dato histórico del club.]]></commentInRDBMS>
+<comment><![CDATA[Fecha en que se fundó el club.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que se fundó el club.]]></commentInRDBMS>
 <generatorID>F51A2AEB-7E70-7130-47CE-92953BCB1221</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -54,8 +54,8 @@
 <Column name="ciudad_equipo" id="A8030A6D-6727-D900-F965-7057777853DA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></comment>
-<commentInRDBMS><![CDATA[Ciudad de origen del equipo (opcional). Permite agrupar o filtrar equipos por ubicación.]]></commentInRDBMS>
+<comment><![CDATA[Ciudad a la que pertenece el club.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad a la que pertenece el club.]]></commentInRDBMS>
 <generatorID>4EF866EA-7D8F-6DCB-EA13-A157564E8F22</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -68,8 +68,8 @@
 <Column name="id_tecnico" id="9CFAFEA3-4D31-D9C1-8A25-BD2FE8119522">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a TECNICO: técnico que dirige al equipo (relación Dirigir 1:1). Es obligatoria y única: un equipo tiene exactamente un técnico y un técnico dirige como máximo un equipo.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a TECNICO: técnico que dirige al equipo (relación Dirigir 1:1). Es obligatoria y única: un equipo tiene exactamente un técnico y un técnico dirige como máximo un equipo.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a TECNICO: técnico que dirige el equipo (relación Dirigir). Es única porque un técnico dirige un solo equipo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TECNICO: técnico que dirige el equipo (relación Dirigir). Es única porque un técnico dirige un solo equipo.]]></commentInRDBMS>
 <generatorID>4E220AAA-DC97-9F3E-57C6-73B9C07A67A6</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -86,8 +86,8 @@
 <Column name="id_sede" id="5484CA31-3EB4-A8A9-4E1D-60778E96605E">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Es obligatoria; un estadio puede ser sede de varios equipos.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Es obligatoria; un estadio puede ser sede de varios equipos.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Un estadio puede ser sede de varios equipos.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ESTADIO: estadio sede del equipo (relación Tener:sede). Un estadio puede ser sede de varios equipos.]]></commentInRDBMS>
 <generatorID>60263612-8F54-B27B-B017-F723E2ED3734</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -104,7 +104,8 @@
 <Column name="escudo_url" id="A8FA2626-7735-15DF-D513-B1FFCA6B6AC8">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Enlace (URL) a la imagen del escudo del club (opcional). Se usa para mostrar el escudo en la aplicación.]]></commentInRDBMS>
+<comment><![CDATA[Enlace a la imagen del escudo del club que muestra la aplicación web. Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Enlace a la imagen del escudo del club que muestra la aplicación web. Es opcional.]]></commentInRDBMS>
 <generatorID>C1313751-0BB9-CC9F-14D1-5EB220A780C2</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -144,7 +145,7 @@
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-08 00:54:38 UTC</createdTime>
 <ownerDesignName>qtal</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
+<indexState>Unique Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="DB8FB18E-A7B2-A413-8ECD-FCB065E1ADAA"/>

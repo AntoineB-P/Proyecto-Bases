@@ -2,8 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="652EA174-922A-698D-812E-5ECAFADC7141" name="ROL">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 03:27:58 UTC</createdTime>
-<commentInRDBMS><![CDATA[Catálogo de roles de los usuarios del sistema (por ejemplo administrador). Un rol puede estar asignado a varios usuarios.
-]]></commentInRDBMS>
+<comment><![CDATA[Catálogo de roles de los usuarios de la aplicación web: ADMIN y USUARIO.]]></comment>
+<commentInRDBMS><![CDATA[Catálogo de roles de los usuarios de la aplicación web: ADMIN y USUARIO.]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -21,6 +21,7 @@
 <Attribute name="id_rol" id="2E474433-237E-B21E-47A8-1AB286A58B78">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 04:03:04 UTC</createdTime>
+<comment><![CDATA[Identificador único del rol (llave primaria). USUARIO lo referencia.]]></comment>
 <commentInRDBMS><![CDATA[Identificador único del rol (llave primaria). USUARIO lo referencia.]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -36,8 +37,8 @@
 <Attribute name="nombre_rol" id="5F7BFFE0-9044-ADF1-9BE6-E169AA4D158C">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 04:10:56 UTC</createdTime>
-<commentInRDBMS><![CDATA[Nombre del rol (por ejemplo administrador). Define lo que el usuario puede hacer en el sistema.
-]]></commentInRDBMS>
+<comment><![CDATA[Nombre del rol: ADMIN (puede crear, modificar y borrar datos) o USUARIO (solo consulta). Es único.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del rol: ADMIN (puede crear, modificar y borrar datos) o USUARIO (solo consulta). Es único.]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -46,8 +47,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

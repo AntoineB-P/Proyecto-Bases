@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE4C5042-E0D6-EDC4-231A-874386A0A555" name="EQUIPO_COLOR">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color que tiene un equipo, ya que un equipo puede tener varios colores.]]></comment>
-<commentInRDBMS><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color que tiene un equipo, ya que un equipo puede tener varios colores.]]></commentInRDBMS>
+<comment><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color del uniforme de un equipo.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve el atributo multivaluado colores de EQUIPO: guarda un registro por cada color del uniforme de un equipo.]]></commentInRDBMS>
 <generatorID>0C317949-8910-2327-6500-E5030939518E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -13,8 +13,8 @@
 <Column name="id_equipo" id="57A5DC5C-EEBF-B0A3-51B9-7DD006A120DA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: indica a qué equipo pertenece el color.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: indica a qué equipo pertenece el color.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo al que pertenece el color. Si se borra el equipo se borran sus colores.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo al que pertenece el color. Si se borra el equipo se borran sus colores.]]></commentInRDBMS>
 <generatorID>51B3585D-978C-B483-ABDF-51B41EC38D46</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,8 +31,8 @@
 <Column name="color" id="AC26FA11-DF55-9D2C-D0AB-2D3D754FDB15">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Nombre del color del equipo (por ejemplo rojo o blanco). Parte de la llave primaria para que un color no se repita en el mismo equipo.]]></comment>
-<commentInRDBMS><![CDATA[Nombre del color del equipo (por ejemplo rojo o blanco). Parte de la llave primaria para que un color no se repita en el mismo equipo.]]></commentInRDBMS>
+<comment><![CDATA[Nombre del color, por ejemplo Azul o Blanco. Es parte de la llave primaria para que un color no se repita en el mismo equipo.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del color, por ejemplo Azul o Blanco. Es parte de la llave primaria para que un color no se repita en el mismo equipo.]]></commentInRDBMS>
 <generatorID>233C1F43-EDB4-2767-91C3-09DF039233FA</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

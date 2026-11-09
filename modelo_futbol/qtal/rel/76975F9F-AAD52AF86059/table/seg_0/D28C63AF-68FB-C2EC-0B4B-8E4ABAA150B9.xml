@@ -2,7 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D28C63AF-68FB-C2EC-0B4B-8E4ABAA150B9" name="DEFENSA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los defensas]]></commentInRDBMS>
+<comment><![CDATA[Subclase de JUGADOR para los jugadores que juegan como defensas (especialización total y disjunta).]]></comment>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR para los jugadores que juegan como defensas (especialización total y disjunta).]]></commentInRDBMS>
 <generatorID>A24BD1ED-A924-6BD6-98F7-325D810E2F09</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -12,7 +13,8 @@
 <Column name="entradas_oportunas" id="54335898-2791-3C4E-74E0-B557F343F7BD">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Cantidad de entradas oportunas (recuperaciones de balón) del defensa]]></commentInRDBMS>
+<comment><![CDATA[Cantidad de entradas oportunas del defensa. Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de entradas oportunas del defensa. Es opcional.]]></commentInRDBMS>
 <generatorID>C2C2004C-A6C8-0884-BA72-C33966584639</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -26,8 +28,8 @@
 <Column name="id_jugador" id="196CE906-823D-1C26-D736-1526F8926DAD">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<commentInRDBMS><![CDATA[Identificador del jugador que juega de defensa. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<comment><![CDATA[Llave primaria y llave foránea a JUGADOR: el defensa es el mismo jugador de la superclase.]]></comment>
+<commentInRDBMS><![CDATA[Llave primaria y llave foránea a JUGADOR: el defensa es el mismo jugador de la superclase.]]></commentInRDBMS>
 <generatorID>34B7F442-A3CA-B3F5-8841-2E8A19C657EC</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

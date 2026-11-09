@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6256CDC9-04CB-8626-5B3D-4ED96D91D8F0" name="TARJETA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Tarjetas disciplinarias mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></comment>
-<commentInRDBMS><![CDATA[Tarjetas disciplinarias mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></commentInRDBMS>
+<comment><![CDATA[Tarjetas mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></comment>
+<commentInRDBMS><![CDATA[Tarjetas mostradas a un jugador durante su participación en un partido. Es una entidad débil de PARTICIPACION (relación Ocurre).]]></commentInRDBMS>
 <generatorID>F8A5B18D-5B47-5B5E-1608-ABE7A78F8CF5</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -31,8 +31,8 @@
 <Column name="id_tarjeta" id="0B0F5EBF-AF71-6BCB-34C8-C05644869690">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Identificador de la tarjeta; junto con id_participacion forma la llave primaria.]]></comment>
-<commentInRDBMS><![CDATA[Identificador de la tarjeta; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
+<comment><![CDATA[Llave parcial de la tarjeta; junto con id_participacion forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Llave parcial de la tarjeta; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
 <generatorID>08A29755-AC78-2DA7-751F-BC5914F2C573</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -45,8 +45,8 @@
 <Column name="motivo" id="E756386A-DEEA-8FDA-31F1-84ADE02FB8F3">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Razón por la que se mostró la tarjeta (opcional). Sirve para el control disciplinario.]]></comment>
-<commentInRDBMS><![CDATA[Razón por la que se mostró la tarjeta (opcional). Sirve para el control disciplinario.]]></commentInRDBMS>
+<comment><![CDATA[Razón de la tarjeta, por ejemplo Amonestación, Doble amarilla o Roja directa.]]></comment>
+<commentInRDBMS><![CDATA[Razón de la tarjeta, por ejemplo Amonestación, Doble amarilla o Roja directa.]]></commentInRDBMS>
 <generatorID>A2A2F651-A512-F351-4537-E1CDD6AA8C79</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -59,8 +59,8 @@
 <Column name="minuto_tarjeta" id="DA085040-268D-9938-14A5-B1A7085D546B">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Minuto del partido en que se mostró la tarjeta (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Minuto del partido en que se mostró la tarjeta.]]></comment>
+<commentInRDBMS><![CDATA[Minuto del partido en que se mostró la tarjeta.]]></commentInRDBMS>
 <generatorID>1309C667-5F6B-3694-8658-0867EADB8F0F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -73,8 +73,8 @@
 <Column name="id_tipo" id="B897991F-52C2-9F2D-6D4C-F9B7A1583F5B">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla, roja, etc. (relación Ser). Es obligatoria.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla, roja, etc. (relación Ser). Es obligatoria.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla o roja (relación Ser).]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TIPO_TARJETA: indica si la tarjeta es amarilla o roja (relación Ser).]]></commentInRDBMS>
 <generatorID>15944BD4-462E-ED82-B2B4-43341D7DB083</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

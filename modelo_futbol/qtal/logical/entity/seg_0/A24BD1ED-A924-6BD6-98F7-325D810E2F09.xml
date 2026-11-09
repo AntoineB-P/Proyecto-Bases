@@ -2,7 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A24BD1ED-A924-6BD6-98F7-325D810E2F09" name="DEFENSA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:21:13 UTC</createdTime>
-<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los defensas]]></commentInRDBMS>
+<comment><![CDATA[Subclase de JUGADOR para los jugadores que juegan como defensas (especialización total y disjunta).]]></comment>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR para los jugadores que juegan como defensas (especialización total y disjunta).]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -20,7 +21,8 @@
 <Attribute name="entradas_oportunas" id="C2C2004C-A6C8-0884-BA72-C33966584639">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:21:20 UTC</createdTime>
-<commentInRDBMS><![CDATA[Cantidad de entradas oportunas (recuperaciones de balón) del defensa]]></commentInRDBMS>
+<comment><![CDATA[Cantidad de entradas oportunas del defensa. Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de entradas oportunas del defensa. Es opcional.]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -36,8 +38,8 @@
 <Attribute name="id jugador" id="34B7F442-A3CA-B3F5-8841-2E8A19C657EC">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:33:49 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<commentInRDBMS><![CDATA[Identificador del jugador que juega de defensa. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<comment><![CDATA[Llave primaria y llave foránea a JUGADOR: el defensa es el mismo jugador de la superclase.]]></comment>
+<commentInRDBMS><![CDATA[Llave primaria y llave foránea a JUGADOR: el defensa es el mismo jugador de la superclase.]]></commentInRDBMS>
 <generatorID>BEBF0D4B-9602-3AD4-E028-7EEDD623C6FA</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>

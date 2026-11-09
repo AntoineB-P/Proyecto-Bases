@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="252D6C51-51A4-D3B7-4636-B489CBD26C5B" name="ARBITRO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Árbitros que dirigen los partidos. Guarda sus datos personales, su ciudad y su categoría.]]></comment>
-<commentInRDBMS><![CDATA[Árbitros que dirigen los partidos. Guarda sus datos personales, su ciudad y su categoría.]]></commentInRDBMS>
+<comment><![CDATA[Árbitros que dirigen los partidos. Guarda sus datos, su ciudad y su categoría.]]></comment>
+<commentInRDBMS><![CDATA[Árbitros que dirigen los partidos. Guarda sus datos, su ciudad y su categoría.]]></commentInRDBMS>
 <generatorID>11AE7B2B-FCD2-DE91-1EE0-F6F050DD6D65</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -13,8 +13,8 @@
 <Column name="cedula" id="DB110328-DC35-7EC1-D576-C014491ECFCC">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Cédula (documento de identidad) del árbitro. Es la llave primaria y la referencia ARBITRAJE.]]></comment>
-<commentInRDBMS><![CDATA[Cédula (documento de identidad) del árbitro. Es la llave primaria y la referencia ARBITRAJE.]]></commentInRDBMS>
+<comment><![CDATA[Cédula del árbitro (llave primaria). ARBITRAJE la referencia.]]></comment>
+<commentInRDBMS><![CDATA[Cédula del árbitro (llave primaria). ARBITRAJE la referencia.]]></commentInRDBMS>
 <generatorID>AEE0200C-3D6E-0D63-9193-25E1629DDEB8</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -27,8 +27,8 @@
 <Column name="nombres" id="279A6D3A-57E8-AC27-4409-FAF50291B34A">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Nombres de pila del árbitro. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></comment>
-<commentInRDBMS><![CDATA[Nombres de pila del árbitro. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></commentInRDBMS>
+<comment><![CDATA[Nombres del árbitro. Junto con apellidos forma el atributo compuesto Nombre.]]></comment>
+<commentInRDBMS><![CDATA[Nombres del árbitro. Junto con apellidos forma el atributo compuesto Nombre.]]></commentInRDBMS>
 <generatorID>35EEEDA6-7669-5194-9C8F-2C0FB947BFB8</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -41,8 +41,8 @@
 <Column name="apellidos" id="0FB9E33D-D7EA-72D7-8C56-069D18FF11CE">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Apellidos del árbitro. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></comment>
-<commentInRDBMS><![CDATA[Apellidos del árbitro. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></commentInRDBMS>
+<comment><![CDATA[Apellidos del árbitro. Junto con nombres forma el atributo compuesto Nombre.]]></comment>
+<commentInRDBMS><![CDATA[Apellidos del árbitro. Junto con nombres forma el atributo compuesto Nombre.]]></commentInRDBMS>
 <generatorID>707AF33B-8F2D-0BAE-CFE7-C80CDABFECC4</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -55,8 +55,8 @@
 <Column name="ciudad_arbitro" id="66F4B5B8-5A89-767B-97A2-A4A85E798EB6">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Ciudad del árbitro (opcional). Permite filtrar árbitros por ubicación al asignarlos a partidos.]]></comment>
-<commentInRDBMS><![CDATA[Ciudad del árbitro (opcional). Permite filtrar árbitros por ubicación al asignarlos a partidos.]]></commentInRDBMS>
+<comment><![CDATA[Ciudad donde vive el árbitro.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad donde vive el árbitro.]]></commentInRDBMS>
 <generatorID>FC07D943-F967-C488-311F-61CBFF24B20F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -69,8 +69,8 @@
 <Column name="categoria" id="2B4F9766-0C3F-0E3D-5834-4193C0F9B8C4">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Categoría o nivel del árbitro (por ejemplo nacional o internacional) (opcional). Sirve para asignar árbitros según la importancia del partido.]]></comment>
-<commentInRDBMS><![CDATA[Categoría o nivel del árbitro (por ejemplo nacional o internacional) (opcional). Sirve para asignar árbitros según la importancia del partido.]]></commentInRDBMS>
+<comment><![CDATA[Categoría del árbitro: Nacional o FIFA.]]></comment>
+<commentInRDBMS><![CDATA[Categoría del árbitro: Nacional o FIFA.]]></commentInRDBMS>
 <generatorID>7761B320-0FAD-F1F2-42B6-2615D8661C4B</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

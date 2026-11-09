@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0C58E98A-1B37-8B83-C38F-597AD863A7AF" name="USUARIO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Personas que usan el sistema. Guarda sus datos de acceso (usuario, contraseña cifrada y correo), si ya confirmaron su correo, su rol y, de forma opcional, su equipo favorito.
-]]></commentInRDBMS>
+<comment><![CDATA[Usuarios registrados en la aplicación web. Cada uno tiene un rol y puede elegir un equipo favorito.]]></comment>
+<commentInRDBMS><![CDATA[Usuarios registrados en la aplicación web. Cada uno tiene un rol y puede elegir un equipo favorito.]]></commentInRDBMS>
 <generatorID>D41F9767-186D-0098-64E4-60942BAB34F4</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -13,8 +13,8 @@
 <Column name="id_equipo_favorito" id="937034F8-54DE-2C48-811B-9AE70610E9B1">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Identificador único del equipo (llave primaria). Lo referencian PARTIDO, EQUIPO_TORNEO, EQUIPO_COLOR e INSCRIPCION.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: equipo favorito del usuario (relación Elegir_favorito). Es opcional: queda vacía si el usuario no eligió equipo. Si se borra el equipo, el campo queda vacío.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a EQUIPO: club favorito del usuario (relación Elegir_favorito). Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: club favorito del usuario (relación Elegir_favorito). Es opcional.]]></commentInRDBMS>
 <generatorID>C8DF7652-7EAE-2A8D-6E07-146D2D500859</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -32,6 +32,7 @@
 <Column name="id_usuario" id="1249DF7B-E2BD-EC09-D5D6-E30168CC0BA0">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Identificador único del usuario (llave primaria).]]></comment>
 <commentInRDBMS><![CDATA[Identificador único del usuario (llave primaria).]]></commentInRDBMS>
 <generatorID>6D38070D-FEA7-743C-B1BC-791E5E4333AB</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
@@ -45,7 +46,8 @@
 <Column name="usuario" id="691F77C7-7368-C6E5-A4E4-89CF4C9610FF">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Nombre de usuario con el que inicia sesión. Es único: no puede repetirse entre usuarios]]></commentInRDBMS>
+<comment><![CDATA[Nombre de usuario con el que se inicia sesión. Es único.]]></comment>
+<commentInRDBMS><![CDATA[Nombre de usuario con el que se inicia sesión. Es único.]]></commentInRDBMS>
 <generatorID>27BA49B0-B040-E697-60D1-C4C2EA1650B9</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -58,7 +60,8 @@
 <Column name="contrasenia" id="B9CD851E-AB76-C545-651F-F21ED23B8E4B">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Contraseña del usuario, guardada cifrada (hash), nunca en texto plano. La longitud de la columna permite guardar el hash completo.]]></commentInRDBMS>
+<comment><![CDATA[Contraseña cifrada con BCrypt. Nunca se guarda en texto plano.]]></comment>
+<commentInRDBMS><![CDATA[Contraseña cifrada con BCrypt. Nunca se guarda en texto plano.]]></commentInRDBMS>
 <generatorID>92533AC4-5259-FD47-6CB3-840DF0532F6C</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -71,7 +74,8 @@
 <Column name="correo" id="6A895224-3D3B-5627-D97C-8807360271B7">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Correo electrónico del usuario. Es único y es donde se envía el código para confirmar la cuenta.]]></commentInRDBMS>
+<comment><![CDATA[Correo electrónico del usuario, al que se envía el código de verificación. Es único.]]></comment>
+<commentInRDBMS><![CDATA[Correo electrónico del usuario, al que se envía el código de verificación. Es único.]]></commentInRDBMS>
 <generatorID>EFDA4F46-E39B-B004-A658-2919F2E1BF53</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -84,7 +88,8 @@
 <Column name="verificado" id="87CAFF26-D1C5-8D2D-C4E8-D2B157DFB515">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Indica si el usuario ya confirmó su correo: S si ya lo confirmó y N si no (por defecto N). Solo puede iniciar sesión cuando está verificado.]]></commentInRDBMS>
+<comment><![CDATA[Indica si el usuario ya confirmó su correo: 1 (verificado) o 0 (pendiente). Por defecto es 0.]]></comment>
+<commentInRDBMS><![CDATA[Indica si el usuario ya confirmó su correo: 1 (verificado) o 0 (pendiente). Por defecto es 0.]]></commentInRDBMS>
 <generatorID>AE9196CA-1AC6-DC71-FA69-E435BB17509C</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -98,7 +103,8 @@
 <Column name="codigo_verificacion" id="5118EFD9-93EC-C384-D417-309BE6F93CD7">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Código de 6 dígitos que se envía al correo para confirmar la cuenta (opcional). Se guarda como texto para conservar los ceros iniciales.]]></commentInRDBMS>
+<comment><![CDATA[Código de 6 dígitos enviado al correo para verificar la cuenta. Es opcional y se borra al verificar.]]></comment>
+<commentInRDBMS><![CDATA[Código de 6 dígitos enviado al correo para verificar la cuenta. Es opcional y se borra al verificar.]]></commentInRDBMS>
 <generatorID>5FE980D9-3F3B-19E5-639A-100F2DA1AE99</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -112,8 +118,8 @@
 <Column name="expira_verificacion" id="06EA355B-5A09-D820-2EE3-08584EA7B2E9">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Fecha y hora en que vence el código de verificación (opcional). El código dura 15 minutos.
-]]></commentInRDBMS>
+<comment><![CDATA[Fecha y hora hasta la que es válido el código de verificación. Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Fecha y hora hasta la que es válido el código de verificación. Es opcional.]]></commentInRDBMS>
 <generatorID>691D4707-91BC-7E95-0602-4D8C554B477F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -126,7 +132,8 @@
 <Column name="id_rol" id="58B2554A-F121-D425-2886-80BBEF44D516">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Llave foránea a ROL: rol del usuario (relación Tener_rol). Es obligatoria: todo usuario tiene exactamente un rol.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a ROL: rol del usuario (relación Tener_rol).]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ROL: rol del usuario (relación Tener_rol).]]></commentInRDBMS>
 <generatorID>20C25879-1F32-EDB8-E4C7-004BE6106A7C</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

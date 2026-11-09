@@ -2,8 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FCA0D4A5-226C-66FF-9A12-F17768F45058" name="TIPO TARJETA">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Catálogo de tipos de tarjeta (por ejemplo amarilla y roja). Evita repetir el color en cada tarjeta que se registra.]]></comment>
-<commentInRDBMS><![CDATA[Catálogo de tipos de tarjeta (por ejemplo amarilla y roja). Evita repetir el color en cada tarjeta que se registra.]]></commentInRDBMS>
+<comment><![CDATA[Catálogo de tipos de tarjeta (Amarilla y Roja). Evita repetir el color en cada tarjeta registrada.]]></comment>
+<commentInRDBMS><![CDATA[Catálogo de tipos de tarjeta (Amarilla y Roja). Evita repetir el color en cada tarjeta registrada.]]></commentInRDBMS>
 <generatorID>46CE574E-5362-F0E3-E4B2-FE38F8A80E99</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -39,8 +39,8 @@
 <Attribute name="color_tarjeta" id="1D6B9A73-321E-8599-450D-C1202905A23F">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Color del tipo de tarjeta (por ejemplo amarilla o roja). Es el nombre con el que se reconoce el tipo.]]></comment>
-<commentInRDBMS><![CDATA[Color del tipo de tarjeta (por ejemplo amarilla o roja). Es el nombre con el que se reconoce el tipo.]]></commentInRDBMS>
+<comment><![CDATA[Color de la tarjeta: Amarilla o Roja. Es único.]]></comment>
+<commentInRDBMS><![CDATA[Color de la tarjeta: Amarilla o Roja. Es único.]]></commentInRDBMS>
 <generatorID>A7805529-DA47-CE3A-B934-1410A791A5C6</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>

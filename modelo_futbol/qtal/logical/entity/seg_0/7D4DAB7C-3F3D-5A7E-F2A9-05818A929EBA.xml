@@ -2,8 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7D4DAB7C-3F3D-5A7E-F2A9-05818A929EBA" name="RESULTADO">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener): guarda los goles de cada equipo para determinar el ganador y calcular posiciones.]]></comment>
-<commentInRDBMS><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener): guarda los goles de cada equipo para determinar el ganador y calcular posiciones.]]></commentInRDBMS>
+<comment><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener). Un partido sin resultado todavía no se ha jugado.]]></comment>
+<commentInRDBMS><![CDATA[Marcador final de un partido. Es una entidad débil de PARTIDO (relación 1:1 Tener). Un partido sin resultado todavía no se ha jugado.]]></commentInRDBMS>
 <generatorID>E368EC52-0174-BC2C-3043-9A701E984032</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -22,8 +22,8 @@
 <Attribute name="id partido" id="631CB741-1824-16CC-FCC5-79ACE0B86FA9">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Además es única: cada partido tiene como máximo un resultado.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Además es única: cada partido tiene como máximo un resultado.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Es única: cada partido tiene como máximo un resultado.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria (entidad débil). Es única: cada partido tiene como máximo un resultado.]]></commentInRDBMS>
 <generatorID>57BDD7A7-3C2E-7E0A-58E6-FE6EECE0B55E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -40,8 +40,8 @@
 <Attribute name="id resultado" id="7A7AC537-4601-4D75-7645-E1FD938C3251">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Identificador del resultado; junto con id_partido forma la llave primaria.]]></comment>
-<commentInRDBMS><![CDATA[Identificador del resultado; junto con id_partido forma la llave primaria.]]></commentInRDBMS>
+<comment><![CDATA[Llave parcial del resultado; junto con id_partido forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Llave parcial del resultado; junto con id_partido forma la llave primaria.]]></commentInRDBMS>
 <generatorID>508AD264-6CD4-1063-9CEC-D39F86E0B83A</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -57,15 +57,14 @@
 <Attribute name="goles local" id="16B7EA11-E45C-5C82-6B86-94527CCD1A96">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Cantidad de goles anotados por el equipo local en el partido (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo local en el partido (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Cantidad de goles del equipo local.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de goles del equipo local.]]></commentInRDBMS>
 <generatorID>620820F6-B091-7103-A584-8EA8D42FD4B3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -76,15 +75,14 @@
 <Attribute name="goles visitante" id="49DBA44B-9567-ABFE-AAB6-A49D241AD53B">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Cantidad de goles anotados por el equipo visitante en el partido (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Cantidad de goles anotados por el equipo visitante en el partido (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Cantidad de goles del equipo visitante.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de goles del equipo visitante.]]></commentInRDBMS>
 <generatorID>515A1F58-A70A-2D82-C750-A8864A6A1FDA</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>

@@ -2,7 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3B333E98-778C-16D4-1DE0-8D862DBCF9D1" name="MEDIOCAMPISTA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:20:53 UTC</createdTime>
-<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los mediocampistas]]></commentInRDBMS>
+<comment><![CDATA[Subclase de JUGADOR para los jugadores que juegan como mediocampistas (especialización total y disjunta).]]></comment>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR para los jugadores que juegan como mediocampistas (especialización total y disjunta).]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -20,7 +21,8 @@
 <Attribute name="pases" id="AC0B22F9-C9A0-A5D2-B816-EAF5D757C9C5">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:21:09 UTC</createdTime>
-<commentInRDBMS><![CDATA[Cantidad de pases realizados por el mediocampista]]></commentInRDBMS>
+<comment><![CDATA[Cantidad de pases del mediocampista. Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de pases del mediocampista. Es opcional.]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -36,8 +38,8 @@
 <Attribute name="id jugador" id="162ABED6-FACD-6CBB-1C6D-1558B27F24E7">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:33:37 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<commentInRDBMS><![CDATA[Identificador del jugador que juega de mediocampista. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<comment><![CDATA[Llave primaria y llave foránea a JUGADOR: el mediocampista es el mismo jugador de la superclase.]]></comment>
+<commentInRDBMS><![CDATA[Llave primaria y llave foránea a JUGADOR: el mediocampista es el mismo jugador de la superclase.]]></commentInRDBMS>
 <generatorID>A8C86C0A-20EB-74E4-C89E-B52F6DB088F3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>

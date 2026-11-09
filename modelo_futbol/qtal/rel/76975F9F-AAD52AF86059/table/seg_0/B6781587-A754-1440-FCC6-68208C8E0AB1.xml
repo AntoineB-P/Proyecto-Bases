@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B6781587-A754-1440-FCC6-68208C8E0AB1" name="EQUIPO_TORNEO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></comment>
-<commentInRDBMS><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos participan en qué torneos (un equipo puede jugar varios torneos y un torneo tiene varios equipos).]]></commentInRDBMS>
+<comment><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos juegan cada torneo.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación M:N Participar entre EQUIPO y TORNEO: registra qué equipos juegan cada torneo.]]></commentInRDBMS>
 <generatorID>766E369D-3E52-FAC4-0240-02443C56E34D</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>

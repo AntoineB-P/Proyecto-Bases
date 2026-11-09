@@ -5,7 +5,7 @@
 <generatorID>BEBF0D4B-9602-3AD4-E028-7EEDD623C6FA</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <referredTableLongName>JUGADOR</referredTableLongName>
-<deleteRule>CASCADE</deleteRule>
+<deleteRule>NO ACTION</deleteRule>
 <referredTableID>212E275D-D187-0E83-478A-246C41965582</referredTableID>
 <keyObject>58D6AC25-E543-E851-E5BF-3628628272E2</keyObject>
 <referredKeyID>58D6AC25-E543-E851-E5BF-3628628272E2</referredKeyID>

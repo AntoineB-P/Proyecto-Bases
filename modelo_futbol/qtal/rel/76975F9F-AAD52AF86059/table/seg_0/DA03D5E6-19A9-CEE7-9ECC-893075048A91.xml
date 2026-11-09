@@ -27,8 +27,8 @@
 <Column name="nombre_estadio" id="689B114E-1906-9E34-6A67-891FAEDBD6A0">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></comment>
-<commentInRDBMS><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></commentInRDBMS>
+<comment><![CDATA[Nombre del estadio. Es único: no puede haber dos estadios con el mismo nombre.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del estadio. Es único: no puede haber dos estadios con el mismo nombre.]]></commentInRDBMS>
 <generatorID>42BAE781-3679-0177-4B10-6710B6655CAC</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -41,8 +41,8 @@
 <Column name="capacidad" id="AB239990-233D-92B8-1DE5-16E0BE39CD0C">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></comment>
-<commentInRDBMS><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></commentInRDBMS>
+<comment><![CDATA[Cantidad máxima de espectadores del estadio.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad máxima de espectadores del estadio.]]></commentInRDBMS>
 <generatorID>2A8ACAE3-E6AA-93AC-CAB2-741156129EB3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -55,8 +55,8 @@
 <Column name="direccion" id="1F6714BD-BFB5-6232-E63C-17B392597C65">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></comment>
-<commentInRDBMS><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></commentInRDBMS>
+<comment><![CDATA[Dirección del estadio. Hace parte del atributo compuesto Ubicación del modelo entidad-relación.]]></comment>
+<commentInRDBMS><![CDATA[Dirección del estadio. Hace parte del atributo compuesto Ubicación del modelo entidad-relación.]]></commentInRDBMS>
 <generatorID>D0E760F5-12D3-1C41-7749-CFD19528E7F1</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -69,8 +69,8 @@
 <Column name="ciudad_estadio" id="2BF009EA-CD9C-A3A0-A76E-AEE9928C1C91">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></comment>
-<commentInRDBMS><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></commentInRDBMS>
+<comment><![CDATA[Ciudad donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></commentInRDBMS>
 <generatorID>9EC634C4-B11C-6EDF-CF29-6E10133139EA</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -83,8 +83,8 @@
 <Column name="barrio" id="A0B79E47-5C7C-EB8D-C696-79AD51A4D10A">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></comment>
-<commentInRDBMS><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></commentInRDBMS>
+<comment><![CDATA[Barrio donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Barrio donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></commentInRDBMS>
 <generatorID>52DBC228-C2D2-E359-744D-5F6A2D2F9F35</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

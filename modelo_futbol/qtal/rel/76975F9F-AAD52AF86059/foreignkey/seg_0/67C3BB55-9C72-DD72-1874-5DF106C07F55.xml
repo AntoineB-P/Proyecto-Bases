@@ -5,7 +5,7 @@
 <generatorID>3105CCBB-D4CF-5BA7-962C-0D515B003EFE</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <referredTableLongName>EQUIPO</referredTableLongName>
-<deleteRule>CASCADE</deleteRule>
+<deleteRule>NO ACTION</deleteRule>
 <referredTableID>73B0EABA-F19D-6557-F321-324671509713</referredTableID>
 <keyObject>4CFDB5DF-D771-CB24-E54F-EE3A1C7E2DF4</keyObject>
 <referredKeyID>4CFDB5DF-D771-CB24-E54F-EE3A1C7E2DF4</referredKeyID>
