@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3E05884D-F01E-F331-29B0-C41BDAD9FBF8" name="TECNICO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Directores técnicos (entrenadores) del torneo. Cada técnico dirige como máximo un equipo (relación 1:1 Dirigir) y sirve para saber quién está a cargo de cada equipo.]]></comment>
-<commentInRDBMS><![CDATA[Directores técnicos (entrenadores) del torneo. Cada técnico dirige como máximo un equipo (relación 1:1 Dirigir) y sirve para saber quién está a cargo de cada equipo.]]></commentInRDBMS>
+<comment><![CDATA[Directores técnicos de los equipos. Cada técnico dirige como máximo un equipo (relación 1:1 Dirigir).]]></comment>
+<commentInRDBMS><![CDATA[Directores técnicos de los equipos. Cada técnico dirige como máximo un equipo (relación 1:1 Dirigir).]]></commentInRDBMS>
 <generatorID>93B16C8C-AB65-7E1F-9B19-1CA79C27441D</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -13,8 +13,8 @@
 <Column name="id_tecnico" id="87BDDA56-6498-CBF9-C4C4-93281C7627BA">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Identificador único del técnico (llave primaria). EQUIPO lo referencia para indicar qué técnico dirige a cada equipo.]]></comment>
-<commentInRDBMS><![CDATA[Identificador único del técnico (llave primaria). EQUIPO lo referencia para indicar qué técnico dirige a cada equipo.]]></commentInRDBMS>
+<comment><![CDATA[Identificador único del técnico (llave primaria). EQUIPO lo referencia para indicar quién lo dirige.]]></comment>
+<commentInRDBMS><![CDATA[Identificador único del técnico (llave primaria). EQUIPO lo referencia para indicar quién lo dirige.]]></commentInRDBMS>
 <generatorID>2531126D-9B9C-4004-AB66-1F3CF8B2E486</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -27,8 +27,8 @@
 <Column name="nombres" id="6BE699E7-3805-5801-24C7-B5FB07C33BD5">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Nombres de pila del técnico. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></comment>
-<commentInRDBMS><![CDATA[Nombres de pila del técnico. Junto con apellidos forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y buscarlo.]]></commentInRDBMS>
+<comment><![CDATA[Nombres del técnico. Junto con apellidos forma el atributo compuesto Nombre del modelo entidad-relación.]]></comment>
+<commentInRDBMS><![CDATA[Nombres del técnico. Junto con apellidos forma el atributo compuesto Nombre del modelo entidad-relación.]]></commentInRDBMS>
 <generatorID>9DF4F519-8DC0-E82F-D615-E410A5785CB3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -41,8 +41,8 @@
 <Column name="apellidos" id="DBB6B9E0-44BA-DDBB-215D-1C323C4807DF">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Apellidos del técnico. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></comment>
-<commentInRDBMS><![CDATA[Apellidos del técnico. Junto con nombres forma el atributo compuesto Nombre del diagrama; se usa para mostrarlo y ordenarlo.]]></commentInRDBMS>
+<comment><![CDATA[Apellidos del técnico. Junto con nombres forma el atributo compuesto Nombre.]]></comment>
+<commentInRDBMS><![CDATA[Apellidos del técnico. Junto con nombres forma el atributo compuesto Nombre.]]></commentInRDBMS>
 <generatorID>76233490-7CD7-0185-48FC-1447C38A7172</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -55,8 +55,8 @@
 <Column name="nacionalidad" id="4623BDBC-A8FC-14C9-F248-230CEFBEE777">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[País de origen del técnico (opcional). Sirve para reportes y estadísticas, por ejemplo cuántos técnicos extranjeros hay.]]></comment>
-<commentInRDBMS><![CDATA[País de origen del técnico (opcional). Sirve para reportes y estadísticas, por ejemplo cuántos técnicos extranjeros hay.]]></commentInRDBMS>
+<comment><![CDATA[País de origen del técnico. Sirve para reportes, por ejemplo cuántos técnicos son extranjeros.]]></comment>
+<commentInRDBMS><![CDATA[País de origen del técnico. Sirve para reportes, por ejemplo cuántos técnicos son extranjeros.]]></commentInRDBMS>
 <generatorID>A1B0751B-CFD2-BEB5-AAA3-DED28749FCA6</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -69,8 +69,8 @@
 <Column name="fecha_nacimiento" id="CB919124-9E3F-54D2-9590-BA9FD43BC540">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Fecha de nacimiento del técnico (opcional). Permite conocer y calcular su edad.]]></comment>
-<commentInRDBMS><![CDATA[Fecha de nacimiento del técnico (opcional). Permite conocer y calcular su edad.]]></commentInRDBMS>
+<comment><![CDATA[Fecha de nacimiento del técnico. Permite calcular su edad, que no se guarda por ser un dato derivado.]]></comment>
+<commentInRDBMS><![CDATA[Fecha de nacimiento del técnico. Permite calcular su edad, que no se guarda por ser un dato derivado.]]></commentInRDBMS>
 <generatorID>D0772CE6-4EEC-8C6D-936A-4DDC7F2F8AF0</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

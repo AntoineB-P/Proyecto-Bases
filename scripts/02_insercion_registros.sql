@@ -1,5 +1,3 @@
-SET DEFINE OFF;
-
 INSERT INTO tecnico (ID_TECNICO,NOMBRES,APELLIDOS,NACIONALIDAD,FECHA_NACIMIENTO) values ('1','Flavio Horacio','Robatto','Argentina',to_date('16/01/1974','DD/MM/YYYY'));
 INSERT INTO tecnico (ID_TECNICO,NOMBRES,APELLIDOS,NACIONALIDAD,FECHA_NACIMIENTO) values ('2','José Flabio','Torres Sierra','Colombia',to_date('07/12/1970','DD/MM/YYYY'));
 INSERT INTO tecnico (ID_TECNICO,NOMBRES,APELLIDOS,NACIONALIDAD,FECHA_NACIMIENTO) values ('3','David','González Giraldo','Colombia',to_date('20/07/1982','DD/MM/YYYY'));

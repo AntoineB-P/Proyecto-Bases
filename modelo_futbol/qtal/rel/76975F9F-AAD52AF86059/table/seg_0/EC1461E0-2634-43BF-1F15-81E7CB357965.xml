@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EC1461E0-2634-43BF-1F15-81E7CB357965" name="PARTIDO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Encuentros entre dos equipos (local y visitante) dentro de un torneo, jugados en un estadio en una fecha y hora. Es el eje del que dependen el resultado, los árbitros y las participaciones.]]></comment>
-<commentInRDBMS><![CDATA[Encuentros entre dos equipos (local y visitante) dentro de un torneo, jugados en un estadio en una fecha y hora. Es el eje del que dependen el resultado, los árbitros y las participaciones.]]></commentInRDBMS>
+<comment><![CDATA[Encuentros entre un equipo local y uno visitante dentro de un torneo, en un estadio, fecha y hora. De él dependen el resultado, los árbitros y las participaciones.]]></comment>
+<commentInRDBMS><![CDATA[Encuentros entre un equipo local y uno visitante dentro de un torneo, en un estadio, fecha y hora. De él dependen el resultado, los árbitros y las participaciones.]]></commentInRDBMS>
 <generatorID>DCFD96BC-3A68-8A45-0983-0BDC930C92F1</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -27,8 +27,8 @@
 <Column name="fecha" id="F8614EFF-6A44-CA24-77B8-0C8FE75D9CC7">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Fecha en que se juega el partido (opcional). Sirve para armar el calendario y ordenar los encuentros.]]></comment>
-<commentInRDBMS><![CDATA[Fecha en que se juega el partido (opcional). Sirve para armar el calendario y ordenar los encuentros.]]></commentInRDBMS>
+<comment><![CDATA[Fecha en que se juega el partido.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que se juega el partido.]]></commentInRDBMS>
 <generatorID>5A795516-5B3E-E1CC-DCE2-01D232E6BFFF</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -40,8 +40,8 @@
 <Column name="hora" id="FA3D2D1A-D970-7CDA-9670-50EEED11F8B3">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Hora programada de inicio del partido, guardada como texto (por ejemplo 15:30) (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Hora programada de inicio del partido, guardada como texto (por ejemplo 15:30) (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Hora de inicio del partido, guardada como texto en formato HH:MM, por ejemplo 18:10.]]></comment>
+<commentInRDBMS><![CDATA[Hora de inicio del partido, guardada como texto en formato HH:MM, por ejemplo 18:10.]]></commentInRDBMS>
 <generatorID>770EE37E-E994-6221-FC05-49D690AAF410</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -54,8 +54,8 @@
 <Column name="jornada" id="CA6A6A4D-3DC1-8E3A-03AE-D15B287A74A7">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Número de jornada del torneo a la que pertenece el partido (opcional). Agrupa los partidos del calendario.]]></comment>
-<commentInRDBMS><![CDATA[Número de jornada del torneo a la que pertenece el partido (opcional). Agrupa los partidos del calendario.]]></commentInRDBMS>
+<comment><![CDATA[Número de la jornada (fecha del calendario) a la que pertenece el partido.]]></comment>
+<commentInRDBMS><![CDATA[Número de la jornada (fecha del calendario) a la que pertenece el partido.]]></commentInRDBMS>
 <generatorID>E7A8F322-39FC-C1CE-75DA-135F7627BF38</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -68,8 +68,8 @@
 <Column name="id_torneo" id="DA76F93D-9EAF-CD59-1526-B28CEC352B84">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a TORNEO: torneo al que pertenece el partido (relación Tener). Es obligatoria.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a TORNEO: torneo al que pertenece el partido (relación Tener). Es obligatoria.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a TORNEO: torneo al que pertenece el partido (relación Tener).]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a TORNEO: torneo al que pertenece el partido (relación Tener).]]></commentInRDBMS>
 <generatorID>4FCE0BD7-70AB-7F78-D05D-F78C1727DA1D</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -86,8 +86,8 @@
 <Column name="id_estadio" id="F45E9736-30C3-D8E8-BE95-C6523751B083">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a ESTADIO: estadio donde se juega el partido (relación Jugar). Es obligatoria; un estadio puede albergar varios partidos.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a ESTADIO: estadio donde se juega el partido (relación Jugar). Es obligatoria; un estadio puede albergar varios partidos.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a ESTADIO: estadio donde se juega el partido (relación Jugar).]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ESTADIO: estadio donde se juega el partido (relación Jugar).]]></commentInRDBMS>
 <generatorID>C98AC96A-ECCC-03E0-6C54-C68A90826FA1</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -104,8 +104,8 @@
 <Column name="id_local" id="D65C9A73-5A82-390D-1E7F-4211CBCDDB6A">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a EQUIPO: equipo que juega como local (relación Ser_local). Es obligatoria.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: equipo que juega como local (relación Ser_local). Es obligatoria.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a EQUIPO: equipo que juega como local (relación Ser_local).]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: equipo que juega como local (relación Ser_local).]]></commentInRDBMS>
 <generatorID>7BFAAB93-AD3A-3754-1162-BC355BC5D4C8</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -122,8 +122,8 @@
 <Column name="id_visitante" id="CB0A5F92-EDAA-D1A6-02A9-33E0FA241012">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a EQUIPO: equipo que juega como visitante (relación Ser_visitante). Es obligatoria.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: equipo que juega como visitante (relación Ser_visitante). Es obligatoria.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a EQUIPO: equipo que juega como visitante (relación Ser_visitante). Debe ser distinto del local.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a EQUIPO: equipo que juega como visitante (relación Ser_visitante). Debe ser distinto del local.]]></commentInRDBMS>
 <generatorID>A78646B6-4FA3-FF02-182B-DA07140BAA6F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

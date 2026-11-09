@@ -5,7 +5,7 @@ Scripts para pasar el modelo lógico al modelo físico en **Oracle AI Database 2
 | Script | Qué hace |
 |---|---|
 | `01_creacion_objetos.sql` | Crea las 22 tablas con sus llaves primarias, llaves foráneas, restricciones `UNIQUE` y columnas obligatorias (`NOT NULL`). |
-| `02_insercion_registros.sql` | Inserta los datos de la liga: técnicos, estadios, equipos, torneo, jugadores, partidos, resultados, goles, tarjetas y roles. |
+| `02_insercion_registros.sql` | Inserta los datos de la liga: técnicos, estadios, equipos y sus colores, torneo, jugadores con su posición, inscripciones, árbitros, partidos con sus árbitros, resultados, participaciones, goles, tarjetas y roles. |
 | `03_scripts_varios.sql` | Consultas de comprobación y de uso diario (ver más abajo). |
 
 ## Antes de empezar: crear el usuario LIGA
@@ -38,6 +38,7 @@ Las tablas están ordenadas para que cada llave foránea apunte a una tabla que 
 - **ON DELETE CASCADE:** lo tienen las tablas que no tienen sentido sin su dueño: RESULTADO y ARBITRAJE (de PARTIDO), GOL y TARJETA (de PARTICIPACION) y EQUIPO_COLOR (de EQUIPO).
 - **Especialización de JUGADOR:** ATACANTE, MEDIOCAMPISTA, DEFENSA y PORTERO tienen como llave primaria el `id_jugador`, que también es llave foránea hacia JUGADOR.
 - **Atributos derivados:** la edad del jugador, la duración del torneo y la tabla de posiciones no se guardan; se calculan con consultas.
+- **Datos cargados:** corresponden al torneo Liga BetPlay Dimayor II-2026. Las jornadas 1 a 6 ya se jugaron (60 partidos con resultado, goles y tarjetas) y la jornada 7 está programada (10 partidos con su árbitro, todavía sin resultado). Por eso hay 70 partidos y 60 resultados.
 - **Usuarios:** el script de inserción no trae usuarios, porque sus correos y contraseñas son datos personales. Los usuarios se crean desde la página de registro de la aplicación web, que guarda la contraseña cifrada.
 
 ## Contenido de `03_scripts_varios.sql`

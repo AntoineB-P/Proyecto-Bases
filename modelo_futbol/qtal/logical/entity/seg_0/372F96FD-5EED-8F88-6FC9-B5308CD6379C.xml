@@ -39,8 +39,8 @@
 <Attribute name="nombre_estadio" id="42BAE781-3679-0177-4B10-6710B6655CAC">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></comment>
-<commentInRDBMS><![CDATA[Nombre del estadio. Se usa para identificarlo en calendarios y reportes.]]></commentInRDBMS>
+<comment><![CDATA[Nombre del estadio. Es único: no puede haber dos estadios con el mismo nombre.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del estadio. Es único: no puede haber dos estadios con el mismo nombre.]]></commentInRDBMS>
 <generatorID>D0E54BCC-2108-5AC9-BD4A-EE94278E64C0</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -50,21 +50,20 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>80</dataTypeSize>
-<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="capacidad" id="2A8ACAE3-E6AA-93AC-CAB2-741156129EB3">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></comment>
-<commentInRDBMS><![CDATA[Aforo máximo de espectadores del estadio (opcional). Sirve para reportes y para comparar escenarios.]]></commentInRDBMS>
+<comment><![CDATA[Cantidad máxima de espectadores del estadio.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad máxima de espectadores del estadio.]]></commentInRDBMS>
 <generatorID>36A5174F-54AE-4B89-7EF7-A45E2BA1C2ED</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -74,33 +73,31 @@
 <Attribute name="direccion" id="D0E760F5-12D3-1C41-7749-CFD19528E7F1">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></comment>
-<commentInRDBMS><![CDATA[Dirección del estadio (opcional). Hace parte del atributo compuesto Ubicación del diagrama.]]></commentInRDBMS>
+<comment><![CDATA[Dirección del estadio. Hace parte del atributo compuesto Ubicación del modelo entidad-relación.]]></comment>
+<commentInRDBMS><![CDATA[Dirección del estadio. Hace parte del atributo compuesto Ubicación del modelo entidad-relación.]]></commentInRDBMS>
 <generatorID>1B927DEA-7D73-B700-36B5-7CABD1D548B2</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>120</dataTypeSize>
-<ownDataTypeParameters>120,,</ownDataTypeParameters>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="ciudad_estadio" id="9EC634C4-B11C-6EDF-CF29-6E10133139EA">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></comment>
-<commentInRDBMS><![CDATA[Ciudad donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; permite filtrar estadios por ciudad.]]></commentInRDBMS>
+<comment><![CDATA[Ciudad donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Ciudad donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></commentInRDBMS>
 <generatorID>B06326E7-9D17-BE1D-03D6-627EB67648E0</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -110,15 +107,14 @@
 <Attribute name="barrio" id="52DBC228-C2D2-E359-744D-5F6A2D2F9F35">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></comment>
-<commentInRDBMS><![CDATA[Barrio donde queda el estadio (opcional). Hace parte del atributo compuesto Ubicación; precisa la localización.]]></commentInRDBMS>
+<comment><![CDATA[Barrio donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></comment>
+<commentInRDBMS><![CDATA[Barrio donde queda el estadio. Hace parte del atributo compuesto Ubicación.]]></commentInRDBMS>
 <generatorID>E53FA96F-6594-49C3-D849-544B916DB3E1</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

@@ -2,7 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D2878316-EAE8-B804-A65B-3F1AF3E8EC56" name="ATACANTE">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:19:44 UTC</createdTime>
-<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los atacantes]]></commentInRDBMS>
+<comment><![CDATA[Subclase de JUGADOR para los jugadores que juegan como atacantes (especialización total y disjunta).]]></comment>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR para los jugadores que juegan como atacantes (especialización total y disjunta).]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -20,7 +21,8 @@
 <Attribute name="tiros_puerta" id="37724501-9DDC-ED9D-FDB3-83EF4A9CE35B">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:20:41 UTC</createdTime>
-<commentInRDBMS><![CDATA[Cantidad de tiros a puerta realizados por el atacante]]></commentInRDBMS>
+<comment><![CDATA[Cantidad de tiros a puerta del atacante. Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de tiros a puerta del atacante. Es opcional.]]></commentInRDBMS>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
@@ -36,8 +38,8 @@
 <Attribute name="id jugador" id="09A5DB11-41BE-E61B-A15F-60C2A2B4F275">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 14:31:39 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<commentInRDBMS><![CDATA[Identificador del jugador que juega de atacante. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<comment><![CDATA[Llave primaria y llave foránea a JUGADOR: el atacante es el mismo jugador de la superclase.]]></comment>
+<commentInRDBMS><![CDATA[Llave primaria y llave foránea a JUGADOR: el atacante es el mismo jugador de la superclase.]]></commentInRDBMS>
 <generatorID>4FF94F09-EADC-5267-9407-B7255B507A0E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>

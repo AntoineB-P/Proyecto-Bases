@@ -2,8 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9A30AF3B-87ED-2A28-29C6-CDB95ED0F305" name="ARBITRAJE">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: registra qué árbitros dirigen cada partido y con qué rol.]]></comment>
-<commentInRDBMS><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: registra qué árbitros dirigen cada partido y con qué rol.]]></commentInRDBMS>
+<comment><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: qué árbitros dirigen cada partido y con qué rol.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación M:N Arbitrar entre PARTIDO y ARBITRO: qué árbitros dirigen cada partido y con qué rol.]]></commentInRDBMS>
 <generatorID>79083653-29A2-9446-B48F-28E0F6E6C2F7</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -22,8 +22,8 @@
 <Attribute name="id partido" id="F02AC061-032D-C25C-25F0-4A36B1143CD7">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se arbitra.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se arbitra.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se dirige. Si se borra el partido se borran sus arbitrajes.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTIDO y parte de la llave primaria: partido que se dirige. Si se borra el partido se borran sus arbitrajes.]]></commentInRDBMS>
 <generatorID>0ADD30E1-2BDE-447E-BD77-3532A91FAF3B</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -40,8 +40,8 @@
 <Attribute name="cedula" id="DE7C7541-3D7C-59D3-BD7D-9FAA82B71D2C">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro asignado al partido.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro asignado al partido.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro designado.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a ARBITRO y parte de la llave primaria: árbitro designado.]]></commentInRDBMS>
 <generatorID>115ECBDA-CA08-AF41-EB15-00A42FA16832</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -58,20 +58,19 @@
 <Attribute name="rol" id="5B5D3591-23E8-830C-543F-8649BD56D3E9">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Función del árbitro en ese partido (por ejemplo central, asistente o cuarto árbitro) (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Función del árbitro en ese partido (por ejemplo central, asistente o cuarto árbitro) (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Función del árbitro en el partido: Central, Asistente, Cuarto árbitro o VAR.]]></comment>
+<commentInRDBMS><![CDATA[Función del árbitro en el partido: Central, Asistente, Cuarto árbitro o VAR.]]></commentInRDBMS>
 <generatorID>EE1A4C75-C412-CBD3-7763-666A8737580F</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

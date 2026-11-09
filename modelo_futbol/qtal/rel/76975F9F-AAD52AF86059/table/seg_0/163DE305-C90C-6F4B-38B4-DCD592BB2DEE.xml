@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="163DE305-C90C-6F4B-38B4-DCD592BB2DEE" name="ROL">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Catálogo de roles de los usuarios del sistema (por ejemplo administrador). Un rol puede estar asignado a varios usuarios.
-]]></commentInRDBMS>
+<comment><![CDATA[Catálogo de roles de los usuarios de la aplicación web: ADMIN y USUARIO.]]></comment>
+<commentInRDBMS><![CDATA[Catálogo de roles de los usuarios de la aplicación web: ADMIN y USUARIO.]]></commentInRDBMS>
 <generatorID>652EA174-922A-698D-812E-5ECAFADC7141</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -13,6 +13,7 @@
 <Column name="id_rol" id="0AF77173-CC67-1ED3-B63F-A8CAC83DBE16">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
+<comment><![CDATA[Identificador único del rol (llave primaria). USUARIO lo referencia.]]></comment>
 <commentInRDBMS><![CDATA[Identificador único del rol (llave primaria). USUARIO lo referencia.]]></commentInRDBMS>
 <generatorID>2E474433-237E-B21E-47A8-1AB286A58B78</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
@@ -26,8 +27,8 @@
 <Column name="nombre_rol" id="9EE4B1D3-1F22-4091-BAF6-6C841BD64775">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<commentInRDBMS><![CDATA[Nombre del rol (por ejemplo administrador). Define lo que el usuario puede hacer en el sistema.
-]]></commentInRDBMS>
+<comment><![CDATA[Nombre del rol: ADMIN (puede crear, modificar y borrar datos) o USUARIO (solo consulta). Es único.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del rol: ADMIN (puede crear, modificar y borrar datos) o USUARIO (solo consulta). Es único.]]></commentInRDBMS>
 <generatorID>5F7BFFE0-9044-ADF1-9BE6-E169AA4D158C</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

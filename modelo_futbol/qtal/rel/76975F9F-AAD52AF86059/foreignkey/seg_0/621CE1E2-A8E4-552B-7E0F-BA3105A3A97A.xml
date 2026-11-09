@@ -5,7 +5,7 @@
 <generatorID>DADABEEF-EEFD-6B1C-9ACD-D4607CC187A1</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <referredTableLongName>PARTIDO</referredTableLongName>
-<deleteRule>CASCADE</deleteRule>
+<deleteRule>NO ACTION</deleteRule>
 <referredTableID>EC1461E0-2634-43BF-1F15-81E7CB357965</referredTableID>
 <keyObject>6CB45B16-4F37-C574-9CA2-F86DE643EB70</keyObject>
 <referredKeyID>6CB45B16-4F37-C574-9CA2-F86DE643EB70</referredKeyID>

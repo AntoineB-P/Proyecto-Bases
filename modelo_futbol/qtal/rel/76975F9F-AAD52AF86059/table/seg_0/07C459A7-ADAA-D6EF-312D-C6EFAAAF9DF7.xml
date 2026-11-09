@@ -2,7 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="07C459A7-ADAA-D6EF-312D-C6EFAAAF9DF7" name="PORTERO">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 15:05:35 UTC</createdTime>
-<commentInRDBMS><![CDATA[Subclase de JUGADOR: estadísticas propias de los porteros]]></commentInRDBMS>
+<comment><![CDATA[Subclase de JUGADOR para los jugadores que juegan como porteros (especialización total y disjunta).]]></comment>
+<commentInRDBMS><![CDATA[Subclase de JUGADOR para los jugadores que juegan como porteros (especialización total y disjunta).]]></commentInRDBMS>
 <generatorID>F0D07261-C728-7309-4A8D-2EA24C6BB108</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -12,7 +13,8 @@
 <Column name="porteria_imbatida" id="29464FCC-6877-B5A0-59BC-32091D23C521">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 15:05:35 UTC</createdTime>
-<commentInRDBMS><![CDATA[Cantidad de partidos en los que el portero mantuvo la portería en cero]]></commentInRDBMS>
+<comment><![CDATA[Cantidad de partidos en los que el portero no recibió goles. Es opcional.]]></comment>
+<commentInRDBMS><![CDATA[Cantidad de partidos en los que el portero no recibió goles. Es opcional.]]></commentInRDBMS>
 <generatorID>C6FCE2F2-A9F0-6BB0-A540-150AE9A46345</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -26,8 +28,8 @@
 <Column name="id_jugador" id="8D0D55A5-3A53-68C2-27EB-18B4E897BA48">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-10-27 15:05:35 UTC</createdTime>
-<comment><![CDATA[Identificador único del jugador (llave primaria). Lo referencian INSCRIPCION y PARTICIPACION.]]></comment>
-<commentInRDBMS><![CDATA[Identificador del jugador que juega de portero. PK y FK hacia JUGADOR]]></commentInRDBMS>
+<comment><![CDATA[Llave primaria y llave foránea a JUGADOR: el portero es el mismo jugador de la superclase.]]></comment>
+<commentInRDBMS><![CDATA[Llave primaria y llave foránea a JUGADOR: el portero es el mismo jugador de la superclase.]]></commentInRDBMS>
 <generatorID>BD9C8EDF-F763-D86C-3315-1CEE115D2E42</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

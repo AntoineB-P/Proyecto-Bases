@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DEA917F3-B837-D81B-C348-A11D847FD9C4" name="GOL">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Goles anotados en un partido. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido en que se anotó.]]></comment>
-<commentInRDBMS><![CDATA[Goles anotados en un partido. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido en que se anotó.]]></commentInRDBMS>
+<comment><![CDATA[Goles anotados en los partidos. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido.]]></comment>
+<commentInRDBMS><![CDATA[Goles anotados en los partidos. Es una entidad débil de PARTICIPACION (relación Marcar): cada gol queda ligado al jugador y al partido.]]></commentInRDBMS>
 <generatorID>2397C567-9C7F-1B58-7E24-1AD3B4146D2E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -13,8 +13,8 @@
 <Column name="id_participacion" id="08093B48-2963-777C-2C57-4BD1FA7A4655">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó el gol.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó el gol.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTICIPACION y parte de la llave primaria (entidad débil): participación del jugador que anotó.]]></commentInRDBMS>
 <generatorID>FD8C475B-04A7-380A-6A88-5C2A10AE9C20</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,8 +31,8 @@
 <Column name="id_gol" id="096F1C42-ED40-00F9-312D-4C2F06D25CA5">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Identificador del gol; junto con id_participacion forma la llave primaria.]]></comment>
-<commentInRDBMS><![CDATA[Identificador del gol; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
+<comment><![CDATA[Llave parcial del gol; junto con id_participacion forma la llave primaria.]]></comment>
+<commentInRDBMS><![CDATA[Llave parcial del gol; junto con id_participacion forma la llave primaria.]]></commentInRDBMS>
 <generatorID>9ABB1B0E-AC69-0EF6-0499-9698828D1DAD</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -45,8 +45,8 @@
 <Column name="tipo_gol" id="1B7179A1-232E-F85E-6C11-567588B3CB37">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Tipo de gol (por ejemplo jugada, penal, tiro libre o autogol) (opcional). Sirve para estadísticas.]]></comment>
-<commentInRDBMS><![CDATA[Tipo de gol (por ejemplo jugada, penal, tiro libre o autogol) (opcional). Sirve para estadísticas.]]></commentInRDBMS>
+<comment><![CDATA[Forma en que se anotó el gol: Jugada, Penal o Cabeza. No se distinguen autogoles.]]></comment>
+<commentInRDBMS><![CDATA[Forma en que se anotó el gol: Jugada, Penal o Cabeza. No se distinguen autogoles.]]></commentInRDBMS>
 <generatorID>E2BFF6FF-39ED-906E-8BA4-C72478A1EA9E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -59,8 +59,8 @@
 <Column name="minuto_gol" id="ADCC181C-DEAA-1374-998E-7729878D7C81">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Minuto del partido en que se anotó el gol (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Minuto del partido en que se anotó el gol (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Minuto del partido en que se anotó el gol.]]></comment>
+<commentInRDBMS><![CDATA[Minuto del partido en que se anotó el gol.]]></commentInRDBMS>
 <generatorID>132CA83B-873C-0608-D3B8-A963C62AB10B</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>

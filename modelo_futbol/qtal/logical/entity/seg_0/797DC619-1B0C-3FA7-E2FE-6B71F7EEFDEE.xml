@@ -2,8 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="797DC619-1B0C-3FA7-E2FE-6B71F7EEFDEE" name="INSCRIPCION">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Resuelve la relación ternaria Inscribir (M:N:M) entre EQUIPO, TORNEO y JUGADOR: registra con qué equipo y en qué torneo está inscrito cada jugador, con su dorsal y las fechas de vigencia.]]></comment>
-<commentInRDBMS><![CDATA[Resuelve la relación ternaria Inscribir (M:N:M) entre EQUIPO, TORNEO y JUGADOR: registra con qué equipo y en qué torneo está inscrito cada jugador, con su dorsal y las fechas de vigencia.]]></commentInRDBMS>
+<comment><![CDATA[Resuelve la relación ternaria Inscribir entre EQUIPO, TORNEO y JUGADOR: con qué equipo y en qué torneo juega cada jugador, con su dorsal y su vigencia.]]></comment>
+<commentInRDBMS><![CDATA[Resuelve la relación ternaria Inscribir entre EQUIPO, TORNEO y JUGADOR: con qué equipo y en qué torneo juega cada jugador, con su dorsal y su vigencia.]]></commentInRDBMS>
 <generatorID>D853FFAF-249A-21C4-0CEA-3CC2671F2521</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -22,8 +22,8 @@
 <Attribute name="id jugador" id="1730D12E-69F5-58FD-8048-72C885278F23">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria: jugador que se inscribe.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria: jugador que se inscribe.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria. Es única por torneo: un jugador está en un solo equipo por torneo.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a JUGADOR y parte de la llave primaria. Es única por torneo: un jugador está en un solo equipo por torneo.]]></commentInRDBMS>
 <generatorID>21375983-D635-568E-0DEA-B5F6F8BD8B72</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -40,15 +40,14 @@
 <Attribute name="fecha inicio" id="42DBD342-633F-B9FC-7536-CE2219C56A4F">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Fecha desde la que el jugador está inscrito con el equipo en ese torneo (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Fecha desde la que el jugador está inscrito con el equipo en ese torneo (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Fecha desde la que el jugador está inscrito con el equipo.]]></comment>
+<commentInRDBMS><![CDATA[Fecha desde la que el jugador está inscrito con el equipo.]]></commentInRDBMS>
 <generatorID>6F84ABE7-B5AD-6161-D7F2-D2C820650E96</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -57,8 +56,8 @@
 <Attribute name="fecha fin" id="B332B977-D12A-B7A6-F2D2-E7EDB87B4276">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Fecha hasta la que el jugador estuvo inscrito con el equipo en ese torneo (opcional). Permite conservar el historial de traspasos.]]></comment>
-<commentInRDBMS><![CDATA[Fecha hasta la que el jugador estuvo inscrito con el equipo en ese torneo (opcional). Permite conservar el historial de traspasos.]]></commentInRDBMS>
+<comment><![CDATA[Fecha hasta la que estuvo inscrito. Es opcional: vacía significa que la inscripción sigue vigente.]]></comment>
+<commentInRDBMS><![CDATA[Fecha hasta la que estuvo inscrito. Es opcional: vacía significa que la inscripción sigue vigente.]]></commentInRDBMS>
 <generatorID>7E67EBA4-A72E-034F-1230-13C4E208FE46</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -74,15 +73,14 @@
 <Attribute name="dorsal" id="37220B67-5D9C-1F9C-9D8D-06F455C3003C">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Número de camiseta que usa el jugador con ese equipo en ese torneo (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Número de camiseta que usa el jugador con ese equipo en ese torneo (opcional).]]></commentInRDBMS>
+<comment><![CDATA[Número de camiseta del jugador en ese equipo y torneo. Es único dentro del mismo equipo y torneo.]]></comment>
+<commentInRDBMS><![CDATA[Número de camiseta del jugador en ese equipo y torneo. Es único dentro del mismo equipo y torneo.]]></commentInRDBMS>
 <generatorID>D00CA03D-ED03-D54A-EB4A-953ED0774A50</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -92,8 +90,8 @@
 <Attribute name="id equipo" id="A72EB02B-FD24-C6B6-E571-FA0C93FFA883">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:20:06 UTC</createdTime>
-<comment><![CDATA[Llave foránea a EQUIPO y parte de la llave primaria: equipo que participa en el torneo.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a EQUIPO_TORNEO y parte de la llave primaria: equipo con el que se inscribe el jugador. El equipo debe participar en el torneo.]]></commentInRDBMS>
+<comment><![CDATA[Parte de la llave primaria y, junto con id_torneo, llave foránea a EQUIPO_TORNEO: equipo en el que se inscribe el jugador.]]></comment>
+<commentInRDBMS><![CDATA[Parte de la llave primaria y, junto con id_torneo, llave foránea a EQUIPO_TORNEO: equipo en el que se inscribe el jugador.]]></commentInRDBMS>
 <generatorID>AF40C615-EC4C-F36F-D3E0-14CD27E4A33E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -110,8 +108,8 @@
 <Attribute name="id torneo" id="60FE7F5E-4C35-B2A7-0465-E1AFCAFD299D">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:20:06 UTC</createdTime>
-<comment><![CDATA[Llave foránea a TORNEO y parte de la llave primaria: torneo en el que participa el equipo.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a EQUIPO_TORNEO y parte de la llave primaria: torneo en el que se inscribe el jugador.]]></commentInRDBMS>
+<comment><![CDATA[Parte de la llave primaria y, junto con id_equipo, llave foránea a EQUIPO_TORNEO: torneo de la inscripción.]]></comment>
+<commentInRDBMS><![CDATA[Parte de la llave primaria y, junto con id_equipo, llave foránea a EQUIPO_TORNEO: torneo de la inscripción.]]></commentInRDBMS>
 <generatorID>AF40C615-EC4C-F36F-D3E0-14CD27E4A33E</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>

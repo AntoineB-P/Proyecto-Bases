@@ -2,8 +2,8 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E1442125-5883-42CF-F4D1-B8211F551349" name="TORNEO">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Torneos o campeonatos organizados por periodo (año y semestre). Agrupan los equipos participantes, los jugadores inscritos y los partidos que se juegan.]]></comment>
-<commentInRDBMS><![CDATA[Torneos o campeonatos organizados por periodo (año y semestre). Agrupan los equipos participantes, los jugadores inscritos y los partidos que se juegan.]]></commentInRDBMS>
+<comment><![CDATA[Ediciones de la liga, identificadas por año y semestre. Agrupan los equipos participantes, las inscripciones y los partidos.]]></comment>
+<commentInRDBMS><![CDATA[Ediciones de la liga, identificadas por año y semestre. Agrupan los equipos participantes, las inscripciones y los partidos.]]></commentInRDBMS>
 <generatorID>F6693D8C-A0D8-EBB5-CD69-3A660FB60E9A</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -39,8 +39,8 @@
 <Attribute name="nombre_torneo" id="5D844288-1C0E-AFDD-7947-E907D3644FAC">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Nombre del torneo o campeonato. Se usa para identificarlo en calendarios y reportes.]]></comment>
-<commentInRDBMS><![CDATA[Nombre del torneo o campeonato. Se usa para identificarlo en calendarios y reportes.]]></commentInRDBMS>
+<comment><![CDATA[Nombre del torneo, por ejemplo Liga BetPlay Dimayor II-2026.]]></comment>
+<commentInRDBMS><![CDATA[Nombre del torneo, por ejemplo Liga BetPlay Dimayor II-2026.]]></commentInRDBMS>
 <generatorID>99C812E6-D658-AE08-A874-C170AA9C8A44</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
@@ -50,21 +50,20 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>80</dataTypeSize>
-<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="anio" id="A9216386-6DD0-01E9-20E3-DBDFA4376CA3">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Año en que se juega el torneo (opcional). Sirve para ordenar y filtrar torneos por periodo.]]></comment>
-<commentInRDBMS><![CDATA[Año en que se juega el torneo (opcional). Sirve para ordenar y filtrar torneos por periodo.]]></commentInRDBMS>
+<comment><![CDATA[Año en que se juega el torneo.]]></comment>
+<commentInRDBMS><![CDATA[Año en que se juega el torneo.]]></commentInRDBMS>
 <generatorID>FCBFEB89-39AA-087D-DA4A-F93E34DA5657</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -74,15 +73,14 @@
 <Attribute name="semestre" id="3A2E27B3-C35A-E131-091F-DFBA8F65312A">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Semestre del año en que se juega el torneo, por ejemplo 1 o 2 (opcional). Complementa al año para distinguir torneos del mismo año.]]></comment>
-<commentInRDBMS><![CDATA[Semestre del año en que se juega el torneo, por ejemplo 1 o 2 (opcional). Complementa al año para distinguir torneos del mismo año.]]></commentInRDBMS>
+<comment><![CDATA[Semestre del año en que se juega el torneo: 1 o 2.]]></comment>
+<commentInRDBMS><![CDATA[Semestre del año en que se juega el torneo: 1 o 2.]]></commentInRDBMS>
 <generatorID>1F101F12-B1DF-ED58-FD43-C05BA8BBFCF8</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -92,15 +90,14 @@
 <Attribute name="fecha inicio_torneo" id="A8FA7BD2-272C-DE5C-9ACE-498E4AED7AE3">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Fecha en que arranca el torneo (opcional). Se usa para calcular la duración del torneo.]]></comment>
-<commentInRDBMS><![CDATA[Fecha en que arranca el torneo (opcional). Se usa para calcular la duración del torneo.]]></commentInRDBMS>
+<comment><![CDATA[Fecha en que empieza el torneo.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que empieza el torneo.]]></commentInRDBMS>
 <generatorID>EA43B321-A57F-4339-752B-F38C84C74AB4</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -109,15 +106,14 @@
 <Attribute name="fecha fin_torneo" id="E7648C6B-ADF9-6A07-0318-ED0C5EE3E1EF">
 <createdBy>felip</createdBy>
 <createdTime>2026-10-18 03:48:54 UTC</createdTime>
-<comment><![CDATA[Fecha en que termina el torneo (opcional). Se usa para calcular la duración del torneo.]]></comment>
-<commentInRDBMS><![CDATA[Fecha en que termina el torneo (opcional). Se usa para calcular la duración del torneo.]]></commentInRDBMS>
+<comment><![CDATA[Fecha en que termina el torneo. Junto con la de inicio permite calcular la duración, que no se guarda por ser derivada.]]></comment>
+<commentInRDBMS><![CDATA[Fecha en que termina el torneo. Junto con la de inicio permite calcular la duración, que no se guarda por ser derivada.]]></commentInRDBMS>
 <generatorID>D1D68C8C-40E8-58B7-6F6E-3C30B7275617</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <engineerTo>
 <item key="76975F9F-A29C-C7A9-C425-AAD52AF86059" value="true"/>
 <item key="6C6013FB-5F9F-AB77-0CEA-CDE2A3D68811" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>

@@ -2,8 +2,8 @@
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA66CA5D-9D6D-1630-63F0-E2880C22C170" name="PARTICIPACION">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Intervención de un jugador en un partido (resuelve la relación M:N Jugar entre PARTIDO y JUGADOR). De ella dependen los goles y las tarjetas.]]></comment>
-<commentInRDBMS><![CDATA[Intervención de un jugador en un partido (resuelve la relación M:N Jugar entre PARTIDO y JUGADOR). De ella dependen los goles y las tarjetas.]]></commentInRDBMS>
+<comment><![CDATA[Participación de un jugador en un partido (agregación sobre la relación M:N Jugar entre JUGADOR y PARTIDO). De ella dependen los goles y las tarjetas.]]></comment>
+<commentInRDBMS><![CDATA[Participación de un jugador en un partido (agregación sobre la relación M:N Jugar entre JUGADOR y PARTIDO). De ella dependen los goles y las tarjetas.]]></commentInRDBMS>
 <generatorID>79CFD44D-0CC9-85D3-DCBB-0FF27015A4D3</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
@@ -27,8 +27,8 @@
 <Column name="id_partido" id="31B57BA9-FDAD-6AC9-5078-07D51B5881F2">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a PARTIDO: partido en el que interviene el jugador (relación Incluir). Es obligatoria.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a PARTIDO: partido en el que interviene el jugador (relación Incluir). Es obligatoria.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a PARTIDO: partido en el que participa el jugador (relación Incluir).]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a PARTIDO: partido en el que participa el jugador (relación Incluir).]]></commentInRDBMS>
 <generatorID>CA040BF8-3366-BB5C-4705-E1D228A138AA</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -45,8 +45,8 @@
 <Column name="id_jugador" id="0959C3F7-01E3-E9DE-6E95-DC5C0B9B936C">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Llave foránea a JUGADOR: jugador que participa en el partido (relación Realizar). Es obligatoria.]]></comment>
-<commentInRDBMS><![CDATA[Llave foránea a JUGADOR: jugador que participa en el partido (relación Realizar). Es obligatoria.]]></commentInRDBMS>
+<comment><![CDATA[Llave foránea a JUGADOR: jugador que participa (relación Realizar). Junto con id_partido es única: un jugador participa una vez por partido.]]></comment>
+<commentInRDBMS><![CDATA[Llave foránea a JUGADOR: jugador que participa (relación Realizar). Junto con id_partido es única: un jugador participa una vez por partido.]]></commentInRDBMS>
 <generatorID>68F78364-20B8-9179-24A8-1EFB6588B84C</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -63,11 +63,10 @@
 <Column name="minutos_jugados" id="365FA805-5ADE-887B-8B69-032C83883EC6">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Minutos que el jugador estuvo en cancha durante el partido (opcional). Sirve para estadísticas de rendimiento.]]></comment>
-<commentInRDBMS><![CDATA[Minutos que el jugador estuvo en cancha durante el partido (opcional). Sirve para estadísticas de rendimiento.]]></commentInRDBMS>
+<comment><![CDATA[Minutos que el jugador estuvo en la cancha.]]></comment>
+<commentInRDBMS><![CDATA[Minutos que el jugador estuvo en la cancha.]]></commentInRDBMS>
 <generatorID>E26A7CE5-C972-3AA4-AC78-608ED58799CE</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -78,11 +77,10 @@
 <Column name="titular" id="14A83467-7B86-2C13-4E6B-CD8683294265">
 <createdBy>Daniel</createdBy>
 <createdTime>2026-11-06 07:43:25 UTC</createdTime>
-<comment><![CDATA[Indica si el jugador salió en el equipo inicial (verdadero) o como suplente (falso) (opcional).]]></comment>
-<commentInRDBMS><![CDATA[Indica si el jugador salió en el equipo inicial (verdadero) o como suplente (falso) .]]></commentInRDBMS>
+<comment><![CDATA[Indica si el jugador inició el partido: S (titular) o N (suplente).]]></comment>
+<commentInRDBMS><![CDATA[Indica si el jugador inició el partido: S (titular) o N (suplente).]]></commentInRDBMS>
 <generatorID>62DBBA68-6D91-35D2-D528-CC477CC276FE</generatorID>
 <ownerDesignName>qtal</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT025</logicalDatatype>
